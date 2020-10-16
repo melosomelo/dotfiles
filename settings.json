@@ -1,0 +1,36 @@
+{
+  "workbench.colorTheme": "Palenight Theme",
+  "editor.fontFamily": "Fira Code",
+  "editor.fontLigatures": true,
+  "workbench.iconTheme": "material-icon-theme",
+  "window.zoomLevel": 1,
+  "editor.fontSize": 16,
+  "keyboard.dispatch": "keyCode",
+  "vim.easymotion": true,
+"vim.incsearch": true,
+"vim.useSystemClipboard": true,
+"vim.useCtrlKeys": true,
+"vim.hlsearch": true,
+"vim.insertModeKeyBindings": [
+  {
+    "before": ["j", "j"],
+    "after": ["<Esc>"]
+  }
+],
+"vim.normalModeKeyBindingsNonRecursive": [
+  {
+    "before": ["<leader>", "d"],
+    "after": ["d", "d"]
+  },
+  {
+    "before": ["<C-n>"],
+    "commands": [":nohl"]
+  }
+],
+"vim.leader": "<space>",
+"vim.handleKeys": {
+  "<C-a>": false,
+  "<C-f>": false
+},
+"editor.tabSize": 2
+}
