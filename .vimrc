@@ -8,6 +8,7 @@ set nowrap "does not wrap long lines into multiple lines
 set autoindent "New lines inherit the indentation of previous lines.
 set expandtab "Convert tabs to spaces
 set tabstop=2 "indent using 2 spaces
+set mouse=a "enable mouse use in all modes
 
 syntax on 
 filetype plugin indent on
