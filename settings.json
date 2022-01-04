@@ -1,36 +1,88 @@
 {
-  "workbench.colorTheme": "Palenight Theme",
-  "editor.fontFamily": "Fira Code",
+  "workbench.colorTheme": "Dracula Pro",
+  "editor.fontFamily": " 'JetBrains Mono'",
   "editor.fontLigatures": true,
-  "workbench.iconTheme": "material-icon-theme",
-  "window.zoomLevel": 1,
   "editor.fontSize": 16,
   "keyboard.dispatch": "keyCode",
   "vim.easymotion": true,
-"vim.incsearch": true,
-"vim.useSystemClipboard": true,
-"vim.useCtrlKeys": true,
-"vim.hlsearch": true,
-"vim.insertModeKeyBindings": [
-  {
-    "before": ["j", "j"],
-    "after": ["<Esc>"]
-  }
-],
-"vim.normalModeKeyBindingsNonRecursive": [
-  {
-    "before": ["<leader>", "d"],
-    "after": ["d", "d"]
+  "vim.incsearch": true,
+  "vim.useSystemClipboard": true,
+  "vim.useCtrlKeys": true,
+  "vim.hlsearch": true,
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "j"],
+      "after": ["<Esc>"]
+    }
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<leader>", "d"],
+      "after": ["d", "d"]
+    },
+    {
+      "before": ["<C-n>"],
+      "commands": [":nohl"]
+    }
+  ],
+  "vim.leader": "<space>",
+  "vim.handleKeys": {
+    "<C-a>": false,
+    "<C-f>": false
   },
-  {
-    "before": ["<C-n>"],
-    "commands": [":nohl"]
-  }
-],
-"vim.leader": "<space>",
-"vim.handleKeys": {
-  "<C-a>": false,
-  "<C-f>": false
-},
-"editor.tabSize": 2
+  "editor.tabSize": 2,
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "liveServer.settings.donotShowInfoMsg": true,
+  "explorer.compactFolders": false,
+  "workbench.editor.enablePreview": false,
+  "editor.fontWeight": null,
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "sonarlint.rules": {
+    "java:S120": {
+      "level": "off"
+    }
+  },
+  "eslint.alwaysShowStatus": true,
+  "editor.formatOnPaste": true,
+  "emmet.excludeLanguages": ["markdown"],
+  "python.languageServer": "Jedi",
+  "prettier.proseWrap": "always",
+  "explorer.confirmDragAndDrop": false,
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.sideBar.location": "right",
+  "window.zoomLevel": 1,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "files.exclude": {
+    "**/.classpath": true,
+    "**/.project": true,
+    "**/.settings": true,
+    "**/.factorypath": true
+  },
+  "cSpell.enableFiletypes": ["!cpp"],
+  "workbench.editorAssociations": [
+    {
+      "viewType": "jupyter-notebook",
+      "filenamePattern": "*.ipynb"
+    }
+  ],
+  "editor.cursorStyle": "line",
+  "editor.lineNumbers": "on",
+  "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
+  "editor.wordWrap": "off",
+  "explorer.confirmDelete": false,
+  "emmet.triggerExpansionOnTab": true,
+  "redhat.telemetry.enabled": false,
+  "emmet.showExpandedAbbreviation": "inMarkupAndStylesheetFilesOnly"
 }
