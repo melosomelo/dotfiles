@@ -61,7 +61,6 @@
   "explorer.confirmDragAndDrop": false,
   "workbench.iconTheme": "material-icon-theme",
   "workbench.sideBar.location": "right",
-  "window.zoomLevel": 1,
   "javascript.updateImportsOnFileMove.enabled": "always",
   "typescript.updateImportsOnFileMove.enabled": "always",
   "files.exclude": {
@@ -71,12 +70,9 @@
     "**/.factorypath": true
   },
   "cSpell.enableFiletypes": ["!cpp"],
-  "workbench.editorAssociations": [
-    {
-      "viewType": "jupyter-notebook",
-      "filenamePattern": "*.ipynb"
-    }
-  ],
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter-notebook"
+  },
   "editor.cursorStyle": "line",
   "editor.lineNumbers": "on",
   "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
@@ -84,5 +80,10 @@
   "explorer.confirmDelete": false,
   "emmet.triggerExpansionOnTab": true,
   "redhat.telemetry.enabled": false,
-  "emmet.showExpandedAbbreviation": "inMarkupAndStylesheetFilesOnly"
+  "emmet.showExpandedAbbreviation": "inMarkupAndStylesheetFilesOnly",
+  "bracketPairColorizer.depreciation-notice": false,
+  "security.workspace.trust.untrustedFiles": "open",
+  "window.zoomLevel": 1,
+  "java.debug.settings.hotCodeReplace": "auto",
+  "java.configuration.updateBuildConfiguration": "automatic"
 }
