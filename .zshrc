@@ -80,6 +80,7 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 export CATALINA_HOME="/usr/local/lib/apache-tomcat-9.0.56"
 export IBM_BB="/Users/mateusnascimento/Documents/ibm/bb"
+export LIB_DIR="/usr/local/lib"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
