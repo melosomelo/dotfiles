@@ -85,5 +85,6 @@
   "security.workspace.trust.untrustedFiles": "open",
   "window.zoomLevel": 1,
   "java.debug.settings.hotCodeReplace": "auto",
-  "java.configuration.updateBuildConfiguration": "automatic"
+  "java.configuration.updateBuildConfiguration": "automatic",
+  "haskell.manageHLS": "PATH"
 }
