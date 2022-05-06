@@ -1,3 +1,4 @@
+let mapleader = " "
 "----------- SETTING OPTIONS ----------
 set relativenumber
 set number
@@ -11,10 +12,21 @@ set smartindent
 set shiftround
 set nowrap
 set incsearch
-set scrolloff=8
+set scrolloff=20
 set signcolumn=yes
 set showmode
 set showcmd
 set ruler
 set wrap
 set mps+=<:>
+
+"----------- GENERAL MAPPINGS ------------
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
+
+"------------ PLUGINS
+call plug#begin()
+
+
+
+call plug#end()
