@@ -84,7 +84,7 @@ export LIB_DIR="/usr/local/lib"
 export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 export MAVEN_HOME="/usr/local/lib/apache-maven-3.6.3"
 export PATH=$PATH:$JAVA_HOME/bin:$MAVEN_HOME/bin
-export VIMRC="/Users/mateusnascimento/.config/nvim/vim.init"
+export VIMRC="/Users/mateusnascimento/.config/nvim/init.vim"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
