@@ -108,7 +108,7 @@ window:
 # Font configuration
 font:
   normal:
-    family: JetBrains Mono
+    family: FiraCode Nerd Font
   size: 18.0
   bold:
     style: Bold
