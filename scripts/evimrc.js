@@ -1,3 +1,4 @@
+// Script to open selected config files for nvim
 const { spawn } = require("child_process");
 const fs = require("fs");
 const { exit } = require("process");
