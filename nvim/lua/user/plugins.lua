@@ -16,10 +16,5 @@ return require('packer').startup(function()
       theme = "dracula"
     }
   }
-  -- Current colorscheme
-  use {
-    "folke/tokyonight.nvim"
-  }
-
 
 end)
