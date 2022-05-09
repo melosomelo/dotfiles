@@ -1,0 +1,22 @@
+#i!/bin/zsh
+
+REPO_LOCATION="/Users/mateusnascimento/Documents/my-repos/dotfiles"
+
+cp /Users/mateusnascimento/.alacritty.yml $REPO_LOCATION 
+cp /Users/mateusnascimento/.tmux.conf $REPO_LOCATION
+cp /Users/mateusnascimento/.zshrc $REPO_LOCATION
+cp /Users/mateusnascimento/Library/Application\ Support/Code/User/keybindings.json $REPO_LOCATION
+cp /Users/mateusnascimento/Library/Application\ Support/Code/User/settings.json $REPO_LOCATION
+cp /Users/mateusnascimento/.config/nvim/init.lua $REPO_LOCATION/nvim
+cp /Users/mateusnascimento/.config/nvim/old.init.vim $REPO_LOCATION/nvim
+cp /Users/mateusnascimento/.config/nvim/vscode.init.vim $REPO_LOCATION/nvim
+cp -r /Users/mateusnascimento/.config/nvim/lua $REPO_LOCATION/nvim
+cp  /Users/mateusnascimento/scripts/evimrc $REPO_LOCATION/scripts
+cp  /Users/mateusnascimento/scripts/evimrc.js $REPO_LOCATION/scripts
+cp /Users/mateusnascimento/scripts/syncdot $REPO_LOCATION/scripts
+
+cd $REPO_LOCATION
+gitjob-unset
+git add .
+git commit -m "synchronization commit $(date +"%d/%m/%y - %H:%M:%S")" --allow-empty
+git push origin main
