@@ -26,7 +26,6 @@ return require('packer').startup(function()
     }
   }
   -- nvim-cmp (Autocompletion)
-  use 'neovim/nvim-lspconfig'
   use 'hrsh7th/cmp-nvim-lsp'
   use 'hrsh7th/cmp-buffer'
   use 'hrsh7th/cmp-path'
@@ -41,11 +40,18 @@ return require('packer').startup(function()
     local line, col = unpack(vim.api.nvim_win_get_cursor(0))
     return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
   end
+
+  local check_backspace = function()
+    local col = vim.fn.col "." - 1
+    return col == 0 or vim.fn.getline("."):sub(col, col):match "%s"
+  end
+
   local cmp = require("cmp")
+  local luasnip = require("luasnip")
   cmp.setup({
     snippet = {
       expand = function(args)
-        require('luasnip').lsp_expand(args.body) 
+        require('luasnip').lsp_expand(args.body)
       end
     },
     mapping = cmp.mapping.preset.insert({
@@ -55,15 +61,17 @@ return require('packer').startup(function()
       ["<C-l>"] = cmp.mapping(cmp.mapping.scroll_docs(1), {"i", "c"}),
       ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), {"i", "c"}),
       ["<CR>"] = cmp.mapping.confirm({select = true}),
-      ["<Tab>"] = cmp.mapping(function(fallback) 
+      ["<Tab>"] = cmp.mapping(function(fallback)
         if cmp.visible() then
           cmp.select_next_item()
+        elseif luasnip.expandable() then
+          luasnip.expand()
         elseif luasnip.expand_or_jumpable() then
           luasnip.expand_or_jump()
-        elseif has_words_before() then
-          cmp.complete()
+        elseif check_backspace() then
+          fallback()
         else
-          fallback() 
+          fallback()
         end
       end, { "i", "s" }),
       ["<S-Tab>"] = cmp.mapping(function(fallback)
@@ -85,5 +93,19 @@ return require('packer').startup(function()
 
     })
   })
-  -- lsp configuration
+  -- LSP configuration
+  use {
+    "williamboman/nvim-lsp-installer",
+    {
+      "neovim/nvim-lspconfig",
+      config = function()
+          require("nvim-lsp-installer").setup {
+            ensure_installed = { "sumneko_lua" }
+          }
+          local lspconfig = require("lspconfig")
+          lspconfig.sumneko_lua.setup {}
+      end
+    }
+  }
+
 end)
