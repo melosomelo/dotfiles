@@ -31,7 +31,7 @@ return require('packer').startup(function()
   use 'hrsh7th/cmp-path'
   use 'hrsh7th/cmp-cmdline'
   use 'hrsh7th/nvim-cmp'
-  -- snippet engine 
+  -- snippet engine
   use 'L3MON4D3/LuaSnip'
   use 'saadparwaiz1/cmp_luasnip'
 
@@ -104,6 +104,7 @@ return require('packer').startup(function()
           }
           local lspconfig = require("lspconfig")
           lspconfig.sumneko_lua.setup {}
+          lspconfig.tsserver.setup {}
       end
     }
   }
