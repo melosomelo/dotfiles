@@ -1,6 +1,6 @@
 {
   "workbench.colorTheme": "Dracula Pro",
-  "editor.fontFamily": " 'JetBrains Mono'",
+  "editor.fontFamily": "'FiraCode Nerd Font',  'JetBrains Mono'",
   "editor.fontLigatures": true,
   "editor.fontSize": 16,
   "keyboard.dispatch": "keyCode",
@@ -86,5 +86,7 @@
   "window.zoomLevel": 1,
   "java.debug.settings.hotCodeReplace": "auto",
   "java.configuration.updateBuildConfiguration": "automatic",
-  "haskell.manageHLS": "PATH"
+  "haskell.manageHLS": "PATH",
+  "vim.vimrc.enable": true,
+  "vim.vimrc.path": "$HOME/.config/nvim/vscode.init.vim"
 }
