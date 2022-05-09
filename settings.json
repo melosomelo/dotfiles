@@ -88,5 +88,17 @@
   "java.configuration.updateBuildConfiguration": "automatic",
   "haskell.manageHLS": "PATH",
   "vim.vimrc.enable": true,
-  "vim.vimrc.path": "$HOME/.config/nvim/vscode.init.vim"
+  "vim.vimrc.path": "$HOME/.config/nvim/vscode.init.vim",
+  "vim.normalModeKeyBindings": [
+    {
+      "before": ["<leader>", "d"],
+      "commands": ["editor.action.revealDefinition"],
+      "silent": true
+    },
+    {
+      "before": ["<leader>", "p", "d"],
+      "commands": ["editor.action.peekDefinition"],
+      "silent": true
+    }
+  ]
 }

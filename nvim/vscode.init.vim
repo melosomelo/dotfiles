@@ -6,6 +6,6 @@ let mapleader = " "
 nnoremap <leader>ev :vsplit /Users/mateusnascimento/.config/nvim/vscode.init.vim<cr>
 
 "next tab
-nnoremap <leader>l gt
+nnoremap L gt
 "previous tab
-nnoremap <leader>h gT
+nnoremap H gT
