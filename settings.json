@@ -9,20 +9,22 @@
   "vim.useSystemClipboard": true,
   "vim.useCtrlKeys": true,
   "vim.hlsearch": true,
-  "vim.insertModeKeyBindings": [
-    {
-      "before": ["j", "j"],
-      "after": ["<Esc>"]
-    }
-  ],
+  "vim.insertModeKeyBindings": [],
   "vim.normalModeKeyBindingsNonRecursive": [
     {
       "before": ["<leader>", "d"],
-      "after": ["d", "d"]
+      "commands": ["editor.action.revealDefinition"],
+      "silent": true
     },
     {
-      "before": ["<C-n>"],
-      "commands": [":nohl"]
+      "before": ["<leader>", "p", "d"],
+      "commands": ["editor.action.peekDefinition"],
+      "silent": true
+    },
+    {
+      "before": ["<leader>", "t"],
+      "commands": ["workbench.action.toggleSidebarVisibility"],
+      "silent": true
     }
   ],
   "vim.leader": "<space>",
@@ -89,16 +91,5 @@
   "haskell.manageHLS": "PATH",
   "vim.vimrc.enable": true,
   "vim.vimrc.path": "$HOME/.config/nvim/vscode.init.vim",
-  "vim.normalModeKeyBindings": [
-    {
-      "before": ["<leader>", "d"],
-      "commands": ["editor.action.revealDefinition"],
-      "silent": true
-    },
-    {
-      "before": ["<leader>", "p", "d"],
-      "commands": ["editor.action.peekDefinition"],
-      "silent": true
-    }
-  ]
+  "vim.normalModeKeyBindings": []
 }
