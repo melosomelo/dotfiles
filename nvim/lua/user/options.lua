@@ -35,5 +35,6 @@ options.splitbelow = true
 options.splitright = true
 options.undofile = true
 options.cursorline = true
+options.completeopt = {"menu", "menuone", "noselect"}
 vim.cmd("filetype plugin indent on")
 
