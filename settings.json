@@ -17,13 +17,18 @@
       "silent": true
     },
     {
+      "before": ["<leader>", "i"],
+      "commands": ["editor.action.goToImplementation"],
+      "silent": true
+    },
+    {
       "before": ["<leader>", "p", "d"],
       "commands": ["editor.action.peekDefinition"],
       "silent": true
     },
     {
-      "before": ["<leader>", "t"],
-      "commands": ["workbench.action.toggleSidebarVisibility"],
+      "before": ["<leader>", "p", "i"],
+      "commands": ["editor.action.peekImplementation"],
       "silent": true
     }
   ],
