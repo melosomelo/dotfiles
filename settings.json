@@ -62,6 +62,7 @@
   },
   "eslint.alwaysShowStatus": true,
   "editor.formatOnPaste": true,
+  "editor.cursorSurroundingLines": 15,
   "emmet.excludeLanguages": ["markdown"],
   "python.languageServer": "Jedi",
   "prettier.proseWrap": "always",
