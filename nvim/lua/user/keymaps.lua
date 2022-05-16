@@ -14,7 +14,7 @@ local default_options = { remap = false, silent = true }
   keymap.set("n", "<leader>ev", ":vsplit /Users/mateusnascimento/.config/nvim/lua/user<cr>", default_options)
 
   -- Toggle netrw
-  keymap.set("n", "<leader>d", ":Lexplore<cr>", default_options) 
+  keymap.set("n", "<leader>d", ":Lexplore<cr>", default_options)
 
   -- Window navigation
   keymap.set("n", "<C-h>", "<C-w>h", default_options)
@@ -26,4 +26,7 @@ local default_options = { remap = false, silent = true }
   keymap.set("n", "<S-h>", "gT", default_options) -- previous tab
   keymap.set("n", "<S-l>", "gt", default_options) -- next tab
 
+  -- Remap CTRL + U and CTRL + D to Shift+K and Shift+J, respectively
+  keymap.set("n", "<S-j>", "<C-d>", default_options)
+  keymap.set("n", "<S-k>", "<C-u>", default_options)
 
