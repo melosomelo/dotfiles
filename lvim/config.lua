@@ -13,8 +13,8 @@ local options          = vim.opt
 options.relativenumber = true
 options.termguicolors  = true
 options.number         = true
-options.numberwidth    = 4
 options.hlsearch       = false
+options.numberwidth    = 4
 options.errorbells     = false
 options.tabstop        = 2
 options.showtabline    = 2
@@ -29,6 +29,7 @@ options.scrolloff      = 20
 options.signcolumn     = "yes"
 options.showmode       = true
 options.showcmd        = true
+options.cmdheight      = 1
 options.ruler          = true
 options.mps            = options.mps + "<:>"
 options.fenc           = "utf-8"
@@ -48,19 +49,36 @@ vim.cmd [[
   let g:dracula_bold = 1
   let g:dracula_italic = 1
 ]]
--- general
 lvim.format_on_save = true
 lvim.log.level      = "warn"
 lvim.colorscheme    = "dracula_pro"
--- keymappings [view all the defaults by pressing <leader>Lk]
+-- ===================KEYMAPPINGS====================
 
--- add your own keymapping
+-- Open config for LunarVim
+lvim.keys.normal_mode["<leader>ev"] = ":vsplit /Users/mateusnascimento/.config/lvim/config.lua<cr>"
+
+-- Toggle NvimTree
+lvim.keys.normal_mode["<leader>d"] = ":NvimTreeToggle<cr>"
+
+-- Better window navigation
+lvim.keys.normal_mode["<C-h>"] = "<C-w>h"
+lvim.keys.normal_mode["<C-j>"] = "<C-w>j"
+lvim.keys.normal_mode["<C-k>"] = "<C-w>k"
+lvim.keys.normal_mode["<C-l>"] = "<C-w>l"
+
+-- Tab navigation
+lvim.keys.normal_mode["<S-h>"] = "gT" -- previous tab
+lvim.keys.normal_mode["<S-l>"] = "gt" -- next tab
+
+-- Remap CTRL + U and CTRL + D to Shift+K and Shift+J, respectively
+lvim.lsp.buffer_mappings.normal_mode["K"] = nil
+lvim.keys.normal_mode["K"] = "<C-u>"
+lvim.keys.normal_mode["<S-j>"] = "<C-d>"
 lvim.leader = "space"
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
--- unmap a default keymapping
--- lvim.keys.normal_mode["<C-Up>"] = false
--- edit a default keymapping
--- lvim.keys.normal_mode["<C-q>"] = ":q<cr>"
+
+-- ===================LUALINE====================
+lvim.builtin.lualine.style = "default"
 
 -- Change Telescope navigation to use j and k for navigation and n and p for history in both input and normal mode.
 -- we use protected-mode (pcall) just in case the plugin wasn't loaded yet.
