@@ -39,11 +39,6 @@
     "when": "editorTextFocus && vim.active && vim.use<C-shift+2>"
   },
   {
-    "key": "ctrl+shift+space",
-    "command": "workbench.action.previousEditorInGroup",
-    "when": ""
-  },
-  {
     "key": "up",
     "command": "-notebook.focusPreviousEditor",
     "when": "editorTextFocus && inputFocus && notebookEditorFocused && notebookEditorCursorAtBoundary != 'bottom' && notebookEditorCursorAtBoundary != 'none'"
@@ -52,11 +47,6 @@
     "key": "ctrl+shift+space",
     "command": "-editor.action.triggerParameterHints",
     "when": "editorHasSignatureHelpProvider && editorTextFocus"
-  },
-  {
-    "key": "ctrl+space",
-    "command": "workbench.action.nextEditorInGroup",
-    "when": ""
   },
   {
     "key": "ctrl+down",

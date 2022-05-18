@@ -12,12 +12,12 @@
   "vim.insertModeKeyBindings": [],
   "vim.normalModeKeyBindingsNonRecursive": [
     {
-      "before": ["<leader>", "r", "d"],
+      "before": ["<leader>", "d"],
       "commands": ["editor.action.revealDefinition"],
       "silent": true
     },
     {
-      "before": ["<leader>", "r", "i"],
+      "before": ["<leader>", "i"],
       "commands": ["editor.action.goToImplementation"],
       "silent": true
     },
