@@ -8,7 +8,6 @@ an executable
 ]]
 -- THESE ARE EXAMPLE CONFIGS FEEL FREE TO CHANGE TO WHATEVER YOU WANT
 
-
 -- Vim Options
 local options          = vim.opt
 options.relativenumber = true
@@ -40,15 +39,21 @@ options.splitright     = true
 options.undofile       = true
 options.cursorline     = true
 options.completeopt    = { "menu", "menuone", "noselect" }
--- general
-lvim.format_on_save    = true
-lvim.log.level         = "warn"
-lvim.colorscheme       = "onedarker"
-lvim.relativenumber    = true
--- to disable icons and use a minimalist setup, uncomment the following
--- lvim.use_icons = false
 
+-- Configuration for DraculaPro
+vim.cmd [[
+  packadd! dracula_pro
+  syntax enable
+  let g:dracula_colorterm = 0
+  let g:dracula_bold = 1
+  let g:dracula_italic = 1
+]]
+-- general
+lvim.format_on_save = true
+lvim.log.level      = "warn"
+lvim.colorscheme    = "dracula_pro"
 -- keymappings [view all the defaults by pressing <leader>Lk]
+
 -- add your own keymapping
 lvim.leader = "space"
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
