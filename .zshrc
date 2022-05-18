@@ -83,7 +83,7 @@ export IBM_BB="/Users/mateusnascimento/Documents/ibm/bb"
 export LIB_DIR="/usr/local/lib"
 export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 export MAVEN_HOME="/usr/local/lib/apache-maven-3.6.3"
-export PATH=$PATH:$JAVA_HOME/bin:$MAVEN_HOME/bin
+export PATH=$PATH:$JAVA_HOME/bin:$MAVEN_HOME/bin:/Users/mateusnascimento/.local/bin
 export LIBDIR="/usr/local/lib"
 # export MANPATH="/usr/local/man:$MANPATH"
 

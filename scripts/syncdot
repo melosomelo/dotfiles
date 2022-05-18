@@ -13,6 +13,7 @@ cp -r /Users/mateusnascimento/.config/nvim/lua $REPO_LOCATION/nvim
 cp  /Users/mateusnascimento/scripts/evimrc $REPO_LOCATION/scripts
 cp  /Users/mateusnascimento/scripts/evimrc.js $REPO_LOCATION/scripts
 cp /Users/mateusnascimento/scripts/syncdot $REPO_LOCATION/scripts
+cp -r /Users/mateusnascimento/.config/lvim $REPO_LOCATION
 
 cd $REPO_LOCATION
 gitjob-unset

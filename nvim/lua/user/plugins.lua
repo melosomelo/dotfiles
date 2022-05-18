@@ -91,7 +91,6 @@ return require('packer').startup(function()
       { name = 'luasnip' },
       { name = "buffer" },
       { name = "path" }
-
     })
   })
   -- LSP configuration
