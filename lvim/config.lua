@@ -58,6 +58,7 @@ lvim.colorscheme    = "dracula_pro"
 lvim.keys.normal_mode["<leader>ev"] = ":vsplit /Users/mateusnascimento/.config/lvim/config.lua<cr>"
 
 -- Toggle NvimTree
+lvim.keys.normal_mode["<leader>e"] = false
 lvim.keys.normal_mode["<leader>d"] = ":NvimTreeToggle<cr>"
 
 -- Better window navigation
@@ -77,128 +78,8 @@ lvim.keys.normal_mode["<S-j>"] = "<C-d>"
 lvim.leader = "space"
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 
--- ===================LUALINE====================
-lvim.builtin.lualine.style = "default"
 
 -- ===================NvimTree====================
-require 'nvim-tree'.setup { -- BEGIN_DEFAULT_OPTS
-  auto_reload_on_write = true,
-  disable_netrw = false,
-  hijack_cursor = false,
-  hijack_netrw = true,
-  hijack_unnamed_buffer_when_opening = false,
-  ignore_buffer_on_setup = false,
-  open_on_setup = false,
-  open_on_setup_file = false,
-  open_on_tab = false,
-  sort_by = "name",
-  update_cwd = false,
-  reload_on_bufenter = false,
-  view = {
-    width = 25,
-    height = 30,
-    hide_root_folder = false,
-    side = "right",
-    preserve_window_proportions = false,
-    number = true,
-    relativenumber = true,
-    signcolumn = "yes",
-    mappings = {
-      custom_only = false,
-      list = {
-        { key = { "l" }, action = "tabnew", mode = "n" },
-      },
-    },
-  },
-  renderer = {
-    indent_markers = {
-      enable = false,
-      icons = {
-        corner = "└ ",
-        edge = "│ ",
-        none = "  ",
-      },
-    },
-    icons = {
-      webdev_colors = true,
-      git_placement = "before",
-    },
-  },
-  hijack_directories = {
-    enable = true,
-    auto_open = true,
-  },
-  update_focused_file = {
-    enable = false,
-    update_cwd = false,
-    ignore_list = {},
-  },
-  ignore_ft_on_setup = {},
-  system_open = {
-    cmd = "",
-    args = {},
-  },
-  diagnostics = {
-    enable = false,
-    show_on_dirs = false,
-    icons = {
-      hint = "",
-      info = "",
-      warning = "",
-      error = "",
-    },
-  },
-  filters = {
-    dotfiles = false,
-    custom = {},
-    exclude = {},
-  },
-  git = {
-    enable = true,
-    ignore = true,
-    timeout = 400,
-  },
-  actions = {
-    use_system_clipboard = true,
-    change_dir = {
-      enable = true,
-      global = false,
-      restrict_above_cwd = false,
-    },
-    open_file = {
-      quit_on_open = false,
-      resize_window = false,
-      window_picker = {
-        enable = true,
-        chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890",
-        exclude = {
-          filetype = { "notify", "packer", "qf", "diff", "fugitive", "fugitiveblame" },
-          buftype = { "nofile", "terminal", "help" },
-        },
-      },
-    },
-  },
-  trash = {
-    cmd = "trash",
-    require_confirm = true,
-  },
-  live_filter = {
-    prefix = "[FILTER]: ",
-    always_show_folders = true,
-  },
-  log = {
-    enable = false,
-    truncate = false,
-    types = {
-      all = false,
-      config = false,
-      copy_paste = false,
-      diagnostics = false,
-      git = false,
-      profile = false,
-    },
-  },
-} -- END_DEFAULT_OPTS
 -- Change Telescope navigation to use j and k for navigation and n and p for history in both input and normal mode.
 -- we use protected-mode (pcall) just in case the plugin wasn't loaded yet.
 -- local _, actions = pcall(require, "telescope.actions")
@@ -235,10 +116,17 @@ lvim.builtin.alpha.active = true
 lvim.builtin.alpha.mode = "dashboard"
 lvim.builtin.notify.active = true
 lvim.builtin.terminal.active = true
-lvim.builtin.nvimtree.setup.view.side = "left"
-lvim.builtin.nvimtree.show_icons.git = 0
-
+-- Lualine configuration
+lvim.builtin.lualine.style = "default"
+-- NvimTree configuration
+lvim.builtin.nvimtree.show_icons.git = 1
+lvim.builtin.nvimtree.setup.view.side = "right"
+lvim.builtin.nvimtree.setup.view.width = 25
+lvim.builtin.nvimtree.setup.view.mappings.list = {
+  { key = { "l" }, action = "tabnew", mode = "n" }
+}
 -- if you don't want all the parsers change this to a table of the ones you want
+
 lvim.builtin.treesitter.ensure_installed = {
   "bash",
   "c",
@@ -254,20 +142,20 @@ lvim.builtin.treesitter.ensure_installed = {
   "yaml",
 }
 
-lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enabled = true
 
 -- generic LSP settings
 
 -- ---@usage disable automatic installation of servers
 -- lvim.lsp.automatic_servers_installation = false
+-- lvim.lsp.templates_dir = join_paths(get_runtime_dir(), "after", "ftplugin")
+-- require("lvim.lsp.manager").setup("hls")
 
 -- ---configure a server manually. !!Requires `:LvimCacheReset` to take effect!!
 -- ---see the full default list `:lua print(vim.inspect(lvim.lsp.automatic_configuration.skipped_servers))`
 -- vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "pyright" })
 -- local opts = {} -- check the lspconfig documentation for a list of all possible options
 -- require("lvim.lsp.manager").setup("pyright", opts)
-
 -- ---remove a server from the skipped list, e.g. eslint, or emmet_ls. !!Requires `:LvimCacheReset` to take effect!!
 -- ---`:LvimInfo` lists which server(s) are skiipped for the current filetype
 -- vim.tbl_map(function(server)
