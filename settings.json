@@ -97,5 +97,8 @@
   "haskell.manageHLS": "PATH",
   "vim.vimrc.enable": true,
   "vim.vimrc.path": "$HOME/.config/nvim/vscode.init.vim",
-  "vim.normalModeKeyBindings": []
+  "vim.normalModeKeyBindings": [],
+  "[haskell]": {
+    "editor.defaultFormatter": "haskell.haskell"
+  }
 }
