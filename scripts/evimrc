@@ -1,7 +1,0 @@
-result=""
-for filename in "$@"
-do
-    result="$result $filename"
-done
-
-node ~/scripts/evimrc.js $result
