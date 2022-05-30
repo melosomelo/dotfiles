@@ -13,7 +13,7 @@ cmp.setup {
     end
   },
   mapping = cmp.mapping.preset.insert {
-    ["<C-Space>"] = cmp.mapping.complete(), -- toggle completion
+    ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), {"i", "c"}), -- toggle completion
     -- overloads tab and shift-tab to scroll through the autocompletion options
     ["<Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
