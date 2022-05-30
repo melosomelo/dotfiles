@@ -6,6 +6,7 @@ end
 local cmp = require "cmp"
 local luasnip = require "luasnip"
 
+-- icons that will appear in the cmp menu
 local kind_icons = {
   Text = "",
   Method = "",
