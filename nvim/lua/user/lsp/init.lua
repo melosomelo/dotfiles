@@ -38,8 +38,22 @@ end
 
 vim.lsp.handlers["textDocument/definition"] = goto_definition('vsplit')
 
+vim.diagnostic.config({
+  virtual_text = false,
+  signs = true,
+  severity_sort = true,
+  float = {
+    focusable = false,
+    style = "minimal",
+    border = "rounded",
+    source = "always",
+    header = "",
+    prefix = ""
+  }
+})
+
 -- open the diagnostic with a floating window
-vim.api.nvim_set_keymap('n', '<space>e', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
+vim.api.nvim_set_keymap('n', '<space>f', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
 -- go to prev diagnostic
 vim.api.nvim_set_keymap('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
 -- go to next diagnostic
@@ -66,7 +80,15 @@ end
 local lsp_installer = require "nvim-lsp-installer"
 local lspconfig = require "lspconfig"
 
-lsp_installer.setup {} -- add more configuration later
+lsp_installer.setup {
+  ui = {
+    icons = {
+      server_installed = "✓",
+      server_pending = "➜",
+      server_uninstalled = "✗"
+    }
+  }
+}
 
 -- for each installed server, check if it has custom options
 -- and merge them with default opts
@@ -80,7 +102,7 @@ for _, server in pairs(installed_servers) do
       vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>h', '<cmd>lua vim.lsp.buf.hover()<CR>', opts) -- hover
       vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
       vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
-      vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
+      -- vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
       -- don't know what any of these do, so imma just leave em disabled
       -- vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>i', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts) -- go to implementation
       -- vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
