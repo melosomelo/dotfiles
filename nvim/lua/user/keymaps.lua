@@ -25,4 +25,16 @@ keymap.set("n", "<S-j>", "<C-d>", opts)
 keymap.set("n", "<S-k>", "<C-u>", opts)
 
 -- Telescope mappings
-keymap.set("n", "<leader>ff", "<cmd>lua require('telescope.builtin').find_files({hidden = true})<cr>")
+keymap.set("n", "<leader>t", "<cmd>lua require('telescope.builtin').find_files({hidden = true})<cr>", opts)
+
+-- Diagnostics keymaps
+-- open the diagnostic with a floating window
+keymap.set('n', '<space>f', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
+-- go to prev diagnostic
+keymap.set('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
+-- go to next diagnostic
+keymap.set('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
+-- open diagnostics list
+keymap.set('n', '<space>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
+
+

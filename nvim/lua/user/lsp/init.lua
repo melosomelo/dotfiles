@@ -52,14 +52,6 @@ vim.diagnostic.config({
   }
 })
 
--- open the diagnostic with a floating window
-vim.api.nvim_set_keymap('n', '<space>f', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
--- go to prev diagnostic
-vim.api.nvim_set_keymap('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
--- go to next diagnostic
-vim.api.nvim_set_keymap('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
--- open diagnostics list
-vim.api.nvim_set_keymap('n', '<space>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
 
 -- changing the signs of diagnostics in the sign column
 local signs = {
