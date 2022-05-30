@@ -23,3 +23,6 @@ keymap.set("n", "<S-l>", "gt", opts) -- next tab
 -- Remap CTRL + U and CTRL + D to Shift+K and Shift+J, respectively
 keymap.set("n", "<S-j>", "<C-d>", opts)
 keymap.set("n", "<S-k>", "<C-u>", opts)
+
+-- Telescope mappings
+keymap.set("n", "<leader>ff", "<cmd>lua require('telescope.builtin').find_files({hidden = true})<cr>")
