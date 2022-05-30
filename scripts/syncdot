@@ -10,8 +10,6 @@ cp /Users/mateusnascimento/Library/Application\ Support/Code/User/settings.json 
 cp /Users/mateusnascimento/.config/nvim/init.lua $REPO_LOCATION/nvim
 cp /Users/mateusnascimento/.config/nvim/vscode.init.vim $REPO_LOCATION/nvim
 cp -r /Users/mateusnascimento/.config/nvim/lua $REPO_LOCATION/nvim
-cp /Users/mateusnascimento/scripts/evimrc $REPO_LOCATION/scripts
-cp /Users/mateusnascimento/scripts/evimrc.js $REPO_LOCATION/scripts
 cp /Users/mateusnascimento/scripts/syncdot $REPO_LOCATION/scripts
 
 cd $REPO_LOCATION
