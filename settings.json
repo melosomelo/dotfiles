@@ -105,5 +105,8 @@
     "editor.defaultFormatter": "yinfei.luahelper"
   },
   "luahelper.format.continuation_indent_width": 2,
-  "luahelper.format.indent_width": 2
+  "luahelper.format.indent_width": 2,
+  "[java]": {
+    "editor.defaultFormatter": "redhat.java"
+  }
 }

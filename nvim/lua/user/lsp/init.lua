@@ -3,40 +3,44 @@ local opts = {
   silent = true
 }
 
+local split_command = "split";
+
 -- go to definition in split window
-local function goto_definition(split_cmd)
+-- want to improve in order to split vertically and horizntally
+-- in alternate fashion
+
+local function alternate_split_command()
+  if split_command == "split" then
+    split_command = "vsplit"
+  else
+    split_command = "split"
+  end
+end
+
+-- splits the screen horizontally if definition is in another file 
+-- if not, just jumps to location in same file
+local function goto_definition(_, result, ctx)
   local util = vim.lsp.util
   local log = require("vim.lsp.log")
   local api = vim.api
 
-  -- note, this handler style is for neovim 0.5.1/0.6, if on 0.5, call with function(_, method, result)
-  local handler = function(_, result, ctx)
-    if result == nil or vim.tbl_isempty(result) then
-      local _ = log.info() and log.info(ctx.method, "No location found")
-      return nil
-    end
-
-    if split_cmd then
-      vim.cmd(split_cmd)
-    end
-
-    if vim.tbl_islist(result) then
-      util.jump_to_location(result[1])
-
-      if #result > 1 then
-        setqflist(util.locations_to_items(result))
-        api.nvim_command("copen")
-        api.nvim_command("wincmd p")
-      end
-    else
-      util.jump_to_location(result)
-    end
+  if result == nil or vim.tbl_isempty(result) then
+    local _ = log.info() and log.info(ctx.method, "No location found")
+    return nil
   end
+
+  local origin_filename = ctx.params.textDocument.uri
+  local result_filename = result[1].targetUri
+  if origin_filename ~= result_filename then
+    alternate_split_command()
+    vim.cmd(split_command)
+  end
+  util.jump_to_location(result[1])
 
   return handler
 end
 
-vim.lsp.handlers["textDocument/definition"] = goto_definition('vsplit')
+vim.lsp.handlers["textDocument/definition"] = goto_definition
 
 vim.diagnostic.config({
   virtual_text = false,
@@ -51,7 +55,6 @@ vim.diagnostic.config({
     prefix = ""
   }
 })
-
 
 -- changing the signs of diagnostics in the sign column
 local signs = {

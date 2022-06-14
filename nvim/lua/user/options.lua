@@ -1,14 +1,15 @@
 -- Global variables.
 vim.g.mapleader = " "
+
 -- Options
 local options = vim.opt
-options.relativenumber = true 
+options.relativenumber = true
 options.termguicolors = true
 options.number = true
 options.numberwidth = 4
 options.hlsearch = false
 options.errorbells = false
-options.tabstop = 2 
+options.tabstop = 2
 options.showtabline = 2
 options.softtabstop = 2
 options.shiftwidth = 2

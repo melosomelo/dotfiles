@@ -10,6 +10,8 @@ local opts = { silent = true, remap = false }
 --   term_mode = "t",
 --   command_mode = "c",
 
+-- move line down
+
 -- window navigation
 keymap.set("n", "<C-h>", "<C-w>h", opts)
 keymap.set("n", "<C-j>", "<C-w>j", opts)
@@ -25,7 +27,8 @@ keymap.set("n", "<S-j>", "<C-d>", opts)
 keymap.set("n", "<S-k>", "<C-u>", opts)
 
 -- Telescope mappings
-keymap.set("n", "<leader>t", "<cmd>lua require('telescope.builtin').find_files({hidden = true})<cr>", opts)
+keymap.set("n", "<leader>tf", "<cmd>lua require('telescope.builtin').find_files({hidden = true})<cr>", opts)
+keymap.set("n", "<leader>tg", "<cmd>lua require('telescope.builtin').live_grep()<cr>", opts)
 
 -- Diagnostics keymaps
 -- open the diagnostic with a floating window
