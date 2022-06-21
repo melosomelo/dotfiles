@@ -54,17 +54,11 @@ return packer.startup(function(use)
   use "neovim/nvim-lspconfig" -- enable LSP
   use "williamboman/nvim-lsp-installer" -- simple to use language server installer
   -- Telescope
+  use {'nvim-telescope/telescope.nvim'}
+  -- Treesitter
   use {
-    'nvim-telescope/telescope.nvim',
+    'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate'
   }
-  -- Project.nvim
-  use {
-    "ahmedkhalf/project.nvim",
-    config = function()
-      require("project_nvim").setup {
-        detection_methods = { "lsp", "pattern" },
-        patterns = { ".git", "package.json", ".nvimproj" }
-      }
-    end
-  }
+
 end)
