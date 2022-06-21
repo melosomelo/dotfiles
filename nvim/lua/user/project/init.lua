@@ -6,22 +6,12 @@ local has_matched_patterns = false
 
 local M = {}
 
-local project_types = {
-  git = {
-    patterns = {".git"},
-    keymaps = {}
-  },
-  javascript = {
-    patterns = {"package.json"}
-  }
-}
-
 local matched_project_types = {}
 
 function M.setup(config)
   while current_directory ~= LIMIT_DIRECTORY and not has_matched_patterns do
     local dir = util.read_directory(current_directory)
-    for project_type_name, project_type_config in pairs(project_types) do
+    for project_type_name, project_type_config in pairs(config.project_types) do
       if util.has_pattern_match_within_dir(project_type_config.patterns, dir) then
         matched_project_types[#matched_project_types + 1] = project_type_name
         has_matched_patterns = true
