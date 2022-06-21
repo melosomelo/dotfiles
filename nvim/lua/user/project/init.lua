@@ -1,7 +1,8 @@
 local util = require "user.project.util"
 
 local LIMIT_DIRECTORY = os.getenv("HOME")
-local current_directory = vim.fn.getcwd()
+local current_directory = vim.fn.expand("%:p")
+
 local has_matched_patterns = false
 
 local M = {}
@@ -25,7 +26,6 @@ function M.setup(config)
   if has_matched_patterns then
     vim.cmd(string.format("cd %s", current_directory))
   end
-  print(vim.inspect(matched_project_types))
 end
 
 function M.project_has_type(type)
