@@ -5,10 +5,6 @@ local opts = {
 
 local split_command = "split";
 
--- go to definition in split window
--- want to improve in order to split vertically and horizntally
--- in alternate fashion
-
 local function alternate_split_command()
   if split_command == "split" then
     split_command = "vsplit"
@@ -36,7 +32,6 @@ local function goto_definition(_, result, ctx)
     vim.cmd(split_command)
   end
   util.jump_to_location(result[1])
-
   return handler
 end
 
@@ -58,10 +53,10 @@ vim.diagnostic.config({
 
 -- changing the signs of diagnostics in the sign column
 local signs = {
-  Error = " ",
-  Warn = " ",
-  Hint = " ",
-  Info = " "
+  Error = "",
+  Warn = "",
+  Hint = "",
+  Info = ""
 }
 for type, icon in pairs(signs) do
   local hl = "DiagnosticSign" .. type
