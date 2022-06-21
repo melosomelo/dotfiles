@@ -1,7 +1,7 @@
 local M = {};
 
 function M.read_directory(dir)
-  local stream = io.popen(string.format("ls -a %s", current_directory))
+  local stream = io.popen(string.format("ls -a %s", dir))
   local directory = {}
   for file in stream:lines() do
     directory[#directory + 1] = file

@@ -8,6 +8,9 @@ project_manager.setup({
     },
     javascript = {
       patterns = {"package.json"}
+    },
+    tailwind = {
+      patterns = {"tailwind.config.js", "tailwind.config.json"}
     }
   }
 })

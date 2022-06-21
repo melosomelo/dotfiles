@@ -25,6 +25,7 @@ function M.setup(config)
   if has_matched_patterns then
     vim.cmd(string.format("cd %s", current_directory))
   end
+  print(vim.inspect(matched_project_types))
 end
 
 function M.project_has_type(type)
