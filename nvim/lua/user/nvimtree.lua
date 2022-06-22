@@ -32,6 +32,9 @@ require("nvim-tree").setup {
         key = "<CR>",
         action = "open"
       }, {
+        key = "l",
+        action = "open"
+      }, {
         key = "<C-v>",
         action = "vsplit"
       }, {
@@ -44,7 +47,7 @@ require("nvim-tree").setup {
         key = "<Tab>",
         action = "preview"
       }, {
-        key = "a",
+        key = "<C-n>",
         action = "",
         action_cb = function(node)
           vim.ui.input({
@@ -63,6 +66,32 @@ require("nvim-tree").setup {
             end
             os.execute(command)
             vim.cmd "NvimTreeRefresh"
+          end)
+        end
+      }, {
+        key = "d",
+        action = "remove"
+      }, {
+        key = "r",
+        action = "full_rename"
+      }, {
+        key = "mv",
+        action = "",
+        action_cb = function(node)
+          vim.ui.input({
+            prompt = "Move file to ",
+            default = string.format("%s", vim.fn.getcwd()),
+            completion = "dir"
+          }, function(dir)
+            if not dir then
+              return
+            end
+            local no_errors = os.execute(string.format("mv %s %s", node.absolute_path, dir))
+            if no_errors then
+              vim.cmd "NvimTreeRefresh"
+            else
+              print("Something went wrong, dude.")
+            end
           end)
         end
       }}
