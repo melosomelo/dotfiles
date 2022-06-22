@@ -1,7 +1,6 @@
 local cmp = require "cmp"
 local luasnip = require "luasnip"
 
-
 local has_words_before = function()
   local line, col = unpack(vim.api.nvim_win_get_cursor(0))
   return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
@@ -40,7 +39,7 @@ cmp.setup {
   -- autocomplete = false, -- only invoke autocompletion manually?
   snippet = { -- required snippet engine
     expand = function(args)
-      require "luasnip".lsp_expand(args.body)
+      require"luasnip".lsp_expand(args.body)
     end
   },
   window = {
@@ -51,9 +50,9 @@ cmp.setup {
   mapping = cmp.mapping.preset.insert {
     ["<C-k>"] = cmp.mapping.select_prev_item(),
     ["<C-j>"] = cmp.mapping.select_next_item(),
-    ["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
-    ["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
-    ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }), -- toggle completion
+    ["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), {"i", "c"}),
+    ["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(1), {"i", "c"}),
+    ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), {"i", "c"}), -- toggle completion
     ['<CR>'] = cmp.mapping.confirm({
       select = true
     }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
@@ -75,7 +74,7 @@ cmp.setup {
       else
         fallback()
       end
-    end, { "i", "s" }),
+    end, {"i", "s"}),
     ["<S-Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_prev_item()
@@ -84,9 +83,9 @@ cmp.setup {
       else
         fallback()
       end
-    end, { "i", "s" })
+    end, {"i", "s"})
   },
-  sources = cmp.config.sources { { -- possible sources for autocompletion
+  sources = cmp.config.sources {{ -- possible sources for autocompletion
     name = "nvim_lsp" -- autocompletion from lsp servers
   }, {
     name = "luasnip" -- autocompletion from snippet engine (will do more later)
@@ -94,7 +93,7 @@ cmp.setup {
     name = "buffer" -- autocompletion with words from the current buffer.
   }, {
     name = "path" -- autocompletion for filesystem paths.
-  } },
+  }},
   formatting = { -- for formatting the items that appear in the complete menu
     format = function(entry, vim_item)
       -- Kind icons

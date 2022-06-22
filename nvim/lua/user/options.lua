@@ -6,7 +6,7 @@ local options = vim.opt
 options.relativenumber = true
 options.termguicolors = true
 options.number = true
-options.numberwidth = 4
+options.numberwidth = 1
 options.hlsearch = false
 options.errorbells = false
 options.tabstop = 2
@@ -24,7 +24,7 @@ options.showmode = true
 options.showcmd = true
 options.ruler = true
 options.mps = options.mps + "<:>"
-options.guifont="Fira_Code_Nerd_Font:h16"
+options.guifont = "Fira_Code_Nerd_Font:h16"
 options.fenc = "utf-8"
 options.ignorecase = true
 options.smartcase = true
@@ -33,5 +33,5 @@ options.splitright = true
 options.undofile = true
 options.cursorline = true
 options.completeopt = {"menu", "menuone", "noselect"}
-vim.cmd"filetype plugin indent on"
+vim.cmd "filetype plugin indent on"
 

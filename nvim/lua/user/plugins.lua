@@ -60,5 +60,19 @@ return packer.startup(function(use)
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate'
   }
+  -- autopairs
+  use {
+    "windwp/nvim-autopairs",
+    config = function()
+      require("nvim-autopairs").setup {}
+    end
+  }
+  -- gitsigns
+  use {'lewis6991/gitsigns.nvim'}
+  -- nvim-tree
+  use {
+    'kyazdani42/nvim-tree.lua',
+    requires = {'kyazdani42/nvim-web-devicons'}
+  }
 
 end)
