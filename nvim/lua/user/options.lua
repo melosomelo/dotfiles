@@ -3,6 +3,7 @@ vim.g.mapleader = " "
 
 -- Options
 local options = vim.opt
+options.hidden = false
 options.relativenumber = true
 options.termguicolors = true
 options.number = true

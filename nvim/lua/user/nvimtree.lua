@@ -90,7 +90,7 @@ require("nvim-tree").setup {
             if no_errors then
               vim.cmd "NvimTreeRefresh"
             else
-              print("Something went wrong, dude.")
+              print("Could not move file!")
             end
           end)
         end
