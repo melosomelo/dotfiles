@@ -44,14 +44,18 @@ require("nvim-tree").setup {
         key = "<Tab>",
         action = "preview"
       }, {
-        key = "<C-n>",
+        key = "a",
         action = "",
         action_cb = function(node)
           vim.ui.input({
             prompt = "Create file/folder ",
-            default = string.format("%s", node.parent.absolute_path)
+            default = string.format("%s", node.parent.absolute_path),
+            completion = "file"
           }, function(path)
             local command = nil
+            if not path then
+              return
+            end
             if (string.sub(path, #path, #path) == "/") then
               command = string.format("mkdir %s", path)
             else
