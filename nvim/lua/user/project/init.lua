@@ -10,6 +10,9 @@ local M = {}
 local matched_project_types = {}
 
 function M.setup(config)
+  if current_directory == "" then
+    return
+  end
   while current_directory ~= LIMIT_DIRECTORY and not has_matched_patterns do
     local dir = util.read_directory(current_directory)
     for project_type_name, project_type_config in pairs(config.project_types) do
@@ -31,6 +34,10 @@ end
 function M.project_has_type(type)
   return matched_project_types[type] ~= nil
 end
+
+vim.api.nvim_create_user_command("LProjectTypes", function()
+  print(vim.inspect(matched_project_types))
+end, {})
 
 return M
 
