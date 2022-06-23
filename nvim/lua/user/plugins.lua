@@ -86,4 +86,9 @@ return packer.startup(function(use)
 		"akinsho/toggleterm.nvim",
 		tag = "v1.*",
 	})
+	-- alpha
+	use({
+		"goolord/alpha-nvim",
+		requires = { "kyazdani42/nvim-web-devicons" },
+	})
 end)

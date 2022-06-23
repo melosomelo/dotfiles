@@ -6,6 +6,8 @@ telescope.setup({
 		initial_mode = "normal",
 		file_ignore_patterns = {
 			".git/",
+			"node_modules/",
+			".next/",
 		},
 	},
 })

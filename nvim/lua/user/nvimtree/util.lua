@@ -3,7 +3,7 @@ local M = {}
 function M.create(node)
 	vim.ui.input({
 		prompt = "Create file/folder ",
-		default = string.format("%s", node.parent.absolute_path),
+		default = string.format("%s/", node.parent.absolute_path),
 		completion = "file",
 	}, function(path)
 		local command = nil
