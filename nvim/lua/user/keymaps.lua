@@ -49,3 +49,6 @@ keymap.set('n', '<space>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
 
 -- toggle Nvimtree
 keymap.set('n', '<C-D>', '<cmd>NvimTreeToggle<CR>', opts)
+
+-- manual formatting
+keymap.set("n", "<C-f>", "<cmd>lua vim.lsp.buf.formatting_sync()<CR>", opts)

@@ -1,3 +1,5 @@
+require "user.lsp.null-ls"
+
 local opts = {
   noremap = true,
   silent = true
@@ -86,7 +88,8 @@ local installed_servers = lsp_installer.get_installed_servers()
 for _, server in pairs(installed_servers) do
   local lsp_opts = {
     capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities()),
-    on_attach = function(_, bufnr)
+    on_attach = function(client, bufnr)
+      print(vim.inspect(client))
       -- some mappings for lsp features
       vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>d', '<cmd>lua vim.lsp.buf.definition()<CR>', opts) -- go to definition
       vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>h', '<cmd>lua vim.lsp.buf.hover()<CR>', opts) -- hover
