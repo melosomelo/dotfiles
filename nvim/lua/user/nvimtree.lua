@@ -29,10 +29,7 @@ require("nvim-tree").setup {
     mappings = {
       custom_only = true,
       list = {{
-        key = "<CR>",
-        action = "open"
-      }, {
-        key = "l",
+        key = {"<CR>", "l"},
         action = "open"
       }, {
         key = "<C-v>",
@@ -41,14 +38,17 @@ require("nvim-tree").setup {
         key = "<C-x>",
         action = "split"
       }, {
-        key = "<C-t>",
-        action = "tabnew"
-      }, {
         key = "<Tab>",
         action = "preview"
       }, {
+        key = "d",
+        action = "remove"
+      }, {
+        key = "r",
+        action = "full_rename"
+      }, {
         key = "<C-n>",
-        action = "",
+        action = "new",
         action_cb = function(node)
           vim.ui.input({
             prompt = "Create file/folder ",
@@ -69,14 +69,8 @@ require("nvim-tree").setup {
           end)
         end
       }, {
-        key = "d",
-        action = "remove"
-      }, {
-        key = "r",
-        action = "full_rename"
-      }, {
-        key = "mv",
-        action = "",
+        key = "m",
+        action = "move",
         action_cb = function(node)
           vim.ui.input({
             prompt = "Move file to ",
@@ -93,6 +87,16 @@ require("nvim-tree").setup {
               print("Could not move file!")
             end
           end)
+        end
+      }, {
+        key = "<C-t>",
+        action = "tab",
+        action_cb = function(node)
+          vim.cmd(string.format([[
+            NvimTreeToggle
+            tabedit
+            e %s
+          ]], node.absolute_path))
         end
       }}
     }
