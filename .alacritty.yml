@@ -78,7 +78,7 @@ window:
   #   - SimpleFullscreen
   #startup_mode: Windowed
 
-  # Window title
+
   #title: Alacritty
 
   # Allow terminal applications to change Alacritty's window title.
