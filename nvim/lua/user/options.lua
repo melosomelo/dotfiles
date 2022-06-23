@@ -3,7 +3,7 @@ vim.g.mapleader = " "
 
 -- Options
 local options = vim.opt
-options.hidden = false
+options.hidden = true
 options.relativenumber = true
 options.termguicolors = true
 options.number = true
@@ -33,6 +33,5 @@ options.splitbelow = true
 options.splitright = true
 options.undofile = true
 options.cursorline = true
-options.completeopt = {"menu", "menuone", "noselect"}
-vim.cmd "filetype plugin indent on"
-
+options.completeopt = { "menu", "menuone", "noselect" }
+vim.cmd("filetype plugin indent on")
