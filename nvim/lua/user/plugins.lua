@@ -8,7 +8,7 @@ vim.cmd([[
   packadd! dracula_pro
   syntax enable
   let g:dracula_colorterm = 0
-  colorscheme dracula_pro
+  colorscheme tokyonight
 ]])
 
 -- Autocommand that reloads neovim whenever you save the plugins.lua file
@@ -91,6 +91,5 @@ return packer.startup(function(use)
 		"goolord/alpha-nvim",
 		requires = { "kyazdani42/nvim-web-devicons" },
 	})
-	-- palenight
-	use("drewtempelmeyer/palenight.vim")
+	use("folke/tokyonight.nvim")
 end)
