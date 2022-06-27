@@ -108,5 +108,15 @@
   "luahelper.format.indent_width": 2,
   "[java]": {
     "editor.defaultFormatter": "redhat.java"
+  },
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": "keyword",
+        "settings": {
+          "fontStyle": "italic bold"
+        }
+      }
+    ]
   }
 }
