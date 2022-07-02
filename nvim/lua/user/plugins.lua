@@ -8,7 +8,7 @@ vim.cmd([[
   packadd! dracula_pro
   syntax enable
   let g:dracula_colorterm = 0
-  colorscheme tokyonight
+  colorscheme dracula_pro
 ]])
 
 -- Autocommand that reloads neovim whenever you save the plugins.lua file

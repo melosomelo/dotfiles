@@ -113,5 +113,21 @@
   {
     "key": "ctrl+`",
     "command": "-workbench.action.terminal.toggleTerminal"
+  },
+  {
+    "key": "ctrl+shift+h",
+    "command": "moveActiveEditor",
+    "args": {
+      "to": "left",
+      "by": "tab"
+    }
+  },
+  {
+    "key": "ctrl+shift+l",
+    "command": "moveActiveEditor",
+    "args": {
+      "to": "right",
+      "by": "tab"
+    }
   }
 ]
