@@ -129,5 +129,13 @@
       "to": "right",
       "by": "tab"
     }
+  },
+  {
+    "key": "ctrl+shift+0",
+    "command": "moveActiveEditor",
+    "args": {
+      "to": "first",
+      "by": "tab"
+    }
   }
 ]
