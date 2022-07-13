@@ -85,6 +85,7 @@ export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 export MAVEN_HOME="/usr/local/lib/apache-maven-3.6.3"
 export PATH=$PATH:$JAVA_HOME/bin:$MAVEN_HOME/bin:/Users/mateusnascimento/.local/bin
 export LIBDIR="/usr/local/lib"
+
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -108,6 +109,8 @@ export LIBDIR="/usr/local/lib"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+alias gadd="git add ."
 source /Users/mateusnascimento/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 export NVM_DIR="$HOME/.nvm"

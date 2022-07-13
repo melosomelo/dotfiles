@@ -11,6 +11,7 @@ cp /Users/mateusnascimento/.config/nvim/init.lua $REPO_LOCATION/nvim
 cp /Users/mateusnascimento/.config/nvim/vscode.init.vim $REPO_LOCATION/nvim
 cp -r /Users/mateusnascimento/.config/nvim/lua $REPO_LOCATION/nvim
 cp /Users/mateusnascimento/scripts/syncdot $REPO_LOCATION/scripts
+cp /Users/mateusnascimento/scripts/gac $REPO_LOCATION/scripts
 
 cd $REPO_LOCATION
 git add .
