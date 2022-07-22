@@ -118,5 +118,6 @@
         }
       }
     ]
-  }
+  },
+  "arduino.path": "'/Applications/Arduino.app'"
 }
