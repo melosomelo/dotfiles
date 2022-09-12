@@ -119,5 +119,8 @@
       }
     ]
   },
-  "arduino.path": "'/Applications/Arduino.app'"
+  "arduino.path": "'/Applications/Arduino.app'",
+  "[cpp]": {
+    "editor.defaultFormatter": "ms-vscode.cpptools"
+  }
 }
