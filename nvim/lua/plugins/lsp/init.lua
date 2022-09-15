@@ -1,4 +1,4 @@
-require("plugins.lsp.null-ls")
+-- require("plugins.lsp.null-ls")
 
 local opts = {
 	noremap = true,
