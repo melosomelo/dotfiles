@@ -27,13 +27,7 @@ keymap.set("n", "<leader>s", ":w<CR>", opts)
 -- quit
 keymap.set("n", "<leader>q", ":q!<CR>", opts)
 -- save and quit
-keymap.set("n", "<leader>sq", ":wq<CR>", opts)
--- save all
-keymap.set("n", "<leader>sa", ":wall<CR>", opts)
--- quit all
-keymap.set("n", "<leader>qa", ":qa!<CR>", opts)
--- save and quit all
-keymap.set("n", "<leader>sqa", ":wqa<CR>", opts)
+keymap.set("n", "<leader>wq", ":wq<CR>", opts)
 
 -- window navigation
 keymap.set("n", "<C-h>", "<C-w>h", opts)
@@ -70,7 +64,7 @@ keymap.set("n", "[d", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opts)
 -- go to next diagnostic
 keymap.set("n", "]d", "<cmd>lua vim.diagnostic.goto_next()<CR>", opts)
 -- open diagnostics list
-keymap.set("n", "<space>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
+-- keymap.set("n", "<space>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
 
 -- Nvimtree maps
 -- toggle Nvimtree
