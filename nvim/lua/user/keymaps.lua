@@ -21,7 +21,7 @@ keymap.set("n", alt_j, "ddp", opts)
 -- move line up
 keymap.set("n", alt_k, "ddkP", opts)
 
--- save and quit
+-- save and quit shortcuts
 -- save
 keymap.set("n", "<leader>s", ":w<CR>", opts)
 -- quit
