@@ -6,8 +6,8 @@ window:
   dynamic_padding: false
 font:
   normal:
-    family: FiraCode Nerd Font
-  size: 18.0
+    family: JetBrainsMono Nerd Font
+  size: 20.0
   bold:
     style: Bold
   italic:
