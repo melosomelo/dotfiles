@@ -5,6 +5,7 @@ vim.g.mapleader = " "
 local options = vim.opt
 -- Make it so that the vim's clipboard will use both the register '*' and '+'
 options.clipboard = options.clipboard + "unnamedplus"
+options.colorcolumn = "90"
 options.completeopt = { "menu", "menuone", "noselect" }
 options.cursorline = true
 options.errorbells = false

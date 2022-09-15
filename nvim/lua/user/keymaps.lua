@@ -13,7 +13,27 @@ local opts = {
 --   term_mode = "t",
 --   command_mode = "c",
 
+local alt_j = "∆"
+local alt_k = "˚"
+
 -- move line down
+keymap.set("n", alt_j, "ddp", opts)
+-- move line up
+keymap.set("n", alt_k, "ddkP", opts)
+
+-- save and quit
+-- save
+keymap.set("n", "<leader>s", ":w<CR>", opts)
+-- quit
+keymap.set("n", "<leader>q", ":q!<CR>", opts)
+-- save and quit
+keymap.set("n", "<leader>sq", ":wq<CR>", opts)
+-- save all
+keymap.set("n", "<leader>sa", ":wall<CR>", opts)
+-- quit all
+keymap.set("n", "<leader>qa", ":qa!<CR>", opts)
+-- save and quit all
+keymap.set("n", "<leader>sqa", ":wqa<CR>", opts)
 
 -- window navigation
 keymap.set("n", "<C-h>", "<C-w>h", opts)
@@ -52,6 +72,7 @@ keymap.set("n", "]d", "<cmd>lua vim.diagnostic.goto_next()<CR>", opts)
 -- open diagnostics list
 keymap.set("n", "<space>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
 
+-- Nvimtree maps
 -- toggle Nvimtree
 keymap.set("n", "<C-D>", "<cmd>NvimTreeToggle<CR>", opts)
 
