@@ -1,43 +1,8 @@
 -- require("plugins.lsp.null-ls")
+local handlers = require "plugins.lsp.handlers"
 
-local opts = {
-	noremap = true,
-	silent = true,
-}
 
-local split_command = "split"
-
-local function alternate_split_command()
-	if split_command == "split" then
-		split_command = "vsplit"
-	else
-		split_command = "split"
-	end
-end
-
--- splits the screen horizontally if definition is in another file
--- if not, just jumps to location in same file
-local function goto_definition(_, result, ctx)
-	local util = vim.lsp.util
-	local log = require("vim.lsp.log")
-	local api = vim.api
-
-	if result == nil or vim.tbl_isempty(result) then
-		local _ = log.info() and log.info(ctx.method, "No location found")
-		return nil
-	end
-
-	local origin_filename = ctx.params.textDocument.uri
-	local result_filename = result[1].targetUri
-	if origin_filename ~= result_filename then
-		alternate_split_command()
-		vim.cmd(split_command)
-	end
-	util.jump_to_location(result[1])
-	return handler
-end
-
-vim.lsp.handlers["textDocument/definition"] = goto_definition
+vim.lsp.handlers["textDocument/definition"] = handlers.goto_definition
 
 vim.diagnostic.config({
 	virtual_text = false,
@@ -60,6 +25,7 @@ local signs = {
 	Hint = "",
 	Info = "",
 }
+
 for type, icon in pairs(signs) do
 	local hl = "DiagnosticSign" .. type
 	vim.fn.sign_define(hl, {
@@ -82,6 +48,11 @@ lsp_installer.setup({
 	},
 })
 
+local opts = {
+	noremap = true,
+	silent = true,
+}
+
 -- for each installed server, check if it has custom options
 -- and merge them with default opts
 local installed_servers = lsp_installer.get_installed_servers()
@@ -90,8 +61,9 @@ for _, server in pairs(installed_servers) do
 		capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities()),
 		on_attach = function(client, bufnr)
 			-- some mappings for lsp features
+      -- for more methods, check out: https://neovim.io/doc/user/lsp.html#lsp-buf
 			vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>d", "<cmd>lua vim.lsp.buf.definition()<CR>", opts) -- go to definition
-			vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>h", "<cmd>lua vim.lsp.buf.hover()<CR>", opts) -- hover
+			vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>h", "<cmd>lua vim.lsp.buf.hover()<CR>", opts) -- hover (show info)
 			vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>D", "<cmd>lua vim.lsp.buf.type_definition()<CR>", opts)
 			vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
 			-- vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
@@ -106,7 +78,7 @@ for _, server in pairs(installed_servers) do
 			-- '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
 		end,
 	}
-	local has_custom_opts, server_custom_opts = pcall(require, "user.lsp.settings" .. server.name)
+	local has_custom_opts, server_custom_opts = pcall(require, "plugins.lsp.settings" .. server.name)
 	if has_custom_opts then
 		lsp_opts = vim.tbl_deep_extend("force", server_custom_opts, lsp_opts)
 	end
