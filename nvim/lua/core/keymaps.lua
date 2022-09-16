@@ -16,6 +16,7 @@ local opts = {
 local alt_j = "∆"
 local alt_k = "˚"
 
+-- move lines
 -- move line down
 keymap.set("n", alt_j, "ddp", opts)
 -- move line up
@@ -55,16 +56,6 @@ keymap.set(
 )
 -- open live grep
 keymap.set("n", "<leader>tg", "<cmd>lua require('telescope.builtin').live_grep()<cr>", opts)
-
--- Diagnostics keymaps
--- open the diagnostic with a floating window
-keymap.set("n", "<space>f", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
--- go to prev diagnostic
-keymap.set("n", "[d", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opts)
--- go to next diagnostic
-keymap.set("n", "]d", "<cmd>lua vim.diagnostic.goto_next()<CR>", opts)
--- open diagnostics list
--- keymap.set("n", "<space>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
 
 -- Nvimtree maps
 -- toggle Nvimtree
