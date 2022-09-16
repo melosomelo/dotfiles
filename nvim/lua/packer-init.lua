@@ -1,3 +1,5 @@
+-- script to automatically install packer
+-- whenever on a new computer
 local ensure_packer = function()
   local fn = vim.fn
   local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'

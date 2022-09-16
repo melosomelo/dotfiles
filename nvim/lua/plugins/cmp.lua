@@ -6,7 +6,7 @@ local has_words_before = function()
   return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
 end
 
--- icons that will appear in the cmp menu
+-- icons that will appear in the cmp menu for suggestions
 local kind_icons = {
   Text = "",
   Method = "",
@@ -36,8 +36,9 @@ local kind_icons = {
 }
 
 cmp.setup {
-  -- autocomplete = false, -- only invoke autocompletion manually?
-  snippet = { -- required snippet engine
+  autocomplete = false, -- only invoke autocompletion manually?
+  snippet = { 
+    -- required snippet engine
     expand = function(args)
       require"luasnip".lsp_expand(args.body)
     end
@@ -86,9 +87,11 @@ cmp.setup {
     end, {"i", "s"})
   },
   sources = cmp.config.sources {{ -- possible sources for autocompletion
-    name = "nvim_lsp" -- autocompletion from lsp servers
+    -- autocompletion from lsp servers
+    name = "nvim_lsp"
   }, {
-    name = "luasnip" -- autocompletion from snippet engine (will do more later)
+    -- autocompletion from snippet engine (will do more later)
+    name = "luasnip",
   }, {
     name = "buffer" -- autocompletion with words from the current buffer.
   }, {
@@ -108,4 +111,5 @@ cmp.setup {
       return vim_item
     end
   }
+
 }
