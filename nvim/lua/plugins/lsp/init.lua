@@ -8,6 +8,7 @@ local lsp_installer = require("nvim-lsp-installer")
 local lspconfig = require("lspconfig")
 
 lsp_installer.setup({
+  ensure_installed = { "tsserver", "sumneko_lua" },
 	ui = {
 		icons = {
 			server_installed = "✓",
@@ -47,7 +48,7 @@ for _, server in pairs(installed_servers) do
 		end,
 	}
 	local has_custom_opts, server_custom_opts = pcall(require,
-    "plugins.lsp.settings" .. server.name)
+    "plugins.lsp.settings." .. server.name)
 	if has_custom_opts then
 		lsp_opts = vim.tbl_deep_extend("force", server_custom_opts, lsp_opts)
 	end
