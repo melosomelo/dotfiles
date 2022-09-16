@@ -15,6 +15,7 @@ options.hidden = true
 options.hlsearch = false -- not highlight search results
 options.ignorecase = true
 options.incsearch = true -- highlight match while typing (not after pressing <CR>)
+options.mouse = "a"
 options.mps = options.mps + "<:>"
 options.number = true
 options.numberwidth = 1
