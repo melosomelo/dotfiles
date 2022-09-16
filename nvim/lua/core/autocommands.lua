@@ -20,3 +20,11 @@ autocmd("BufWritePost", {
   command = "source <afile> | PackerSync",
   pattern = "~/.config/nvim/lua/packer-init.lua"
 })
+
+augroup("default_settings", { clear = true})
+autocmd("BufWritePre", {
+  group = "default_settings",
+  desc = "Remove postspaces",
+  command = [[%s/\s\+$//e]],
+  pattern = "*"
+})
