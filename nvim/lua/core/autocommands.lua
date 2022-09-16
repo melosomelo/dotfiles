@@ -21,10 +21,17 @@ autocmd("BufWritePost", {
   pattern = "~/.config/nvim/lua/packer-init.lua"
 })
 
-augroup("default_settings", { clear = true})
+augroup("default_settings", { clear = true })
 autocmd("BufWritePre", {
   group = "default_settings",
   desc = "Remove postspaces",
   command = [[%s/\s\+$//e]],
   pattern = "*"
+})
+
+augroup("line_length", { clear = true })
+autocmd("FileType", {
+  group = "line_length",
+  pattern = { "text", "markdown", "html", "yaml" },
+  command = "setlocal cc=0"
 })
