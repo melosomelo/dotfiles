@@ -9,6 +9,8 @@ local ensure_packer = function()
   return false
 end
 
+local packer_bootstrap = ensure_packer()
+
 local status_ok, packer = pcall(require, "packer")
 if not status_ok then
 	return
@@ -30,6 +32,9 @@ packer.init({
 			})
 		end,
 	},
+  profile = {
+    enable = true
+  }
 })
 
 return packer.startup(function(use)
@@ -95,4 +100,9 @@ return packer.startup(function(use)
 		requires = { "kyazdani42/nvim-web-devicons" },
 	})
 	use("folke/tokyonight.nvim")
+
+  if packer_bootstrap then
+    require("packer").sync()
+  end
+
 end)
