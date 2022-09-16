@@ -3,8 +3,8 @@
 local diagnostics = {
   {severity = "Error", icon = ""},
   {severity = "Warn", icon = ""},
-  {severity = "Info", icon = ""},
-  {severity = "Hint", icon = ""}
+  {severity = "Info", icon = ""},
+  {severity = "Hint", icon = ""}
 }
 
 for i = 1, #diagnostics do
