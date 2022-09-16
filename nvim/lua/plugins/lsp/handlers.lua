@@ -12,11 +12,10 @@ function M.goto_definition(_, result, ctx)
 
 	local origin_filename = ctx.params.textDocument.uri
 	local result_filename = result[1].uri
-  print(vim.inspect(result), origin_filename, result_filename)
 	if origin_filename ~= result_filename then
 		vim.cmd[[split]]
 	end
-	util.jump_to_location(result[1])
+	util.jump_to_location(result[1], "utf-8")
 	return handler
 end
 

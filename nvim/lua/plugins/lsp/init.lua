@@ -2,38 +2,8 @@
 local handlers = require "plugins.lsp.handlers"
 
 
+-- handlers definitions
 vim.lsp.handlers["textDocument/definition"] = handlers.goto_definition
-
-vim.diagnostic.config({
-	virtual_text = false,
-	signs = true,
-	severity_sort = true,
-	float = {
-		focusable = false,
-		style = "minimal",
-		border = "rounded",
-		source = "always",
-		header = "",
-		prefix = "",
-	},
-})
-
--- changing the signs of diagnostics in the sign column
-local signs = {
-	Error = "",
-	Warn = "",
-	Hint = "",
-	Info = "",
-}
-
-for type, icon in pairs(signs) do
-	local hl = "DiagnosticSign" .. type
-	vim.fn.sign_define(hl, {
-		text = icon,
-		texthl = hl,
-		numhl = hl,
-	})
-end
 
 local lsp_installer = require("nvim-lsp-installer")
 local lspconfig = require("lspconfig")
@@ -67,15 +37,9 @@ for _, server in pairs(installed_servers) do
 			vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>D", "<cmd>lua vim.lsp.buf.type_definition()<CR>", opts)
 			vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
 			-- vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
-			-- don't know what any of these do, so imma just leave em disabled
-			-- vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>i', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts) -- go to implementation
+			-- Some functionalities that I'll probably use in the future
 			-- vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
 			-- vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
-			-- vim.api.nvim_buf_set_keymap(bufnr, 'n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
-			-- vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
-			-- vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
-			-- vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>wl',
-			-- '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
 		end,
 	}
 	local has_custom_opts, server_custom_opts = pcall(require, "plugins.lsp.settings" .. server.name)
