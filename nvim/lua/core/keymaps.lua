@@ -64,6 +64,16 @@ keymap.set("n", "<C-D>", "<cmd>NvimTreeToggle<CR>", opts)
 -- manual formatting
 keymap.set("n", "<C-f>", "<cmd>lua vim.lsp.buf.formatting_sync()<CR>", opts)
 
+-- Diagnostics keymaps
+-- open the diagnostic with a floating window
+keymap.set("n", "<space>f", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
+-- go to prev diagnostic
+keymap.set("n", "[d", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opts)
+-- go to next diagnostic
+keymap.set("n", "]d", "<cmd>lua vim.diagnostic.goto_next()<CR>", opts)
+-- open diagnostics list
+-- keymap.set("n", "<space>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
+
 -- toggleterm
 keymap.set("n", "<C-t>", "<cmd>ToggleTerm direction=float<CR>", opts)
 keymap.set("t", "<C-t>", "<cmd>ToggleTerm<CR>", opts)
