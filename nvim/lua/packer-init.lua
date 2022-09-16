@@ -16,13 +16,6 @@ if not status_ok then
 	return
 end
 
--- configuring dracula pro
-vim.cmd([[
-  packadd! dracula_pro
-  syntax enable
-  let g:dracula_colorterm = 0
-  colorscheme dracula_pro
-]])
 
 packer.init({
 	display = {
@@ -99,7 +92,11 @@ return packer.startup(function(use)
 		"goolord/alpha-nvim",
 		requires = { "kyazdani42/nvim-web-devicons" },
 	})
-	use("folke/tokyonight.nvim")
+
+  use { "catppuccin/nvim", as = "catppuccin" }
+
+
+
 
   if packer_bootstrap then
     require("packer").sync()

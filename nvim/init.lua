@@ -1,6 +1,7 @@
 require("core.options")
 require("core.keymaps")
 require("core.autocommands")
+require("core.colorscheme")
 
 require("packer-init")
 require("plugins.lualine")
