@@ -1,7 +1,5 @@
 local keymap = vim.keymap
 
-
-
 local opts = {
 	silent = true,
   remap = false,
@@ -34,6 +32,11 @@ keymap.set("n", "<leader>wq", ":wq<CR>", opts)
 
 -- comments
 -- comment single line
+keymap.set("n", "<leader>c", function ()
+  local initial_cmd = "norm I" .. vim.api.nvim_buf_get_option(0, "commentstring")
+  local cmd = string.sub(initial_cmd, 0, #initial_cmd - 2)
+  vim.cmd(cmd .. " ")
+end, opts)
 
 -- window navigation
 keymap.set("n", "<C-h>", "<C-w>h", opts)
