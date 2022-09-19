@@ -37,7 +37,7 @@ local kind_icons = {
 
 cmp.setup {
   autocomplete = false, -- only invoke autocompletion manually?
-  snippet = { 
+  snippet = {
     -- required snippet engine
     expand = function(args)
       require"luasnip".lsp_expand(args.body)
