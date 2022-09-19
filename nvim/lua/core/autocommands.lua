@@ -18,7 +18,7 @@ autocmd("BufWritePost", {
   group = "packer_user_config",
   desc = "Autocommand that reloads neovim whenever you save the packer-init.lua file",
   command = "source <afile> | PackerSync",
-  pattern = "~/.config/nvim/lua/packer-init.lua"
+  pattern = "packer-init.lua"
 })
 
 augroup("default_settings", { clear = true })

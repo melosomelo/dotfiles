@@ -1,5 +1,6 @@
 -- script to automatically install packer
 -- whenever on a new computer
+--
 local ensure_packer = function()
   local fn = vim.fn
   local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
@@ -37,6 +38,7 @@ return packer.startup(function(use)
 	use("wbthomason/packer.nvim")
 	-- Utility functions
 	use("nvim-lua/plenary.nvim")
+  use "kyazdani42/nvim-web-devicons"
 	use({
 		"nvim-lualine/lualine.nvim",
 		requires = {
