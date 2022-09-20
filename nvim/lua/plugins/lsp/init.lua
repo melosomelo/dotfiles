@@ -33,7 +33,7 @@ for _, server in pairs(installed_servers) do
 		on_attach = function(client, bufnr)
 			-- some mappings for lsp features
       -- for more methods, check out: https://neovim.io/doc/user/lsp.html#lsp-buf
-			vim.api.nvim_buf_set_keymap(bufnr, "n", 
+			vim.api.nvim_buf_set_keymap(bufnr, "n",
         "<leader>d", "<cmd>lua vim.lsp.buf.definition()<CR>", opts) -- go to definition
 			vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>h",
         "<cmd>lua vim.lsp.buf.hover()<CR>", opts) -- hover (show info)

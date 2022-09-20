@@ -80,7 +80,7 @@ keymap.set("n", "[d", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opts)
 -- go to next diagnostic
 keymap.set("n", "]d", "<cmd>lua vim.diagnostic.goto_next()<CR>", opts)
 -- open diagnostics list
-keymap.set("n", "<space>dl", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
+-- keymap.set("n", "<space>dl", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
 
 -- toggleterm
 keymap.set("n", "<C-t>", "<cmd>ToggleTerm direction=float<CR>", opts)

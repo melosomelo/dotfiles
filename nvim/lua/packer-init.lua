@@ -1,6 +1,5 @@
 -- script to automatically install packer
 -- whenever on a new computer
---
 local ensure_packer = function()
   local fn = vim.fn
   local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
@@ -56,8 +55,8 @@ return packer.startup(function(use)
 	use("saadparwaiz1/cmp_luasnip")
 
 	-- LSP
-	use("neovim/nvim-lspconfig") -- enable LSP
-	use("williamboman/nvim-lsp-installer") -- simple to use language server installer
+	use("neovim/nvim-lspconfig") -- utility layer to configure lsp
+	use("williamboman/nvim-lsp-installer") -- language server installer/manager
 	-- use("jose-elias-alvarez/null-ls.nvim") -- for formatters and linters
 	-- Telescope
 	use({ "nvim-telescope/telescope.nvim" })
