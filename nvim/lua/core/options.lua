@@ -1,43 +1,44 @@
 -- Global variables.
 vim.g.mapleader = " "
 
--- Options
 local options = vim.opt
 
--- Tab options
+-- TAB OPTIONS
 options.expandtab = true -- use spaces instead of tabs
 options.tabstop = 2 -- number of spaces that a <Tab> in the file counts for.
 options.shiftwidth = 2 -- number of spaces to use for each step of (auto)indent.
 
+-- GUI
+options.colorcolumn = "90" -- highlight column 90
+options.cursorline = true -- highlight the line which the cursor is currently on
+options.hlsearch = false -- not highlight search results
+options.incsearch = true -- highlight match while typing (not after pressing <CR>)
+options.number = true -- show line numbers
+options.relativenumber = true -- other lines' numbers will be relative to current line
+options.numberwidth = 1 -- minimal number of columns to use for the line number.
+options.ruler = true -- show the line and column number of the cursor position
+options.termguicolors = true -- enables 24-bit RGB color in the TUI.
+options.signcolumn = "yes" -- always show sign column
+options.showcmd = true -- always show cmd line on last line
+
 
 -- Make it so that the vim's clipboard will use both the register '*' and '+'
 options.clipboard = options.clipboard + "unnamedplus"
-options.colorcolumn = "90"
 options.completeopt = { "menu", "menuone", "noselect" }
-options.cursorline = true
 options.errorbells = false
 options.fenc = "utf-8" -- file encoding
 options.hidden = true
-options.hlsearch = false -- not highlight search results
 options.ignorecase = true
-options.incsearch = true -- highlight match while typing (not after pressing <CR>)
 options.mouse = "a"
 options.mps = options.mps + "<:>"
-options.number = true
-options.numberwidth = 1
-options.relativenumber = true
-options.ruler = true
 options.scrolloff = 20
-options.signcolumn = "yes"
 options.shiftround = true
-options.showcmd = true
 options.showmode = true
 options.showtabline = 2
 options.smartcase = true
 options.smartindent = true
 options.splitbelow = true
 options.splitright = true
-options.termguicolors = true
 options.undofile = true
 options.wrap = false
 
