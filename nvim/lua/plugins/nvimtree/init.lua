@@ -1,35 +1,24 @@
 local nvimtree_util = require("plugins.nvimtree.util")
 
+-- disabling netrw
+vim.g.loaded = 1
+vim.g.loaded_netrwPlugin = 1
+
 require("nvim-tree").setup({
-	auto_reload_on_write = true,
-	create_in_closed_folder = false,
-	disable_netrw = false, -- disable neovims default file explorer
-	hijack_cursor = true, -- keep the cursor on the first letter of the filename
-	hijack_netrw = true,
-	hijack_unnamed_buffer_when_opening = false,
-	ignore_buffer_on_setup = false,
-	open_on_setup = false,
-	open_on_setup_file = false,
-	open_on_tab = false,
-	sort_by = "name",
-	root_dirs = {},
-	prefer_startup_root = false,
-	update_cwd = false,
-	reload_on_bufenter = false,
-	respect_buf_cwd = false,
+	disable_netrw = true, -- disable neovims default file explorer
+  -- Automatically open tree when buffer is dir, empty or unnamed.
+	open_on_setup = true,
+  -- Creating a file with the cursor inside a close folder will set the parent
+  -- directory to be the closed folder.
+	create_in_closed_folder = true,
+	hijack_cursor = true, -- Keep the cursor on the first letter of the filename.
+  sync_root_with_cwd = true, -- Changes the tree's directory whenever cwd changes.
 	view = {
-		adaptive_size = false,
-		centralize_selection = false,
-		width = 25,
-		height = 30,
-		hide_root_folder = false,
+		width = 30,
 		side = "right",
-		preserve_window_proportions = false,
-		number = false,
-		relativenumber = true,
-		signcolumn = "yes",
+		signcolumn = "no",
 		mappings = {
-			custom_only = true,
+			custom_only = true, -- Disregard default mappings and only use custom ones.
 			list = {
 				{
 					key = "l",
@@ -74,26 +63,13 @@ require("nvim-tree").setup({
 		},
 	},
 	renderer = {
-		add_trailing = true,
-		group_empty = false,
+		add_trailing = true, -- Add trailing slash to folder names.
 		highlight_git = true,
-		full_name = false,
 		highlight_opened_files = "name",
-		root_folder_modifier = ":~",
 		indent_markers = {
-			enable = true,
-			icons = {
-				corner = "└ ",
-				edge = "│ ",
-				item = "│ ",
-				none = "  ",
-			},
+			enable = true
 		},
 		icons = {
-			webdev_colors = true,
-			git_placement = "before",
-			padding = " ",
-			symlink_arrow = " ➛ ",
 			show = {
 				file = true,
 				folder = true,
@@ -124,88 +100,19 @@ require("nvim-tree").setup({
 				},
 			},
 		},
-		special_files = { "Cargo.toml", "Makefile", "README.md", "readme.md" },
-	},
-	hijack_directories = {
-		enable = true,
-		auto_open = true,
-	},
-	update_focused_file = {
-		enable = false,
-		update_cwd = false,
-		update_root = false,
-		ignore_list = {},
-	},
-	ignore_ft_on_setup = {},
-	system_open = {
-		cmd = "",
-		args = {},
+		special_files = { "Makefile", "README.md", "readme.md", "package.json" },
 	},
 	diagnostics = {
 		enable = true,
-		show_on_dirs = false,
 		icons = {
-			hint = "",
-			info = "",
-			warning = "",
-			error = "",
+			hint = "",
+			info = "",
+			warning = "",
+			error = "",
 		},
-	},
-	filters = {
-		dotfiles = false,
-		custom = {},
-		exclude = {},
 	},
 	git = {
 		enable = true,
-		ignore = false,
-		timeout = 400,
-	},
-	actions = {
-		use_system_clipboard = true,
-		change_dir = {
-			enable = true,
-			global = false,
-			restrict_above_cwd = false,
-		},
-		expand_all = {
-			max_folder_discovery = 300,
-		},
-		open_file = {
-			quit_on_open = false,
-			resize_window = true,
-			window_picker = {
-				enable = true,
-				chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890",
-				exclude = {
-					filetype = { "notify", "packer", "qf", "diff", "fugitive", "fugitiveblame" },
-					buftype = { "nofile", "terminal", "help" },
-				},
-			},
-		},
-		remove_file = {
-			close_window = true,
-		},
-	},
-	trash = {
-		cmd = "gio trash",
-		require_confirm = true,
-	},
-	live_filter = {
-		prefix = "[FILTER]: ",
-		always_show_folders = true,
-	},
-	log = {
-		enable = false,
-		truncate = false,
-		types = {
-			all = false,
-			config = false,
-			copy_paste = false,
-			diagnostics = false,
-			git = false,
-			profile = false,
-			watcher = false,
-		},
-	},
+		ignore = false, -- Show files even if they are git ignored.
+	}
 })
