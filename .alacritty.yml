@@ -43,3 +43,7 @@ colors:
     cyan: "0x99ffee"
     white: "0xffffff"
 background_opacity: 1.0
+key_bindings:
+  # mapping Ctrl Shift H and Ctrl Shift L so that I can use them in neovim
+  - { key: H, mods: Control|Shift, chars: "\x1b[72;5u"}
+  - { key: L, mods: Control|Shift, chars: "\x1b[76;5u"}
