@@ -20,7 +20,10 @@ options.ruler = true -- show the line and column number of the cursor position
 options.termguicolors = true -- enables 24-bit RGB color in the TUI.
 options.signcolumn = "yes" -- always show sign column
 options.showcmd = true -- always show cmd line on last line
+options.showmode = true -- place a message on last line regarding the current mode
+options.showtabline = 2 -- always show tabline
 
+-- FORMATTING
 
 -- Make it so that the vim's clipboard will use both the register '*' and '+'
 options.clipboard = options.clipboard + "unnamedplus"
@@ -33,8 +36,6 @@ options.mouse = "a"
 options.mps = options.mps + "<:>"
 options.scrolloff = 20
 options.shiftround = true
-options.showmode = true
-options.showtabline = 2
 options.smartcase = true
 options.smartindent = true
 options.splitbelow = true

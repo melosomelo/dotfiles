@@ -1,17 +1,6 @@
 local augroup = vim.api.nvim_create_augroup
 local autocmd = vim.api.nvim_create_autocmd
 
--- this was breaking some things.
---[=[
-vim.cmd([[
-  augroup remember_folds
-    autocmd!
-    autocmd BufWinLeave * mkview
-    autocmd BufWinEnter * silent! loadview
-  augroup END
-]])
---]=]
-
 -- Autocommand that reloads neovim whenever you save the packer-init.lua file
 augroup("packer_user_config", { clear = true })
 autocmd("BufWritePost", {
@@ -22,11 +11,20 @@ autocmd("BufWritePost", {
 })
 
 augroup("default_settings", { clear = true })
+
 autocmd("BufWritePre", {
   group = "default_settings",
   desc = "Remove postspaces",
   command = [[%s/\s\+$//e]],
   pattern = "*"
+})
+
+autocmd("FileType", {
+  group = "default_settings",
+  pattern = "*",
+  command = "set formatoptions-=cro",
+  desc = [[Disable continuation of comments when <CR> (insert mode)
+    and o/O (normal) in a comment line"]]
 })
 
 augroup("line_length", { clear = true })
