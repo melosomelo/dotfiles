@@ -1,18 +1,24 @@
-local nvimtree_util = require("plugins.nvimtree.util")
-
 -- disabling netrw
 vim.g.loaded = 1
 vim.g.loaded_netrwPlugin = 1
 
+local nt_api = require"nvim-tree.api"
+local nt_sync = require"plugins.nvimtree.sync"
+
+local Event = nt_api.events.Event;
+
+nt_api.events.subscribe(Event.TreeOpen, nt_sync.set_open)
+nt_api.events.subscribe(Event.TreeClose, nt_sync.set_close)
+
 require("nvim-tree").setup({
 	disable_netrw = true, -- disable neovims default file explorer
-  -- Automatically open tree when buffer is dir, empty or unnamed.
-	open_on_setup = true,
   -- Creating a file with the cursor inside a close folder will set the parent
   -- directory to be the closed folder.
 	create_in_closed_folder = true,
 	hijack_cursor = true, -- Keep the cursor on the first letter of the filename.
-  sync_root_with_cwd = true, -- Changes the tree's directory whenever cwd changes.
+  update_focused_file = { -- Update the focused file on BufEnter
+    enable = true
+  },
 	view = {
 		width = 30,
 		side = "right",
@@ -46,19 +52,36 @@ require("nvim-tree").setup({
 				},
 				{
 					key = "<C-n>",
-					action = "new",
-					action_cb = nvimtree_util.create,
-				},
-				{
-					key = "m",
-					action = "move",
-					action_cb = nvimtree_util.move,
+					action = "create",
 				},
 				{
 					key = "<C-t>",
-					action = "tab",
-					action_cb = nvimtree_util.tab,
+					action = "tabnew"
 				},
+        {
+          key = "c",
+          action = "copy"
+        },
+        {
+          key = "p",
+          action = "paste"
+        },
+        {
+          key = "y",
+          action = "copy_name"
+        },
+        {
+          key = "Y",
+          action = "copy_path"
+        },
+        {
+          key = "gy",
+          action = "copy_absolute_path"
+        },
+        {
+          key = "<ESC>",
+          action = "close"
+        }
 			},
 		},
 	},

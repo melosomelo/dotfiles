@@ -45,8 +45,8 @@ keymap.set("n", "<C-k>", "<C-w>k", opts)
 keymap.set("n", "<C-l>", "<C-w>l", opts)
 
 -- Tab navigation
-keymap.set("n", "<S-h>", "gT", opts) -- previous tab
-keymap.set("n", "<S-l>", "gt", opts) -- next tab
+keymap.set("n", "<S-h>", "<cmd>BufferLineCyclePrev<CR>", opts) -- previous tab
+keymap.set("n", "<S-l>", "<cmd>BufferLineCycleNext<CR>", opts) -- next tab
 
 -- Remap CTRL + U and CTRL + D to Shift+K and Shift+J, respectively
 keymap.set("n", "<S-j>", "<C-d>", opts)
@@ -85,3 +85,7 @@ keymap.set("n", "]d", "<cmd>lua vim.diagnostic.goto_next()<CR>", opts)
 -- toggleterm
 keymap.set("n", "<C-t>", "<cmd>ToggleTerm direction=float<CR>", opts)
 keymap.set("t", "<C-t>", "<cmd>ToggleTerm<CR>", opts)
+
+keymap.set("n", "<leader>l", function ()
+  print(vim.inspect(vim.fn.gettabinfo()))
+end, opts)
