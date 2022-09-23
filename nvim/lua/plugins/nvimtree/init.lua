@@ -7,8 +7,8 @@ local nt_sync = require"plugins.nvimtree.sync"
 
 local Event = nt_api.events.Event;
 
-nt_api.events.subscribe(Event.TreeOpen, nt_sync.set_open)
-nt_api.events.subscribe(Event.TreeClose, nt_sync.set_close)
+nt_api.events.subscribe(Event.TreeOpen, nt_sync.on_open)
+nt_api.events.subscribe(Event.TreeClose, nt_sync.on_close)
 
 require("nvim-tree").setup({
 	disable_netrw = true, -- disable neovims default file explorer
@@ -137,5 +137,11 @@ require("nvim-tree").setup({
 	git = {
 		enable = true,
 		ignore = false, -- Show files even if they are git ignored.
-	}
+	},
+  actions = {
+    open_file = {
+      -- Close the explorer whenever opening a file
+      quit_on_open = true
+    }
+  }
 })

@@ -10,11 +10,11 @@ local is_nt_open = false
 -- Does tab i have nvim tree open?
 local tab_has_nt = {}
 
-function M.set_open()
+function M.on_open()
   is_nt_open = true
 end
 
-function M.set_close()
+function M.on_close()
   is_nt_open = false
 end
 
