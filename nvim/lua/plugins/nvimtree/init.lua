@@ -2,13 +2,6 @@
 vim.g.loaded = 1
 vim.g.loaded_netrwPlugin = 1
 
-local nt_api = require"nvim-tree.api"
-local nt_sync = require"plugins.nvimtree.sync"
-
-local Event = nt_api.events.Event;
-
-nt_api.events.subscribe(Event.TreeOpen, nt_sync.on_open)
-nt_api.events.subscribe(Event.TreeClose, nt_sync.on_close)
 
 require("nvim-tree").setup({
 	disable_netrw = true, -- disable neovims default file explorer

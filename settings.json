@@ -91,7 +91,6 @@
   "emmet.showExpandedAbbreviation": "inMarkupAndStylesheetFilesOnly",
   "bracketPairColorizer.depreciation-notice": false,
   "security.workspace.trust.untrustedFiles": "open",
-  "window.zoomLevel": 1,
   "java.debug.settings.hotCodeReplace": "auto",
   "java.configuration.updateBuildConfiguration": "automatic",
   "haskell.manageHLS": "PATH",
@@ -121,6 +120,10 @@
   },
   "arduino.path": "'/Applications/Arduino.app'",
   "[cpp]": {
+    "editor.defaultFormatter": "ms-vscode.cpptools"
+  },
+  "window.zoomLevel": 1,
+  "[c]": {
     "editor.defaultFormatter": "ms-vscode.cpptools"
   }
 }

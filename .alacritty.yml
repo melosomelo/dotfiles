@@ -7,7 +7,7 @@ window:
 font:
   normal:
     family: JetBrainsMono Nerd Font
-  size: 22.0
+  size: 24.0
   bold:
     style: Bold
   italic:
