@@ -79,12 +79,8 @@ return packer.startup(function(use)
 		"kyazdani42/nvim-tree.lua",
 		requires = { "kyazdani42/nvim-web-devicons" },
 	})
-	-- bufferline
-	use({
-		"akinsho/bufferline.nvim",
-		tag = "v2.*",
-		requires = "kyazdani42/nvim-web-devicons",
-	})
+  -- bufferline
+  -- use {'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons'}
 	-- termtoggle
 	use({
 		"akinsho/toggleterm.nvim",

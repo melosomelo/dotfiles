@@ -45,8 +45,25 @@ keymap.set("n", "<C-k>", "<C-w>k", opts)
 keymap.set("n", "<C-l>", "<C-w>l", opts)
 
 -- Tab navigation
-keymap.set("n", "<S-h>", "<cmd>BufferLineCyclePrev<CR>", opts) -- previous tab
-keymap.set("n", "<S-l>", "<cmd>BufferLineCycleNext<CR>", opts) -- next tab
+keymap.set("n", "<S-h>", "gT", opts) -- previous tab
+keymap.set("n", "<S-l>", "gt", opts) -- next tab
+keymap.set("n", "<C-S-h>", function () -- move current tabpage to the left
+  local cur_tab_num = vim.fn.tabpagenr()
+  if(cur_tab_num == 1) then
+    vim.cmd"$tabmove"
+  else
+    vim.cmd"-tabmove"
+  end
+end, opts)
+keymap.set("n", "<C-S-l>", function () -- move current tabpage to the right
+  local cur_tab_num = vim.fn.tabpagenr()
+  local last_tab_num = vim.fn.tabpagenr("$")
+  if(cur_tab_num == last_tab_num) then
+    vim.cmd"0tabmove"
+  else
+    vim.cmd"+tabmove"
+  end
+end, opts)
 
 -- Remap CTRL + U and CTRL + D to Shift+K and Shift+J, respectively
 keymap.set("n", "<S-j>", "<C-d>", opts)
