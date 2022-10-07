@@ -30,6 +30,11 @@
       "before": ["<leader>", "p", "i"],
       "commands": ["editor.action.peekImplementation"],
       "silent": true
+    },
+    {
+      "before": ["<leader>", "h"],
+      "commands": ["editor.action.showHover"],
+      "silent": true
     }
   ],
   "vim.leader": "<space>",
