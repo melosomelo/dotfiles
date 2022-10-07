@@ -15,6 +15,8 @@ local opts = {
 
 local alt_j = "∆"
 local alt_k = "˚"
+local alt_h = "˙"
+local alt_l = "¬"
 
 -- move lines
 -- move line down
@@ -47,7 +49,7 @@ keymap.set("n", "<C-l>", "<C-w>l", opts)
 -- Tab navigation
 keymap.set("n", "<S-h>", "gT", opts) -- previous tab
 keymap.set("n", "<S-l>", "gt", opts) -- next tab
-keymap.set("n", "<C-S-h>", function () -- move current tabpage to the left
+keymap.set("n", alt_h, function () -- move current tabpage to the left
   local cur_tab_num = vim.fn.tabpagenr()
   if(cur_tab_num == 1) then
     vim.cmd"$tabmove"
@@ -55,7 +57,7 @@ keymap.set("n", "<C-S-h>", function () -- move current tabpage to the left
     vim.cmd"-tabmove"
   end
 end, opts)
-keymap.set("n", "<C-S-l>", function () -- move current tabpage to the right
+keymap.set("n", alt_l, function () -- move current tabpage to the right
   local cur_tab_num = vim.fn.tabpagenr()
   local last_tab_num = vim.fn.tabpagenr("$")
   if(cur_tab_num == last_tab_num) then

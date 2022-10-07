@@ -1,5 +1,4 @@
 -- changing the signs of diagnostics in the sign column
-
 local diagnostics = {
   {severity = "Error", icon = ""},
   {severity = "Warn", icon = ""},

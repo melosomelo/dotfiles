@@ -57,7 +57,9 @@ return packer.startup(function(use)
 	-- LSP
 	use("neovim/nvim-lspconfig") -- utility layer to configure lsp
 	use("williamboman/nvim-lsp-installer") -- language server installer/manager
-	-- use("jose-elias-alvarez/null-ls.nvim") -- for formatters and linters
+
+  -- Formatting
+  use({ 'mhartington/formatter.nvim' })
 	-- Telescope
 	use({ "nvim-telescope/telescope.nvim" })
 	-- Treesitter

@@ -2,6 +2,7 @@
 
 let mapleader = " "
 
+
 "edit mappings
 nnoremap <leader>ev :vsplit /Users/mateusnascimento/.config/nvim/vscode.init.vim<cr>
 

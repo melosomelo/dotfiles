@@ -1,4 +1,3 @@
--- require("plugins.lsp.null-ls")
 local handlers = require "plugins.lsp.handlers"
 
 -- handlers definitions
