@@ -1,23 +1,34 @@
-local prettier_filetypes = {
-	"javascript",
-	"javascriptreact",
-	"typescript",
-	"typescriptreact",
-	"markdown",
-	"css",
-	"html",
-}
-
-local filetype_table = {
-	lua = {
-		require("formatter.filetypes.lua").stylua,
-	},
-}
-
-for _, ft in ipairs(prettier_filetypes) do
-	filetype_table[ft] = require("formatter.filetypes." .. ft).prettier
-end
-
 require("formatter").setup({
-	filetype = filetype_table,
+	filetype = {
+		lua = {
+			require("formatter.filetypes.lua").stylua,
+		},
+		c = {
+			require("formatter.filetypes.c").clangformat,
+		},
+		cpp = {
+			require("formatter.filetypes.cpp").clangformat,
+		},
+		javascript = {
+			require("formatter.filetypes.javascript").prettier,
+		},
+		javascriptreact = {
+			require("formatter.filetypes.javascriptreact").prettier,
+		},
+		typescript = {
+			require("formatter.filetypes.typescript").prettier,
+		},
+		typescriptreact = {
+			require("formatter.filetypes.typescriptreact").prettier,
+		},
+		html = {
+			require("formatter.filetypes.html").prettier,
+		},
+		css = {
+			require("formatter.filetypes.css").prettier,
+		},
+		markdown = {
+			require("formatter.filetypes.markdown").prettier,
+		},
+	},
 })

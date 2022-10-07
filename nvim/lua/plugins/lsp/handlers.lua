@@ -1,4 +1,22 @@
-local M = {};
+local M = {}
+
+local function resolve_result_filename(result)
+	local result_filename = nil
+	if result.uri then
+		result_filename = result.uri
+	end
+	if result[1] then
+		result_filename = result[1].targetUri
+	end
+	return result_filename
+end
+
+local function resolve_location(result)
+	if result[1] then
+		return result[1]
+	end
+	return result
+end
 
 -- Go to token definition
 -- It will first check to see if the file in which the token is defined is already
@@ -13,29 +31,38 @@ function M.goto_definition(_, result, ctx)
 		return nil
 	end
 
-  -- The filename of the buffer from which this handler was called
-	local origin_filename = string.gsub(ctx.params.textDocument.uri, "file://", "")
-  -- The filename where a correspondence was found
-	local result_filename = string.gsub(result[1].targetUri, "file://", "")
-  -- For each tabpage, loop through all of its windows and check
-  -- to see if that window has a buffer for result_filename
-  local tabs_info = vim.fn.gettabinfo()
-  for i = 1, #tabs_info do
-    local tab_windows = tabs_info[i].windows
-    for j = 1, #tab_windows do
-      local buf_filename = vim.fn.bufname(vim.fn.winbufnr(tab_windows[j]))
-      if(buf_filename == result_filename) then
-        vim.fn.win_gotoid(tab_windows[j])
-        util.jump_to_location(result[1], "utf-8")
-        return
-      end
-    end
-  end
-  -- If we've reached this point, then we need to open a new tab
-  vim.cmd("tabedit")
-  util.jump_to_location(result[1], "utf-8")
+	-- Some servers store the result's filename in `result.uri` and others
+	-- in `result[1].targetUri`
+	local result_filename = nil
+	local location = nil
 
+	result_filename = resolve_result_filename(result)
+	location = resolve_location(result)
 
+	if result_filename == nil then
+		print("Could not resolve `result_filename`! All paths failed!")
+		return
+	end
+
+	-- The filename where a correspondence was found
+	result_filename = string.gsub(result_filename, "file://", "")
+	-- For each tabpage, loop through all of its windows and check
+	-- to see if that window has a buffer for result_filename
+	local tabs_info = vim.fn.gettabinfo()
+	for i = 1, #tabs_info do
+		local tab_windows = tabs_info[i].windows
+		for j = 1, #tab_windows do
+			local buf_filename = vim.fn.bufname(vim.fn.winbufnr(tab_windows[j]))
+			if buf_filename == result_filename then
+				vim.fn.win_gotoid(tab_windows[j])
+				util.jump_to_location(result[1], "utf-8")
+				return
+			end
+		end
+	end
+	-- If we've reached this point, then we need to open a new tab
+	vim.cmd("tabedit")
+	util.jump_to_location(location, "utf-8")
 end
 
 return M
