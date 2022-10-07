@@ -1,5 +1,6 @@
 local augroup = vim.api.nvim_create_augroup
 local autocmd = vim.api.nvim_create_autocmd
+local icons = require"nvim-web-devicons"
 
 -- Autocommand that reloads neovim whenever you save the packer-init.lua file
 augroup("packer_user_config", { clear = true })
@@ -30,3 +31,4 @@ autocmd("FileType", {
   pattern = { "text", "markdown", "html", "yaml" },
   command = "setlocal cc=0"
 })
+
