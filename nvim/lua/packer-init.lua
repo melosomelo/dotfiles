@@ -81,6 +81,8 @@ return packer.startup(function(use)
 	})
   -- bufferline
   -- use {'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons'}
+  -- luatab.nvim
+  use { 'alvarosevilla95/luatab.nvim', requires='kyazdani42/nvim-web-devicons' }
 	-- termtoggle
 	use({
 		"akinsho/toggleterm.nvim",
