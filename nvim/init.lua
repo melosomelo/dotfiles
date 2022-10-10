@@ -14,11 +14,9 @@ require("plugins.autopairs")
 require("plugins.gitsigns")
 require("plugins.nvimtree")
 require("plugins.luatab")
-require("plugins.formatter")
+-- require("plugins.formatter")
 require("plugins.toggleterm")
-
 
 local util = require("core.util")
 
 print(vim.inspect(util.split("eai mateus", " ")))
-
