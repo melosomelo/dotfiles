@@ -87,7 +87,7 @@
     "*.ipynb": "jupyter-notebook"
   },
   "editor.cursorStyle": "line",
-  "editor.lineNumbers": "on",
+  "editor.lineNumbers": "relative",
   "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
   "editor.wordWrap": "off",
   "explorer.confirmDelete": false,
