@@ -1,5 +1,5 @@
 {
-  "workbench.colorTheme": "Dracula Pro",
+  "workbench.colorTheme": "Catppuccin Mocha",
   "editor.fontFamily": "JetBrains Mono, 'FiraCode Nerd Font'",
   "editor.fontLigatures": true,
   "editor.fontSize": 16,
@@ -130,5 +130,8 @@
   "[c]": {
     "editor.defaultFormatter": "ms-vscode.cpptools"
   },
-  "window.zoomLevel": 1
+  "window.zoomLevel": 1,
+  "files.associations": {
+    "*.y": "yacc"
+  }
 }

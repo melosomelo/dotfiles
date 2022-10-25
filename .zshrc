@@ -110,7 +110,6 @@ export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias gadd="git add ."
 alias v="nvim"
 source /Users/mateusnascimento/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
