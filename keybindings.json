@@ -145,15 +145,5 @@
   {
     "key": "cmd+b",
     "command": "-workbench.action.toggleSidebarVisibility"
-  },
-  {
-    "key": "space c",
-    "command": "editor.action.commentLine",
-    "when": "editorTextFocus && !editorReadonly && vim.active && vim.mode != 'Insert'"
-  },
-  {
-    "key": "cmd+/",
-    "command": "-editor.action.commentLine",
-    "when": "editorTextFocus && !editorReadonly"
   }
 ]
