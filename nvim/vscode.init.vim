@@ -13,3 +13,4 @@ nnoremap H gT
 nnoremap K <C-u>
 nnoremap J <C-d>
 nnoremap <leader>d <C-S-d>
+

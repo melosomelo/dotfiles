@@ -12,6 +12,11 @@
   "vim.insertModeKeyBindings": [],
   "vim.normalModeKeyBindingsNonRecursive": [
     {
+      "before": ["<leader>", "m", "t"],
+      "commands": ["editor.emmet.action.matchTag"],
+      "silent": true
+    },
+    {
       "before": ["<leader>", "d"],
       "commands": ["editor.action.revealDefinition"],
       "silent": true
@@ -130,8 +135,10 @@
   "[c]": {
     "editor.defaultFormatter": "ms-vscode.cpptools"
   },
-  "window.zoomLevel": 1,
   "files.associations": {
     "*.y": "yacc"
-  }
+  },
+  "C_Cpp.vcFormat.indent.caseLabels": true,
+  "C_Cpp.vcFormat.indent.caseContentsWhenBlock": true,
+  "window.zoomLevel": 1
 }

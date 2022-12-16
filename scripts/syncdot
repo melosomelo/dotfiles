@@ -1,8 +1,8 @@
 #i!/bin/zsh
 
-REPO_LOCATION="/Users/mateusnascimento/Documents/my-repos/dotfiles"
+REPO_LOCATION="/Users/mateusnascimento/Documents/repos/dotfiles"
 
-cp /Users/mateusnascimento/.alacritty.yml $REPO_LOCATION 
+cp /Users/mateusnascimento/.alacritty.yml $REPO_LOCATION
 cp /Users/mateusnascimento/.tmux.conf $REPO_LOCATION
 cp /Users/mateusnascimento/.zshrc $REPO_LOCATION
 cp /Users/mateusnascimento/.spaceshiprc.zsh $REPO_LOCATION
