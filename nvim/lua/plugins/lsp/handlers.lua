@@ -65,4 +65,22 @@ function M.goto_definition(_, result, ctx)
 	util.jump_to_location(location, "utf-8")
 end
 
+
+function M.hover(_, result, ctx, config)
+  if vim.api.nvim_get_current_buf() ~= ctx.bufnr then
+    -- Ignore result since buffer changed. This happens for slow language servers.
+    return
+  end
+  if not (result and result.contents) then
+    vim.notify('No information available on token!')
+    return
+  end
+  local markdown_lines = vim.lsp.util.convert_input_to_markdown_lines(result.contents)
+  markdown_lines = vim.lsp.util.trim_empty_lines(markdown_lines)
+  if vim.tbl_isempty(markdown_lines) then
+    vim.notify('No information available on token!')
+    return
+  end
+end
+
 return M

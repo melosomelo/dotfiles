@@ -36,7 +36,6 @@ local kind_icons = {
 }
 
 cmp.setup {
-  autocomplete = false, -- only invoke autocompletion manually?
   snippet = {
     -- required snippet engine
     expand = function(args)
@@ -86,21 +85,16 @@ cmp.setup {
       end
     end, {"i", "s"})
   },
-  sources = cmp.config.sources {{ -- possible sources for autocompletion
-    -- autocompletion from lsp servers
-    name = "nvim_lsp"
-  }, {
-    -- autocompletion from snippet engine (will do more later)
-    name = "luasnip",
-  }, {
-    name = "buffer" -- autocompletion with words from the current buffer.
-  }, {
-    name = "path" -- autocompletion for filesystem paths.
-  }},
+  sources = cmp.config.sources({
+    { name = "nvim_lsp" },
+    { name = "luasnip" },
+    { name = "buffer" },
+    { name = "path" }
+  }),
   formatting = { -- for formatting the items that appear in the complete menu
     format = function(entry, vim_item)
       -- Kind icons
-      vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
+      vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind)
       -- Source
       vim_item.menu = ({
         buffer = "[Buffer]",

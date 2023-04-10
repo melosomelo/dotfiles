@@ -15,18 +15,20 @@ for i = 1, #diagnostics do
 	})
 end
 
-
 -- global configurations for diagnostics
 vim.diagnostic.config({
-	virtual_text = { format = function (diagnostic)
-   local icon = diagnostics[diagnostic.severity].icon
-	 return string.format("%s %s", icon, diagnostic.message)
-	end,
-  prefix = ""},
+	virtual_text = {
+    format = function (diagnostic)
+      local icon = diagnostics[diagnostic.severity].icon
+      return string.format("%s %s", icon, diagnostic.message)
+    end,
+    prefix = ""
+  },
+  underline = true,
 	signs = true,
 	severity_sort = true,
 	float = {
-		focusable = false,
+		focusable = true,
 		style = "minimal",
 		border = "rounded",
 		source = "always",

@@ -1,55 +1,88 @@
-local handlers = require "plugins.lsp.handlers"
-
--- handlers definitions
-vim.lsp.handlers["textDocument/definition"] = handlers.goto_definition
-
-local lsp_installer = require("nvim-lsp-installer")
+local set_keymap = vim.api.nvim_buf_set_keymap
+local mason = require("mason")
+local mason_lsp = require("mason-lspconfig")
 local lspconfig = require("lspconfig")
+require("plugins.lsp.null-ls")
 
-lsp_installer.setup({
-  ensure_installed = { "tsserver", "sumneko_lua" },
-	ui = {
-		icons = {
-			server_installed = "✓",
-			server_pending = "➜",
-			server_uninstalled = "✗",
-		},
-	},
+local lsp_servers = { "lua_ls", "tsserver", "astro", "clangd", "marksman", "jsonls" }
+
+mason.setup({})
+mason_lsp.setup({
+	ensure_installed = lsp_servers,
 })
 
-local opts = {
-	noremap = true,
-	silent = true,
-}
+local augroup = vim.api.nvim_create_augroup("LspFormatting", { clear = true })
 
--- for each installed server, check if it has custom options
--- and merge them with default opts
-local installed_servers = lsp_installer.get_installed_servers()
-for _, server in pairs(installed_servers) do
-	local lsp_opts = {
-		capabilities = require("cmp_nvim_lsp").
-      update_capabilities(vim.lsp.protocol.make_client_capabilities()),
+for _, server in pairs(lsp_servers) do
+	local opts = {
+		capabilities = require("cmp_nvim_lsp").default_capabilities(),
 		on_attach = function(client, bufnr)
-			-- some mappings for lsp features
-      -- for more methods, check out: https://neovim.io/doc/user/lsp.html#lsp-buf
-			vim.api.nvim_buf_set_keymap(bufnr, "n",
-        "<leader>d", "<cmd>lua vim.lsp.buf.definition()<CR>", opts) -- go to definition
-			vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>h",
-        "<cmd>lua vim.lsp.buf.hover()<CR>", opts) -- hover (show info)
-			vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>D",
-        "<cmd>lua vim.lsp.buf.type_definition()<CR>", opts)
-			vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>rn",
-        "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
-			-- Some functionalities that I'll probably use in the future
-			-- vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
-			-- vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
-			-- vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
+			local map_opts = {
+				noremap = true,
+				silent = true,
+			}
+			-- setting keymaps
+			-- for more lsp functions, check out https://neovim.io/doc/user/lsp.html#lsp-buf
+			set_keymap(
+				bufnr,
+				"n",
+				"<leader>h",
+				"<cmd>lua vim.lsp.buf.hover()<cr>",
+				map_opts
+			)
+			set_keymap(
+				bufnr,
+				"n",
+				"<leader>ca",
+				"<cmd>lua vim.lsp.buf.code_action()<cr>",
+				map_opts
+			)
+			set_keymap(
+				bufnr,
+				"n",
+				"<leader>d",
+				"<cmd>lua vim.lsp.buf.definition()<cr>",
+				map_opts
+			)
+			set_keymap(
+				bufnr,
+				"n",
+				"<leader>rn",
+				"<cmd>lua vim.lsp.buf.rename()<cr>",
+				map_opts
+			)
+			set_keymap(
+				bufnr,
+				"n",
+				"<leader>f",
+				"<cmd>lua vim.lsp.buf.format()<cr>",
+				map_opts
+			)
+			-- setting up format on save
+			if client.supports_method("textDocument/formatting") then
+				vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+				vim.api.nvim_create_autocmd("BufWritePre", {
+					group = augroup,
+					buffer = bufnr,
+					callback = function()
+						vim.lsp.buf.format({
+							bufnr = bufnr,
+							filter = function(fmt_client)
+								return fmt_client.name == "null-ls"
+							end,
+						})
+					end,
+				})
+			else
+				vim.notify("Formatting not available!")
+			end
 		end,
 	}
-	local has_custom_opts, server_custom_opts = pcall(require,
-    "plugins.lsp.settings." .. server.name)
+	-- check to see if server has some custom options set in the "settings folder".
+	local has_custom_opts, custom_opts = pcall(require, "plugins.lsp.settings." .. server)
 	if has_custom_opts then
-		lsp_opts = vim.tbl_deep_extend("force", server_custom_opts, lsp_opts)
+		-- merging options.
+		opts = vim.tbl_deep_extend("force", opts, custom_opts)
 	end
-	lspconfig[server.name].setup(lsp_opts)
+	lspconfig[server].setup(opts)
 end

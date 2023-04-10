@@ -6,50 +6,40 @@ window:
   dynamic_padding: false
 font:
   normal:
-    family: JetBrainsMono Nerd Font
-  size: 22.0
+    family: iMWritingMonoS Nerd Font Mono
+  size: 20.0
   bold:
     style: Bold
   italic:
     style: Italic
-# Colors (iTerm 2 default theme)
-      # Colors (iTerm 2 default theme)
-# Colors (iTerm 2 default theme)
-# Colors (Challenger Deep)
+
 colors:
-  # Default colors
   primary:
-    background: '0x1e1c31'
-    foreground: '0xcbe1e7'
-  # Colors the cursor will use if `custom_cursor_colors` is true
-  cursor:
-    text: '0xff271d'
-    cursor: '0xfbfcfc'
+    background: '#1a1b26'
+    foreground: '#a9b1d6'
+
   # Normal colors
   normal:
-    black:   '0x141228'
-    red:     '0xff5458'
-    green:   '0x62d196'
-    yellow:  '0xffb378'
-    blue:    '0x65b2ff'
-    magenta: '0x906cff'
-    cyan:    '0x63f2f1'
-    white:   '0xa6b3cc'
+    black:   '#32344a'
+    red:     '#f7768e'
+    green:   '#9ece6a'
+    yellow:  '#e0af68'
+    blue:    '#7aa2f7'
+    magenta: '#ad8ee6'
+    cyan:    '#449dab'
+    white:   '#787c99'
+
   # Bright colors
   bright:
-    black:   '0x565575'
-    red:     '0xff8080'
-    green:   '0x95ffa4'
-    yellow:  '0xffe9aa'
-    blue:    '0x91ddff'
-    magenta: '0xc991e1'
-    cyan:    '0xaaffe4'
-    white:   '0xcbe3e7'
-
+    black:   '#444b6a'
+    red:     '#ff7a93'
+    green:   '#b9f27c'
+    yellow:  '#ff9e64'
+    blue:    '#7da6ff'
+    magenta: '#bb9af7'
+    cyan:    '#0db9d7'
+    white:   '#acb0d0'
+  # Default colors
 background_opacity: 1
-key_bindings:
-  # mapping Ctrl Shift H and Ctrl Shift L so that I can use them in neovim
-  - { key: H, mods: Control|Shift, chars: "\x1b[72;5u"}
-  - { key: L, mods: Control|Shift, chars: "\x1b[76;5u"}
 env:
   TERM: xterm-256color
