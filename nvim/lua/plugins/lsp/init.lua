@@ -5,6 +5,8 @@ local lspconfig = require("lspconfig")
 local handlers = require("plugins.lsp.handlers")
 require("plugins.lsp.null-ls")
 
+vim.lsp.handlers["textDocument/definition"] = handlers.goto_definition
+
 local lsp_servers = { "lua_ls", "tsserver", "astro", "clangd", "marksman", "jsonls" }
 
 mason.setup({})

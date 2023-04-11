@@ -27,11 +27,10 @@ options.wrap = false -- Disable, by default, wrapping of lines longer than the w
 -- FORMATTING
 -- Don't automatically insert comment leader after <CR> in insert mode
 -- and with o or O in Normal mode.
-options.fo:remove({"r", "o"})
+options.fo:remove({ "r", "o" })
 options.shiftround = true -- Round indent to multiple of 'shiftwidth'.
 options.smartindent = true -- Do smart autoindent when startning a new line.
 options.tildeop = true -- The tilde operator behaves like an operator (you can use it like you'd use the `d` operator).
-
 
 -- OTHERS
 options.clipboard = options.clipboard + "unnamedplus" -- Use clipboard for all operations.
