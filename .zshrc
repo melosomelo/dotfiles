@@ -84,6 +84,7 @@ export PATH=$PATH:$JAVA_HOME/bin:$MAVEN_HOME/bin:/Users/mateusnascimento/.local/
 export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
 export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
+export NVIM_CONFIG=$HOME/.config/nvim
 
 # export MANPATH="/usr/local/man:$MANPATH"
 

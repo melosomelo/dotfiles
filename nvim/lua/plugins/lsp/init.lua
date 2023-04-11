@@ -2,6 +2,7 @@ local set_keymap = vim.api.nvim_buf_set_keymap
 local mason = require("mason")
 local mason_lsp = require("mason-lspconfig")
 local lspconfig = require("lspconfig")
+local handlers = require("plugins.lsp.handlers")
 require("plugins.lsp.null-ls")
 
 local lsp_servers = { "lua_ls", "tsserver", "astro", "clangd", "marksman", "jsonls" }
