@@ -1,7 +1,7 @@
 local luatab = require("luatab")
 local util = require("core.util")
 
-local function get_other_buffers_names()
+local function get_other_tabs_names()
 	local result = {}
 	for i = 1, vim.fn.tabpagenr("$") do
 		if i ~= vim.fn.tabpagenr() then
@@ -40,16 +40,21 @@ local function title(bufnr)
 	elseif file == "" then
 		return "[No Name]"
 	else
-		local other_buffers_names = get_other_buffers_names()
+		local tabs_names = get_other_tabs_names()
+		local bufname_path_components = util.split(vim.fn.bufname(bufnr), "/")
+		local left = #bufname_path_components
+		local final_title = bufname_path_components[left]
+		for i = 1, #tabs_names do
+			while
+				util.join(util.slice(util.split(tabs_names[i], "/"), left), "/")
+				== final_title
+			do
+				left = left - 1
+				final_title = util.join(util.slice(bufname_path_components, left), "/")
+			end
+		end
+		return final_title
 		-- return vim.fn.pathshorten(vim.fn.fnamemodify(file, ":p:~:t"))
-		local bufname_path_components = util.split(vim.fn.bufname(), "/")
-		-- print(vim.inspect(bufname_path_components))
-		-- print(util.join({ "eai", "mano", "tudo", "bem", "?" }, " "))
-		-- local left = #bufname_path_components
-		-- for i = 1, #other_buffers_names do
-		-- print(vim.inspect(util.split(other_buffers_names[i], "/")))
-		-- end
-		return vim.fn.fnamemodify(file, ":p:.")
 	end
 end
 

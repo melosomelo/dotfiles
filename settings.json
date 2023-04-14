@@ -1,6 +1,6 @@
 {
   "workbench.colorTheme": "Tokyo Night",
-  "editor.fontFamily": "JetBrains Mono, 'FiraCode Nerd Font'",
+  "editor.fontFamily": "SFMono Nerd Font, iMWritingMonoS Nerd Font Mono, JetBrains Mono, 'FiraCode Nerd Font'",
   "editor.fontLigatures": true,
   "editor.fontSize": 16,
   "keyboard.dispatch": "keyCode",

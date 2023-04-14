@@ -31,6 +31,19 @@ M.join = function(t, sep)
 	return str
 end
 
+-- takes the elements from the interval [i,j] from t
+-- and copies them into a new table.
+M.slice = function(t, i, j)
+	-- to make sure both indexes are in the valid intervals.
+	i = math.min(math.max(0, i), #t)
+	j = math.max(math.min(j or #t, #t), 0)
+	local copy = {}
+	for k = i, j do
+		table.insert(copy, t[k])
+	end
+	return copy
+end
+
 M.comment_line = function(i)
 	local line = vim.fn.getline(i)
 	local indent, text = line:match("(%s*)(.*)")
