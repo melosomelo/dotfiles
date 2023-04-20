@@ -78,7 +78,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 export CATALINA_HOME="/usr/local/lib/apache-tomcat-9.0.56"
-export JAVA_HOME=`/usr/libexec/java_home -v 1.8.0`
+export JAVA_HOME=`/usr/libexec/java_home -v 17.0.1`
 export MAVEN_HOME="/usr/local/lib/apache-maven-3.6.3"
 export PATH=$PATH:$JAVA_HOME/bin:$MAVEN_HOME/bin:/Users/mateusnascimento/.local/bin
 export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk

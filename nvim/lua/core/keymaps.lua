@@ -73,6 +73,7 @@ keymap.set("n", alt_h, function() -- move current tabpage to the left
 		vim.cmd("-tabmove")
 	end
 end, opts)
+
 keymap.set("n", alt_l, function() -- move current tabpage to the right
 	local cur_tab_num = vim.fn.tabpagenr()
 	local last_tab_num = vim.fn.tabpagenr("$")

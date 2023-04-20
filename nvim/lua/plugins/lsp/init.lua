@@ -2,10 +2,7 @@ local set_keymap = vim.api.nvim_buf_set_keymap
 local mason = require("mason")
 local mason_lsp = require("mason-lspconfig")
 local lspconfig = require("lspconfig")
-local handlers = require("plugins.lsp.handlers")
 require("plugins.lsp.null-ls")
-
-vim.lsp.handlers["textDocument/definition"] = handlers.goto_definition
 
 local lsp_servers =
 	{ "lua_ls", "tsserver", "astro", "clangd", "marksman", "jsonls", "jdtls" }
@@ -20,6 +17,12 @@ local augroup = vim.api.nvim_create_augroup("LspFormatting", { clear = true })
 for _, server in pairs(lsp_servers) do
 	local opts = {
 		capabilities = require("cmp_nvim_lsp").default_capabilities(),
+		handlers = {
+			["textDocument/definition"] = vim.lsp.with(
+				vim.lsp.handlers["textDocument/definition"],
+				{ reuse_win = true }
+			),
+		},
 		on_attach = function(client, bufnr)
 			local map_opts = {
 				noremap = true,

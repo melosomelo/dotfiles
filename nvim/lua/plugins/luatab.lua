@@ -1,17 +1,15 @@
 local luatab = require("luatab")
 local util = require("core.util")
 
-local function get_other_tabs_names()
+local function get_other_tabs_names(buffer)
 	local result = {}
 	for i = 1, vim.fn.tabpagenr("$") do
-		if i ~= vim.fn.tabpagenr() then
-			local tab_buffers = vim.fn.tabpagebuflist(i)
-			local bufnr = tab_buffers[vim.fn.tabpagewinnr(i)]
-			-- No point in comparing names with the same buffer.
-			if bufnr ~= vim.fn.bufnr() then
-				local bufname = vim.fn.bufname(bufnr)
-				result[#result + 1] = vim.fn.fnamemodify(bufname, ":p:.")
-			end
+		local tab_buffers = vim.fn.tabpagebuflist(i)
+		local bufnr = tab_buffers[vim.fn.tabpagewinnr(i)]
+		-- No point in comparing names with the same buffer.
+		if bufnr ~= buffer then
+			local bufname = vim.fn.bufname(bufnr)
+			result[#result + 1] = vim.fn.fnamemodify(bufname, ":p:.")
 		end
 	end
 	return result
@@ -40,28 +38,25 @@ local function title(bufnr)
 	elseif file == "" then
 		return "[No Name]"
 	else
-		-- Adds more components to the tab title (if required) to differentiate
-		-- it from other tabs' titles.
-		-- For example, if we had files src/routes/user.ts and src/services/user.ts,
-		-- instead of showing the entire path of the file or just user.ts on both
-		-- tabs, we'd have routes/user.ts and services/user.ts.
-		local tabs_names = get_other_tabs_names()
+		-- Need to refactor this to make it cleaner!
+		local tabs_names = get_other_tabs_names(bufnr)
 		local bufname_path_components = util.split(vim.fn.bufname(bufnr), "/")
 		local left = #bufname_path_components
 		local final_title = bufname_path_components[left]
 		for i = 1, #tabs_names do
 			-- This will not enter an infinite loop with tabs that have the same file opened
 			-- as the funciton get_other_tabs_names ignores filters them.
+			local limit = #util.split(tabs_names[i], "/")
 			while
-				util.join(util.slice(util.split(tabs_names[i], "/"), left), "/")
+				util.join(util.slice(util.split(tabs_names[i], "/"), limit), "/")
 				== final_title
 			do
 				left = left - 1
+				limit = limit - 1
 				final_title = util.join(util.slice(bufname_path_components, left), "/")
 			end
 		end
 		return final_title
-		-- return vim.fn.pathshorten(vim.fn.fnamemodify(file, ":p:~:t"))
 	end
 end
 
