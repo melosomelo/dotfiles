@@ -14,3 +14,13 @@ command("ProjectRemove", function(opts)
 		end
 	end)
 end, { nargs = 1, complete = proj_core.get_projects_names })
+
+command("ProjectList", function()
+	local projects = proj_core.get_projects()
+	vim.notify("These are your registered projects:")
+	for i = 1, #projects do
+		vim.notify(
+			"  " .. tostring(i) .. "." .. projects[i].name .. ": " .. projects[i].path
+		)
+	end
+end, { nargs = 0 })
