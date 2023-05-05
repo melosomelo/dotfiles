@@ -35,6 +35,8 @@ local function title(bufnr)
 	elseif buftype == "terminal" then
 		local _, mtch = string.match(file, "term:(.*):(%a+)")
 		return mtch ~= nil and mtch or vim.fn.fnamemodify(vim.env.SHELL, ":t")
+	elseif buftype == "nofile" then
+		return ""
 	elseif file == "" then
 		return "[No Name]"
 	else

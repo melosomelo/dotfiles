@@ -6,7 +6,7 @@ window:
   dynamic_padding: false
 font:
   normal:
-    family: iMWritingMonoS Nerd Font
+    family: iMWritingMonoS Nerd Font Mono
   size: 20.0
   bold:
     style: Bold

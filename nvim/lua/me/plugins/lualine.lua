@@ -4,4 +4,4 @@
 ]]
 local lualine = require("lualine")
 
-lualine.setup({ theme = "cattpuccin" })
+lualine.setup()

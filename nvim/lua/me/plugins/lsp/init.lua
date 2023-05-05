@@ -72,10 +72,15 @@ for _, server in pairs(lsp_servers) do
 					group = augroup,
 					buffer = bufnr,
 					callback = function()
+						local clients = vim.lsp.get_active_clients({ bufnr = bufnr })
 						vim.lsp.buf.format({
 							bufnr = bufnr,
 							filter = function(fmt_client)
-								return fmt_client.name == "null-ls"
+								-- if null-ls is available, then use it.
+								if #clients > 1 then
+									return fmt_client.name == "null-ls"
+								end
+								return true
 							end,
 						})
 					end,

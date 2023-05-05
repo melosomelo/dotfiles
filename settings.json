@@ -1,6 +1,6 @@
 {
   "workbench.colorTheme": "Tokyo Night",
-  "editor.fontFamily": "SFMono Nerd Font, iMWritingMonoS Nerd Font Mono, JetBrains Mono, 'FiraCode Nerd Font'",
+  "editor.fontFamily": "SFMono Nerd Font, iMWritingMonoS Nerd Font Mono,  'FiraCode Nerd Font'",
   "editor.fontLigatures": true,
   "editor.fontSize": 16,
   "keyboard.dispatch": "keyCode",
@@ -140,5 +140,8 @@
   },
   "C_Cpp.vcFormat.indent.caseLabels": true,
   "C_Cpp.vcFormat.indent.caseContentsWhenBlock": true,
-  "window.zoomLevel": 1
+  "window.zoomLevel": 1,
+  "[xml]": {
+    "editor.defaultFormatter": "redhat.vscode-xml"
+  }
 }
