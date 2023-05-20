@@ -80,7 +80,7 @@ source $ZSH/oh-my-zsh.sh
 export CATALINA_HOME="/usr/local/lib/apache-tomcat-9.0.56"
 export JAVA_HOME=`/usr/libexec/java_home -v 1.8.0`
 export MAVEN_HOME="/usr/local/lib/apache-maven-3.6.3"
-export PATH=$PATH:$JAVA_HOME/bin:$MAVEN_HOME/bin:/Users/mateusnascimento/.local/bin
+export PATH=$PATH:$MAVEN_HOME/bin:/Users/mateusnascimento/.local/bin
 export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
 export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
@@ -120,3 +120,26 @@ export NVM_DIR="$HOME/.nvm"
 #[ -f "/Users/mateusnascimento/.ghcup/env" ] && source "/Users/mateusnascimento/.ghcup/env" # ghcup-env
 
 [ -f "/Users/mateusnascimento/.ghcup/env" ] && source "/Users/mateusnascimento/.ghcup/env" # ghcup-env
+
+# eval export PATH="/Users/mateusnascimento/.jenv/shims:${PATH}"
+# export JENV_SHELL=zsh
+# export JENV_LOADED=1
+# unset JAVA_HOME
+# unset JDK_HOME
+# source '/usr/local/Cellar/jenv/0.5.6/libexec/libexec/../completions/jenv.zsh'
+# jenv rehash 2>/dev/null
+# jenv refresh-plugins
+# jenv() {
+  # type typeset &> /dev/null && typeset command
+  # command="$1"
+  # if [ "$#" -gt 0 ]; then
+    # shift
+  # fi
+#
+  # case "$command" in
+  # enable-plugin|rehash|shell|shell-options)
+    # eval `jenv "sh-$command" "$@"`;;
+  # *)
+    # command jenv "$command" "$@";;
+  # esac
+# }

@@ -62,15 +62,14 @@ return packer.startup(function(use)
 		"jose-elias-alvarez/null-ls.nvim",
 		requires = { "nvim-lua/plenary.nvim" },
 	})
-
 	-- Autocompletion stuff
 	use("hrsh7th/cmp-nvim-lsp") -- for autocompletion coming from lsp servers
 	use("hrsh7th/cmp-buffer") -- for autocompletion coming from the buffer
 	use("hrsh7th/cmp-path") -- for autocompletion comming from system path
 	use("hrsh7th/cmp-cmdline") -- for autocompletion for the command line
 	use("hrsh7th/nvim-cmp") -- the plugin that actually does the autocompletion
-	use("L3MON4D3/LuaSnip")
-	use("saadparwaiz1/cmp_luasnip")
+	use("L3MON4D3/LuaSnip") -- The snippet engine
+	use("saadparwaiz1/cmp_luasnip") -- Integration between the snippet engine and the cmp lib
 	use("rafamadriz/friendly-snippets")
 
 	use({
@@ -80,41 +79,35 @@ return packer.startup(function(use)
 			opt = true,
 		},
 	})
-
-	-- Telescope
 	use({ "nvim-telescope/telescope.nvim" })
-	-- autopairs
 	use({
 		"windwp/nvim-autopairs",
 		config = function()
 			require("nvim-autopairs").setup({})
 		end,
 	})
-	-- gitsigns
 	use({ "lewis6991/gitsigns.nvim" })
-	-- nvim-tree
 	use({
 		"kyazdani42/nvim-tree.lua",
 		requires = { "kyazdani42/nvim-web-devicons" },
 	})
-	-- luatab.nvim
 	use({ "alvarosevilla95/luatab.nvim", requires = "kyazdani42/nvim-web-devicons" })
-	-- toggleterm
 	use({
 		"akinsho/toggleterm.nvim",
 	})
 	use("lukas-reineke/indent-blankline.nvim")
-	-- alpha
 	use({
 		"goolord/alpha-nvim",
 		requires = { "kyazdani42/nvim-web-devicons" },
 	})
 
+	-- colorschemes I like switching between
 	use({ "ellisonleao/gruvbox.nvim" })
 	use("folke/tokyonight.nvim")
 	use({ "catppuccin/nvim", as = "catppuccin" })
+	use("rebelot/kanagawa.nvim")
 
-	-- extensions to the java eclipse language server
+	-- extensions for the java eclipse language server
 	use("mfussenegger/nvim-jdtls")
 
 	if packer_bootstrap then

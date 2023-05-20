@@ -1,5 +1,5 @@
 {
-  "workbench.colorTheme": "Tokyo Night",
+  "workbench.colorTheme": "Kanagawa",
   "editor.fontFamily": "SFMono Nerd Font, iMWritingMonoS Nerd Font Mono,  'FiraCode Nerd Font'",
   "editor.fontLigatures": true,
   "editor.fontSize": 16,
@@ -60,7 +60,6 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "liveServer.settings.donotShowInfoMsg": true,
-  "explorer.compactFolders": false,
   "workbench.editor.enablePreview": false,
   "editor.fontWeight": null,
   "editor.suggestSelection": "first",
@@ -75,7 +74,6 @@
   "editor.cursorSurroundingLines": 15,
   "emmet.excludeLanguages": ["markdown"],
   "python.languageServer": "Jedi",
-  "prettier.proseWrap": "always",
   "explorer.confirmDragAndDrop": false,
   "workbench.iconTheme": "material-icon-theme",
   "workbench.sideBar.location": "right",
@@ -143,5 +141,7 @@
   "window.zoomLevel": 1,
   "[xml]": {
     "editor.defaultFormatter": "redhat.vscode-xml"
-  }
+  },
+  "maven.executable.path": "/usr/local/lib/apache-maven-3.6.3/bin/mvn",
+  "maven.settingsFile": ""
 }
