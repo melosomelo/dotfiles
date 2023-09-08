@@ -21,16 +21,26 @@ message "Enabling parallel downloads for pacstrap"
 sed -i "s/#ParallelDownloads = 5/ParallelDownloads = 5/g" /etc/pacman.conf
 
 read -rp "${BOLD}> Enter the path to the disk that needs to be partitioned: ${RESET}" disk_name
-
 if [[ -z ${disk_name} ]]; then
 	echo -e "${RED}> FATAL: No disk provided to be partitioned, cannot proceed!${RESET}"
 	exit
 fi
 
 message "Partitioning the disk"
+read -rp "${BOLD}> How much swap memory (in GB) do you want?${RESET}" amount_swap
 sgdisk -n 1::+512M -t 1:ef00 "${disk_name}"
-sgdisk -n 2::+4G -t 2:8200 "${disk_name}"
+sgdisk -n 2::+"${amount_swap}"G -t 2:8200 "${disk_name}"
 sgdisk -n 3:: -t 3:8300 "${disk_name}"
+
+message "Formatting the partitions"
+mkfs.ext4 "${disk_name}3"
+mkswap "${disk_name}2"
+mkfs.fat -F 32 "${disk_name}1"
+
+message "Mounting the partitions"
+mount "${disk_name}3" /mnt
+mount --mkdir "${disk_name}1" /mnt/boot
+swapon "${disk_name}2"
 
 message "Generating fstab file"
 genfstab -U /mnt >> /mnt/etc/fstab
