@@ -14,23 +14,23 @@ message "Generating fstab file"
 genfstab -U /mnt >> /mnt/etc/fstab
 
 message "Setting the timezone"
-archroot /mnt ln -sf /usr/share/zoneinfo/America/Fortaleza /etc/localtime
-archroot /mnt hwclock --systohc
+arch-chroot /mnt ln -sf /usr/share/zoneinfo/America/Fortaleza /etc/localtime
+arch-chroot /mnt hwclock --systohc
 
 message "Setting the locale"
-archroot /mnt sed -i '/^#en_US.UTF-8 UTF-8/s/^#//' /etc/locale.gen
-archroot /mnt echo "LANG=en_US.UTF-8" >> /etc/locale.conf
+arch-chroot /mnt sed -i '/^#en_US.UTF-8 UTF-8/s/^#//' /etc/locale.gen
+arch-chroot /mnt echo "LANG=en_US.UTF-8" >> /etc/locale.conf
 
 message "Setting the hostname"
-archroot /mnt read hostname
-archroot /mnt echo "${hostname}" >> /etc/hostname
+arch-chroot /mnt read hostname
+arch-chroot /mnt echo "${hostname}" >> /etc/hostname
 
 message "Setting the root password"
-archroot /mnt passwd
+arch-chroot /mnt passwd
 
 message "UEFI installing GRUB"
-archroot /mnt pacman -S grub efibootmgr
-archroot /mnt grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
-archroot /mnt grub-mkconfig -o /boot/grub/grub.cfg
+arch-chroot /mnt pacman -S grub efibootmgr
+arch-chroot /mnt grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
+arch-chroot /mnt grub-mkconfig -o /boot/grub/grub.cfg
 
 
