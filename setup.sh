@@ -14,24 +14,31 @@ message "Generating fstab file"
 genfstab -U /mnt >> /mnt/etc/fstab
 
 message "Setting the timezone"
-ln -sf /usr/share/zoneinfo/America/Fortaleza /mnt/etc/localtime
+arch-chroot /mnt ln -sf /usr/share/zoneinfo/America/Fortaleza /etc/localtime
 arch-chroot /mnt hwclock --systohc
 
-message "Setting the locale"
-sed -i '/^#en_US.UTF-8 UTF-8/s/^#//' /mnt/etc/locale.gen
-echo "LANG=en_US.UTF-8" > /mnt/etc/locale.conf
+message "Configuring locale"
+arch-chroot /mnt sed -i '/^#en_US.UTF-8 UTF-8/s/^#//' /etc/locale.gen
+arch-chroot locale-gen
+arch-chroot /mnt echo "LANG=en_US.UTF-8" | tee -a /mnt/etc/locale.conf
 
 message "Setting the hostname"
 echo -n "Please, specify a hostname: "
 read hostname
-echo "${hostname}" > /mnt/etc/hostname
+arch-chroot /mnt touch /etc/hostname
+arch-chroot /mnt echo "${hostname}" | tee -a /mnt/etc/hostname
 
 message "Setting the new root password"
-passwd
+arch-chroot /mnt passwd
 
-message "UEFI installing GRUB"
+message "Enabling parallel downloads for pacman"
+arch-chroot /mnt sed -i "s/#ParallelDownloads = 5/ParallelDownloads = 5/g" /etc/pacman.conf
+
+message "Installing additional packages"
 arch-chroot /mnt pacman -S grub efibootmgr --noconfirm
-arch-chroot /mnt grub-install --target=x86_64-efi --efi-directory=/mnt/boot --bootloader-id=GRUB
-arch-chroot /mnt grub-mkconfig -o /mnt/boot/grub/grub.cfg
 
-echo -e "${BOLD}Setup done!${RESET}"
+message "Installing GRUB bootloader"
+arch-chroot /mnt grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
+arch-chroot /mnt grub-mkconfig -o /boot/grub/grub.cfg
+
+echo -e "${BOLD}Setup done! Reboot your machine!${RESET}"
