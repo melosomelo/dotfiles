@@ -31,7 +31,7 @@ passwd
 
 message "UEFI installing GRUB"
 arch-chroot /mnt pacman -S grub efibootmgr --noconfirm
-arch-chroot /mnt grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
-arch-chroot /mnt grub-mkconfig -o /boot/grub/grub.cfg
+arch-chroot /mnt grub-install --target=x86_64-efi --efi-directory=/mnt/boot --bootloader-id=GRUB
+arch-chroot /mnt grub-mkconfig -o /mnt/boot/grub/grub.cfg
 
 echo -e "${BOLD}Setup done!${RESET}"
