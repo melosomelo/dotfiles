@@ -6,4 +6,4 @@
   until section 2.1
 - Run the command from section 2.2 from the guide, but also install `git`
 - Execute `arch-chroot /mnt git clone https://github.com/melosomelo/dotfiles`
-- Execute `exit`
+- Execute `/mnt/dotfiles/setup.sh`

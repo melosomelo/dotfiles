@@ -26,12 +26,10 @@ echo -n "Please, specify a hostname: "
 read hostname
 arch-chroot /mnt echo "${hostname}" >> /etc/hostname
 
-message "Setting the root password"
+message "Setting the new root password"
 arch-chroot /mnt passwd
 
 message "UEFI installing GRUB"
 arch-chroot /mnt pacman -S grub efibootmgr --noconfirm
 arch-chroot /mnt grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
 arch-chroot /mnt grub-mkconfig -o /boot/grub/grub.cfg
-
-
