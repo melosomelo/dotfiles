@@ -22,6 +22,7 @@ arch-chroot /mnt sed -i '/^#en_US.UTF-8 UTF-8/s/^#//' /etc/locale.gen
 arch-chroot /mnt echo "LANG=en_US.UTF-8" >> /etc/locale.conf
 
 message "Setting the hostname"
+echo "Please, specify a hostname:"
 read hostname
 arch-chroot /mnt echo "${hostname}" >> /etc/hostname
 
