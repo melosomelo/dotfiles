@@ -1,7 +1,11 @@
 #!/bin/bash
 
+# Took a lot of things here from
+# https://github.com/Ruturajn/Dotfiles/blob/main/Arch-Setup-Scripts/Arch_Install.sh
+
 # Text modifiers
 BOLD='\033[0;1m'
+RED="\e[1;31m"
 RESET='\033[0;0m'
 
 message(){
@@ -10,6 +14,24 @@ message(){
 
 # Start of the script
 # This initial part merely automates the Arch Linux installation guide.
+message "Setting up the system clock"
+timedatectl set-npt true
+
+message "Enabling parallel downloads for pacstrap"
+sed -i "s/#ParallelDownloads = 5/ParallelDownloads = 5/g" /etc/pacman.conf
+
+read -rp "${BOLD}> Enter the path to the disk that needs to be partitioned: ${RESET}" disk_name
+
+if [[ -z ${disk_name} ]]; then
+	echo -e "${RED}> FATAL: No disk provided to be partitioned, cannot proceed!${RESET}"
+	exit
+fi
+
+message "Partitioning the disk"
+sgdisk -n 1::+512M -t 1:ef00 "${disk_name}"
+sgdisk -n 2::+4G -t 2:8200 "${disk_name}"
+sgdisk -n 3:: -t 3:8300 "${disk_name}"
+
 message "Generating fstab file"
 genfstab -U /mnt >> /mnt/etc/fstab
 
