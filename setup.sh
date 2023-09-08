@@ -19,7 +19,7 @@ arch-chroot /mnt hwclock --systohc
 
 message "Configuring locale"
 arch-chroot /mnt sed -i '/^#en_US.UTF-8 UTF-8/s/^#//' /etc/locale.gen
-arch-chroot locale-gen
+arch-chroot /mnt locale-gen
 arch-chroot /mnt echo "LANG=en_US.UTF-8" | tee -a /mnt/etc/locale.conf
 
 message "Setting the hostname"
