@@ -15,19 +15,21 @@ message(){
 # Start of the script
 # This initial part merely automates the Arch Linux installation guide.
 message "Setting up the system clock"
-timedatectl set-npt true
+timedatectl set-ntp true
 
 message "Enabling parallel downloads for pacstrap"
 sed -i "s/#ParallelDownloads = 5/ParallelDownloads = 5/g" /etc/pacman.conf
 
-read -rp "${BOLD}> Enter the path to the disk that needs to be partitioned: ${RESET}" disk_name
+echo -en "${BOLD}> Enter the path to the disk that needs to be partitioned: ${RESET}"
+read disk_name
 if [[ -z ${disk_name} ]]; then
 	echo -e "${RED}> FATAL: No disk provided to be partitioned, cannot proceed!${RESET}"
 	exit
 fi
 
 message "Partitioning the disk"
-read -rp "${BOLD}> How much swap memory (in GB) do you want?${RESET}" amount_swap
+echo -en "${BOLD}> How much swap memory (in GB) do you want?${RESET}"
+read amount_swap
 sgdisk -n 1::+512M -t 1:ef00 "${disk_name}"
 sgdisk -n 2::+"${amount_swap}"G -t 2:8200 "${disk_name}"
 sgdisk -n 3:: -t 3:8300 "${disk_name}"
