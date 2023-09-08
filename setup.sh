@@ -42,6 +42,9 @@ mount "${disk_name}3" /mnt
 mount --mkdir "${disk_name}1" /mnt/boot
 swapon "${disk_name}2"
 
+message "Installing base system"
+pacstrap -K /mnt base linux linux-firmware grub efibootmgr
+
 message "Generating fstab file"
 genfstab -U /mnt >> /mnt/etc/fstab
 
@@ -67,9 +70,9 @@ message "Enabling parallel downloads for pacman"
 arch-chroot /mnt sed -i "s/#ParallelDownloads = 5/ParallelDownloads = 5/g" /etc/pacman.conf
 
 message "Installing additional packages"
-arch-chroot /mnt pacman -S grub efibootmgr --noconfirm
+# arch-chroot /mnt pacman -S grub efibootmgr --noconfirm
 
-message "Installing GRUB bootloader"
+message "Configuring GRUB bootloader"
 arch-chroot /mnt grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
 arch-chroot /mnt grub-mkconfig -o /boot/grub/grub.cfg
 
