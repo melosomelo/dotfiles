@@ -5,7 +5,8 @@
 
 # Text modifiers
 BOLD='\033[0;1m'
-RED="\e[1;31m"
+RED="\033[1;31m"
+CYAN="\033[1;36m"
 RESET='\033[0;0m'
 
 message(){
@@ -13,7 +14,16 @@ message(){
 }
 
 # Start of the script
-# This initial part merely automates the Arch Linux installation guide.
+
+echo -e "${BOLD}> ${CYAN}Arch Linux${RESET}${BOLD} setup script"
+echo -e "${BOLD}> Written by ${CYAN}Mateus Nascimento${RESET}${BOLD} (https://mateusm.dev)"
+
+for i in 3 2 1
+do
+	echo -ne "${BOLD}> Setup will start in $i\r${RESET}"
+	sleep 1
+done
+
 message "Setting up the system clock"
 timedatectl set-ntp true
 
@@ -72,10 +82,23 @@ message "Enabling parallel downloads for pacman"
 arch-chroot /mnt sed -i "s/#ParallelDownloads = 5/ParallelDownloads = 5/g" /etc/pacman.conf
 
 message "Installing additional packages"
-# arch-chroot /mnt pacman -S grub efibootmgr --noconfirm
+arch-chroot /mnt pacman -S sudo --noconfirm
 
 message "Configuring GRUB bootloader"
 arch-chroot /mnt grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
 arch-chroot /mnt grub-mkconfig -o /boot/grub/grub.cfg
+
+message "Enabling services"
+
+
+message "Adding new user"
+echo -ne "${BOLD}> Choose your username: ${RESET}"
+read username
+arch-chroot /mnt useradd -m "${username}"
+arch-chroot /mnt passwd "${username}"
+
+message "Giving new user sudo privileges"
+arch-chroot /mnt sed -i "s/# %wheel ALL=(ALL:ALL) ALL/%wheel ALL=(ALL:ALL) ALL/" /etc/sudoers
+arch-chroot /mnt usermod -aG wheel "${username}"
 
 echo -e "${BOLD}Setup done! Reboot your machine!${RESET}"
