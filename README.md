@@ -2,8 +2,6 @@
 
 ## Setting up
 
-- Follow the [Arch Linux installation guide](https://wiki.archlinux.org/title/installation_guide)
-  until section 2.1
-- Run the command from section 2.2 from the guide, but also install `git`
-- Execute `arch-chroot /mnt git clone https://github.com/melosomelo/dotfiles`
-- Execute `/mnt/dotfiles/setup.sh`
+- Execute `curl https://raw.githubusercontent.com/melosomelo/dotfiles/main/setup.sh > setup.sh && chmod +x ./setup.sh`
+- Execute `./setup.sh`
+- Reboot your computer
