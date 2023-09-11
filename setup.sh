@@ -55,7 +55,7 @@ mount --mkdir "${disk_name}1" /mnt/boot
 swapon "${disk_name}2"
 
 message "Installing base system"
-pacstrap -K /mnt base linux linux-firmware grub efibootmgr
+pacstrap -K /mnt base linux linux-firmware grub efibootmgr networkmanager
 
 message "Generating fstab file"
 genfstab -U /mnt >> /mnt/etc/fstab
@@ -89,7 +89,7 @@ arch-chroot /mnt grub-install --target=x86_64-efi --efi-directory=/boot --bootlo
 arch-chroot /mnt grub-mkconfig -o /boot/grub/grub.cfg
 
 message "Enabling services"
-arch-chroot /mnt systectml enable NetworkManager
+arch-chroot /mnt systemctl enable NetworkManager
 
 message "Adding new user"
 echo -ne "${BOLD}> Choose your username: ${RESET}"
