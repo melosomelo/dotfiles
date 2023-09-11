@@ -82,14 +82,14 @@ message "Enabling parallel downloads for pacman"
 arch-chroot /mnt sed -i "s/#ParallelDownloads = 5/ParallelDownloads = 5/g" /etc/pacman.conf
 
 message "Installing additional packages"
-arch-chroot /mnt pacman -S sudo --noconfirm
+arch-chroot /mnt pacman -S sudo git --noconfirm
 
 message "Configuring GRUB bootloader"
 arch-chroot /mnt grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
 arch-chroot /mnt grub-mkconfig -o /boot/grub/grub.cfg
 
 message "Enabling services"
-
+arch-chroot /mnt systectml enable NetworkManager
 
 message "Adding new user"
 echo -ne "${BOLD}> Choose your username: ${RESET}"
@@ -100,5 +100,10 @@ arch-chroot /mnt passwd "${username}"
 message "Giving new user sudo privileges"
 arch-chroot /mnt sed -i "s/# %wheel ALL=(ALL:ALL) ALL/%wheel ALL=(ALL:ALL) ALL/" /etc/sudoers
 arch-chroot /mnt usermod -aG wheel "${username}"
+
+message "Downloading dotfiles and configuration"
+arch-chroot /mnt git clone https://github.com/melosomelo/dotfiles
+
+message "Setting up symbolic links"
 
 echo -e "${BOLD}Setup done! Reboot your machine!${RESET}"
