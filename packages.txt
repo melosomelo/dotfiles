@@ -1,0 +1,14 @@
+alacritty
+fish
+i3-wm
+man-db
+neovim
+reflector
+ttf-firacode-nerd
+ttf-iawriter-nerd
+ttf-jetbrains-mono-nerd
+xorg-mkfontscale
+xorg-server
+xorg-xinit
+xorg-xlsfonts
+xorg-xset
