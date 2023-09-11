@@ -101,8 +101,8 @@ message "Giving new user sudo privileges"
 arch-chroot /mnt sed -i "s/# %wheel ALL=(ALL:ALL) ALL/%wheel ALL=(ALL:ALL) ALL/" /etc/sudoers
 arch-chroot /mnt usermod -aG wheel "${username}"
 
-message "Downloading dotfiles and configuration"
-arch-chroot /mnt git clone https://github.com/melosomelo/dotfiles
+message "Downloading dotfiles"
+arch-chroot /mnt/home/mateus git clone https://github.com/melosomelo/dotfiles
 
 message "Setting up symbolic links"
 
