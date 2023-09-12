@@ -16,6 +16,7 @@ message(){
 
 # Start of the script
 
+set -e
 echo -e "${BOLD}> ${CYAN}Arch Linux${RESET}${BOLD} setup script"
 echo -e "${BOLD}> Written by ${CYAN}Mateus Nascimento${RESET}${BOLD} (https://mateusm.dev)"
 
@@ -84,9 +85,8 @@ message "Enabling parallel downloads for pacman"
 arch-chroot /mnt sed -i "s/#ParallelDownloads = 5/ParallelDownloads = 5/g" /etc/pacman.conf
 
 message "Installing additional packages"
-curl https://raw.githubusercontent.com/melosomelo/dotfiles/main/packages.txt > packages.txt
-arch-chroot /mnt pacman -S $(cat ./packages.txt) --noconfirm
-rm packages.txt
+curl https://raw.githubusercontent.com/melosomelo/dotfiles/main/packages.txt > packages.txt \
+	&& arch-chroot /mnt pacman -S $(cat ./packages.txt) --noconfirm && rm packages.txt
 
 message "Configuring GRUB bootloader"
 arch-chroot /mnt grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
