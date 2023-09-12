@@ -98,19 +98,18 @@ arch-chroot /mnt systemctl enable NetworkManager
 message "Adding new user"
 echo -ne "${BOLD}> Choose your username: ${RESET}"
 read username
-arch-chroot /mnt useradd -m "${username}"
-arch-chroot /mnt passwd "${username}"
+arch-chroot /mnt useradd -m "${username}" && arch-chroot /mnt passwd "${username}"
 
 message "Giving new user sudo privileges"
-arch-chroot /mnt sed -i "s/# %wheel ALL=(ALL:ALL) ALL/%wheel ALL=(ALL:ALL) ALL/" /etc/sudoers
-arch-chroot /mnt usermod -aG wheel "${username}"
+arch-chroot /mnt sed -i "s/# %wheel ALL=(ALL:ALL) ALL/%wheel ALL=(ALL:ALL) ALL/" /etc/sudoers \
+	&& arch-chroot /mnt usermod -aG wheel "${username}"
 
 message "Setting new user's shell to fish"
-chsh -s /mnt/usr/bin/fish "${username}"
+arch-chroot /mnt chsh -s /usr/bin/fish "${username}"
 
 message "Installing Oh My Fish"
 arch-chroot /mnt curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install > omf_install \
-	&& fish omf_install --path=/mnt/home/mateus/.local/opt/omf --config=/mnt/home/mateus/.config/omf
+	&& arhc-chroot /mnt fish omf_install --path=/mnt/home/mateus/.local/opt/omf --config=/mnt/home/mateus/.config/omf \
 
 message "Downloading dotfiles"
 arch-chroot /mnt git clone https://github.com/melosomelo/dotfiles /mnt/home/mateus/dotfiles
