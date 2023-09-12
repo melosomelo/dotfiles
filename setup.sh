@@ -106,16 +106,12 @@ arch-chroot /mnt sed -i "s/# %wheel ALL=(ALL:ALL) ALL/%wheel ALL=(ALL:ALL) ALL/"
 message "Setting new user's shell to fish"
 arch-chroot /mnt chsh -s /usr/bin/fish "${username}"
 
-exit
-
 message "Downloading dotfiles"
-arch-chroot /mnt git clone https://github.com/melosomelo/dotfiles /home/mateus/dotfiles
+arch-chroot /mnt runuser -l "${username}" -c 'git clone https://github.com/melosomelo/dotfiles'
 
 message "Setting up symbolic links"
 
 message "Installing Oh My Fish"
-arch-chroot /mnt curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install > /mnt/home/mateus/omf_install \
-	&& arch-chroot /mnt fish /home/mateus/omf_install --path=/home/mateus/.local/opt/omf --config=/home/mateus/.config/omf \
-	&& rm /mnt/home/mateus/omf_install
+arch-chroot /mnt runuser -l "${username}" -c 'curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install > omf_install && fish omf_install --noninteractive --path=~/.local/opt/omf --config=~/.config/omf'
 
 echo -e "${BOLD}Setup done! Reboot your machine!${RESET}"
