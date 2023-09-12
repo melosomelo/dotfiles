@@ -14,3 +14,4 @@ xorg-server
 xorg-xinit
 xorg-xlsfonts
 xorg-xset
+which
