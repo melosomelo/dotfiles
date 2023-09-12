@@ -56,10 +56,7 @@ mount --mkdir "${disk_name}1" /mnt/boot
 swapon "${disk_name}2"
 
 message "Installing base system"
-until pacstrap -K /mnt base linux linux-firmwae grub efibootmgr networkmanager
-do
-	echo -e "${YELLOW}> Something went wrong while trying to install the base system. Trying again..."
-done
+pacstrap -K /mnt base linux linux-firmwae grub efibootmgr networkmanager
 
 message "Generating fstab file"
 genfstab -U /mnt >> /mnt/etc/fstab
