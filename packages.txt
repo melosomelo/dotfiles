@@ -4,6 +4,7 @@ i3-wm
 man-db
 neovim
 reflector
+sudo
 ttf-firacode-nerd
 ttf-iawriter-nerd
 ttf-jetbrains-mono-nerd
