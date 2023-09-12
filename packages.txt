@@ -1,5 +1,6 @@
 alacritty
 fish
+git
 i3-wm
 man-db
 neovim
