@@ -56,7 +56,7 @@ mount --mkdir "${disk_name}1" /mnt/boot
 swapon "${disk_name}2"
 
 message "Installing base system"
-until packstrap -K /mnt base linux linux-firmwae grub efibootmgr networkmanager
+until pacstrap -K /mnt base linux linux-firmwae grub efibootmgr networkmanager
 do
 	echo -e "${YELLOW}> Something went wrong while trying to install the base system. Trying again..."
 done
