@@ -6,6 +6,7 @@
 # Text modifiers
 BOLD='\033[0;1m'
 RED="\033[1;31m"
+YELLOW="\033[1;93m"
 CYAN="\033[1;36m"
 RESET='\033[0;0m'
 
@@ -55,10 +56,9 @@ mount --mkdir "${disk_name}1" /mnt/boot
 swapon "${disk_name}2"
 
 message "Installing base system"
-false
-while ![$? -eq 0]
+until packstrap -K /mnt base linux linux-firmwae grub efibootmgr networkmanager
 do
-	pacstrap -K /mnt base linux linux-firmware grub efibootmgr networkmanager
+	echo -e "${YELLOW}> Something went wrong while trying to install the base system. Trying again..."
 done
 
 message "Generating fstab file"
