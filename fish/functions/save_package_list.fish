@@ -6,6 +6,6 @@ function save_package_list
   # Update the list of additional (not base system) packages
   pacman -Qqen | grep -v -E -e "base|linux|linux-firmware|grub|efibootmgr|networkmanager" > packages.txt
   git add .
-  git commit -m "[$(date +%Y-%m-%d_%H-%M)] pacman install/remove hook"
+  git commit -m "[$(date +%Y-%m-%d_%H:%M)] pacman install/remove hook"
   git push origin main
 end
