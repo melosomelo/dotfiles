@@ -8,6 +8,7 @@
 - [ ] Add Git authentication configuration to setup script
   - [ ] Investigate integration with 1Password credential helper
 - [ ] Set up symbolic links to dotfiles in setup script
+- [ ] Add pacman hook to automatically save packages on Github after installation
 
 ## Setup script
 
