@@ -94,9 +94,8 @@ arch-chroot /mnt grub-mkconfig -o /boot/grub/grub.cfg
 message "Enabling services"
 arch-chroot /mnt systemctl enable NetworkManager
 
-message "Adding new user"
-echo -ne "${BOLD}> Choose your username: ${RESET}"
-read username
+username="mateus"
+message "Adding new user ${username}"
 arch-chroot /mnt useradd -m "${username}" && arch-chroot /mnt passwd "${username}"
 
 message "Giving new user sudo privileges"
