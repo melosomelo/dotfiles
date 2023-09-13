@@ -7,4 +7,6 @@ Target = *
 [Action]
 Description = Create an up-to-date list of all currently installed packages
 When = PostTransaction
-Exec = save_package_list
+# this is not ideal because the username's hardcoded.
+# but wth
+Exec = /usr/bin/fish -c 'runuser -l mateus -c "save_package_list"'
