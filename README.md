@@ -5,7 +5,8 @@
 - [ ] Add fish configuration
 - [ ] Add `.xinitrc` configuration
 - [ ] Add Alacritty configuration
-- [ ] Add Github authentication configuration to setup script
+- [ ] Add Git authentication configuration to setup script
+  - [ ] Investigate integration with 1Password credential helper
 - [ ] Set up symbolic links to dotfiles in setup script
 
 ## Setup script
