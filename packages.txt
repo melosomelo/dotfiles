@@ -1,4 +1,3 @@
-abc
 alacritty
 fish
 git
