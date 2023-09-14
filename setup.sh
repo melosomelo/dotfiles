@@ -117,7 +117,7 @@ arch-chroot /mnt runuser -l "${username}" -c "mkdir -p .config/fish && ln -s ${D
 arch-chroot /mnt runuser -l "${username}" -c "sudo -S mkdir -p /etc/pacman.d/hooks && sudo ln -s ${DOTFILES_DIR}/pacman/hooks/save_package_list.hook /etc/pacman.d/hooks/save_package_list.hook"
 
 message "Installing Oh My Fish"
-arch-chroot /mnt runuser -l "${username}" -c 'curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install > omf_install && fish omf_install --noninteractive --path=~/.local/opt/omf --config=~/.config/omf'
+arch-chroot /mnt runuser -l "${username}" -c 'curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install > omf_install && fish omf_install --noninteractive --path=~/.local/opt/omf --config=~/.config/omf && rm omf_install'
 
 message "Setting Oh My Fish theme"
 arch-chroot /mnt runuser -l "${username}" -c 'omf install l && omf theme l'
