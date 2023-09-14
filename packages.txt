@@ -3,6 +3,7 @@ awesome
 fish
 git
 github-cli
+i3-wm
 man-db
 neovim
 openssh
