@@ -40,7 +40,7 @@ if [[ -z ${disk_name} ]]; then
 fi
 
 message "Partitioning the disk"
-echo -en "${BOLD}> How much swap memory (in GB) do you want?${RESET}"
+echo -en "${BOLD}> How much swap memory (in GB) do you want?${RESET} "
 read amount_swap
 sgdisk -n 1::+512M -t 1:ef00 "${disk_name}"
 sgdisk -n 2::+"${amount_swap}"G -t 2:8200 "${disk_name}"
