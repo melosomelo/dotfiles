@@ -1,5 +1,4 @@
 alacritty
-awesome
 fish
 git
 github-cli
