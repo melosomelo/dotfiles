@@ -1,5 +1,6 @@
 # dotfiles
 
+
 ## Setup script
 
 The `setup.sh` script performs the Arch Linux installation and also sets up my dotfiles
