@@ -13,6 +13,7 @@ ttf-firacode-nerd
 ttf-iawriter-nerd
 ttf-jetbrains-mono-nerd
 which
+xdg-user-dirs
 xorg-mkfontscale
 xorg-server
 xorg-xinit
