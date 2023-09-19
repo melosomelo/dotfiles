@@ -112,7 +112,7 @@ bindsym Mod1+Shift+9 move container to workspace number $ws9
 bindsym Mod1+Shift+0 move container to workspace number $ws10
 
 # --------------- APPEARANCE ---------------
-default_border normal 2
+default_border pixel 2
 default_floating_border normal 2
 gaps inner 8
 gaps outer 4
