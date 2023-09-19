@@ -123,7 +123,7 @@ window:
 
 # Font configuration
 font:
-  size: 16
+  size: 14
   normal:
     family: JetBrainsMono Nerd Font
     style: Regular
