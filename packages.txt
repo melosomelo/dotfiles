@@ -8,6 +8,7 @@ i3-wm
 man-db
 neovim
 openssh
+python-pywal
 reflector
 sudo
 ttf-firacode-nerd
