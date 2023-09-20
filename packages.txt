@@ -8,6 +8,7 @@ i3-wm
 man-db
 neovim
 openssh
+picom
 python-pip
 python-pywal
 reflector
