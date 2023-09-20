@@ -5,8 +5,9 @@
 - [ ] Add git authentication to `setup.sh` script.
 - [ ] Add `xdg-user-dirs` configuration to `setup.sh` script.
 - [ ] Configure VSCode in `setup.sh` script.
-- [ ] Create fish function to update mirror list with `reflector` and also
-      enable its service to periodically run.
+- [ ] Configure Neovim in `setup.sh` script.
+- [x] ~Create fish function to update mirror list with `reflector` and also
+      enable its service to periodically run.~
 - [ ] Define pacman cache cleaning strategy.
 - [ ] Define backup strategy.
 - [ ] Configure clipboard
