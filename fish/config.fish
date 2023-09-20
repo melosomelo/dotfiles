@@ -1,4 +1,5 @@
-# global variables 
+# global variables
+set -g fish_greeting
 set -gx DOTFILES $HOME/dotfiles
 
 # start X at login
