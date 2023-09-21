@@ -11,6 +11,7 @@
 - [ ] Define pacman cache cleaning strategy.
 - [ ] Define backup strategy.
 - [ ] Configure clipboard
+- [ ] Find a way to add rounded borders with picom and i3 or switch to another window manager
 
 ## Setup script
 

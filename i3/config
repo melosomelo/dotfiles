@@ -20,7 +20,7 @@ set $up k
 set $down j
 set $left h
 set $right l
-# change focus 
+# change focus
 bindsym Mod1+$left focus left
 bindsym Mod1+$down focus down
 bindsym Mod1+$up focus up
@@ -113,7 +113,7 @@ bindsym Mod1+Shift+0 move container to workspace number $ws10
 
 # --------------- APPEARANCE ---------------
 default_border pixel 2
-default_floating_border normal 2
+default_floating_border pixel 2
 gaps inner 8
 gaps outer 4
 
