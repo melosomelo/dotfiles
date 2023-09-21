@@ -57,7 +57,7 @@ mount --mkdir "${disk_name}1" /mnt/boot
 swapon "${disk_name}2"
 
 message "Installing base system"
-pacman-key --init && pacstrap -K /mnt base linux linux-firmware grub efibootmgr networkmanager
+pacman-key --init && pacstrap -K /mnt base base-devel linux linux-firmware grub efibootmgr networkmanager
 
 message "Generating fstab file"
 genfstab -U /mnt >> /mnt/etc/fstab
