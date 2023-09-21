@@ -12,6 +12,8 @@
 - [ ] Define backup strategy.
 - [ ] Configure clipboard
 - [ ] Find a way to add rounded borders with picom and i3 or switch to another window manager
+- [ ] Configure `picom`
+- [ ] Setup picom during `setup.sh`
 
 ## Setup script
 
