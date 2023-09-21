@@ -16,6 +16,7 @@
 - [ ] Setup picom during `setup.sh`
 - [ ] Configure VSCode
 - [ ] Update Neovim configuration
+- [ ] Add support for AUR packages
 
 ## Setup script
 
