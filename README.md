@@ -2,24 +2,29 @@
 
 ## Todo
 
-- [ ] Add git authentication to `setup.sh` script.
-- [ ] Add `xdg-user-dirs` configuration to `setup.sh` script.
-- [ ] Configure VSCode in `setup.sh` script.
-- [ ] Configure Neovim in `setup.sh` script.
-- [x] ~Create fish function to update mirror list with `reflector` and also
-      enable its service to periodically run.~
-- [ ] Define pacman cache cleaning strategy.
-- [ ] Define backup strategy.
-- [ ] Configure clipboard
-- [ ] Find a way to add rounded borders with picom and i3 or switch to another window manager
-- [ ] Configure `picom`
-- [ ] Setup picom during `setup.sh`
-- [ ] Configure VSCode
-- [ ] Update Neovim configuration
+- [ ] VSCode
+    - [ ] Configure VSCode
+    - [ ] Add VSCode configuration to `setup.sh`
+- [ ] Neovim
+    - [ ] Review Neovim configuration (packer is no longer maintained)
+    - [ ] Add Neovim configuration to `setup.sh`
+- [ ] Pacman
+    - [ ] Define cache cleaning strategy
+    - [ ] Define backup strategy
+- [ ] Picom
+    - [ ] Configure `picom`
+    - [ ] Add picom configuration to `setup.sh`
+    - [ ] Find a way to add rounded borders with i3 or switch to another window manager
 - [ ] Add support for AUR packages
   - [x] ~Create script to automatically download, build and install AUR packages~ (used `yay`)
   - [x] ~Add suport for installed AUR packages on the installed packages list~
   - [ ] Add support for AUR packages on the `setup.sh`
+- [ ] Configure clibpoard with support for texts and images
+- [ ] Configure screenshot and investigate integration with clipboard
+- [ ] Add git authentication to `setup.sh` script.
+- [ ] Add `xdg-user-dirs` configuration to `setup.sh` script.
+- [x] ~Create fish function to update mirror list with `reflector` and also
+      enable its service to periodically run.~
 - [ ] Install `yay` during `setup.sh`
 
 ## Setup script
