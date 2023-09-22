@@ -20,6 +20,7 @@
   - [x] ~Create script to automatically download, build and install AUR packages~ (used `yay`)
   - [x] ~Add suport for installed AUR packages on the installed packages list~
   - [ ] Add support for AUR packages on the `setup.sh`
+- [ ] Install `yay` during `setup.sh`
 
 ## Setup script
 
