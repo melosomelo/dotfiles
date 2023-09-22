@@ -17,8 +17,8 @@
 - [ ] Configure VSCode
 - [ ] Update Neovim configuration
 - [ ] Add support for AUR packages
-  - [ ] Create script to automatically download, build and install AUR packages
-  - [ ] Add suport for installed AUR packages on the installed packages list
+  - [x] ~Create script to automatically download, build and install AUR packages~ (used `yay`)
+  - [x] ~Add suport for installed AUR packages on the installed packages list~
   - [ ] Add support for AUR packages on the `setup.sh`
 
 ## Setup script
