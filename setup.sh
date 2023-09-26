@@ -83,9 +83,9 @@ arch-chroot /mnt passwd
 message "Enabling parallel downloads for pacman"
 arch-chroot /mnt sed -i "s/#ParallelDownloads = 5/ParallelDownloads = 5/g" /etc/pacman.conf
 
-message "Installing additional packages"
-curl https://raw.githubusercontent.com/melosomelo/dotfiles/main/packages.txt > packages.txt \
-	&& arch-chroot /mnt pacman -S $(cat ./packages.txt) --noconfirm && rm packages.txt
+message "Installing additional official packages"
+curl https://raw.githubusercontent.com/melosomelo/dotfiles/main/packages/official.txt > official.txt \
+	&& arch-chroot /mnt pacman -S $(cat ./official.txt) --noconfirm && rm official.txt
 
 message "Configuring GRUB bootloader"
 arch-chroot /mnt grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
@@ -105,6 +105,16 @@ arch-chroot /mnt sed -i "s/# %wheel ALL=(ALL:ALL) ALL/%wheel ALL=(ALL:ALL) ALL/"
 message "Setting new user's shell to fish"
 arch-chroot /mnt chsh -s /usr/bin/fish "${username}"
 
+message "Downloading and installing yay"
+arch-chroot /mnt runuser -l "${username}" -c "mkdir -p ~/.aur"
+arch-chroot /mnt runuser -l "${username}" -c "git clone https://aur.archlinux.org/yay.git ~/.aur && cd ~/.aur/yay && makepkg -sirc"
+
+message "Installing AUR packages with yay"
+arch-chroot /mnt runuser -l "${username}" -c "curl https://raw.githubusercontent.com/melosomelo/dotfiles/main/packages/aur.txt > aur.txt && yay -S $(cat ./aur.txt) --noconfirm && rm aur.txt"
+
+curl https://raw.githubusercontent.com/melosomelo/dotfiles/main/packages/official.txt > official.txt \
+	&& arch-chroot /mnt pacman -S $(cat ./official.txt) --noconfirm && rm official.txt
+
 DOTFILES_DIR="/home/${username}/dotfiles"
 message "Downloading dotfiles"
 arch-chroot /mnt runuser -l "${username}" -c "git clone https://github.com/melosomelo/dotfiles && cd ${DOTFILES_DIR} && git submodule init && git submodule update"
@@ -113,13 +123,18 @@ message "Setting up symbolic links"
 arch-chroot /mnt runuser -l "${username}" -c "mkdir -p .config"
 arch-chroot /mnt runuser -l "${username}" -c "ln -s ${DOTFILES_DIR}/X11/.xinitrc .xinitrc"
 arch-chroot /mnt runuser -l "${username}" -c "ln -s ${DOTFILES_DIR}/alacritty .config/alacritty"
+arch-chroot /mnt runuser -l "${username}" -c "ln -s ${DOTFILES_DIR}/nvim .config/nvim"
 arch-chroot /mnt runuser -l "${username}" -c "mkdir -p .config/fish && ln -s ${DOTFILES_DIR}/fish/config.fish .config/fish/config.fish && ln -s ${DOTFILES_DIR}/fish/functions .config/fish/functions"
 arch-chroot /mnt runuser -l "${username}" -c "sudo -S mkdir -p /etc/pacman.d/hooks && sudo ln -s ${DOTFILES_DIR}/pacman/hooks/save_package_list.hook /etc/pacman.d/hooks/save_package_list.hook"
+
+message "Setting up XDG user directories"
+arch-chroot /mnt runuser -l "${username}" -c "cp ${DOTFILES_DIR}/misc/user-dirs.dirs .config && xdg-user-dirs-update"
 
 message "Installing Oh My Fish"
 arch-chroot /mnt runuser -l "${username}" -c 'curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install > omf_install && fish omf_install --noninteractive --path=~/.local/opt/omf --config=~/.config/omf && rm omf_install'
 
 message "Setting Oh My Fish theme"
 arch-chroot /mnt runuser -l "${username}" -c 'omf install l && omf theme l'
+
 
 echo -e "${BOLD}Setup done! Reboot your machine!${RESET}"
