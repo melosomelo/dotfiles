@@ -60,21 +60,8 @@ mount "${disk_name}3" /mnt
 mount --mkdir "${disk_name}1" /mnt/boot
 swapon "${disk_name}2"
 
-# Installing the base system is a bit slow and is prone to failure
-# This set directive and this while loop make sure the script doesn't exit when that happens
-# and that it keeps retrying until it succeeds.
-set +e
-while true
-do
-  message "Installing base system"
-  pacman-key --init && pacstrap -K /mnt base base-devel linux linux-firmware grub efibootmgr networkmanager
-  if [$? -eq 0]; then
-    break
-  fi
-done
-
-# Going back to normal abort failure mode.
-set -e
+message "Installing base system"
+pacman-key --init && pacstrap -K /mnt base base-devel linux linux-firmware grub efibootmgr networkmanager
 
 message "Generating fstab file"
 genfstab -U /mnt >> /mnt/etc/fstab
