@@ -26,22 +26,22 @@ do
 	sleep 1
 done
 
+message "Reading user input data"
+echo -en "${BOLD}> Enter the path to the disk that needs to be partitioned: ${RESET}"
+read disk_name
+echo -en "${BOLD}> How much swap memory (in GB) do you want?${RESET} "
+read amount_swap
+echo -en "${BOLD}> Specify a hostname for your machine: ${RESET} "
+read hostname
+
 message "Setting up the system clock"
 timedatectl set-ntp true
 
 message "Enabling parallel downloads for pacstrap"
 sed -i "s/#ParallelDownloads = 5/ParallelDownloads = 5/g" /etc/pacman.conf
 
-echo -en "${BOLD}> Enter the path to the disk that needs to be partitioned: ${RESET}"
-read disk_name
-if [[ -z ${disk_name} ]]; then
-	echo -e "${RED}> FATAL: No disk provided to be partitioned, cannot proceed!${RESET}"
-	exit
-fi
 
 message "Partitioning the disk"
-echo -en "${BOLD}> How much swap memory (in GB) do you want?${RESET} "
-read amount_swap
 sgdisk -n 1::+512M -t 1:ef00 "${disk_name}"
 sgdisk -n 2::+"${amount_swap}"G -t 2:8200 "${disk_name}"
 sgdisk -n 3:: -t 3:8300 "${disk_name}"
@@ -72,8 +72,6 @@ arch-chroot /mnt locale-gen
 arch-chroot /mnt echo "LANG=en_US.UTF-8" | tee -a /mnt/etc/locale.conf
 
 message "Setting the hostname"
-echo -n "Please, specify a hostname: "
-read hostname
 arch-chroot /mnt touch /etc/hostname
 arch-chroot /mnt echo "${hostname}" | tee -a /mnt/etc/hostname
 
