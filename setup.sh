@@ -25,6 +25,8 @@ do
 	sleep 1
 done
 
+username="mateus"
+
 message "Reading user input data"
 echo -en "${BOLD}> Enter the path to the disk that needs to be partitioned: ${RESET}"
 read disk_name
@@ -32,6 +34,10 @@ echo -en "${BOLD}> Enter the amount of swap memory (in GB) you want: ${RESET} "
 read amount_swap
 echo -en "${BOLD}> Specify a hostname for your machine: ${RESET} "
 read hostname
+echo -en "${BOLD}> Choose your root password: ${RESET} "
+read -s root_password
+echo -en "${BOLD}> Choose the password for the main user ${username}: ${RESET} "
+read -s main_user_password
 
 message "Setting up the system clock"
 timedatectl set-ntp true
@@ -75,7 +81,7 @@ arch-chroot /mnt touch /etc/hostname
 arch-chroot /mnt echo "${hostname}" | tee -a /mnt/etc/hostname
 
 message "Setting the new root password"
-arch-chroot /mnt passwd
+arch-chroot /mnt echo "root:${root_password}" | arch-chroot /mnt chpasswd
 
 message "Enabling parallel downloads for pacman"
 arch-chroot /mnt sed -i "s/#ParallelDownloads = 5/ParallelDownloads = 5/g" /etc/pacman.conf
@@ -91,9 +97,9 @@ arch-chroot /mnt grub-mkconfig -o /boot/grub/grub.cfg
 message "Enabling services"
 arch-chroot /mnt systemctl enable NetworkManager
 
-username="mateus"
 message "Adding new user ${username}"
-arch-chroot /mnt useradd -m "${username}" && arch-chroot /mnt passwd "${username}"
+arch-chroot /mnt useradd -m "${username}" && \
+  arch-chroot echo "${username}:${main_user_password}" | arch-chroot /mnt chpasswd
 
 message "Giving new user sudo privileges"
 arch-chroot /mnt sed -i "s/# %wheel ALL=(ALL:ALL) ALL/%wheel ALL=(ALL:ALL) ALL/" /etc/sudoers \
@@ -103,8 +109,8 @@ message "Setting new user's shell to fish"
 arch-chroot /mnt chsh -s /usr/bin/fish "${username}"
 
 message "Downloading and installing yay"
-arch-chroot /mnt runuser -l "${username}" -c "mkdir -p ~/.aur"
-arch-chroot /mnt runuser -l "${username}" -c "git clone https://aur.archlinux.org/yay.git ~/.aur && cd ~/.aur/yay && makepkg -sirc"
+arch-chroot /mnt runuser -l "${username}" -c "mkdir -p ~/.aur/yay"
+arch-chroot /mnt runuser -l "${username}" -c "git clone https://aur.archlinux.org/yay.git ~/.aur/yay && cd ~/.aur/yay && makepkg -sirc"
 
 message "Installing AUR packages with yay"
 arch-chroot /mnt runuser -l "${username}" -c "curl https://raw.githubusercontent.com/melosomelo/dotfiles/main/packages/aur.txt > aur.txt && yay -S $(cat ./aur.txt) --noconfirm && rm aur.txt"
