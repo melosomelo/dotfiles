@@ -109,14 +109,11 @@ message "Setting new user's shell to fish"
 arch-chroot /mnt chsh -s /usr/bin/fish "${username}"
 
 message "Downloading and installing yay"
-arch-chroot /mnt runuser -l "${username}" -c "mkdir -p ~/.aur/yay"
-arch-chroot /mnt runuser -l "${username}" -c "git clone https://aur.archlinux.org/yay.git ~/.aur/yay && cd ~/.aur/yay && makepkg -sirc"
+arch-chroot /mnt runuser -l -u $username mkdir -p ~/.aur/yay
+arch-chroot /mnt runuser -l "${username}" -c "git clone https://aur.archlinux.org/yay.git ~/.aur/yay && cd ~/.aur/yay && makepkg -src && echo ${main_user_password} | sudo -S pacman -U $(*.pkg.tar.zst)"
 
 message "Installing AUR packages with yay"
 arch-chroot /mnt runuser -l "${username}" -c "curl https://raw.githubusercontent.com/melosomelo/dotfiles/main/packages/aur.txt > aur.txt && yay -S $(cat ./aur.txt) --noconfirm && rm aur.txt"
-
-curl https://raw.githubusercontent.com/melosomelo/dotfiles/main/packages/official.txt > official.txt \
-	&& arch-chroot /mnt pacman -S $(cat ./official.txt) --noconfirm && rm official.txt
 
 DOTFILES_DIR="/home/${username}/dotfiles"
 message "Downloading dotfiles"
@@ -130,14 +127,13 @@ arch-chroot /mnt runuser -l "${username}" -c "ln -s ${DOTFILES_DIR}/nvim .config
 arch-chroot /mnt runuser -l "${username}" -c "mkdir -p .config/fish && ln -s ${DOTFILES_DIR}/fish/config.fish .config/fish/config.fish && ln -s ${DOTFILES_DIR}/fish/functions .config/fish/functions"
 arch-chroot /mnt runuser -l "${username}" -c "sudo -S mkdir -p /etc/pacman.d/hooks && sudo ln -s ${DOTFILES_DIR}/pacman/hooks/save_package_list.hook /etc/pacman.d/hooks/save_package_list.hook"
 
-message "Setting up XDG user directories"
-arch-chroot /mnt runuser -l "${username}" -c "cp ${DOTFILES_DIR}/misc/user-dirs.dirs .config && xdg-user-dirs-update"
-
 message "Installing Oh My Fish"
 arch-chroot /mnt runuser -l "${username}" -c 'curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install > omf_install && fish omf_install --noninteractive --path=~/.local/opt/omf --config=~/.config/omf && rm omf_install'
 
 message "Setting Oh My Fish theme"
 arch-chroot /mnt runuser -l "${username}" -c 'omf install l && omf theme l'
 
+message "Setting up XDG user directories"
+arch-chroot /mnt runuser -l "${username}" -c "cp ${DOTFILES_DIR}/misc/user-dirs.dirs .config && xdg-user-dirs-update"
 
 echo -e "${BOLD}Setup done! Reboot your machine!${RESET}"
