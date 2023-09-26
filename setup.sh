@@ -15,7 +15,6 @@ message(){
 }
 
 # Start of the script
-
 set -e
 echo -e "${BOLD}> ${CYAN}Arch Linux${RESET}${BOLD} setup script"
 echo -e "${BOLD}> Written by ${CYAN}Mateus Nascimento${RESET}${BOLD} (https://mateusm.dev)"
@@ -29,7 +28,7 @@ done
 message "Reading user input data"
 echo -en "${BOLD}> Enter the path to the disk that needs to be partitioned: ${RESET}"
 read disk_name
-echo -en "${BOLD}> How much swap memory (in GB) do you want?${RESET} "
+echo -en "${BOLD}> Enter the amount of swap memory (in GB) you want: ${RESET} "
 read amount_swap
 echo -en "${BOLD}> Specify a hostname for your machine: ${RESET} "
 read hostname
