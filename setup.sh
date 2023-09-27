@@ -25,9 +25,6 @@ do
 	sleep 1
 done
 
-
-message "Reading user input data"
-
 message "Setting up the system clock"
 timedatectl set-ntp true
 
@@ -54,7 +51,7 @@ mount --mkdir "${disk_name}1" /mnt/boot
 swapon "${disk_name}2"
 
 message "Installing base system"
-pacman-key --init && pacstrap -K /mnt base base-devel linux linux-firmware grub efibootmgr networkmanager
+pacstrap -K /mnt base base-devel linux linux-firmware grub efibootmgr networkmanager
 
 message "Generating fstab file"
 genfstab -U /mnt >> /mnt/etc/fstab
