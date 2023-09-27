@@ -40,7 +40,7 @@ git clone https://github.com/melosomelo/dotfiles $DOTFILES_DIR && cd $DOTFILES_D
 message "Setting up symbolic links"
 mkdir -p $HOMEDIR/.config && \
   ln -s $DOTFILES_DIR/X11/.xinitrc .xinitrc && \
-  ln -s $DOTFILES_DIR/alacritty .config/alacritty && \
+  ln -s $DOTFILES_DIR/alacritty $HOMEDIR/.config/alacritty && \
   ln -s $DOTFILES_DIR/nvim .config/nvim && \
   mkdir -p $HOMEDIR/.config/fish && ln -s ${DOTFILES_DIR}/fish/config.fish $HOMEDIR/.config/fish/config.fish && \
     ln -s ${DOTFILES_DIR}/fish/functions $HOMEDIR/.config/fish/functions && \
@@ -49,7 +49,7 @@ mkdir -p $HOMEDIR/.config && \
 
 message "Installing Oh My Fish"
 curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install > $HOMEDIR/omf_install && \
-  /usr/bin/fish omf_install --noninteractive --path=$HOMEDIR/.local/opt/omf --config=$HOMEDIR/.config/omf && \
+  /usr/bin/fish $HOMEDIR/omf_install --noninteractive --path=$HOMEDIR/.local/opt/omf --config=$HOMEDIR/.config/omf && \
   rm $HOMEDIR/omf_install
 
 message "Setting Oh My Fish theme"
@@ -59,4 +59,4 @@ message "Downloading and installing yay"
 mkdir -p $HOMEDIR/.aur/yay
 git clone https://aur.archlinux.org/yay.git $HOMEDIR/.aur/yay
 cd $HOMEDIR/.aur/yay
-makepkg -sirc
+makepkg -sirc --noconfirm
