@@ -24,11 +24,11 @@ done
 message "Enabling parallel downloads for pacman"
 sudo sed -i "s/#ParallelDownloads = 5/ParallelDownloads = 5/g" /etc/pacman.conf
 
-message "Installing additional official packages"
-curl https://raw.githubusercontent.com/melosomelo/dotfiles/main/packages/official.txt > official.txt \
-	&& sudo pacman -S $(cat ./official.txt) --noconfirm && rm official.txt
-
 username="mateus"
+message "Installing additional official packages"
+curl https://raw.githubusercontent.com/melosomelo/dotfiles/main/packages/official.txt > official.txt
+sudo pacman -S $(cat /home/$username/official.txt) --noconfirm && rm official.txt
+
 message "Setting new user's shell to fish"
 chsh -s /usr/bin/fish
 
