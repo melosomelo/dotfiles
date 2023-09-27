@@ -122,10 +122,10 @@ arch-chroot /mnt runuser -l "${username}" -c 'curl https://raw.githubusercontent
 message "Setting Oh My Fish theme"
 arch-chroot /mnt runuser -l "${username}" -c 'omf install l && omf theme l'
 
-# message "Downloading and installing yay"
-# arch-chroot /mnt runuser -l "${username}" -c "mkdir -p ~/.aur/yay"
-# arch-chroot /mnt runuser -l "${username}" -c "git clone https://aur.archlinux.org/yay.git ~/.aur/yay"
-# arch-chroot /mnt runuser -P -l "${username}" -c "cd ~/.aur/yay && makepkg -sirc"
+message "Downloading and installing yay"
+arch-chroot /mnt runuser -l "${username}" -c "mkdir -p ~/.aur/yay"
+arch-chroot /mnt runuser -l "${username}" -c "git clone https://aur.archlinux.org/yay.git ~/.aur/yay"
+arch-chroot /mnt runuser -P -l "${username}" -c "cd ~/.aur/yay && makepkg -sirc"
 #
 # message "Installing AUR packages with yay"
 # arch-chroot /mnt runuser -l "${username}" -c "curl https://raw.githubusercontent.com/melosomelo/dotfiles/main/packages/aur.txt > aur.txt && yay -S $(cat ./aur.txt) --noconfirm && rm aur.txt"
