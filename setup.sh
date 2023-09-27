@@ -107,13 +107,6 @@ arch-chroot /mnt sed -i "s/# %wheel ALL=(ALL:ALL) ALL/%wheel ALL=(ALL:ALL) ALL/"
 message "Setting new user's shell to fish"
 arch-chroot /mnt chsh -s /usr/bin/fish "${username}"
 
-message "Downloading and installing yay"
-arch-chroot /mnt runuser -l -u $username mkdir -p ~/.aur/yay
-arch-chroot /mnt runuser -l "${username}" -c "git clone https://aur.archlinux.org/yay.git ~/.aur/yay && cd ~/.aur/yay && makepkg -src && echo ${main_user_password} | sudo -S pacman -U $(*.pkg.tar.zst)"
-
-message "Installing AUR packages with yay"
-arch-chroot /mnt runuser -l "${username}" -c "curl https://raw.githubusercontent.com/melosomelo/dotfiles/main/packages/aur.txt > aur.txt && yay -S $(cat ./aur.txt) --noconfirm && rm aur.txt"
-
 DOTFILES_DIR="/home/${username}/dotfiles"
 message "Downloading dotfiles"
 arch-chroot /mnt runuser -l "${username}" -c "git clone https://github.com/melosomelo/dotfiles && cd ${DOTFILES_DIR} && git submodule init && git submodule update"
@@ -132,7 +125,15 @@ arch-chroot /mnt runuser -l "${username}" -c 'curl https://raw.githubusercontent
 message "Setting Oh My Fish theme"
 arch-chroot /mnt runuser -l "${username}" -c 'omf install l && omf theme l'
 
-message "Setting up XDG user directories"
-arch-chroot /mnt runuser -l "${username}" -c "cp ${DOTFILES_DIR}/misc/user-dirs.dirs .config && xdg-user-dirs-update"
+# message "Downloading and installing yay"
+# arch-chroot /mnt runuser -l "${username}" -c "mkdir -p ~/.aur/yay"
+# arch-chroot /mnt runuser -l "${username}" -c "git clone https://aur.archlinux.org/yay.git ~/.aur/yay"
+# arch-chroot /mnt runuser -P -l "${username}" -c "cd ~/.aur/yay && makepkg -sirc"
+#
+# message "Installing AUR packages with yay"
+# arch-chroot /mnt runuser -l "${username}" -c "curl https://raw.githubusercontent.com/melosomelo/dotfiles/main/packages/aur.txt > aur.txt && yay -S $(cat ./aur.txt) --noconfirm && rm aur.txt"
+#
+# message "Setting up XDG user directories"
+# arch-chroot /mnt runuser -l "${username}" -c "cp ${DOTFILES_DIR}/misc/user-dirs.dirs .config && xdg-user-dirs-update"
 
 echo -e "${BOLD}Setup done! Reboot your machine!${RESET}"
