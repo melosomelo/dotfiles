@@ -35,29 +35,12 @@ and `setup.sh`. `install.sh` performs the basic system installation as per the
 and creates a new sudo user named `mateus`, while `setup.sh` installs and configures the relevant
 pieces of software.
 
-## Setup script
-
-The `setup.sh` script performs the Arch Linux installation and also sets up my dotfiles
-for the installed applications.
-
-To use it, boot into the Arch Linux installation image,
-[make sure you're connected to the internet](https://wiki.archlinux.org/title/installation_guide#Connect_to_the_internet)
-and then execute the following command:
+To start the installation, execute the following command:
 
 ```
-curl https://raw.githubusercontent.com/melosomelo/dotfiles/main/setup.sh > setup.sh && chmod +x ./setup.sh && ./setup.sh
+curl https://raw.githubusercontent.com/melosomelo/dotfiles/main/install.sh > install.sh && chmod +x ./install.sh && ./install.sh
 ```
 
-The script will prompt you for some information, such as the path
-of the disk you want to partition, the hostname, the name of the new user other than sudo, the
-password for that new user, etc.
+After the installation is complete, the script will prompt you to check if you want to download
+and execute the setup script.
 
-Beware the this script **is currently not resilient against
-faulty user input**. This means that if
-you provide a wrong path to a disk or make a mistake when specifying the
-password and thus cause an error,
-the script will simply halt and will start from the beginning if you execute it
-again. Since some commands here are not idempotent, my guess is that you may end up with an invalid
-installation. But I don't know, I haven't tested such scenarios. In any case, if you make some mistakes,
-just restart the installation from scratch. I'll eventually improve this script to deal with
-such scenarios.

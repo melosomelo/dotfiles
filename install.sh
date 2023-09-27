@@ -91,7 +91,7 @@ message "Giving new user sudo privileges"
 arch-chroot /mnt sed -i "s/# %wheel ALL=(ALL:ALL) ALL/%wheel ALL=(ALL:ALL) ALL/" /etc/sudoers \
 	&& arch-chroot /mnt usermod -aG wheel "${username}"
 
-echo -en "${BOLD}Installation is done! Would you like to run the setup now? (Y/n)"
+echo -en "${BOLD}Installation is complete! Would you like to run the setup now? (Y/n)"
 read install_setup
 if [ install_setup = "Y" ]; then
   message "Downloading setup script"
