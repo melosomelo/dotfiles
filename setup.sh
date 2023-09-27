@@ -22,7 +22,7 @@ do
 done
 
 message "Enabling parallel downloads for pacman"
-sed -i "s/#ParallelDownloads = 5/ParallelDownloads = 5/g" /etc/pacman.conf
+sudo sed -i "s/#ParallelDownloads = 5/ParallelDownloads = 5/g" /etc/pacman.conf
 
 message "Installing additional official packages"
 curl https://raw.githubusercontent.com/melosomelo/dotfiles/main/packages/official.txt > official.txt \
@@ -30,7 +30,7 @@ curl https://raw.githubusercontent.com/melosomelo/dotfiles/main/packages/officia
 
 username="mateus"
 message "Setting new user's shell to fish"
-chsh -s /usr/bin/fish "${username}"
+chsh -s /usr/bin/fish
 
 HOMEDIR="/home/${username}"
 DOTFILES_DIR="${HOMEDIR}/dotfiles"
@@ -44,8 +44,8 @@ mkdir -p .config && \
   ln -s ${DOTFILES_DIR}/nvim .config/nvim && \
   mkdir -p .config/fish && ln -s ${DOTFILES_DIR}/fish/config.fish .config/fish/config.fish && \
     ln -s ${DOTFILES_DIR}/fish/functions .config/fish/functions && \
-  mkdir -p /etc/pacman.d/hooks && \
-    ln -s ${DOTFILES_DIR}/pacman/hooks/save_package_list.hook /etc/pacman.d/hooks/save_package_list.hook
+  sudo mkdir -p /etc/pacman.d/hooks && \
+    sudo ln -s ${DOTFILES_DIR}/pacman/hooks/save_package_list.hook /etc/pacman.d/hooks/save_package_list.hook
 
 message "Installing Oh My Fish"
 curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install > omf_install && \
@@ -58,4 +58,5 @@ omf install l && omf theme l
 message "Downloading and installing yay"
 mkdir -p $HOMEDIR/.aur/yay
 git clone https://aur.archlinux.org/yay.git $HOMEDIR/.aur/yay
-cd $HOMEDIR/.aur/yay && makepkg -sirc
+cd $HOMEDIR/.aur/yay
+makepkg -sirc
