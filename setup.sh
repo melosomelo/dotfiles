@@ -35,22 +35,22 @@ chsh -s /usr/bin/fish
 HOMEDIR="/home/${username}"
 DOTFILES_DIR="${HOMEDIR}/dotfiles"
 message "Downloading dotfiles"
-git clone https://github.com/melosomelo/dotfiles && cd ${DOTFILES_DIR} && git submodule init && git submodule update
+git clone https://github.com/melosomelo/dotfiles $DOTFILES_DIR && cd $DOTFILES_DIR && git submodule init && git submodule update
 
 message "Setting up symbolic links"
-mkdir -p .config && \
-  ln -s ${DOTFILES_DIR}/X11/.xinitrc .xinitrc && \
-  ln -s ${DOTFILES_DIR}/alacritty .config/alacritty && \
-  ln -s ${DOTFILES_DIR}/nvim .config/nvim && \
-  mkdir -p .config/fish && ln -s ${DOTFILES_DIR}/fish/config.fish .config/fish/config.fish && \
-    ln -s ${DOTFILES_DIR}/fish/functions .config/fish/functions && \
+mkdir -p $HOMEDIR/.config && \
+  ln -s $DOTFILES_DIR/X11/.xinitrc .xinitrc && \
+  ln -s $DOTFILES_DIR/alacritty .config/alacritty && \
+  ln -s $DOTFILES_DIR/nvim .config/nvim && \
+  mkdir -p $HOMEDIR/.config/fish && ln -s ${DOTFILES_DIR}/fish/config.fish $HOMEDIR/.config/fish/config.fish && \
+    ln -s ${DOTFILES_DIR}/fish/functions $HOMEDIR/.config/fish/functions && \
   sudo mkdir -p /etc/pacman.d/hooks && \
     sudo ln -s ${DOTFILES_DIR}/pacman/hooks/save_package_list.hook /etc/pacman.d/hooks/save_package_list.hook
 
 message "Installing Oh My Fish"
-curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install > omf_install && \
-  fish omf_install --noninteractive --path=~/.local/opt/omf --config=~/.config/omf && \
-  rm omf_install
+curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install > $HOMEDIR/omf_install && \
+  /usr/bin/fish omf_install --noninteractive --path=$HOMEDIR/.local/opt/omf --config=$HOMEDIR/.config/omf && \
+  rm $HOMEDIR/omf_install
 
 message "Setting Oh My Fish theme"
 omf install l && omf theme l
