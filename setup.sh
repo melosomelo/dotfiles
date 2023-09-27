@@ -26,8 +26,8 @@ sudo sed -i "s/#ParallelDownloads = 5/ParallelDownloads = 5/g" /etc/pacman.conf
 
 username="mateus"
 message "Installing additional official packages"
-sudo curl https://raw.githubusercontent.com/melosomelo/dotfiles/main/packages/official.txt > official.txt
-sudo pacman -S $(cat official.txt) --noconfirm && rm official.txt
+sudo curl https://raw.githubusercontent.com/melosomelo/dotfiles/main/packages/official.txt > /home/$username/official.txt
+sudo pacman -S $(cat home/$username/official.txt) --noconfirm && rm /home/$username/official.txt
 
 message "Setting new user's shell to fish"
 chsh -s /usr/bin/fish
