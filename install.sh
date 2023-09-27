@@ -96,9 +96,5 @@ read install_setup
 if [ install_setup = "Y" ]; then
   message "Downloading setup script"
   curl https://raw.githubusercontent.com/melosomelo/dotfiles/main/setup.sh > setup.sh && \
-    chmod +x ./setup.sh && mv ./setup.sh /mnt/home/$username
-
-  curl https://raw.githubusercontent.com/melosomelo/dotfiles/setup.sh > setup.sh && chmod +x ./setup.sh
-  message "Running setup script as user ${username}"
-  arch-chroot /mnt runuser -l "${username} -c
+    chmod +x ./setup.sh
 fi
