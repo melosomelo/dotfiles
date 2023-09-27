@@ -100,7 +100,7 @@ if [ "$install_setup" == "Y" ]; then
   curl https://raw.githubusercontent.com/melosomelo/dotfiles/main/setup.sh > setup.sh
   chmod +x ./setup.sh
   mv ./setup.sh /mnt/home/$username
-  # arch-chroot /mnt runuser -u $username -- bash /home/$username/setup.sh
+  arch-chroot /mnt runuser -u $username -- bash /home/$username/setup.sh
 else
   log "Skipping setup. Remember to execute it later as the newly added $username user!"
 fi
