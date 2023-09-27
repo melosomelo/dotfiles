@@ -25,19 +25,8 @@ do
 	sleep 1
 done
 
-username="mateus"
 
 message "Reading user input data"
-echo -en "${BOLD}> Enter the path to the disk that needs to be partitioned: ${RESET}"
-read disk_name
-echo -en "${BOLD}> Enter the amount of swap memory (in GB) you want: ${RESET} "
-read amount_swap
-echo -en "${BOLD}> Specify a hostname for your machine: ${RESET} "
-read hostname
-echo -en "${BOLD}> Choose your root password: ${RESET} "
-read -s root_password
-echo -en "${BOLD}> Choose the password for the main user ${username}: ${RESET} "
-read -s main_user_password
 
 message "Setting up the system clock"
 timedatectl set-ntp true
@@ -46,7 +35,11 @@ message "Enabling parallel downloads for pacstrap"
 sed -i "s/#ParallelDownloads = 5/ParallelDownloads = 5/g" /etc/pacman.conf
 
 message "Partitioning the disk"
+echo -en "${BOLD}> Enter the path to the disk that needs to be partitioned: ${RESET}"
+read disk_name
 sgdisk -n 1::+512M -t 1:ef00 "${disk_name}"
+echo -en "${BOLD}> Enter the amount of swap memory (in GB) you want: ${RESET} "
+read amount_swap
 sgdisk -n 2::+"${amount_swap}"G -t 2:8200 "${disk_name}"
 sgdisk -n 3:: -t 3:8300 "${disk_name}"
 
@@ -76,11 +69,13 @@ arch-chroot /mnt locale-gen
 arch-chroot /mnt echo "LANG=en_US.UTF-8" | tee -a /mnt/etc/locale.conf
 
 message "Setting the hostname"
+echo -en "${BOLD}> Specify a hostname for your machine: ${RESET} "
+read hostname
 arch-chroot /mnt touch /etc/hostname
 arch-chroot /mnt echo "${hostname}" | tee -a /mnt/etc/hostname
 
 message "Setting the new root password"
-arch-chroot /mnt echo "root:${root_password}" | arch-chroot /mnt chpasswd
+arch-chroot /mnt passwd
 
 message "Enabling parallel downloads for pacman"
 arch-chroot /mnt sed -i "s/#ParallelDownloads = 5/ParallelDownloads = 5/g" /etc/pacman.conf
@@ -96,9 +91,14 @@ arch-chroot /mnt grub-mkconfig -o /boot/grub/grub.cfg
 message "Enabling services"
 arch-chroot /mnt systemctl enable NetworkManager
 
+# Values is fixed as of now due to the pacman hook that saves the list of installed packages.
+# Will fix this later (maybe).
+username="mateus"
 message "Adding new user ${username}"
-arch-chroot /mnt useradd -m "${username}" && \
-  arch-chroot echo "${username}:${main_user_password}" | arch-chroot /mnt chpasswd
+arch-chroot /mnt useradd -m "${username}"
+
+message "Setting password for new user ${username}"
+arch-chroot /mnt passwd ${username}
 
 message "Giving new user sudo privileges"
 arch-chroot /mnt sed -i "s/# %wheel ALL=(ALL:ALL) ALL/%wheel ALL=(ALL:ALL) ALL/" /etc/sudoers \
