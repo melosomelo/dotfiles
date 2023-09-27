@@ -27,6 +27,14 @@
       enable its service to periodically run.~
 - [x] ~Install `yay` during `setup.sh`~
 
+## Install and setup scripts
+
+There are two main scripts to setup an Arch Linux instance based on this config: `install.sh`
+and `setup.sh`. `install.sh` performs the basic system installation as per the
+[Arch Linux installation guide](https://wiki.archlinux.org/title/installation_guide)
+and creates a new sudo user named `mateus`, while `setup.sh` installs and configures the relevant
+pieces of software.
+
 ## Setup script
 
 The `setup.sh` script performs the Arch Linux installation and also sets up my dotfiles
