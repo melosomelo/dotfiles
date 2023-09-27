@@ -37,9 +37,9 @@ sed -i "s/#ParallelDownloads = 5/ParallelDownloads = 5/g" /etc/pacman.conf
 message "Partitioning the disk"
 echo -en "${BOLD}> Enter the path to the disk that needs to be partitioned: ${RESET}"
 read disk_name
-sgdisk -n 1::+512M -t 1:ef00 "${disk_name}"
 echo -en "${BOLD}> Enter the amount of swap memory (in GB) you want: ${RESET} "
 read amount_swap
+sgdisk -n 1::+512M -t 1:ef00 "${disk_name}"
 sgdisk -n 2::+"${amount_swap}"G -t 2:8200 "${disk_name}"
 sgdisk -n 3:: -t 3:8300 "${disk_name}"
 
