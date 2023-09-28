@@ -22,7 +22,7 @@
 - [ ] Configure clibpoard with support for texts and images
 - [ ] Configure screenshot and investigate integration with clipboard
 - [ ] Add git authentication to `setup.sh` script.
-- [x] ~Add `xdg-user-dirs` configuration to `setup.sh` script.~
+- [ ] Add `xdg-user-dirs` configuration to `setup.sh` script.
 - [x] ~Create fish function to update mirror list with `reflector` and also
       enable its service to periodically run.~
 - [x] ~Install `yay` during `setup.sh`~
