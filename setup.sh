@@ -26,7 +26,6 @@ sudo sed -i "s/#ParallelDownloads = 5/ParallelDownloads = 5/g" /etc/pacman.conf
 
 username="mateus"
 HOMEDIR="/home/${username}"
-DOTFILES_DIR="${HOMEDIR}/dotfiles"
 
 message "Installing additional official packages"
 curl https://raw.githubusercontent.com/melosomelo/dotfiles/main/packages/official.txt > /home/$username/official.txt
@@ -50,9 +49,11 @@ curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install 
   /usr/bin/fish $HOMEDIR/omf_install --noninteractive --path=$HOMEDIR/.local/opt/omf --config=$HOMEDIR/.config/omf && \
   rm $HOMEDIR/omf_install
 
+# This is not working for some reason
 # message "Setting Oh My Fish theme"
 # omf install l && omf theme l
 
+DOTFILES_DIR="${HOMEDIR}/dotfiles"
 message "Downloading dotfiles"
 git clone https://github.com/melosomelo/dotfiles $DOTFILES_DIR && cd $DOTFILES_DIR && git submodule init && git submodule update
 
@@ -65,5 +66,8 @@ mkdir -p $HOMEDIR/.config && \
     ln -s ${DOTFILES_DIR}/fish/functions $HOMEDIR/.config/fish/functions && \
   sudo mkdir -p /etc/pacman.d/hooks && \
     sudo ln -s ${DOTFILES_DIR}/pacman/hooks/save_package_list.hook /etc/pacman.d/hooks/save_package_list.hook
+
+message "Setting up XDG user directories"
+cp ${DOTFILES_DIR}/misc/user-dirs.dirs $HOMEDIR/.config && xdg-user-dirs-update
 
 echo -e "${BOLD}> Setup is complete! Reboot your system and enjoy!${RESET}"

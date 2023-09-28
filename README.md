@@ -35,12 +35,14 @@ and `setup.sh`. `install.sh` performs the basic system installation as per the
 and creates a new sudo user named `mateus`, while `setup.sh` installs and configures the relevant
 pieces of software.
 
-To start the installation, execute the following command:
+To perform the installation, execute the following command:
 
 ```
 curl https://raw.githubusercontent.com/melosomelo/dotfiles/main/install.sh > install.sh && chmod +x ./install.sh && ./install.sh
 ```
 
 After the installation is complete, the script will prompt you to check if you want to download
-and execute the setup script.
+and execute the `setup.sh` script. If you want to perform the setup later, download the
+script just as previously with `install.sh` and **make sure to execute the script as the newly
+created user!**
 
