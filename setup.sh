@@ -70,8 +70,5 @@ mkdir -p $HOMEDIR/.config && \
 message "Setting up XDG user directories"
 cp ${DOTFILES_DIR}/misc/user-dirs.dirs $HOMEDIR/.config
 
-message "Setting the wallpaper"
-feh --bg-scale $DOTFILES_DIR/wallpapers/purple_sky.png
-
 echo -e "${BOLD}> Setup is complete! Reboot your system and enjoy!${RESET}"
 rm -- "$0"
