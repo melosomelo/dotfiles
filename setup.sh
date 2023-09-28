@@ -25,15 +25,34 @@ message "Enabling parallel downloads for pacman"
 sudo sed -i "s/#ParallelDownloads = 5/ParallelDownloads = 5/g" /etc/pacman.conf
 
 username="mateus"
+HOMEDIR="/home/${username}"
+DOTFILES_DIR="${HOMEDIR}/dotfiles"
+
 message "Installing additional official packages"
 curl https://raw.githubusercontent.com/melosomelo/dotfiles/main/packages/official.txt > /home/$username/official.txt
 sudo pacman -S $(cat home/$username/official.txt) --noconfirm && rm /home/$username/official.txt
 
+message "Downloading and installing yay"
+mkdir -p $HOMEDIR/.aur/yay
+git clone https://aur.archlinux.org/yay.git $HOMEDIR/.aur/yay
+cd $HOMEDIR/.aur/yay
+makepkg -sirc --noconfirm
+
+message "Downloading AUR packages with yay"
+curl https://raw.githubusercontent.com/melosomelo/dotfiles/main/packages/aur.txt > $HOMEDIR/aur.txt
+sudo yay -S $(cat $HOMEDIR/aur.txt) --noconfirm && rm $HOMEDIR/aur.txt
+
 message "Setting new user's shell to fish"
 chsh -s /usr/bin/fish
 
-HOMEDIR="/home/${username}"
-DOTFILES_DIR="${HOMEDIR}/dotfiles"
+message "Installing Oh My Fish"
+curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install > $HOMEDIR/omf_install && \
+  /usr/bin/fish $HOMEDIR/omf_install --noninteractive --path=$HOMEDIR/.local/opt/omf --config=$HOMEDIR/.config/omf && \
+  rm $HOMEDIR/omf_install
+
+# message "Setting Oh My Fish theme"
+# omf install l && omf theme l
+
 message "Downloading dotfiles"
 git clone https://github.com/melosomelo/dotfiles $DOTFILES_DIR && cd $DOTFILES_DIR && git submodule init && git submodule update
 
@@ -41,22 +60,10 @@ message "Setting up symbolic links"
 mkdir -p $HOMEDIR/.config && \
   ln -s $DOTFILES_DIR/X11/.xinitrc .xinitrc && \
   ln -s $DOTFILES_DIR/alacritty $HOMEDIR/.config/alacritty && \
-  ln -s $DOTFILES_DIR/nvim .config/nvim && \
+  ln -s $DOTFILES_DIR/nvim $HOMEDIR/.config/nvim && \
   mkdir -p $HOMEDIR/.config/fish && ln -s ${DOTFILES_DIR}/fish/config.fish $HOMEDIR/.config/fish/config.fish && \
     ln -s ${DOTFILES_DIR}/fish/functions $HOMEDIR/.config/fish/functions && \
   sudo mkdir -p /etc/pacman.d/hooks && \
     sudo ln -s ${DOTFILES_DIR}/pacman/hooks/save_package_list.hook /etc/pacman.d/hooks/save_package_list.hook
 
-message "Installing Oh My Fish"
-curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install > $HOMEDIR/omf_install && \
-  /usr/bin/fish $HOMEDIR/omf_install --noninteractive --path=$HOMEDIR/.local/opt/omf --config=$HOMEDIR/.config/omf && \
-  rm $HOMEDIR/omf_install
-
-message "Setting Oh My Fish theme"
-omf install l && omf theme l
-
-message "Downloading and installing yay"
-mkdir -p $HOMEDIR/.aur/yay
-git clone https://aur.archlinux.org/yay.git $HOMEDIR/.aur/yay
-cd $HOMEDIR/.aur/yay
-makepkg -sirc --noconfirm
+echo -e "${BOLD}> Setup is complete! Reboot your system and enjoy!${RESET}"
