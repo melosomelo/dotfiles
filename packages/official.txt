@@ -1,4 +1,5 @@
 alacritty
+bspwm
 code
 feh
 fish
@@ -13,6 +14,7 @@ python-pip
 python-pywal
 reflector
 rustup
+sxhkd
 ttf-firacode-nerd
 ttf-iawriter-nerd
 ttf-jetbrains-mono-nerd
