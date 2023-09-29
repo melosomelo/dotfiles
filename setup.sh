@@ -68,6 +68,11 @@ mkdir -p $HOMEDIR/.config && \
     sudo ln -s ${DOTFILES_DIR}/pacman/hooks/save_package_list.hook /etc/pacman.d/hooks/save_package_list.hook
 
 message "Setting up XDG user directories"
+<<<<<<< Updated upstream
+=======
+cp $DOTFILES_DIR/misc/user-dirs.dirs $HOMEDIR/.config
+cp $DOTFILES_DIR/misc/user-dirs.locale $HOMEDIR/.config
+>>>>>>> Stashed changes
 mkdir $HOMEDIR/downloads $HOMEDIR/documents $HOMEDIR/pictures $HOMEDIR/videos
 xdg-user-dirs-update --set DOWNLOAD $HOMEDIR/downloads
 xdg-user-dirs-update --set DOCUMENTS $HOMEDIR/documents
