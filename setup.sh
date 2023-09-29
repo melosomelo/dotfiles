@@ -76,7 +76,9 @@ mkdir -p $HOMEDIR/.config && \
     ln -s ${DOTFILES_DIR}/fish/functions $HOMEDIR/.config/fish/functions && \
   sudo mkdir -p /etc/pacman.d/hooks && \
     sudo ln -s ${DOTFILES_DIR}/pacman/hooks/save_package_list.hook /etc/pacman.d/hooks/save_package_list.hook && \
-  ln -s $DOTFILES_DIR/eww $HOMDIR/.config/eww
+  ln -s $DOTFILES_DIR/eww $HOMEDIR/.config/eww && \
+  ln -s $DOTFILES_DIR/bspwm $HOMEDIR/.config/bspwm && \
+  ln -s $DOTFILES_DIR/sxhkd $HOMEDIR/.config/sxhkd
 
 message "Setting up XDG user directories"
 mkdir $HOMEDIR/downloads $HOMEDIR/documents $HOMEDIR/pictures $HOMEDIR/videos
