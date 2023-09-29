@@ -52,6 +52,15 @@ curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install 
 message "Setting Oh My Fish theme"
 /usr/bin/fish -l -c "omf install l && omf theme l"
 
+message "Downloading Rust toolchain"
+rustup default stable
+
+message "Downloading and installing eww"
+git clone https://github.com/elkowar/eww $HOMEDIR/.local/opt/eww
+cd $HOMEDIR/.local/opt/eww && cargo build --release --no-default-features --features x11
+chmod +x $HOMEDIR/.local/opt/eww/target/release/eww
+sudo ln -s $HOMEDIR/.local/opt/eww/target/release/eww /usr/local/bin/eww
+
 DOTFILES_DIR="${HOMEDIR}/dotfiles"
 message "Downloading dotfiles"
 git clone https://github.com/melosomelo/dotfiles $DOTFILES_DIR && cd $DOTFILES_DIR && git submodule init && git submodule update
@@ -63,16 +72,12 @@ mkdir -p $HOMEDIR/.config && \
   ln -s $DOTFILES_DIR/nvim $HOMEDIR/.config/nvim && \
   ln -s $DOTFILES_DIR/i3 $HOMEDIR/.config/i3 && \
   mkdir -p $HOMEDIR/.config/fish && ln -s ${DOTFILES_DIR}/fish/config.fish $HOMEDIR/.config/fish/config.fish && \
+    rm -rf $DOTFILES_DIR/fish/functions && \
     ln -s ${DOTFILES_DIR}/fish/functions $HOMEDIR/.config/fish/functions && \
   sudo mkdir -p /etc/pacman.d/hooks && \
     sudo ln -s ${DOTFILES_DIR}/pacman/hooks/save_package_list.hook /etc/pacman.d/hooks/save_package_list.hook
 
 message "Setting up XDG user directories"
-<<<<<<< Updated upstream
-=======
-cp $DOTFILES_DIR/misc/user-dirs.dirs $HOMEDIR/.config
-cp $DOTFILES_DIR/misc/user-dirs.locale $HOMEDIR/.config
->>>>>>> Stashed changes
 mkdir $HOMEDIR/downloads $HOMEDIR/documents $HOMEDIR/pictures $HOMEDIR/videos
 xdg-user-dirs-update --set DOWNLOAD $HOMEDIR/downloads
 xdg-user-dirs-update --set DOCUMENTS $HOMEDIR/documents
