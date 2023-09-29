@@ -1,3 +1,5 @@
+(include "./bar/bar.yuck")
+
 (defwidget greeter [?text name]
   (box :orientation "horizontal"
        :halign "center"
