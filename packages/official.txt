@@ -21,6 +21,7 @@ ttf-jetbrains-mono-nerd
 xdg-user-dirs
 xorg-mkfontscale
 xorg-server
+xorg-xev
 xorg-xinit
 xorg-xlsfonts
 xorg-xset

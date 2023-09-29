@@ -37,5 +37,6 @@ fi
 
 ~/.fehbg & # set the background on startup
 xset r rate 250 20 #adjust key delay and repeat rate
-exec i3
+exec sxhkd
+exec bspwm
 
