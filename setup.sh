@@ -83,6 +83,11 @@ mkdir -p $HOMEDIR/.config && \
 message "Setting up XDG user directories"
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+cp $DOTFILES_DIR/misc/user-dirs.dirs $HOMEDIR/.config
+cp $DOTFILES_DIR/misc/user-dirs.locale $HOMEDIR/.config
+>>>>>>> Stashed changes
 =======
 cp $DOTFILES_DIR/misc/user-dirs.dirs $HOMEDIR/.config
 cp $DOTFILES_DIR/misc/user-dirs.locale $HOMEDIR/.config
