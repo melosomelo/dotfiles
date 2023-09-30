@@ -12,9 +12,9 @@
     - [ ] Define cache cleaning strategy
     - [ ] Define backup strategy
 - [ ] Picom
+    - [ ] Determine how to enable blur in VirtualBox guest host
     - [ ] Configure `picom`
     - [ ] Add picom configuration to `setup.sh`
-    - [ ] Find a way to add rounded borders with i3 or switch to another window manager
 - [x] ~Add support for AUR packages~
   - [x] ~Create script to automatically download, build and install AUR packages~ (used `yay`)
   - [x] ~Add suport for installed AUR packages on the installed packages list~

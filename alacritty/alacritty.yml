@@ -10,6 +10,9 @@
 # to the user's home directory starting with `~/`.
 import:
   - ~/dotfiles/alacritty/themes/themes/challenger_deep.yaml
+colors:
+  primary:
+    background: '0x111517'
 
 # Any items in the `env` entry below will be added as
 # environment variables. Some entries may override variables
@@ -68,7 +71,7 @@ window:
   #
   # Window opacity as a floating point number from `0.0` to `1.0`.
   # The value `0.0` is completely transparent and `1.0` is opaque.
-  opacity: 1.0 
+  opacity: 1.0
 
   # Startup Mode (changes require restart)
   #
@@ -127,10 +130,10 @@ font:
   normal:
     family: JetBrainsMono Nerd Font
     style: Regular
-  bold: 
+  bold:
     family: JetBrainsMono Nerd Font
     style: Bold
-  italic: 
+  italic:
     family: JetBrainsMono Nerd Font
     style: Italic
   bold_italic:

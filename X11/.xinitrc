@@ -35,7 +35,8 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  unset f
 fi
 
-~/.fehbg & # set the background on startup
 xset r rate 250 20 #adjust key delay and repeat rate
+~/.fehbg & # set the background on startup
 sxhkd &
+picom &
 exec bspwm
