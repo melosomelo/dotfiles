@@ -8,11 +8,8 @@
 #
 # All imports must either be absolute paths starting with `/`, or paths relative
 # to the user's home directory starting with `~/`.
-import:
-  - ~/dotfiles/alacritty/themes/themes/challenger_deep.yaml
-colors:
-  primary:
-    background: '0x111517'
+# import:
+  # - ~/dotfiles/alacritty/themes/themes/challenger_deep.yaml
 
 # Any items in the `env` entry below will be added as
 # environment variables. Some entries may override variables

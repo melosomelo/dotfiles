@@ -1,4 +1,5 @@
 colorz
+flavours
 python-colorthief
 python-haishoku
 spotify
