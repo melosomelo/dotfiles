@@ -2,7 +2,7 @@
 function save_package_list
   cd $DOTFILES
   # save any unstaged/uncomitted changes and pull any new changes
-  git stash clean && git add . && git stash && git pull && git stash pop
+  git stash clear && git add . && git stash && git pull && git stash pop
   # Update the list of additional (not base system) packages
   pacman -Qqen | grep -v -E -e "base|base-devel|linux|linux-firmware|grub|efibootmgr|networkmanager" > packages/official.txt
   # AUR packages
