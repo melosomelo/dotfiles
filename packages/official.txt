@@ -11,8 +11,10 @@ neovim
 openssh
 parcellite
 picom
+python-pillow
 python-pip
 python-pywal
+python-scipy
 reflector
 rustup
 sxhkd
