@@ -81,21 +81,6 @@ mkdir -p $HOMEDIR/.config && \
   ln -s $DOTFILES_DIR/sxhkd $HOMEDIR/.config/sxhkd
 
 message "Setting up XDG user directories"
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
-cp $DOTFILES_DIR/misc/user-dirs.dirs $HOMEDIR/.config
-cp $DOTFILES_DIR/misc/user-dirs.locale $HOMEDIR/.config
->>>>>>> Stashed changes
-=======
-cp $DOTFILES_DIR/misc/user-dirs.dirs $HOMEDIR/.config
-cp $DOTFILES_DIR/misc/user-dirs.locale $HOMEDIR/.config
->>>>>>> Stashed changes
-=======
-cp $DOTFILES_DIR/misc/user-dirs.dirs $HOMEDIR/.config
-cp $DOTFILES_DIR/misc/user-dirs.locale $HOMEDIR/.config
->>>>>>> Stashed changes
 mkdir $HOMEDIR/downloads $HOMEDIR/documents $HOMEDIR/pictures $HOMEDIR/videos
 xdg-user-dirs-update --set DOWNLOAD $HOMEDIR/downloads
 xdg-user-dirs-update --set DOCUMENTS $HOMEDIR/documents
