@@ -14,3 +14,8 @@ if status is-login
     exec startx -- -keeptty
   end
 end
+
+if status is-interactive
+  # applying selected wal theme to new terminals
+  cat ~/.cache/wal/sequences
+end
