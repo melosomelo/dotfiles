@@ -36,9 +36,10 @@ and `setup.sh`. `install.sh` performs the basic system installation as per the
 and creates a new sudo user named `mateus`, while `setup.sh` installs and configures the relevant
 pieces of software.
 
-Before installing, make sure that you're connected to the Internet, that you have a disk
-attached that you to partition and that you know its path on the installation image
-filesystem.
+Before installing, make sure that:
+  - You have a disk attached that you want to partition and that you know its path
+    on the installation image filesystem (`/dev/something`)
+  - [You are connected to the Internet](https://wiki.archlinux.org/title/installation_guide#Connect_to_the_internet)
 
 To actually perform the installation, execute the following command:
 
