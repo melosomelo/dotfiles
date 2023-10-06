@@ -13,3 +13,6 @@ bspc config gapless_monocle      true
 
 # For now, position everything according to the window tree
 bspc rule -a * state=tiled
+
+# Initializing alttab window switcher
+alttab -w 1 -d 1 -sc 1 -mk Super_L &
