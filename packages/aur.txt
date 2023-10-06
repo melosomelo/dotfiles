@@ -1,5 +1,5 @@
+1password-cli
 colorz
-flavours
 python-colorthief
 python-haishoku
 spotify
