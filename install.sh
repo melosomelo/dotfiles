@@ -50,7 +50,7 @@ mount --mkdir "${disk_name}1" /mnt/boot
 swapon "${disk_name}2"
 
 log "Installing base system"
-pacstrap -K /mnt base base-devel linux linux-firmware grub efibootmgr networkmanager
+pacstrap -K /mnt base base-devel linux linux-firmware grub efibootmgr networkmanager iwd
 
 log "Generating fstab file"
 genfstab -U /mnt >> /mnt/etc/fstab
