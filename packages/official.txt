@@ -7,7 +7,6 @@ fish
 git
 github-cli
 i3-wm
-libxpm
 man-db
 neovim
 openssh
@@ -22,7 +21,6 @@ sxhkd
 ttf-firacode-nerd
 ttf-iawriter-nerd
 ttf-jetbrains-mono-nerd
-uthash
 xdg-user-dirs
 xorg-mkfontscale
 xorg-server
