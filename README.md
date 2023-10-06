@@ -27,6 +27,8 @@
 - [x] ~Create fish function to update mirror list with `reflector` and also
       enable its service to periodically run.~
 - [x] ~Install `yay` during `setup.sh`~
+- [ ] Add a list of "ignored packages"
+    (that shouldn' be automatically saved in lists when installed)
 
 ## Install and setup scripts
 
