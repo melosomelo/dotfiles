@@ -14,7 +14,7 @@
 - [ ] Picom
     - [ ] Determine how to enable blur in VirtualBox guest host
     - [ ] Configure `picom`
-    - [ ] Add picom configuration to `setup.sh`
+    - [x] Add picom configuration to `setup.sh`
 - [x] ~Add support for AUR packages~
   - [x] ~Create script to automatically download, build and install AUR packages~ (used `yay`)
   - [x] ~Add suport for installed AUR packages on the installed packages list~
