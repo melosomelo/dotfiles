@@ -2,6 +2,7 @@ alacritty
 bspwm
 code
 feh
+firefox
 fish
 git
 github-cli
