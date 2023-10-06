@@ -37,6 +37,10 @@ git clone https://aur.archlinux.org/yay.git $HOMEDIR/.aur/yay
 cd $HOMEDIR/.aur/yay
 makepkg -sirc --noconfirm
 
+# this is necessary to install 1password-cli
+gpg --keyserver hkps://keyserver.ubuntu.com \
+  --receive-keys 3FEF9748469ADBE15DA7CA80AC2D62842012EA22
+
 message "Downloading AUR packages with yay"
 sudo curl https://raw.githubusercontent.com/melosomelo/dotfiles/main/packages/aur.txt > $HOMEDIR/aur.txt
 yay -S $(cat $HOMEDIR/aur.txt) --noconfirm && rm $HOMEDIR/aur.txt
