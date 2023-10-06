@@ -53,4 +53,3 @@ After the installation is complete, the script will prompt you to check if you w
 and execute the `setup.sh` script. If you want to perform the setup later, download the
 script just as previously with `install.sh` and **make sure to execute the script as the newly
 created user!**
-

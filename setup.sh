@@ -65,9 +65,18 @@ cd $HOMEDIR/.local/opt/eww && cargo build --release --no-default-features --feat
 chmod +x $HOMEDIR/.local/opt/eww/target/release/eww
 sudo ln -s $HOMEDIR/.local/opt/eww/target/release/eww /usr/local/bin/eww
 
+message "Setting up git global configs"
+git config --global user.name "melosomelo"
+git config --global user.email "mateusmelornrn@gmail.com"
+
+message "Adding 1Password account"
+op account add
+eval $(op signin)
+
 DOTFILES_DIR="${HOMEDIR}/dotfiles"
 message "Downloading dotfiles"
-git clone https://github.com/melosomelo/dotfiles $DOTFILES_DIR && cd $DOTFILES_DIR && git submodule init && git submodule update
+git clone https://github.com/melosomelo/dotfiles $DOTFILES_DIR && \
+  cd $DOTFILES_DIR && git submodule init && git submodule update
 
 message "Setting up symbolic links"
 mkdir -p $HOMEDIR/.config && \
@@ -96,6 +105,7 @@ xdg-user-dirs-update --set PUBLICSHARE $HOMEDIR
 xdg-user-dirs-update --set MUSIC $HOMEDIR
 xdg-user-dirs-update --set DESKTOP $HOMEDIR
 xdg-user-dirs-update
+
 
 echo -e "${BOLD}> Setup is complete! Reboot your system and enjoy!${RESET}"
 rm -- "$0"
