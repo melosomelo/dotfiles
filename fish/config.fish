@@ -3,6 +3,8 @@ abbr -a ga git add
 abbr -a gp git push
 abbr -a gpo git push origin
 abbr -a gpom git push origin main
+abbr -a gc git commit
+abbr -a gcm git commit -m \"
 
 # global variables
 set -g fish_greeting
