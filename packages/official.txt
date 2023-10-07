@@ -18,6 +18,7 @@ python-setuptools
 reflector
 rustup
 sxhkd
+ttf-fantasque-nerd
 ttf-firacode-nerd
 ttf-iawriter-nerd
 ttf-jetbrains-mono-nerd

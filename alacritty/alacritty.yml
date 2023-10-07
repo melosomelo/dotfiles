@@ -125,16 +125,16 @@ window:
 font:
   size: 14
   normal:
-    family: JetBrainsMono Nerd Font
+    family: MapleMono
     style: Regular
   bold:
-    family: JetBrainsMono Nerd Font
+    family: MapleMono
     style: Bold
   italic:
-    family: JetBrainsMono Nerd Font
+    family: MapleMono
     style: Italic
   bold_italic:
-    family: JetBrainsMono Nerd Font
+    family: MapleMono
     style: Bold Italic
 
   # Point size
