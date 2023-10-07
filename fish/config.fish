@@ -6,9 +6,13 @@ abbr -a gpom git push origin main
 abbr -a gc git commit
 abbr -a gcm git commit -m \"
 
+# aliases
+alias v nvim
+
 # global variables
 set -g fish_greeting
 set -gx DOTFILES $HOME/dotfiles
+set -gx BSPWM_SPLIT_AREA_DIR west
 
 # start X at login
 if status is-login

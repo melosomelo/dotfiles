@@ -13,6 +13,7 @@ bspc config gapless_monocle      true
 
 # For now, position everything according to the window tree
 bspc rule -a * state=tiled
+bpsc rule -a * split_dir=$BSPWM_SPLIT_AREA_DIR
 
-# Inetializing alttab window switcher
+# Initializing alttab window switcher
 alttab -w 1 -d 1 -sc 1 -mk Super_L &

@@ -47,6 +47,7 @@ super + shift + {1,2,3,4,5,6,7,8,9,0}
 super + f
   bspc node -t ~fullscreen
 
+
 # # alternate between the tiled and monocle layout
 # super + m
 	# bspc desktop -l next
