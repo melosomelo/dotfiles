@@ -4,4 +4,5 @@ colorz
 python-colorthief
 python-haishoku
 spotify
+ttf-maple
 yay
