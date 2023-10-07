@@ -54,7 +54,7 @@ and execute the `setup.sh` script. If you want to perform the setup later, downl
 script just as previously with `install.sh` and **make sure to execute the script as the newly
 created user!**
 
-Both `install.sh` and `setup.sh` scripts **are not resilient failures**, i.e., the script will simply
+Both `install.sh` and `setup.sh` scripts **are not resilient to failures**, i.e., the script will simply
 halt if anything goes wrong. Since a lot of operations are not idempotent, my recommendation
 is for you to fix what cause the issue, manually edit the script up until the failed command,
 and then run it again.
