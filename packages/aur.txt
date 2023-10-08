@@ -1,5 +1,6 @@
 1password-cli
 alttab
+anki
 colorz
 python-colorthief
 python-haishoku
