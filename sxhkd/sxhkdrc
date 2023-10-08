@@ -49,8 +49,8 @@ super + f
 
 # close every window in the curren desktop except for
 # the focused one
-super + shift + f
-  bspc
+# super + shift + f
+  # bspc
 
 # # alternate between the tiled and monocle layout
 # super + m
