@@ -16,4 +16,4 @@ bspc rule -a * state=tiled
 bpsc rule -a * split_dir=$BSPWM_SPLIT_AREA_DIR
 
 # Initializing alttab window switcher
-alttab -w 1 -d 1 -sc 1 -mk Super_L &
+alttab -w 1 -d 1 -sc 1 -mk Super_L -bk Shift_L &
