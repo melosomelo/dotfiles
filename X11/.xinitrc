@@ -39,6 +39,4 @@ xset r rate 250 20 #adjust key delay and repeat rate
 setxkbmap -option caps:escape # map Caps Lock to ESC
 wal -R # restore the last pywal colorscheme that was on use
 ~/.fehbg & # set the background on startup
-sxhkd & # start hotkey daemon
-picom & # start picom composer
-exec bspwm
+exec i3

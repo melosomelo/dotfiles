@@ -16,36 +16,36 @@ super + Escape
 #######################################################
 
 # quit/restart bspwm
-super + shift + {x,r}
-  bspc {quit,wm -r}
+# super + shift + {x,r}
+  # bspc {quit,wm -r}
 
 # close focused window
-super + c
-  bspc node -c
+# super + c
+  # bspc node -c
 
 # kill focused window
-super + shift + c
-  bspc node -k
+# super + shift + c
+  # bspc node -k
 
 # focus the node in the given direction
-super + {h,j,k,l}
-	bspc node -f {west,south,north,east}
+# super + {h,j,k,l}
+	# bspc node -f {west,south,north,east}
 
 # swap the focused node to the one in the given direction
-super + shift + {h,j,k,l}
-  bspc node -s {west,south,north,east}
+# super + shift + {h,j,k,l}
+  # bspc node -s {west,south,north,east}
 
 # switch to nth desktop
-super + {1,2,3,4,5,6,7,8,9,0}
-  bspc desktop -f {I,II,III,IV,V,VI,VII,VIII,IX,X}
+# super + {1,2,3,4,5,6,7,8,9,0}
+  # bspc desktop -f {I,II,III,IV,V,VI,VII,VIII,IX,X}
 
 # move focused node to the nth desktop
-super + shift + {1,2,3,4,5,6,7,8,9,0}
-  bspc node -d {I,II,III,IV,V,VI,VII,VIII,IX,X}
+# super + shift + {1,2,3,4,5,6,7,8,9,0}
+  # bspc node -d {I,II,III,IV,V,VI,VII,VIII,IX,X}
 
 # toggle fullscreen state for selected window
-super + f
-  bspc node -t ~fullscreen
+# super + f
+  # bspc node -t ~fullscreen
 
 # close every window in the curren desktop except for
 # the focused one

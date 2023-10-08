@@ -1,3 +1,3 @@
 function logout
-  bspc quit
+  i3-msg exit
 end

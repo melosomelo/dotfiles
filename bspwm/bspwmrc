@@ -10,11 +10,13 @@ bspc config window_gap          12
 bspc config split_ratio          0.52
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
+bspc config pointer_modifier     mod4
 
 # For now, position everything according to the window tree
+bspc rule -a Anki state=floating
+bspc rule -a Firefox desktop='II'
 bspc rule -a * state=tiled
-bspc rule -a anki state=floating desktop=X
-bpsc rule -a * split_dir=$BSPWM_SPLIT_AREA_DIR
+# bpsc rule -a * split_dir=$BSPWM_SPLIT_AREA_DIR
 
 # Initializing alttab window switcher
 alttab -w 1 -d 1 -sc 1 -mk Super_L -bk Shift_L &
