@@ -1,15 +1,9 @@
 # i3 config file (v4)
 
-# start terminal on startup
-exec --no-startup-id i3-sensible-terminal
-# start window switcher alttab on startup
-exec --no-startup-id alttab -w 1 -d 1 -sc 1 -mk Super_L -bk Shift_L &
-# start picom
-exec --no-startup-id picom &
+include $HOME/.config/i3/variables
+include $HOME/.config/i3/keybindings
 
 font pango:JetBrainsMono Nerd Font 10
-
-# variables
 set $mod Mod4
 set $up k
 set $down j
@@ -106,6 +100,8 @@ bindsym $mod+a focus parent
 # focus the child container
 # bindsym $mod+d focus child
 
+for_window [class="firefox"] move to workspace $ws2
+
 # --------------- SCRATCHPAD ---------------
 # move the currently focused window to the scratchpad
 bindsym $mod+Shift+minus move scratchpad
@@ -145,6 +141,12 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+# start terminal on startup
+exec --no-startup-id i3-sensible-terminal
+# start window switcher alttab on startup
+exec --no-startup-id alttab -w 1 -d 1 -sc 1 -mk Super_L -bk Shift_L &
+# start picom
+exec --no-startup-id picom &
 
 # DEFAULT STUFF THAT I HAVEN'T TOUCHED YET
 

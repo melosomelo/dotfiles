@@ -6,7 +6,10 @@ firefox
 fish
 git
 github-cli
+gumbo-parser
 i3-wm
+jbig2dec
+libmupdf
 man-db
 neovim
 openssh
@@ -15,6 +18,7 @@ picom
 python-pip
 python-pywal
 python-setuptools
+qt5-3d
 reflector
 rustup
 sxhkd
