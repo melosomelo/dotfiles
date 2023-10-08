@@ -4,6 +4,7 @@ anki
 colorz
 python-colorthief
 python-haishoku
+sioyek
 spotify
 ttf-maple
 yay
