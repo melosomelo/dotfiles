@@ -101,6 +101,7 @@ bindsym $mod+a focus parent
 # bindsym $mod+d focus child
 
 for_window [class="firefox"] move to workspace $ws2
+for_window [class="Anki"] move to workspace $ws10
 
 # --------------- SCRATCHPAD ---------------
 # move the currently focused window to the scratchpad
