@@ -16,6 +16,7 @@ python-pip
 python-pywal
 python-setuptools
 reflector
+rofi
 rustup
 sxhkd
 ttf-fantasque-nerd
