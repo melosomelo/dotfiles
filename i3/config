@@ -66,7 +66,7 @@ bindsym $mod+r mode "resize"
 # start terminal on startup
 exec --no-startup-id i3-sensible-terminal
 # start window switcher alttab on startup
-exec --no-startup-id alttab -w 1 -d 1 -sc 1 -mk Super_L -bk Shift_L &
+# exec --no-startup-id alttab -w 1 -d 1 -sc 1 -mk Super_L -bk Shift_L &
 # start picom
 exec --no-startup-id picom &
 
