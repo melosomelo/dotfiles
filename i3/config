@@ -69,7 +69,6 @@ exec --no-startup-id i3-sensible-terminal
 exec --no-startup-id picom &
 # start eww for widgets
 exec --no-startup-id eww daemon
-exec --no-startup-id eww open bar_window
 
 # DEFAULT STUFF THAT I HAVEN'T TOUCHED YET
 
