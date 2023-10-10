@@ -6,8 +6,8 @@ set $up k
 set $down j
 set $left h
 set $right l
-set $ws1 "term"
-set $ws2 "web"
+set $ws1 "1: term"
+set $ws2 "2: web"
 set $ws3 "3"
 set $ws4 "4"
 set $ws5 "5"
@@ -15,7 +15,7 @@ set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
-set $ws10 "float"
+set $ws10 "10: float"
 
 include keybindings.conf
 
@@ -65,10 +65,11 @@ bindsym $mod+r mode "resize"
 
 # start terminal on startup
 exec --no-startup-id i3-sensible-terminal
-# start window switcher alttab on startup
-# exec --no-startup-id alttab -w 1 -d 1 -sc 1 -mk Super_L -bk Shift_L &
-# start picom
+# start picom for fancy effects
 exec --no-startup-id picom &
+# start eww for widgets
+exec --no-startup-id eww daemon
+exec --no-startup-id eww open bar_window
 
 # DEFAULT STUFF THAT I HAVEN'T TOUCHED YET
 

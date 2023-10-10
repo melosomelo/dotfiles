@@ -12,6 +12,7 @@ neovim
 openssh
 parcellite
 picom
+polybar
 python-pip
 python-pywal
 python-setuptools

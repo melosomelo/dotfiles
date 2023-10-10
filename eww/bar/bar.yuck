@@ -1,8 +1,19 @@
-(defwindow bar
-  :windowtype "dock"
-  :geometry (geometry :x "0px" :y "11px" :width "98%" :height "40px" :anchor "top center")
+(defwidget bar[]
+  (box
+    :class "bar"
+    :orientation "horizontal"
+    :halign "center"
+    "oie")
+)
+
+(defwindow bar_window
+  :geometry (geometry
+    :x "0%"
+    :y "0%"
+    :width "90%"
+    :anchor "top center")
   :stacking "fg"
-  :reserve (struts :side "top" :distance "55px")
-  :wi-ignore false
-  "oi")
+  :reserve (struts :side "top" :distance "4%" )
+  (bar)
+  )
 
