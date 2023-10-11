@@ -6,4 +6,5 @@ python-haishoku
 sioyek
 spotify
 ttf-maple
+ttf-material-icons-git
 yay
