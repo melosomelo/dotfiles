@@ -3,6 +3,7 @@ anki
 colorz
 python-colorthief
 python-haishoku
+rofi-greenclip
 sioyek
 spotify
 ttf-maple
