@@ -4,6 +4,7 @@ code
 feh
 firefox
 fish
+font-manager
 git
 github-cli
 i3-wm
