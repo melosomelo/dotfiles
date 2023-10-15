@@ -13,6 +13,7 @@ neovim
 openssh
 parcellite
 picom
+pipewire
 polybar
 python-pip
 python-pywal
