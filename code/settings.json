@@ -1,6 +1,6 @@
 {
   "workbench.colorTheme": "Kanagawa",
-  "editor.fontFamily": "SFMono Nerd Font, iMWritingMonoS Nerd Font Mono,  'FiraCode Nerd Font'",
+  "editor.fontFamily": "JetBrainsMono Nerd Font, iMWritingMonoS Nerd Font Mono,  'FiraCode Nerd Font'",
   "editor.fontLigatures": true,
   "editor.fontSize": 16,
   "keyboard.dispatch": "keyCode",
@@ -103,7 +103,7 @@
   "java.configuration.updateBuildConfiguration": "automatic",
   "haskell.manageHLS": "PATH",
   "vim.vimrc.enable": true,
-  "vim.vimrc.path": "$HOME/.config/nvim/vscode.init.vim",
+  "vim.vimrc.path": "$HOME/dotfiles/code/init.vim",
   "vim.normalModeKeyBindings": [],
   "[haskell]": {
     "editor.defaultFormatter": "haskell.haskell"
@@ -126,7 +126,6 @@
       }
     ]
   },
-  "arduino.path": "'/Applications/Arduino.app'",
   "[cpp]": {
     "editor.defaultFormatter": "ms-vscode.cpptools"
   },
@@ -141,7 +140,5 @@
   "window.zoomLevel": 1,
   "[xml]": {
     "editor.defaultFormatter": "redhat.vscode-xml"
-  },
-  "maven.executable.path": "/usr/local/lib/apache-maven-3.6.3/bin/mvn",
-  "maven.settingsFile": ""
+  }
 }
