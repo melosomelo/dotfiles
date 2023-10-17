@@ -8,7 +8,9 @@ fish
 font-manager
 git
 github-cli
+http-parser
 i3-wm
+libappindicator-gtk3
 man-db
 neovim
 openssh
@@ -19,6 +21,7 @@ polybar
 python-pip
 python-pywal
 python-setuptools
+re2
 reflector
 rofi
 rustup
