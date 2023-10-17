@@ -31,6 +31,7 @@ wireplumber
 xdg-user-dirs
 xorg-mkfontscale
 xorg-server
+xorg-xbacklight
 xorg-xev
 xorg-xinit
 xorg-xlsfonts
