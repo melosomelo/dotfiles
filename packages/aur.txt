@@ -1,5 +1,6 @@
 1password-cli
 anki
+brillo
 colorz
 python-colorthief
 python-haishoku
