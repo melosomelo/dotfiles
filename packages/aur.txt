@@ -8,4 +8,5 @@ sioyek
 spotify
 ttf-maple
 ttf-material-icons-git
+visual-studio-code-bin
 yay
