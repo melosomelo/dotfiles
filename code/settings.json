@@ -97,7 +97,6 @@
   "emmet.triggerExpansionOnTab": true,
   "redhat.telemetry.enabled": false,
   "emmet.showExpandedAbbreviation": "inMarkupAndStylesheetFilesOnly",
-  "bracketPairColorizer.depreciation-notice": false,
   "security.workspace.trust.untrustedFiles": "open",
   "java.debug.settings.hotCodeReplace": "auto",
   "java.configuration.updateBuildConfiguration": "automatic",

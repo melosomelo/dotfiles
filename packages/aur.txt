@@ -2,6 +2,7 @@
 anki
 brillo
 colorz
+nvm
 python-colorthief
 python-haishoku
 sioyek
