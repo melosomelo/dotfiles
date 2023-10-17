@@ -25,4 +25,5 @@ end
 if status is-interactive
   # applying selected wal theme to new terminals
   cat ~/.cache/wal/sequences
+  zoxide init fish | source
 end

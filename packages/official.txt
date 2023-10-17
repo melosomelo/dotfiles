@@ -1,7 +1,6 @@
 alacritty
 alsa-utils
 bspwm
-code
 feh
 firefox
 fish
