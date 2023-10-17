@@ -26,6 +26,7 @@ ttf-fantasque-nerd
 ttf-firacode-nerd
 ttf-iawriter-nerd
 ttf-jetbrains-mono-nerd
+vlc
 wireplumber
 xdg-user-dirs
 xorg-mkfontscale
