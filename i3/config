@@ -6,16 +6,16 @@ set $up k
 set $down j
 set $left h
 set $right l
-set $ws1 "1: I"
-set $ws2 "2: II"
-set $ws3 "3: III"
-set $ws4 "4: IV"
-set $ws5 "5: V"
-set $ws6 "6: VI"
-set $ws7 "7: VII"
-set $ws8 "8: VIII"
-set $ws9 "9: IX"
-set $ws10 "10: X"
+set $ws1 "1: term"
+set $ws2 "2: web"
+set $ws3 "3: dev"
+set $ws4 "4: media"
+set $ws5 "5: docs"
+set $ws6 "6: file"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10: etc"
 
 include keybindings.conf
 include layout.conf
@@ -34,6 +34,7 @@ exec --no-startup-id eww daemon
 exec --no-startup-id polybar -r &
 # start firefox with some default tabs
 exec --no-startup-id firefox --new-tab calendar.google.com --new-tab gmail.com --new-tab twitter.com --new-tab web.whatsapp.com
+exec --no-startup-id spotify
 
 # DEFAULT STUFF THAT I HAVEN'T TOUCHED YET
 
