@@ -36,3 +36,4 @@ xorg-xinit
 xorg-xlsfonts
 xorg-xset
 zathura
+zoxide
