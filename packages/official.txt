@@ -4,6 +4,7 @@ bspwm
 feh
 firefox
 fish
+fisher
 font-manager
 git
 github-cli
