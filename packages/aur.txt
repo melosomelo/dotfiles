@@ -3,6 +3,7 @@
 anki
 brillo
 colorz
+insomnia
 nvm
 python-colorthief
 python-haishoku
