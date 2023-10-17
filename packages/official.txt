@@ -8,6 +8,7 @@ fish
 font-manager
 git
 github-cli
+go-md2man
 i3-wm
 man-db
 neovim
