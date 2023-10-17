@@ -8,6 +8,8 @@ font-manager
 git
 github-cli
 i3-wm
+libnotify
+lsof
 man-db
 neovim
 openssh
