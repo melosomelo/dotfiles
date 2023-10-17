@@ -10,6 +10,7 @@ github-cli
 i3-wm
 man-db
 neovim
+npm
 openssh
 parcellite
 picom
