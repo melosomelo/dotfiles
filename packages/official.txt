@@ -12,6 +12,7 @@ i3-wm
 man-db
 neovim
 openssh
+pandoc-cli
 parcellite
 picom
 pipewire
