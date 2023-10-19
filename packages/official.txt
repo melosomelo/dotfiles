@@ -19,6 +19,7 @@ polybar
 python-pip
 python-pywal
 python-setuptools
+ranger
 reflector
 rofi
 rustup
