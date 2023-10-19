@@ -37,5 +37,4 @@ xorg-xinit
 xorg-xlsfonts
 xorg-xset
 yarn
-zathura
 zoxide
