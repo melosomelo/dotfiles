@@ -8,12 +8,17 @@ abbr -a gpom git push origin main
 abbr -a gc git commit
 abbr -a gcm git commit -m \"
 
+abbr -a ngmo nest g mo
+abbr -a ngco nest g co
+abbr -a ngpr nest g pr
+
 # aliases
 alias v nvim
 
 # global variables
 set -g fish_greeting
 set -gx DOTFILES $HOME/dotfiles
+set -gx NVM_INITIALIZED false
 
 # start X at login
 if status is-login
