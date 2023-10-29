@@ -27,6 +27,7 @@ rustup
 sxhkd
 ttf-fantasque-nerd
 ttf-firacode-nerd
+ttf-font-awesome
 ttf-iawriter-nerd
 ttf-jetbrains-mono-nerd
 vlc
