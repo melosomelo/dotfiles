@@ -36,6 +36,7 @@ xorg-mkfontscale
 xorg-server
 xorg-xev
 xorg-xinit
+xorg-xinput
 xorg-xlsfonts
 xorg-xset
 yarn
