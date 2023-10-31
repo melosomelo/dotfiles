@@ -8,11 +8,11 @@ nvm
 otf-san-francisco
 python-colorthief
 python-haishoku
-qt5-webkit
 sioyek
 spotify
 ttf-maple
 ttf-material-icons-git
 ttf-merriweather
 visual-studio-code-bin
+wkhtmltopdf
 yay
