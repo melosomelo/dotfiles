@@ -19,6 +19,7 @@ alias v nvim
 set -g fish_greeting
 set -gx DOTFILES $HOME/dotfiles
 set -gx NVM_INITIALIZED false
+set -gx QT_STYLE_OVERRIDE breeze
 
 # start X at login
 if status is-login
