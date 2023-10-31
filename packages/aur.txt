@@ -4,7 +4,6 @@ anki
 brillo
 colorz
 insomnia
-notion-app
 nvm
 python-colorthief
 python-haishoku
