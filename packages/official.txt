@@ -22,6 +22,7 @@ polybar
 python-pip
 python-pywal
 python-setuptools
+qt5ct
 ranger
 reflector
 rofi
