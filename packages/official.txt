@@ -1,5 +1,6 @@
 alacritty
 alsa-utils
+breeze
 bspwm
 docker
 dolphin
