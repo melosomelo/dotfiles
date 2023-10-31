@@ -1,6 +1,7 @@
 alacritty
 alsa-utils
 bspwm
+cmake
 docker
 dolphin
 feh
@@ -9,6 +10,7 @@ fish
 font-manager
 git
 github-cli
+gperf
 i3-wm
 man-db
 neovim
@@ -21,9 +23,15 @@ polybar
 python-pip
 python-pywal
 python-setuptools
+qt5-doc
+qt5-location
+qt5-sensors
+qt5-tools
+qt5-webchannel
 ranger
 reflector
 rofi
+ruby
 rustup
 sxhkd
 ttf-fantasque-nerd
