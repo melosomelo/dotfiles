@@ -5,6 +5,7 @@ brillo
 colorz
 insomnia
 nvm
+otf-san-francisco
 python-colorthief
 python-haishoku
 sioyek
