@@ -12,6 +12,7 @@ github-cli
 i3-wm
 man-db
 neovim
+okular
 openssh
 pandoc-cli
 parcellite
@@ -21,7 +22,6 @@ polybar
 python-pip
 python-pywal
 python-setuptools
-qt5-xmlpatterns
 ranger
 reflector
 rofi
