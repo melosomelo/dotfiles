@@ -2,6 +2,7 @@ alacritty
 alsa-utils
 bspwm
 docker
+dolphin
 feh
 firefox
 fish
