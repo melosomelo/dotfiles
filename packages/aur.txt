@@ -12,5 +12,6 @@ sioyek
 spotify
 ttf-maple
 ttf-material-icons-git
+ttf-merriweather
 visual-studio-code-bin
 yay
