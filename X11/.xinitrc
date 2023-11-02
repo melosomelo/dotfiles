@@ -37,7 +37,7 @@ fi
 
 QT_QPA_PLATFORMTHEME="qt5ct"
 xset r rate 200 20 #adjust key delay and repeat rate
-xinput set-prop 13 "libinput Tapping Enabled" 1 #enable tapping on touchpad
+xinput set-prop "DLL080D:01 06CB:7A13 Touchpad" "libinput Tapping Enabled" 1 #enable tapping on touchpad
 setxkbmap -option caps:escape # map Caps Lock to ESC
 wal -R # restore the last pywal colorscheme that was on use
 ~/.fehbg & # set the background on startup
