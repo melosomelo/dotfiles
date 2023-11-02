@@ -23,6 +23,7 @@ polybar
 python-pip
 python-pywal
 python-setuptools
+qbittorrent
 qt5ct
 ranger
 reflector
