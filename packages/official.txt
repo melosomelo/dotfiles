@@ -2,7 +2,6 @@ alacritty
 alsa-utils
 breeze
 bspwm
-cmake
 docker
 dolphin
 feh
@@ -13,7 +12,6 @@ git
 github-cli
 i3-wm
 man-db
-mpv
 neovim
 okular
 openssh
