@@ -10,7 +10,6 @@ python-colorthief
 python-haishoku
 sioyek
 spotify
-stremio
 ttf-maple
 ttf-material-icons-git
 ttf-merriweather
