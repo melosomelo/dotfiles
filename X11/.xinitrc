@@ -41,4 +41,6 @@ xinput set-prop "DLL080D:01 06CB:7A13 Touchpad" "libinput Tapping Enabled" 1 #en
 setxkbmap -option caps:escape # map Caps Lock to ESC
 wal -R # restore the last pywal colorscheme that was on use
 /.fehbg & # set the background on startup
-exec i3
+export DESKTOP_SESSION=plasma
+export KDEWM=/usr/bin/i3
+exec startplasma-x11

@@ -10,6 +10,7 @@ fish
 font-manager
 git
 github-cli
+gwenview
 i3-wm
 man-db
 neovim
