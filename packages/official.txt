@@ -2,7 +2,6 @@ alacritty
 alsa-utils
 breeze
 bspwm
-cmake
 docker
 dolphin
 feh
