@@ -3,6 +3,7 @@
 anki
 brillo
 colorz
+ddcci-driver-linux-dkms
 insomnia
 nvm
 otf-san-francisco
