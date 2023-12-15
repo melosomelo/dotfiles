@@ -38,6 +38,7 @@ ttf-firacode-nerd
 ttf-font-awesome
 ttf-iawriter-nerd
 ttf-jetbrains-mono-nerd
+unzip
 vlc
 wireplumber
 xdg-user-dirs
