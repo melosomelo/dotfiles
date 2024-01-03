@@ -3,6 +3,7 @@ alsa-utils
 breeze
 bspwm
 docker
+docker-compose
 dolphin
 feh
 firefox
