@@ -33,8 +33,8 @@ exec --no-startup-id eww daemon
 # start polybar
 exec --no-startup-id polybar -r &
 # start firefox with some default tabs
-exec --no-startup-id firefox --new-tab calendar.google.com --new-tab gmail.com --new-tab twitter.com --new-tab web.whatsapp.com
-exec --no-startup-id spotify
+# exec --no-startup-id firefox --new-tab calendar.google.com --new-tab gmail.com --new-tab twitter.com --new-tab web.whatsapp.com
+# exec --no-startup-id spotify
 
 # DEFAULT STUFF THAT I HAVEN'T TOUCHED YET
 
