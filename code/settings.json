@@ -1,5 +1,5 @@
 {
-  "workbench.colorTheme": "Min Dark",
+  "workbench.colorTheme": "Kanagawa",
   "editor.fontFamily": "JetBrainsMono Nerd Font, iMWritingMonoS Nerd Font Mono,  'FiraCode Nerd Font'",
   "editor.fontLigatures": true,
   "editor.fontSize": 14,
@@ -10,6 +10,7 @@
   "editor.minimap.enabled": false,
   "explorer.compactFolders": false,
   "workbench.activityBar.visible": false,
+  "workbench.statusBar.visible": true,
   "editor.scrollbar.horizontal": "hidden",
   "editor.scrollbar.vertical": "hidden",
   "keyboard.dispatch": "keyCode",
@@ -69,7 +70,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "liveServer.settings.donotShowInfoMsg": true,
-  "workbench.editor.enablePreview": false,
+  "workbench.editor.enablePreview": true,
   "editor.fontWeight": null,
   "editor.suggestSelection": "first",
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
@@ -169,5 +170,7 @@
     "tsconfig.json": "tsconfig.*.json",
     "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, .eslint*, .prettier*, .editorconfig, tsconfig.*",
     ".env": ".env*"
-  }
+  },
+  "workbench.startupEditor": "none",
+  "extensions.ignoreRecommendations": true
 }
