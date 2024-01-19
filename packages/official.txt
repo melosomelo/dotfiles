@@ -1,5 +1,6 @@
 alacritty
 alsa-utils
+bluez-utils
 breeze
 bspwm
 docker
