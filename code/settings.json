@@ -146,7 +146,6 @@
   },
   "C_Cpp.vcFormat.indent.caseLabels": true,
   "C_Cpp.vcFormat.indent.caseContentsWhenBlock": true,
-  "window.zoomLevel": 1,
   "[xml]": {
     "editor.defaultFormatter": "redhat.vscode-xml"
   },
@@ -172,5 +171,6 @@
     ".env": ".env*"
   },
   "workbench.startupEditor": "none",
-  "extensions.ignoreRecommendations": true
+  "extensions.ignoreRecommendations": true,
+  "window.zoomLevel": 1
 }
