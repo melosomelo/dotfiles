@@ -17,6 +17,9 @@ style = "Italic"
 family = "JetBrainsMonoNerdFont"
 style = "Regular"
 
+[font.offset]
+y = 5
+
 [window]
 opacity = 1.0
 
