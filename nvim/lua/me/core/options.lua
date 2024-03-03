@@ -27,14 +27,14 @@ options.wrap = false -- Disable, by default, wrapping of lines longer than the w
 -- FORMATTING
 -- Don't automatically insert comment leader after <CR> in insert mode
 -- and with o or O in Normal mode.
-options.fo:remove({ "r", "o" })
+options.fo:remove({"r", "o"})
 options.shiftround = true -- Round indent to multiple of 'shiftwidth'.
 options.smartindent = true -- Do smart autoindent when startning a new line.
 options.tildeop = true -- The tilde operator behaves like an operator (you can use it like you'd use the `d` operator).
 
 -- OTHERS
 options.clipboard = options.clipboard + "unnamedplus" -- Use clipboard for all operations.
-options.completeopt = { "menu", "menuone", "noselect" } -- Options to regulate completion in insert mode.
+options.completeopt = {"menu", "menuone", "noselect"} -- Options to regulate completion in insert mode.
 options.exrc = true -- Enables the reading of .nvim.lua, .nvimrc and .exrc files in the current dir.
 options.fenc = "utf-8" -- file encoding
 options.ignorecase = true -- Ignore case when searching for patterns. Works with 'smartcase'.
