@@ -30,12 +30,19 @@ M.general = {
     ["<C-j>"] = {"<C-w>j", "", opts},
     ["<C-k>"] = {"<C-w>k", "", opts},
     ["<C-l>"] = {"<C-w>l", "", opts},
+    -- better tag navigation
+    ["<S-h>"] = {"gT", "Go to previous tab", opts},
+    ["<S-l>"] = {"gt", "Go to next tab", opts},
     -- Remap CTRL + U and CTRL + D to Shift+K and Shift+J, respectively
     ["<S-j>"] = {"<C-d>zz", "", opts},
     ["<S-k>"] = {"<C-u>zz", "", opts},
     ["<C-u>"] = {"<nop>", "", opts},
     -- Nvimtree
     ["<C-d>"] = {"<cmd>NvimTreeToggle<CR>", "Toggle NvimTree", opts},
+    -- Telescope
+    ["<C-p>"] = {"<cmd>lua require('telescope.builtin').find_files({hidden = true, no_ignore=true})<cr>",
+                 "Open Telescope file picker", opts},
+    ["<C-S-p>"] = {"<cmd>lua require('telescope.builtin').live_grep()<cr>", "Open Telescope live grep", opts},
     --  format with conform
     ["<leader>fm"] = {function()
       require("conform").format()

@@ -46,11 +46,6 @@ keymap.set("n", alt_l, function() -- move current tabpage to the right
 end, opts)
 
 -- Telescope mappings
--- open file picker
-keymap.set("n", "<leader>tf", "<cmd>lua require('telescope.builtin').find_files({hidden = true, no_ignore=true})<cr>",
-  opts)
--- open live grep
-keymap.set("n", "<leader>tg", "<cmd>lua require('telescope.builtin').live_grep()<cr>", opts)
 
 -- Diagnostics keymaps
 -- open the diagnostic with a floating window
