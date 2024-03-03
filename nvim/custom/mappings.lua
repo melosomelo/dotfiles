@@ -6,6 +6,14 @@ local opts = {
   remap = false
 }
 
+-- Modes
+--   normal_mode = "n",
+--   insert_mode = "i",
+--   visual_mode = "v",
+--   visual_block_mode = "x",
+--   term_mode = "t",
+--   command_mode = "c",
+
 M.general = {
   n = {
     [";"] = {
@@ -15,6 +23,8 @@ M.general = {
         nowait = true
       }
     },
+    ["<A-j>"] = {"ddp", "Move current line down", opts},
+    ["<A-k>"] = {"ddkP", "Move current line up", opts},
     -- better window navigation
     ["<C-h>"] = {"<C-w>h", "", opts},
     ["<C-j>"] = {"<C-w>j", "", opts},
