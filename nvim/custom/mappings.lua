@@ -33,8 +33,9 @@ M.general = {
     -- Remap CTRL + U and CTRL + D to Shift+K and Shift+J, respectively
     ["<S-j>"] = {"<C-d>zz", "", opts},
     ["<S-k>"] = {"<C-u>zz", "", opts},
-    ["<C-d>"] = {"<nop>", "", opts},
     ["<C-u>"] = {"<nop>", "", opts},
+    -- Nvimtree
+    ["<C-d>"] = {"<cmd>NvimTreeToggle<CR>", "Toggle NvimTree", opts},
     --  format with conform
     ["<leader>fm"] = {function()
       require("conform").format()
