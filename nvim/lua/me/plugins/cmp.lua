@@ -36,12 +36,6 @@ local kind_icons = {
 }
 
 cmp.setup {
-  snippet = {
-    -- required snippet engine
-    expand = function(args)
-      require"luasnip".lsp_expand(args.body)
-    end
-  },
   window = {
     -- gives some cute borders to windows
     completion = cmp.config.window.bordered(),
@@ -85,12 +79,15 @@ cmp.setup {
       end
     end, {"i", "s"})
   },
-  sources = cmp.config.sources({
-    { name = "nvim_lsp" },
-    { name = "luasnip" },
-    { name = "buffer" },
-    { name = "path" }
-  }),
+  sources = cmp.config.sources({{
+    name = "nvim_lsp"
+  }, {
+    name = "luasnip"
+  }, {
+    name = "buffer"
+  }, {
+    name = "path"
+  }}),
   formatting = { -- for formatting the items that appear in the complete menu
     format = function(entry, vim_item)
       -- Kind icons
