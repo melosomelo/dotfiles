@@ -126,4 +126,8 @@ M.nvimtree = {
   end
 }
 
+M.gitsigns = {
+  current_line_blame = true
+}
+
 return M
