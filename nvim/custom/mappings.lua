@@ -43,6 +43,14 @@ M.general = {
     ["<C-p>"] = {"<cmd>lua require('telescope.builtin').find_files({hidden = true, no_ignore=true})<cr>",
                  "Open Telescope file picker", opts},
     ["<C-S-p>"] = {"<cmd>lua require('telescope.builtin').live_grep()<cr>", "Open Telescope live grep", opts},
+    -- Diagnostics
+    ["[d"] = {"<cmd>lua vim.diagnostic.goto_prev()<CR>", "Go to previous diagnostic", opts},
+    ["]d"] = {"<cmd>lua vim.diagnostic.goto_prev()<CR>", "Go to next diagnostic", opts},
+    ["[e"] = {"<cmd>lua vim.diagnostic.goto_prev({severity=vim.diagnostic.severity.ERROR})<CR>",
+              "Go to previous error diagnostic", opts},
+    ["]e"] = {"<cmd>lua vim.diagnostic.goto_prev({severity=vim.diagnostic.severity.ERROR})<CR>",
+              "Go to next error diagnostic", opts},
+    ["<leader>dl"] = {"<cmd>lua vim.diagnostic.setloclist()<CR>", "Open diagnostic list", opts},
     --  format with conform
     ["<leader>fm"] = {function()
       require("conform").format()

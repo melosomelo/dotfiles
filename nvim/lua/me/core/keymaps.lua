@@ -23,9 +23,6 @@ local alt_l = "¬"
 -- still need to work on reloading the config.
 keymap.set("n", "<leader>ev", ":tabedit ~/.config/nvim<CR>", opts)
 
--- Better tab navigation
-keymap.set("n", "<S-h>", "gT", opts) -- previous tab
-keymap.set("n", "<S-l>", "gt", opts) -- next tab
 keymap.set("n", alt_h, function() -- move current tabpage to the left
   local cur_tab_num = vim.fn.tabpagenr()
   if cur_tab_num == 1 then
@@ -44,15 +41,3 @@ keymap.set("n", alt_l, function() -- move current tabpage to the right
     vim.cmd("+tabmove")
   end
 end, opts)
-
--- Telescope mappings
-
--- Diagnostics keymaps
--- open the diagnostic with a floating window
-keymap.set("n", "<leader>f", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
--- go to prev diagnostic
-keymap.set("n", "[d", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opts)
--- go to next diagnostic
-keymap.set("n", "]d", "<cmd>lua vim.diagnostic.goto_next()<CR>", opts)
--- open diagnostics list
--- keymap.set("n", "<space>dl", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
