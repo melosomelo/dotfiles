@@ -1,7 +1,8 @@
 local M = {}
 
 M.treesitter = {
-  ensure_installed = {"vim", "lua", "html", "css", "javascript", "typescript", "tsx", "c", "markdown", "markdown_inline"},
+  ensure_installed = {"vim", "lua", "html", "css", "javascript", "typescript", "tsx", "c", "markdown",
+                      "markdown_inline", "astro", "angular"},
   indent = {
     enable = true
     -- disable = {
