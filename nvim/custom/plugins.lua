@@ -38,6 +38,11 @@ local plugins = { -- Override plugin definition options
     return vim.tbl_deep_extend("force", require("plugins.configs.others").gitsigns,
       require("custom.configs.overrides").gitsigns)
   end
+}, {
+  "hrsh7th/nvim-cmp",
+  opts = function()
+    return vim.tbl_deep_extend("force", require("plugins.configs.cmp"), require("custom.configs.overrides").cmp)
+  end
 } -- To make a plugin not be loaded
 -- {
 --   "NvChad/nvim-colorizer.lua",
