@@ -19,10 +19,6 @@ local alt_k = "˚"
 local alt_h = "˙"
 local alt_l = "¬"
 
--- Config sourcing and editing
--- still need to work on reloading the config.
-keymap.set("n", "<leader>ev", ":tabedit ~/.config/nvim<CR>", opts)
-
 keymap.set("n", alt_h, function() -- move current tabpage to the left
   local cur_tab_num = vim.fn.tabpagenr()
   if cur_tab_num == 1 then

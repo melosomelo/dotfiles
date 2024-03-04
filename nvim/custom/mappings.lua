@@ -37,12 +37,6 @@ M.general = {
     ["<S-j>"] = {"<C-d>zz", "", opts},
     ["<S-k>"] = {"<C-u>zz", "", opts},
     ["<C-u>"] = {"<nop>", "", opts},
-    -- Nvimtree
-    ["<C-d>"] = {"<cmd>NvimTreeToggle<CR>", "Toggle NvimTree", opts},
-    -- Telescope
-    ["<C-p>"] = {"<cmd>lua require('telescope.builtin').find_files({hidden = true, no_ignore=true})<cr>",
-                 "Open Telescope file picker", opts},
-    ["<C-S-p>"] = {"<cmd>lua require('telescope.builtin').live_grep()<cr>", "Open Telescope live grep", opts},
     -- Diagnostics
     ["[d"] = {"<cmd>lua vim.diagnostic.goto_prev()<CR>", "Go to previous diagnostic", opts},
     ["]d"] = {"<cmd>lua vim.diagnostic.goto_prev()<CR>", "Go to next diagnostic", opts},
@@ -50,7 +44,6 @@ M.general = {
               "Go to previous error diagnostic", opts},
     ["]e"] = {"<cmd>lua vim.diagnostic.goto_prev({severity=vim.diagnostic.severity.ERROR})<CR>",
               "Go to next error diagnostic", opts},
-    ["<leader>dl"] = {"<cmd>lua vim.diagnostic.setloclist()<CR>", "Open diagnostic list", opts},
     --  format with conform
     ["<leader>fm"] = {function()
       require("conform").format()
@@ -62,5 +55,27 @@ M.general = {
 }
 
 -- more keybinds!
+
+M.lspconfig = {
+  n = {
+    ["<leader>h"] = {"<cmd>lua vim.lsp.buf.hover()<cr>", "LSP hover", opts},
+    ["<leader>rn"] = {"<cmd>lua vim.lsp.buf.rename()<cr>", "LSP rename", opts},
+    ["<leader>d"] = {"<cmd>lua vim.lsp.buf.definition()<cr>", "Go to LSP def", opts}
+  }
+}
+
+M.nvimtree = {
+  n = {
+    ["<C-d>"] = {"<cmd>NvimTreeToggle<CR>", "Toggle nvimtree", opts}
+  }
+}
+
+M.telescope = {
+  n = {
+    ["<C-p>"] = {"<cmd>lua require('telescope.builtin').find_files({hidden = true, no_ignore=true})<cr>",
+                 "Open Telescope file picker", opts},
+    ["<C-S-p>"] = {"<cmd>lua require('telescope.builtin').live_grep()<cr>", "Open Telescope live grep", opts}
+  }
+}
 
 return M
