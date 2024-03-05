@@ -22,7 +22,7 @@ options.shiftround = true -- Round indent to multiple of 'shiftwidth'.
 options.tildeop = true -- The tilde operator behaves like an operator (you can use it like you'd use the `d` operator).
 
 options.clipboard = options.clipboard + "unnamedplus" -- Use clipboard for all operations.
-options.completeopt = {"menu", "menuone", "noselect"} -- Options to regulate completion in insert mode.
+options.completeopt = { "menu", "menuone", "noselect" } -- Options to regulate completion in insert mode.
 options.fenc = "utf-8" -- file encoding
 
 -- Other relevant options that I'll maybe investigate in the future:
@@ -51,42 +51,48 @@ local augroup = vim.api.nvim_create_augroup
 local autocmd = vim.api.nvim_create_autocmd
 
 autocmd("FileType", {
-  group = augroup("markdown", {
-    clear = true
-  }),
-  pattern = "markdown",
-  callback = function()
-    vim.cmd([[
+	group = augroup("markdown", {
+		clear = true,
+	}),
+	pattern = "markdown",
+	callback = function()
+		vim.cmd([[
       set wrap
       set showbreak=>>>
       nnoremap j gj
       nnoremap k gk
     ]])
-  end
+	end,
 })
 
 autocmd("VimEnter", {
-  group = augroup("markdown", {
-    clear = true
-  }),
-  callback = function(data)
-    local directory = vim.fn.isdirectory(data.file) == 1
-    if not directory then
-      return
-    end
-    vim.cmd.cd(data.file)
-    require("nvim-tree.api").tree.open()
-  end
+	group = augroup("markdown", {
+		clear = true,
+	}),
+	callback = function(data)
+		local directory = vim.fn.isdirectory(data.file) == 1
+		if not directory then
+			return
+		end
+		vim.cmd.cd(data.file)
+		require("nvim-tree.api").tree.open()
+	end,
 })
 
+local default_settings_augroup = augroup("default_settings", { clear = true })
+
 autocmd("FileType", {
-  group = augroup("default_settings", {
-    clear = true
-  }),
-  pattern = "*",
-  command = "set formatoptions-=cro",
-  desc = [[Disable continuation of comments when <CR> (insert mode)
-    and o/O (normal) in a comment line"]]
+	group = default_settings_augroup,
+	pattern = "*",
+	command = "set formatoptions-=cro",
+	desc = [[Disable continuation of comments when <CR> (insert mode)
+    and o/O (normal) in a comment line"]],
+})
+
+autocmd("BufWritePost", {
+	callback = function()
+		require("lint").try_lint()
+	end,
 })
 
 -- Not really sure about this one yet, so I'll leave it commented out
