@@ -167,4 +167,10 @@ M.cmp = {
 	},
 }
 
+M.telescope = {
+	defaults = {
+		file_ignore_patterns = { "^%.git/", "^node_modules/", "^dist/", "^build/", "^temp/" },
+	},
+}
+
 return M

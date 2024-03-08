@@ -30,8 +30,8 @@ local plugins = { -- Override plugin definition options
 	},
 	{
 		"stevearc/conform.nvim",
-		--  for users those who want auto-save conform + lazyloading!
-		-- event = "BufWritePre"
+		-- always format when possible
+		lazy = false,
 		config = function()
 			require("custom.configs.conform")
 		end,
@@ -54,15 +54,15 @@ local plugins = { -- Override plugin definition options
 	},
 	{
 		"mfussenegger/nvim-lint",
-    config = function()
-      require("lint").linters_by_ft = {
+		config = function()
+			require("lint").linters_by_ft = {
 				javascript = { "eslint_d" },
 				typescript = { "eslint_d" },
 				html = { "eslint_d" },
 				css = { "eslint_d" },
 				markdown = { "eslint_d" },
-      }
-    end
+			}
+		end,
 	},
 	-- To make a plugin not be loaded
 	-- {

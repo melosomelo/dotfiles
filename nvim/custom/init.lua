@@ -95,6 +95,13 @@ autocmd("BufWritePost", {
 	end,
 })
 
+autocmd({ "BufRead", "BufEnter" }, {
+	pattern = "*.component.html",
+	command = "set filetype=angular",
+	desc = "Autocommand to set filetype of angular component templates in order to improve TS highlighting",
+	group = default_settings_augroup,
+})
+
 -- Not really sure about this one yet, so I'll leave it commented out
 -- autocmd("BufWritePre", {
 --   group = "default_settings",

@@ -82,7 +82,7 @@ M.nvimtree = {
 M.telescope = {
 	n = {
 		["<C-p>"] = {
-			"<cmd>lua require('telescope.builtin').find_files({hidden = true, no_ignore=true})<cr>",
+			"<cmd>lua require('telescope.builtin').find_files({hidden = true})<cr>",
 			"Open Telescope file picker",
 			opts,
 		},
