@@ -43,6 +43,7 @@ ttf-jetbrains-mono-nerd
 unzip
 vlc
 wireplumber
+xclip
 xdg-user-dirs
 xorg-mkfontscale
 xorg-server

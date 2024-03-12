@@ -51,11 +51,12 @@ local augroup = vim.api.nvim_create_augroup
 local autocmd = vim.api.nvim_create_autocmd
 
 autocmd("FileType", {
-	group = augroup("markdown", {
-		clear = true,
-	}),
+	-- group = augroup("markdown", {
+	-- 	clear = true,
+	-- }),
 	pattern = "markdown",
 	callback = function()
+		print("hi")
 		vim.cmd([[
       set wrap
       set showbreak=>>>
