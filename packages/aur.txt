@@ -10,7 +10,6 @@ nvm
 otf-san-francisco
 python-colorthief
 python-haishoku
-sioyek
 spotify
 stremio
 ttf-maple
