@@ -19,3 +19,4 @@ ttf-merriweather
 visual-studio-code-bin
 wkhtmltopdf
 yay
+yay-debug
