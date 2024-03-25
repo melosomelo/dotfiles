@@ -172,5 +172,6 @@
   },
   "workbench.startupEditor": "none",
   "extensions.ignoreRecommendations": true,
-  "window.zoomLevel": 1
+  "window.zoomLevel": 1,
+  "typescript.tsserver.log": "verbose"
 }

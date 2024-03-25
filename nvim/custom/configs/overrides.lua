@@ -48,6 +48,9 @@ M.mason = {
 }
 
 M.nvimtree = {
+	filters = {
+		custom = { "^.git" },
+	},
 	disable_netrw = true, -- disable neovims default file explorer
 	hijack_cursor = true, -- Keep the cursor on the first letter of the filename when navigating
 	update_focused_file = { -- Update the focused file on BufEnter
@@ -169,7 +172,13 @@ M.cmp = {
 
 M.telescope = {
 	defaults = {
-		file_ignore_patterns = { "^%.git/", "^node_modules/", "^dist/", "^build/", "^temp/" },
+		file_ignore_patterns = {
+			"%.git",
+			"node_modules",
+			"^dist/",
+			"build",
+			"temp",
+		},
 	},
 }
 

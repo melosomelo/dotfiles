@@ -23,8 +23,10 @@ M.general = {
 				nowait = true,
 			},
 		},
-		["<A-j>"] = { "ddp", "Move current line down", opts },
-		["<A-k>"] = { "ddkP", "Move current line up", opts },
+		-- Commenting out for now because it was conflicting with tmux
+		-- This behavior can be duplicated by deleting the current line and pasting it immediately
+		-- ["<A-k>"] = { "ddkP", "Move current line up", opts },
+		-- ["<A-j>"] = { "ddp", "Move current line down", opts },
 		-- better window navigation
 		["<C-h>"] = { "<C-w>h", "", opts },
 		["<C-j>"] = { "<C-w>j", "", opts },
