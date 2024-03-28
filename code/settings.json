@@ -9,7 +9,6 @@
   "breadcrumbs.enabled": false,
   "editor.minimap.enabled": false,
   "explorer.compactFolders": false,
-  "workbench.activityBar.visible": false,
   "workbench.statusBar.visible": true,
   "editor.scrollbar.horizontal": "hidden",
   "editor.scrollbar.vertical": "hidden",
@@ -173,5 +172,7 @@
   "workbench.startupEditor": "none",
   "extensions.ignoreRecommendations": true,
   "window.zoomLevel": 1,
-  "typescript.tsserver.log": "verbose"
+  "typescript.tsserver.log": "verbose",
+  "workbench.activityBar.location": "hidden",
+  "editor.stickyScroll.enabled": false
 }
