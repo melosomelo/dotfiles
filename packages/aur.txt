@@ -11,7 +11,6 @@ otf-san-francisco
 python-colorthief
 python-haishoku
 slack-desktop
-slack-desktop-debug
 spotify
 stremio
 ttf-maple
