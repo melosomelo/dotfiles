@@ -36,6 +36,7 @@ rofi
 rustup
 spectacle
 sxhkd
+systemc
 tmux
 ttf-fantasque-nerd
 ttf-firacode-nerd
