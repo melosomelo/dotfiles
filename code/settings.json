@@ -172,7 +172,7 @@
   "workbench.startupEditor": "none",
   "extensions.ignoreRecommendations": true,
   "window.zoomLevel": 1,
-  "typescript.tsserver.log": "verbose",
+  "typescript.tsserver.log": "off",
   "workbench.activityBar.location": "hidden",
   "editor.stickyScroll.enabled": false
 }
