@@ -8,7 +8,6 @@ google-chrome
 insomnia
 nvm
 otf-san-francisco
-pritunl-client-bin
 python-colorthief
 python-haishoku
 slack-desktop

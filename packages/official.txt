@@ -6,7 +6,6 @@ bspwm
 docker
 docker-compose
 dolphin
-electron
 feh
 firefox
 fish
@@ -17,7 +16,6 @@ gwenview
 i3-wm
 man-db
 neovim
-npm
 okular
 openssh
 pacman-contrib
@@ -27,6 +25,7 @@ picom
 pipewire
 plasma-meta
 polybar
+pritunl-client-electron
 python-pip
 python-pywal
 python-setuptools
