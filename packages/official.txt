@@ -6,6 +6,7 @@ bspwm
 docker
 docker-compose
 dolphin
+electron
 feh
 firefox
 fish
@@ -16,6 +17,7 @@ gwenview
 i3-wm
 man-db
 neovim
+npm
 okular
 openssh
 pacman-contrib
