@@ -18,7 +18,6 @@ man-db
 neovim
 okular
 openssh
-openvpn
 pacman-contrib
 pandoc-cli
 parcellite
