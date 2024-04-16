@@ -6,6 +6,7 @@ colorz
 ddcci-driver-linux-dkms
 google-chrome
 insomnia
+krunner5-debug
 nvm
 otf-san-francisco
 pritunl-client-bin
