@@ -9,7 +9,6 @@ insomnia
 nvm
 otf-san-francisco
 pritunl-client-bin
-pritunl-client-bin-debug
 python-colorthief
 python-haishoku
 slack-desktop
