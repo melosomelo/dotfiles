@@ -12,7 +12,6 @@ python-colorthief
 python-haishoku
 slack-desktop
 spotify
-stremio
 ttf-maple
 ttf-material-icons-git
 ttf-merriweather
