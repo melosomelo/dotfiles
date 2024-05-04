@@ -58,4 +58,5 @@ xorg-xinput
 xorg-xlsfonts
 xorg-xset
 yarn
+zip
 zoxide
