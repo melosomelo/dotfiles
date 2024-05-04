@@ -1,5 +1,5 @@
 {
-  "workbench.colorTheme": "Kanagawa",
+  "workbench.colorTheme": "Catppuccin Mocha",
   "editor.fontFamily": "JetBrainsMono Nerd Font, iMWritingMonoS Nerd Font Mono,  'FiraCode Nerd Font'",
   "editor.fontLigatures": true,
   "editor.fontSize": 14,
@@ -141,7 +141,8 @@
     "editor.defaultFormatter": "ms-vscode.cpptools"
   },
   "files.associations": {
-    "*.y": "yacc"
+    "*.y": "yacc",
+    ".example.env": "properties"
   },
   "C_Cpp.vcFormat.indent.caseLabels": true,
   "C_Cpp.vcFormat.indent.caseContentsWhenBlock": true,
