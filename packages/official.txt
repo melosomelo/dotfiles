@@ -16,6 +16,7 @@ github-cli
 gwenview
 i3-wm
 man-db
+mkcert
 neovim
 okular
 openssh
