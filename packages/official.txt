@@ -3,6 +3,7 @@ alsa-utils
 bluez-utils
 breeze
 bspwm
+certbot
 dbeaver
 docker
 docker-compose
