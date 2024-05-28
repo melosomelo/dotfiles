@@ -28,7 +28,6 @@ picom
 pipewire
 plasma-meta
 polybar
-pritunl-client-electron
 python-pip
 python-pywal
 python-setuptools
