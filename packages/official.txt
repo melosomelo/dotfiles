@@ -20,5 +20,6 @@ networkmanager
 openssh
 plasma-meta
 sof-firmware
+tmux
 ttf-jetbrains-mono-nerd
 zoxide
