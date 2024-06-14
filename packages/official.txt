@@ -3,6 +3,7 @@ alsa-utils
 base
 base-devel
 docker
+dolphin
 efibootmgr
 firefox
 fish
