@@ -3,6 +3,7 @@ alsa-utils
 base
 base-devel
 docker
+docker-compose
 dolphin
 efibootmgr
 firefox
