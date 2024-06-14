@@ -12,7 +12,6 @@ catppuccin.catppuccin-vsc
 daohong-emilio.yash
 dbaeumer.vscode-eslint
 dnlytras.nord-wave
-drcika.apc-extension
 eamodio.gitlens
 editorconfig.editorconfig
 enkia.tokyo-night
@@ -32,7 +31,6 @@ ms-vscode.vscode-serial-monitor
 pkief.material-icon-theme
 qufiwefefwoyn.kanagawa
 redhat.java
-redhat.vscode-xml
 ritwickdey.liveserver
 sallar.vscode-duotone-dark
 streetsidesoftware.code-spell-checker
