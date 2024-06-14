@@ -3,6 +3,7 @@ alexdauenhauer.catppuccin-noctis
 alexdauenhauer.nocterial-palenight
 angular.ng-template
 arcticicestudio.nord-visual-studio-code
+ashinzekene.nestjs
 astro-build.astro-vscode
 bierner.markdown-emoji
 bmalehorn.vscode-fish
@@ -35,7 +36,7 @@ redhat.vscode-xml
 ritwickdey.liveserver
 sallar.vscode-duotone-dark
 streetsidesoftware.code-spell-checker
-styled-components.vscode-styled-components
+tamasfe.even-better-toml
 tomoki1207.pdf
 unifiedjs.vscode-mdx
 visualstudioexptteam.intellicode-api-usage-examples
