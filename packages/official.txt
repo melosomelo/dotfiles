@@ -1,6 +1,7 @@
 alacritty
 base
 base-devel
+docker
 efibootmgr
 firefox
 fish
@@ -16,5 +17,6 @@ neovim
 networkmanager
 openssh
 plasma-meta
+sof-firmware
 ttf-jetbrains-mono-nerd
 zoxide
