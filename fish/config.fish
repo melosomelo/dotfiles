@@ -24,12 +24,12 @@ set -gx QT_STYLE_OVERRIDE breeze
 # start X at login
 if status is-login
   if test -z "$DISPLAY" -a "$XDG_VTNR" = 1
-    exec startx -- -keeptty
+	  #exec startx -- -keeptty
   end
 end
 
 if status is-interactive
   # applying selected wal theme to new terminals
-  cat ~/.cache/wal/sequences
+  # cat ~/.cache/wal/sequences
   zoxide init fish | source
 end
