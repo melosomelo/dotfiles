@@ -1,6 +1,5 @@
 alacritty
 alsa-utils
-asar
 base
 base-devel
 bluez-utils
