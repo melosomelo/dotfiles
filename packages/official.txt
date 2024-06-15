@@ -20,9 +20,11 @@ linux-firmware
 man-db
 neovim
 networkmanager
+npm
 openssh
 plasma-meta
 sof-firmware
 tmux
 ttf-jetbrains-mono-nerd
+yarn
 zoxide
