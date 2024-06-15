@@ -1,19 +1,16 @@
 alacritty
 alsa-utils
-asar
 base
 base-devel
 docker
 docker-compose
 dolphin
 efibootmgr
-electron29
 firefox
 fish
 git
 github-cli
 grub
-icoutils
 iwd
 less
 linux
@@ -22,7 +19,6 @@ man-db
 neovim
 networkmanager
 openssh
-p7zip
 plasma-meta
 sof-firmware
 tmux
