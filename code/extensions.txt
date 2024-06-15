@@ -8,6 +8,7 @@ astro-build.astro-vscode
 bierner.markdown-emoji
 bmalehorn.vscode-fish
 bradlc.vscode-tailwindcss
+bruno-api-client.bruno
 catppuccin.catppuccin-vsc
 daohong-emilio.yash
 dbaeumer.vscode-eslint
