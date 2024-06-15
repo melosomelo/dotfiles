@@ -1,7 +1,6 @@
 1password
 google-chrome
 notion-app-electron
-notion-app-electron-debug
 visual-studio-code-bin
 whatsdesk-bin
 yay
