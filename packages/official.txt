@@ -15,8 +15,6 @@ github-cli
 grub
 iwd
 less
-libayatana-appindicator
-libcurl-gnutls
 linux
 linux-firmware
 man-db

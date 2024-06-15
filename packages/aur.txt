@@ -1,6 +1,7 @@
 1password
 google-chrome
 notion-app-electron
+spotify
 visual-studio-code-bin
 whatsdesk-bin
 yay
