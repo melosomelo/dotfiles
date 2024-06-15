@@ -9,6 +9,7 @@ dolphin
 efibootmgr
 firefox
 fish
+fuse2
 git
 github-cli
 grub
