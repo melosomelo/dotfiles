@@ -2,6 +2,7 @@ alacritty
 alsa-utils
 base
 base-devel
+bluez-utils
 docker
 docker-compose
 dolphin
