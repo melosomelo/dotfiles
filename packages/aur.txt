@@ -1,5 +1,7 @@
 1password
 google-chrome
+insomnia
+insomnia-debug
 notion-app-electron
 spotify
 visual-studio-code-bin
