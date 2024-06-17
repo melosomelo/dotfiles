@@ -3,6 +3,7 @@ alsa-utils
 base
 base-devel
 bluez-utils
+discord
 docker
 docker-compose
 dolphin
