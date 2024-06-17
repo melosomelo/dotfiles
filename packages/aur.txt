@@ -1,8 +1,8 @@
 1password
 google-chrome
 insomnia
-insomnia-debug
 notion-app-electron
+slack-desktop
 spotify
 visual-studio-code-bin
 whatsdesk-bin
