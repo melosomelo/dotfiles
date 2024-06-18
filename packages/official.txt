@@ -3,6 +3,7 @@ alsa-utils
 base
 base-devel
 bluez-utils
+coq
 discord
 docker
 docker-compose
