@@ -21,6 +21,7 @@ linux-firmware
 man-db
 neovim
 networkmanager
+okular
 openssh
 plasma-meta
 sof-firmware
