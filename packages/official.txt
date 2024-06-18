@@ -4,6 +4,7 @@ base
 base-devel
 bluez-utils
 coq
+coqide
 discord
 docker
 docker-compose
