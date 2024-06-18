@@ -27,6 +27,7 @@ okular
 openssh
 plasma-meta
 sof-firmware
+spectacle
 tmux
 ttf-jetbrains-mono-nerd
 zoxide
