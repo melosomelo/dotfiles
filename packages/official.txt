@@ -26,6 +26,7 @@ networkmanager
 okular
 openssh
 plasma-meta
+qbittorrent
 sof-firmware
 spectacle
 tmux
