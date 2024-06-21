@@ -1,6 +1,7 @@
 1password
 google-chrome
 insomnia
+ngrok
 notion-app-electron
 slack-desktop
 spotify
