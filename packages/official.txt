@@ -32,5 +32,6 @@ sof-firmware
 spectacle
 tmux
 ttf-cascadia-code
+ttf-input
 ttf-jetbrains-mono-nerd
 zoxide
