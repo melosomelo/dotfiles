@@ -30,5 +30,6 @@ qbittorrent
 sof-firmware
 spectacle
 tmux
+ttf-cascadia-code
 ttf-jetbrains-mono-nerd
 zoxide
