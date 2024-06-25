@@ -1,6 +1,6 @@
 {
   "workbench.colorTheme": "Catppuccin Mocha",
-  "editor.fontFamily": "JetBrainsMono Nerd Font, iMWritingMonoS Nerd Font Mono,  'FiraCode Nerd Font'",
+  "editor.fontFamily": "JetBrainsMono Nerd Font",
   "editor.fontLigatures": true,
   "editor.fontSize": 14,
   "editor.lineHeight": 1.8,
