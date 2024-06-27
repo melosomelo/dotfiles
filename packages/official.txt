@@ -33,5 +33,6 @@ spectacle
 tmux
 ttf-cascadia-code
 ttf-input
+ttf-iosevka-nerd
 ttf-jetbrains-mono-nerd
 zoxide
