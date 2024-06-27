@@ -32,6 +32,7 @@ sof-firmware
 spectacle
 tmux
 ttf-cascadia-code
+ttf-fira-code
 ttf-input
 ttf-iosevka-nerd
 ttf-jetbrains-mono-nerd
