@@ -17,6 +17,7 @@ editorconfig.editorconfig
 enkia.tokyo-night
 esbenp.prettier-vscode
 gaearon.subliminal
+golang.go
 haskell.haskell
 jker.purple-wave
 johnnymorganz.stylua
