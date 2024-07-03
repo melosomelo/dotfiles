@@ -25,7 +25,6 @@ neovim
 networkmanager
 okular
 openssh
-openvpn
 otf-monaspace
 plasma-meta
 qbittorrent
