@@ -1,5 +1,6 @@
 alacritty
 alsa-utils
+asar
 base
 base-devel
 bluez-utils
@@ -16,6 +17,7 @@ fuse2
 git
 github-cli
 grub
+icoutils
 iwd
 less
 linux
@@ -26,6 +28,7 @@ networkmanager
 okular
 openssh
 otf-monaspace
+p7zip
 plasma-meta
 qbittorrent
 sof-firmware
