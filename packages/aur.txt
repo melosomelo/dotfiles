@@ -3,7 +3,6 @@ google-chrome
 insomnia
 ngrok
 notion-app-electron
-pritunl-client-bin
 slack-desktop
 spotify
 visual-studio-code-bin
