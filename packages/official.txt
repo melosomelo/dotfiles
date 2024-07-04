@@ -38,4 +38,5 @@ ttf-fira-code
 ttf-input
 ttf-iosevka-nerd
 ttf-jetbrains-mono-nerd
+zip
 zoxide
