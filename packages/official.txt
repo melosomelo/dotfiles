@@ -17,6 +17,7 @@ git
 github-cli
 grub
 iwd
+kolourpaint
 less
 linux
 linux-firmware
