@@ -49,6 +49,11 @@
       "before": ["<leader>", "h"],
       "commands": ["editor.action.showHover"],
       "silent": true
+    },
+    {
+      "before": ["<leader>", "r"],
+      "commands": ["editor.action.rename"],
+      "silent": true
     }
   ],
   "vim.leader": "<space>",
