@@ -1,4 +1,6 @@
 1password
+anki
+anki-debug
 google-chrome
 insomnia
 ngrok
