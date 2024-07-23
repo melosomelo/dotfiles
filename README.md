@@ -44,4 +44,5 @@ end
 26. `mkdir -p ~/.ssh`
 27. `touch ~/.ssh/config`
 28. Configure `ssh` for GitHub authentication via the `config` file
-29. Reboot
+29. Run `gh auth login`
+30. Reboot
