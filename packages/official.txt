@@ -29,7 +29,6 @@ okular
 openssh
 otf-monaspace
 plasma-meta
-pritunl-client-electron
 qbittorrent
 sof-firmware
 spectacle
