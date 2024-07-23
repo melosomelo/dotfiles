@@ -31,7 +31,8 @@ Will likely turn into a script in the future.
 20. `chsh -s /usr/bin/fish`
 21. `curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish`
 22. `omf install l`
-23.
+23. `omf install https://github.com/jorgebucaran/nvm.fish`
+24.
 
 ```
 for ext in $(cat dotfiles/code/extensions.txt)
@@ -39,12 +40,15 @@ for ext in $(cat dotfiles/code/extensions.txt)
 end
 ```
 
-24. `ln -s  ~/dotfiles/code/settings.json ~/.config/Code/User/settings.json`
-25. `ln -s  ~/dotfiles/code/keybindings.json ~/.config/Code/User/keybindings.json`
-26. `mkdir -p ~/.ssh`
-27. `touch ~/.ssh/config`
-28. Configure `ssh` for GitHub authentication via the `config` file
-29. Run `gh auth login`
-30. `sudo mkdir -p /etc/pacman.d/hooks`
-31. `sudo ln -s ~/dotfiles/pacman/hooks/save_package_list.hook /etc/pacman.d/hooks`
-32. Reboot
+25. `ln -s  ~/dotfiles/code/settings.json ~/.config/Code/User/settings.json`
+26. `ln -s  ~/dotfiles/code/keybindings.json ~/.config/Code/User/keybindings.json`
+27. `mkdir -p ~/.ssh`
+28. `touch ~/.ssh/config`
+29. Configure `ssh` for GitHub authentication via the `config` file
+30. Run `gh auth login`
+31. `sudo mkdir -p /etc/pacman.d/hooks`
+32. `sudo ln -s ~/dotfiles/pacman/hooks/save_package_list.hook /etc/pacman.d/hooks`
+33. `sudo systemctl enable docker.service`
+34. `sudo systemctl start docker.service`
+35. `sudo usermod -aG docker mateus`
+36. Reboot
