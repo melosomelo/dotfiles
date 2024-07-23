@@ -45,4 +45,6 @@ end
 27. `touch ~/.ssh/config`
 28. Configure `ssh` for GitHub authentication via the `config` file
 29. Run `gh auth login`
-30. Reboot
+30. `sudo mkdir -p /etc/pacman.d/hooks`
+31. `sudo ln -s ~/dotfiles/pacman/hooks/save_package_list.hook /etc/pacman.d/hooks`
+32. Reboot

@@ -17,6 +17,7 @@ fuse2
 git
 github-cli
 grub
+haskell-random
 iwd
 kolourpaint
 less
@@ -30,8 +31,10 @@ openssh
 otf-monaspace
 plasma-meta
 qbittorrent
+reflector
 sof-firmware
 spectacle
+sudo
 tmux
 ttf-cascadia-code
 ttf-fira-code

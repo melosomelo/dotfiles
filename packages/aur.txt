@@ -1,13 +1,13 @@
 1password
 anki
-anki-debug
 google-chrome
 insomnia
 ngrok
 notion-app-electron
+nvm
 slack-desktop
 spotify
 visual-studio-code-bin
 whatsdesk-bin
 yay
-yay-debug
+yay-bin-debug
