@@ -17,7 +17,6 @@ fuse2
 git
 github-cli
 grub
-haskell-random
 iwd
 kolourpaint
 less
