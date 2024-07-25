@@ -30,6 +30,7 @@ okular
 openssh
 otf-monaspace
 plasma-meta
+postgresql
 qbittorrent
 reflector
 sof-firmware
