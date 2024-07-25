@@ -18,6 +18,7 @@ git
 github-cli
 grub
 iwd
+jre11-openjdk
 kolourpaint
 less
 linux
