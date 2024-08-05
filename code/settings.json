@@ -180,5 +180,8 @@
   "window.zoomLevel": 1,
   "typescript.tsserver.log": "off",
   "workbench.activityBar.location": "hidden",
-  "editor.stickyScroll.enabled": false
+  "editor.stickyScroll.enabled": false,
+  "[go]": {
+    "editor.defaultFormatter": "golang.go"
+  }
 }

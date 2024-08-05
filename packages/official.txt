@@ -11,6 +11,7 @@ docker
 docker-compose
 dolphin
 efibootmgr
+electron31
 firefox
 fish
 fuse2
