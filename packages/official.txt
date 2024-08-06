@@ -11,7 +11,6 @@ docker
 docker-compose
 dolphin
 efibootmgr
-electron31
 firefox
 fish
 fuse2
@@ -32,6 +31,7 @@ openssh
 otf-monaspace
 plasma-meta
 postgresql
+pritunl-client-electron
 qbittorrent
 reflector
 sof-firmware
