@@ -1,6 +1,7 @@
 alacritty
 alsa-utils
 ansible-core
+azure-cli
 base
 base-devel
 bluez-utils
