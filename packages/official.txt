@@ -32,6 +32,7 @@ otf-monaspace
 plasma-meta
 postgresql
 pritunl-client-electron
+python-pip
 qbittorrent
 reflector
 sof-firmware
