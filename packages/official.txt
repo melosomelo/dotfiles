@@ -1,5 +1,6 @@
 alacritty
 alsa-utils
+ansible-core
 base
 base-devel
 bluez-utils
