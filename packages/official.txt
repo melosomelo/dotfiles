@@ -6,6 +6,7 @@ base
 base-devel
 bluez-utils
 coq
+coqide
 dbeaver
 discord
 docker
