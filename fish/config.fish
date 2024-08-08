@@ -12,6 +12,8 @@ abbr -a ngmo nest g mo
 abbr -a ngco nest g co
 abbr -a ngpr nest g pr
 
+abbr -a lz lazydocker
+
 # aliases
 alias v nvim
 
