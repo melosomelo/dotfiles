@@ -3,7 +3,6 @@ anki
 google-chrome
 insomnia
 lazydocker
-lazydocker-debug
 ngrok
 notion-app-electron
 nvm

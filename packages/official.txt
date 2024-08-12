@@ -5,6 +5,7 @@ azure-cli
 base
 base-devel
 bluez-utils
+certbot
 coq
 coqide
 dbeaver
