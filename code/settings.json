@@ -6,7 +6,6 @@
   "editor.lineHeight": 1.8,
   "editor.rulers": [80, 120],
   "editor.semanticHighlighting.enabled": false,
-  "breadcrumbs.enabled": false,
   "editor.minimap.enabled": false,
   "explorer.compactFolders": false,
   "workbench.statusBar.visible": true,
@@ -183,5 +182,6 @@
   "editor.stickyScroll.enabled": false,
   "[go]": {
     "editor.defaultFormatter": "golang.go"
-  }
+  },
+  "prettier.printWidth": 100
 }
