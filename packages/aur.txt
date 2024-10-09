@@ -9,4 +9,5 @@ slack-desktop
 spotify
 visual-studio-code-bin
 whatsdesk-bin
+yay
 yay-bin-debug
