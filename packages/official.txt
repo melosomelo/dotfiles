@@ -35,10 +35,7 @@ otf-monaspace
 plasma-meta
 postgresql
 pritunl-client-electron
-python-build
-python-hypothesis
 python-pip
-python-pytest
 qbittorrent
 reflector
 sof-firmware
