@@ -183,5 +183,6 @@
   "[go]": {
     "editor.defaultFormatter": "golang.go"
   },
-  "prettier.printWidth": 100
+  "prettier.printWidth": 100,
+  "prettier.singleQuote": true
 }
