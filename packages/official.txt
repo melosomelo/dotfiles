@@ -9,7 +9,6 @@ certbot
 coq
 coqide
 dbeaver
-discord
 docker
 docker-compose
 dolphin
