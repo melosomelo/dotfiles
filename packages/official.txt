@@ -36,6 +36,7 @@ postgresql
 pritunl-client-electron
 python-pip
 qbittorrent
+qutebrowser
 reflector
 sof-firmware
 spectacle
