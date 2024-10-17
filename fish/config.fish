@@ -20,6 +20,7 @@ alias v nvim
 # global variables
 set -g fish_greeting
 set -gx DOTFILES $HOME/dotfiles
+set -gx EDITOR nvim
 set -gx NVM_INITIALIZED false
 set -gx QT_STYLE_OVERRIDE breeze
 
