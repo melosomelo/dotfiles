@@ -29,6 +29,7 @@ linux-firmware
 man-db
 neovim
 networkmanager
+noto-fonts-cjk
 okular
 openssh
 otf-monaspace
