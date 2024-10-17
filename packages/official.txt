@@ -13,6 +13,7 @@ docker
 docker-compose
 dolphin
 efibootmgr
+fastfetch
 firefox
 fish
 fuse2
