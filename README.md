@@ -55,3 +55,13 @@ end
 37. `sudo systemctl start docker.service`
 38. `sudo usermod -aG docker mateus`
 39. Reboot
+
+## Wishlist
+
+- [ ] Configure `tmux`
+- [ ] Configure `qutebrowser`
+- [ ] Save web bookmarks independently of web browser
+- [ ] Implement a "work mode". This'd be a mode that can be toggled in order to use more work optimized software.
+      For instance, use i3 + qutebrowser instead of Chrome + Kwin. It'd be cool for times when I want to use my computer more
+      casually or for when other people need to use it for some reason.
+- [ ] Add some cool themes with color schemes
