@@ -14,6 +14,9 @@ abbr -a ngpr nest g pr
 
 abbr -a lz lazydocker
 
+abbr -a tls tmux ls
+abbr -a ta tmux a
+
 # aliases
 alias v nvim
 
