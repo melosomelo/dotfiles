@@ -66,3 +66,4 @@ end
       For instance, use i3 + qutebrowser instead of Chrome + Kwin. It'd be cool for times when I want to use my computer more
       casually or for when other people need to use it for some reason.
 - [ ] Add some cool themes with color schemes
+- [ ] Add some cool screenshots to the README (e.g. fastfetch, maybe make it automatic?)
