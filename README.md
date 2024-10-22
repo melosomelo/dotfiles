@@ -67,3 +67,4 @@ end
       casually or for when other people need to use it for some reason.
 - [ ] Add some cool themes with color schemes
 - [ ] Add some cool screenshots to the README (e.g. fastfetch, maybe make it automatic?)
+- [ ] Turn setup section into a script. Would also be cool to have tests for this setup script. Maybe via a CI/CD pipeline?
