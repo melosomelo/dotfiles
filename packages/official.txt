@@ -6,6 +6,7 @@ base
 base-devel
 bluez-utils
 certbot
+composer
 coq
 coqide
 dbeaver
