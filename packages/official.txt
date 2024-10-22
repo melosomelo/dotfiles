@@ -9,6 +9,7 @@ certbot
 composer
 coq
 coqide
+cronie
 dbeaver
 docker
 docker-compose
