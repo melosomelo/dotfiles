@@ -1,0 +1,2 @@
+# Update VSCode extensions list
+0 10 * * * /usr/bin/fish -c 'ucel'

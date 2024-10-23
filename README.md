@@ -55,7 +55,8 @@ end
 37. `sudo systemctl start docker.service`
 38. `sudo usermod -aG docker mateus`
 39. `sudo systemctl enable cronie && sudo systemctl start cronie`
-40. Reboot
+40. `cat ~/dotfiles/cron/base_crontab | crontab -`
+41. Reboot
 
 ## Wishlist
 
