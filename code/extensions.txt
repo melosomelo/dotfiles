@@ -29,6 +29,7 @@ miguelsolorio.symbols
 ms-azuretools.vscode-docker
 ms-vscode.cpptools
 ms-vscode.vscode-serial-monitor
+ms-vscode.vscode-typescript-tslint-plugin
 pkief.material-icon-theme
 qufiwefefwoyn.kanagawa
 redhat.java
@@ -40,6 +41,7 @@ tomoki1207.pdf
 unifiedjs.vscode-mdx
 visualstudioexptteam.intellicode-api-usage-examples
 visualstudioexptteam.vscodeintellicode
+vscjava.vscode-gradle
 vscjava.vscode-java-debug
 vscjava.vscode-java-dependency
 vscjava.vscode-java-pack
