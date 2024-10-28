@@ -9,7 +9,6 @@ bierner.markdown-emoji
 bmalehorn.vscode-fish
 bradlc.vscode-tailwindcss
 catppuccin.catppuccin-vsc
-daohong-emilio.yash
 dbaeumer.vscode-eslint
 dnlytras.nord-wave
 eamodio.gitlens
@@ -23,13 +22,10 @@ jker.purple-wave
 johnnymorganz.stylua
 justusadam.language-haskell
 kamikillerto.vscode-colorize
-luniclynx.lex
 miguelsolorio.min-theme
 miguelsolorio.symbols
 ms-azuretools.vscode-docker
 ms-vscode.cpptools
-ms-vscode.vscode-serial-monitor
-ms-vscode.vscode-typescript-tslint-plugin
 pkief.material-icon-theme
 qufiwefefwoyn.kanagawa
 redhat.java
