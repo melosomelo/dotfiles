@@ -184,5 +184,8 @@
     "editor.defaultFormatter": "golang.go"
   },
   "prettier.printWidth": 100,
-  "prettier.singleQuote": true
+  "prettier.singleQuote": true,
+  "[sql]": {
+    "editor.defaultFormatter": "inferrinizzard.prettier-sql-vscode"
+  }
 }

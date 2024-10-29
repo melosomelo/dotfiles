@@ -30,12 +30,13 @@ Will likely turn into a script in the future.
 19. `rm -rf .config/fish/functions`
 20. `ln -s ~/dotfiles/fish/config.fish ~/.config/fish/config.fish`
 21. `ln -s ~/dotfiles/fish/functions ~/.config/fish`
-22. `ln -s ~/dotfiles/tmux/.tmux.conf ~/.tmux.conf`
-23. `chsh -s /usr/bin/fish`
-24. `curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish`
-25. `omf install l`
-26. `omf install https://github.com/jorgebucaran/nvm.fish`
-27.
+22. `git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm`
+23. `ln -s ~/dotfiles/tmux/.tmux.conf ~/.tmux.conf`
+24. `chsh -s /usr/bin/fish`
+25. `curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish`
+26. `omf install l`
+27. `omf install https://github.com/jorgebucaran/nvm.fish`
+28.
 
 ```
 for ext in $(cat dotfiles/code/extensions.txt)
@@ -43,20 +44,20 @@ for ext in $(cat dotfiles/code/extensions.txt)
 end
 ```
 
-28. `ln -s  ~/dotfiles/code/settings.json ~/.config/Code/User/settings.json`
-29. `ln -s  ~/dotfiles/code/keybindings.json ~/.config/Code/User/keybindings.json`
-30. `mkdir -p ~/.ssh`
-31. `touch ~/.ssh/config`
-32. Configure `ssh` for GitHub authentication via the `config` file
-33. Run `gh auth login`
-34. `sudo mkdir -p /etc/pacman.d/hooks`
-35. `sudo ln -s ~/dotfiles/pacman/hooks/save_package_list.hook /etc/pacman.d/hooks`
-36. `sudo systemctl enable docker.service`
-37. `sudo systemctl start docker.service`
-38. `sudo usermod -aG docker mateus`
-39. `sudo systemctl enable cronie && sudo systemctl start cronie`
-40. `cat ~/dotfiles/cron/base_crontab | crontab -`
-41. Reboot
+29. `ln -s  ~/dotfiles/code/settings.json ~/.config/Code/User/settings.json`
+30. `ln -s  ~/dotfiles/code/keybindings.json ~/.config/Code/User/keybindings.json`
+31. `mkdir -p ~/.ssh`
+32. `touch ~/.ssh/config`
+33. Configure `ssh` for GitHub authentication via the `config` file
+34. Run `gh auth login`
+35. `sudo mkdir -p /etc/pacman.d/hooks`
+36. `sudo ln -s ~/dotfiles/pacman/hooks/save_package_list.hook /etc/pacman.d/hooks`
+37. `sudo systemctl enable docker.service`
+38. `sudo systemctl start docker.service`
+39. `sudo usermod -aG docker mateus`
+40. `sudo systemctl enable cronie && sudo systemctl start cronie`
+41. `cat ~/dotfiles/cron/base_crontab | crontab -`
+42. Reboot
 
 ## Wishlist
 
