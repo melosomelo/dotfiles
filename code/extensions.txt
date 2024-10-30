@@ -18,6 +18,7 @@ esbenp.prettier-vscode
 gaearon.subliminal
 golang.go
 haskell.haskell
+inferrinizzard.prettier-sql-vscode
 jker.purple-wave
 johnnymorganz.stylua
 justusadam.language-haskell
