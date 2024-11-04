@@ -54,5 +54,7 @@ ttf-iosevka-nerd
 ttf-jetbrains-mono-nerd
 unzip
 vagrant
+virtualbox
+virtualbox-host-modules-arch
 zip
 zoxide
