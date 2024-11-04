@@ -53,5 +53,6 @@ ttf-input
 ttf-iosevka-nerd
 ttf-jetbrains-mono-nerd
 unzip
+vagrant
 zip
 zoxide
