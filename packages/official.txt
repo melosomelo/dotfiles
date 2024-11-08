@@ -5,9 +5,7 @@ azure-cli
 base
 base-devel
 bluez-utils
-boost
 certbot
-cmake
 composer
 coq
 coqide
@@ -20,7 +18,6 @@ efibootmgr
 fastfetch
 firefox
 fish
-fop
 fuse2
 git
 github-cli
