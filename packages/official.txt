@@ -5,7 +5,9 @@ azure-cli
 base
 base-devel
 bluez-utils
+boost
 certbot
+cmake
 composer
 coq
 coqide
