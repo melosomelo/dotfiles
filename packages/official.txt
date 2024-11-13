@@ -18,7 +18,6 @@ efibootmgr
 fastfetch
 firefox
 fish
-fop
 fuse2
 git
 github-cli
