@@ -2,11 +2,13 @@
 abbr -a gs git status
 abbr -a gd git diff
 abbr -a ga git add
-abbr -a gp git push
-abbr -a gpo git push origin
-abbr -a gpom git push origin main
+abbr -a gps git push
+abbr -a gpso git push origin
+abbr -a gpsom git push origin main
+abbr -a gpl git pull
 abbr -a gc git commit
 abbr -a gcm git commit -m \"
+abbr -a gco git checkout
 
 abbr -a ngmo nest g mo
 abbr -a ngco nest g co
