@@ -9,6 +9,7 @@ abbr -a gpl git pull
 abbr -a gc git commit
 abbr -a gcm git commit -m \"
 abbr -a gco git checkout
+abbr -a gl git log
 
 abbr -a ngmo nest g mo
 abbr -a ngco nest g co

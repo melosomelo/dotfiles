@@ -6,6 +6,7 @@ arcticicestudio.nord-visual-studio-code
 ashinzekene.nestjs
 astro-build.astro-vscode
 bierner.markdown-emoji
+bierner.markdown-mermaid
 bmalehorn.vscode-fish
 bradlc.vscode-tailwindcss
 catppuccin.catppuccin-vsc
