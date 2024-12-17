@@ -27,6 +27,9 @@ kamikillerto.vscode-colorize
 miguelsolorio.min-theme
 miguelsolorio.symbols
 ms-azuretools.vscode-docker
+ms-python.debugpy
+ms-python.python
+ms-python.vscode-pylance
 ms-vscode.cpptools
 pkief.material-icon-theme
 qufiwefefwoyn.kanagawa
