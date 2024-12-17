@@ -39,6 +39,7 @@ php-legacy
 plasma-meta
 postgresql
 pritunl-client-electron
+python-networkx
 python-pip
 qbittorrent
 qutebrowser
