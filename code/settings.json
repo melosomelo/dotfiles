@@ -187,5 +187,6 @@
   "prettier.singleQuote": true,
   "[sql]": {
     "editor.defaultFormatter": "inferrinizzard.prettier-sql-vscode"
-  }
+  },
+  "prettier.proseWrap": "always"
 }
