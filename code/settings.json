@@ -100,7 +100,8 @@
   },
   "cSpell.enableFiletypes": ["!cpp"],
   "workbench.editorAssociations": {
-    "*.ipynb": "jupyter-notebook"
+    "*.ipynb": "jupyter-notebook",
+    "{git,gitlens,git-graph}:/**/*.{md,csv,svg}": "default"
   },
   "editor.cursorStyle": "line",
   "editor.lineNumbers": "relative",

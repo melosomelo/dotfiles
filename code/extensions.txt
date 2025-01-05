@@ -10,6 +10,7 @@ bierner.markdown-mermaid
 bmalehorn.vscode-fish
 bradlc.vscode-tailwindcss
 catppuccin.catppuccin-vsc
+cweijan.vscode-office
 dbaeumer.vscode-eslint
 dnlytras.nord-wave
 eamodio.gitlens
