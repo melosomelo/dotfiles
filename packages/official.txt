@@ -29,7 +29,6 @@ less
 linux
 linux-firmware
 man-db
-mpv
 neovim
 networkmanager
 noto-fonts-cjk
@@ -43,11 +42,6 @@ pritunl-client-electron
 python-networkx
 python-pip
 qbittorrent
-qt5-declarative
-qt5-quickcontrols
-qt5-quickcontrols2
-qt5-webchannel
-qt5-webengine
 qutebrowser
 reflector
 sof-firmware

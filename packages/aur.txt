@@ -7,6 +7,7 @@ ngrok
 nvm
 slack-desktop
 spotify
+stremio
 vagrant-git
 visual-studio-code-bin
 whatsdesk-bin
