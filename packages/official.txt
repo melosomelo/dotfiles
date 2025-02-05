@@ -1,5 +1,6 @@
 alacritty
 alsa-utils
+amdvlk
 ansible-core
 azure-cli
 base
@@ -16,12 +17,14 @@ docker-compose
 dolphin
 efibootmgr
 fastfetch
+fcitx5
 firefox
 fish
 fuse2
 git
 github-cli
 grub
+ibus
 iwd
 jre11-openjdk
 kolourpaint
@@ -56,5 +59,6 @@ ttf-jetbrains-mono-nerd
 unzip
 virtualbox
 virtualbox-host-modules-arch
+wayland-protocols
 zip
 zoxide
