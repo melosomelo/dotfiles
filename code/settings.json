@@ -147,7 +147,8 @@
   },
   "files.associations": {
     "*.y": "yacc",
-    ".example.env": "properties"
+    ".example.env": "properties",
+    "*.css": "tailwindcss"
   },
   "C_Cpp.vcFormat.indent.caseLabels": true,
   "C_Cpp.vcFormat.indent.caseContentsWhenBlock": true,
