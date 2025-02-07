@@ -158,6 +158,9 @@
   "[astro]": {
     "editor.defaultFormatter": "astro-build.astro-vscode"
   },
+  "[tailwindcss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "symbols.hidesExplorerArrows": false,
   "apc.stylesheet": {
     ".title-label > h2": "display: none",
