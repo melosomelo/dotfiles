@@ -44,6 +44,7 @@ postgresql
 pritunl-client-electron
 python-networkx
 python-pip
+python-pymysql
 qbittorrent
 qutebrowser
 reflector
