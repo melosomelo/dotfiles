@@ -39,7 +39,6 @@ sallar.vscode-duotone-dark
 streetsidesoftware.code-spell-checker
 tamasfe.even-better-toml
 tomoki1207.pdf
-unifiedjs.vscode-mdx
 visualstudioexptteam.intellicode-api-usage-examples
 visualstudioexptteam.vscodeintellicode
 vscjava.vscode-gradle
