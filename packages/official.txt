@@ -37,7 +37,6 @@ networkmanager
 noto-fonts-cjk
 okular
 openssh
-openssl-1.1
 otf-monaspace
 php-legacy
 plasma-meta
@@ -52,7 +51,6 @@ reflector
 sof-firmware
 spectacle
 sudo
-tk
 tmux
 ttf-cascadia-code
 ttf-fira-code
@@ -63,7 +61,5 @@ unzip
 virtualbox
 virtualbox-host-modules-arch
 wayland-protocols
-xorg-server-xvfb
-xterm
 zip
 zoxide
