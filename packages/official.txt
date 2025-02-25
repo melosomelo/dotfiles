@@ -26,7 +26,6 @@ github-cli
 grub
 ibus
 iwd
-jre11-openjdk
 jre17-openjdk
 kolourpaint
 less
