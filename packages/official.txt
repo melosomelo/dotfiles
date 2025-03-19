@@ -51,7 +51,6 @@ reflector
 sof-firmware
 spectacle
 sudo
-thunderbird
 tmux
 ttf-cascadia-code
 ttf-fira-code
