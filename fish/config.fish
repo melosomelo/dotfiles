@@ -20,6 +20,8 @@ abbr -a lz lazydocker
 abbr -a tls tmux ls
 abbr -a ta tmux a
 
+abbr -a npmc npm run commit
+
 # aliases
 alias v nvim
 
