@@ -12,6 +12,7 @@ coq
 coqide
 cronie
 dbeaver
+deno
 docker
 docker-compose
 dolphin
