@@ -8,6 +8,7 @@ python2-bin
 slack-desktop
 spotify
 stremio
+supabase
 vagrant-git
 visual-studio-code-bin
 whatsdesk-bin
