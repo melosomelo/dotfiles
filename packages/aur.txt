@@ -4,7 +4,6 @@ google-chrome
 insomnia
 lazydocker
 ngrok
-nvm
 python2-bin
 slack-desktop
 spotify
