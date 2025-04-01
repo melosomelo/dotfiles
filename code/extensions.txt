@@ -11,6 +11,7 @@ bmalehorn.vscode-fish
 bradlc.vscode-tailwindcss
 catppuccin.catppuccin-vsc
 dbaeumer.vscode-eslint
+denoland.vscode-deno
 dnlytras.nord-wave
 eamodio.gitlens
 editorconfig.editorconfig

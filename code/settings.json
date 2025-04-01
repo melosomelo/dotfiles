@@ -193,5 +193,10 @@
   "[sql]": {
     "editor.defaultFormatter": "inferrinizzard.prettier-sql-vscode"
   },
-  "prettier.proseWrap": "always"
+  "prettier.proseWrap": "always",
+  "chat.commandCenter.enabled": false,
+  "workbench.layoutControl.enabled": false,
+  "workbench.navigationControl.enabled": false,
+  "window.commandCenter": false,
+  "window.menuBarVisibility": "compact"
 }
