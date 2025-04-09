@@ -13,6 +13,7 @@ catppuccin.catppuccin-vsc
 dbaeumer.vscode-eslint
 denoland.vscode-deno
 dnlytras.nord-wave
+docker.docker
 eamodio.gitlens
 editorconfig.editorconfig
 enkia.tokyo-night
