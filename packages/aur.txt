@@ -6,7 +6,6 @@ lazydocker
 ngrok
 python2-bin
 slack-desktop
-spotify
 stremio
 supabase
 vagrant-git
