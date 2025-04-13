@@ -1,6 +1,7 @@
 {
   "workbench.colorTheme": "Kanagawa",
-  "editor.fontFamily": "JetBrainsMono Nerd Font",
+  "editor.fontFamily": "TX-02",
+  "editor.fontWeight": "400",
   "editor.fontLigatures": true,
   "editor.fontSize": 14,
   "editor.lineHeight": 1.8,
@@ -74,7 +75,6 @@
   },
   "liveServer.settings.donotShowInfoMsg": true,
   "workbench.editor.enablePreview": true,
-  "editor.fontWeight": null,
   "editor.suggestSelection": "first",
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "sonarlint.rules": {

@@ -1,21 +1,21 @@
 [font]
-size = 14
+size = 16
 
 [font.bold]
-family = "JetBrainsMonoNerdFont"
+family = "TX-02"
 style = "Bold"
 
 [font.bold_italic]
-family = "JetBrainsMonoNerdFont"
+family = "TX-02"
 style = "Bold Italic"
 
 [font.italic]
-family = "JetBrainsMonoNerdFont"
+family = "TX-02"
 style = "Italic"
 
 [font.normal]
-family = "JetBrainsMonoNerdFont"
-style = "Regular"
+family = "TX-02"
+style = "Medium"
 
 [font.offset]
 y = 5
