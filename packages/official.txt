@@ -40,6 +40,7 @@ nvm
 okular
 openssh
 otf-monaspace
+patchelf
 php-legacy
 plasma-meta
 postgresql
