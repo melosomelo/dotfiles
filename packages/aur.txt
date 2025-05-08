@@ -11,6 +11,7 @@ stremio
 supabase
 vagrant-git
 visual-studio-code-bin
+watchman-bin
 whatsdesk-bin
 yay
 yay-bin-debug
