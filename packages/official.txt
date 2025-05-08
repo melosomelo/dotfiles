@@ -33,6 +33,7 @@ less
 linux
 linux-firmware
 man-db
+mise
 neovim
 networkmanager
 noto-fonts-cjk

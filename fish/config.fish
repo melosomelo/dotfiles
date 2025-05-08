@@ -5,7 +5,7 @@ abbr -a ga git add
 abbr -a gp git push
 abbr -a gpo git push origin
 abbr -a gpom git push origin main
-abbr -a gpl git pull
+abbr -a gpl git pull 
 abbr -a gc git commit
 abbr -a gcm git commit -m \"
 abbr -a gco git checkout
@@ -31,6 +31,10 @@ set -gx DOTFILES $HOME/dotfiles
 set -gx EDITOR nvim
 set -gx NVM_INITIALIZED false
 set -gx QT_STYLE_OVERRIDE breeze
+set -gx ANDROID_HOME /home/mateus/Android/Sdk
+
+fish_add_path $ANDROID_HOME/emulator
+fish_add_path $ANDROID_HOME/platform-tools
 
 # start X at login
 if status is-login
