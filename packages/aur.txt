@@ -1,4 +1,5 @@
 1password
+android-studio
 anki
 google-chrome
 insomnia
