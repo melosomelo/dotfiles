@@ -46,3 +46,5 @@ end
 if status is-interactive
   zoxide init fish | source
 end
+
+/usr/bin/mise activate fish | source
