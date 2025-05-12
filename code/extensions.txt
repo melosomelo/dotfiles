@@ -26,6 +26,7 @@ jker.purple-wave
 johnnymorganz.stylua
 justusadam.language-haskell
 kamikillerto.vscode-colorize
+mathiasfrohlich.kotlin
 miguelsolorio.min-theme
 miguelsolorio.symbols
 ms-azuretools.vscode-docker
