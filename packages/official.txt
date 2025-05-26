@@ -55,6 +55,7 @@ sof-firmware
 spectacle
 sudo
 tmux
+tree
 ttf-cascadia-code
 ttf-fira-code
 ttf-input
