@@ -10,7 +10,7 @@ slack-desktop
 spotify
 stremio
 supabase
-vagrant-git
+vagrant
 visual-studio-code-bin
 watchman-bin
 whatsdesk-bin
