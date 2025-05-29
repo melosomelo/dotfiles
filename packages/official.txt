@@ -63,8 +63,6 @@ ttf-input
 ttf-iosevka-nerd
 ttf-jetbrains-mono-nerd
 unzip
-virtualbox
-virtualbox-host-modules-arch
 wayland-protocols
 zip
 zoxide
