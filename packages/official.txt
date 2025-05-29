@@ -66,6 +66,7 @@ ttf-input
 ttf-iosevka-nerd
 ttf-jetbrains-mono-nerd
 unzip
+virt-install
 wayland-protocols
 zip
 zoxide
