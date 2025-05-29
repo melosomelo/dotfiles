@@ -37,6 +37,7 @@ mise
 neovim
 networkmanager
 noto-fonts-cjk
+nvidia-dkms
 nvm
 okular
 openssh
