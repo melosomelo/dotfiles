@@ -4,13 +4,10 @@ anki
 google-chrome
 insomnia
 lazydocker
-ngrok
 python2-bin
 slack-desktop
 spotify
 stremio
-supabase
-vagrant
 visual-studio-code-bin
 watchman-bin
 whatsdesk-bin
