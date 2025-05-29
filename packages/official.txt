@@ -51,6 +51,7 @@ python-networkx
 python-pip
 python-pymysql
 qbittorrent
+qemu-base
 qutebrowser
 reflector
 sof-firmware
