@@ -30,6 +30,7 @@ iwd
 jre17-openjdk
 kolourpaint
 less
+libvirt
 linux
 linux-firmware
 man-db
