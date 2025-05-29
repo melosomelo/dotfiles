@@ -13,6 +13,7 @@ coqide
 cronie
 dbeaver
 deno
+dnsmasq
 docker
 docker-compose
 dolphin
