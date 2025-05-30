@@ -30,34 +30,32 @@ if [ "$SKIP_ISO_REMASTER" != 1 ]; then
   log INFO "Remastering ISO file"
 
   # Mounting the ISO locally so we can edit it
-  mkdir -p ~/archiso/iso ~/archiso/work
-  mount -o loop archlinux.iso ~/archiso/iso
-  cp -rT ~/archiso/iso ~/archiso/work
-  umount ~/archiso/iso
+  mkdir -p archiso/iso archiso/work
+  mount -o loop archlinux.iso archiso/iso
+  cp -rT archiso/iso archiso/work
+  umount archiso/iso
 
   # Send all output to the serial device ttyS0. Required to connect to the VM via virsh without any GUI
-  sed -i 's/\(APPEND.*\)$/\1 console=ttyS0/' ~/archiso/work/boot/syslinux/archiso_sys-linux.cfg
+  sed -i 's/\(APPEND.*\)$/\1 console=ttyS0/' archiso/work/boot/syslinux/archiso_sys-linux.cfg
 
   # Enabling autologin on ttyS0
-  unsquashfs -d ~/archiso/airootfs ~/archiso/work/arch/x86_64/airootfs.sfs
-  mkdir -p ~/archiso/airootfs/etc/systemd/system/serial-getty@ttyS0.service.d
-  cat <<EOF > ~/archiso/airootfs/etc/systemd/system/serial-getty@ttyS0.service.d/autologin.conf
+  unsquashfs -d archiso/airootfs archiso/work/arch/x86_64/airootfs.sfs
+  mkdir -p archiso/airootfs/etc/systemd/system/serial-getty@ttyS0.service.d
+  cat <<EOF > archiso/airootfs/etc/systemd/system/serial-getty@ttyS0.service.d/autologin.conf
 [Service]
 ExecStart=
 ExecStart=-/sbin/agetty --autologin root --noclear %I \$TERM
 EOF
-  rm ~/archiso/work/arch/x86_64/airootfs.sfs
-  mksquashfs ~/archiso/airootfs ~/archiso/work/arch/x86_64/airootfs.sfs -comp zstd -noappend
-
-  script_dir=$(pwd)
-  cd ~/archiso/work
+  rm archiso/work/arch/x86_64/airootfs.sfs
+  mksquashfs archiso/airootfs archiso/work/arch/x86_64/airootfs.sfs -comp zstd -noappend
 
   # Rebuilding the ISO file
+  cd archiso/work
   xorriso -as mkisofs \
     -iso-level 3 \
     -full-iso9660-filenames \
     -volid "ARCH_$(date +%Y%m)" \
-    -output "$script_dir/archlinux-custom.iso" \
+    -output "$(pwd)/archlinux-custom.iso" \
     -eltorito-boot boot/syslinux/isolinux.bin \
         -eltorito-catalog boot/syslinux/boot.cat \
         -no-emul-boot -boot-load-size 4 -boot-info-table \
@@ -67,8 +65,8 @@ EOF
         -no-emul-boot \
     -m "arch/x86_64/airootfs.sfs.cms.sig" \
     -graft-points . 
-  rm -rf ~/archiso/iso ~/archiso/work
-  cd $script_dir
+  cd ..
+  rm -rf archiso/
   mv archlinux-custom.iso archlinux.iso
 fi
 
