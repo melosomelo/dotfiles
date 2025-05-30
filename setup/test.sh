@@ -31,18 +31,36 @@ if [ "$SKIP_ISO_REMASTER" != 1 ]; then
   mount -o loop archlinux.iso ~/archiso/iso
   cp -rT ~/archiso/iso ~/archiso/work
   umount ~/archiso/iso
-  sed -i 's/\(APPEND.*\)$/\1 console=ttyS0/' ~/archiso/work/boot/syslinux/archiso_sys-linux.cfg
+  sed -i 's/\(APPEND.*\)$/\1 autologin console=ttyS0/' ~/archiso/work/boot/syslinux/archiso_sys-linux.cfg
+  script_dir=$(pwd)
+  cd ~/archiso/work
+  xorriso -as mkisofs \
+    -iso-level 3 \
+    -full-iso9660-filenames \
+    -volid "ARCH_$(date +%Y%m)" \
+    -output "$script_dir/archlinux-custom.iso" \
+    -eltorito-boot boot/syslinux/isolinux.bin \
+        -eltorito-catalog boot/syslinux/boot.cat \
+        -no-emul-boot -boot-load-size 4 -boot-info-table \
+    -isohybrid-mbr boot/syslinux/isohdpfx.bin \
+    -eltorito-alt-boot \
+        -e EFI/BOOT/BOOTx64.EFI \
+        -no-emul-boot \
+    -m "arch/x86_64/airootfs.sfs.cms.sig" \
+    -graft-points . 
   rm -rf ~/archiso/iso ~/archiso/work
+  cd $script_dir
+  mv archlinux-custom.iso archlinux.iso
 fi
 
-# log INFO "Creating virtual machine from ISO"
-# virt-install \
-#   --name archlinux-test \
-#   --memory 2048 \
-#   --vcpus 2 \
-#   --cdrom archlinux.iso \
-#   --os-variant archlinux \
-#   --disk size=2 \
-#   --transient \
-#   --graphics none \
-#   --noautoconsole
+log INFO "Creating virtual machine from ISO"
+virt-install \
+  --name archlinux-test \
+  --memory 2048 \
+  --vcpus 2 \
+  --cdrom archlinux.iso \
+  --os-variant archlinux \
+  --disk size=2 \
+  --transient \
+  --graphics none \
+  --noautoconsole
