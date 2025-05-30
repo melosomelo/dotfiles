@@ -59,6 +59,7 @@ qutebrowser
 reflector
 sof-firmware
 spectacle
+squashfs-tools
 sudo
 tmux
 tree

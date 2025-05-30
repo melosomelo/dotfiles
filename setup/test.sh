@@ -26,12 +26,16 @@ if [ "$SKIP_ISO_DOWNLOAD" != 1 ]; then
 fi
 
 if [ "$SKIP_ISO_REMASTER" != 1 ]; then
-  log INFO "Remastering ISO file with modified boot parameters"
+  log INFO "Remastering ISO file"
   mkdir -p ~/archiso/iso ~/archiso/work
   mount -o loop archlinux.iso ~/archiso/iso
   cp -rT ~/archiso/iso ~/archiso/work
   umount ~/archiso/iso
-  sed -i 's/\(APPEND.*\)$/\1 autologin console=ttyS0/' ~/archiso/work/boot/syslinux/archiso_sys-linux.cfg
+
+  sed -i 's/\(APPEND.*\)$/\1 console=ttyS0/' ~/archiso/work/boot/syslinux/archiso_sys-linux.cfg
+
+
+
   script_dir=$(pwd)
   cd ~/archiso/work
   xorriso -as mkisofs \
