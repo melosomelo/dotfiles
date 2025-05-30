@@ -68,5 +68,6 @@ ttf-jetbrains-mono-nerd
 unzip
 virt-install
 wayland-protocols
+xmlstarlet
 zip
 zoxide
