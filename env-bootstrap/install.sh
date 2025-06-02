@@ -51,7 +51,7 @@ for i in {5..1}; do
 done
 echo
 
-pacman -S --noconfirm --quiet gum > /dev/null
+pacman -Sy --noconfirm --quiet gum > /dev/null
 
 if [ "$SKIP_DISK_PARTITIONING" != 1 ]; then
   if [ -z "$TARGET_DISK" ]; then
