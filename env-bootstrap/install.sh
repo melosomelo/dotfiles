@@ -51,7 +51,7 @@ for i in {5..1}; do
 done
 echo
 
-gum spin --show-error --spinner dot --title "Installing gum..." -- pacman -S --noconfirm --quiet gum
+pacman -S --noconfirm --quiet gum > /dev/null
 
 if [ "$SKIP_DISK_PARTITIONING" != 1 ]; then
   if [ -z "$TARGET_DISK" ]; then
