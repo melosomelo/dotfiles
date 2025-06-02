@@ -28,6 +28,7 @@ fuse2
 git
 github-cli
 grub
+gum
 ibus
 iwd
 jre17-openjdk
