@@ -110,3 +110,13 @@ echo "✓ Password for $USERNAME set"
 arch-chroot /mnt sed -i "s/# %wheel ALL=(ALL:ALL) ALL/%wheel ALL=(ALL:ALL) ALL/" /etc/sudoers && \
   arch-chroot /mnt usermod -aG wheel "$USERNAME"
 echo "✓ $USERNAME now has sudo privileges"
+
+read -rp "Installation is complete! Would you like to run the setup script now? (Y/n): " RUN_SETUP_SCRIPT
+if [ "$RUN_SETUP_SCRIPT" == "Y" ]; then
+  https://raw.githubusercontent.com/melosomelo/dotfiles/refs/heads/main/env-bootstrap/setup.sh > setup.sh
+  chmod +x ./setup.sh
+  mv ./setup.sh /mnt/home/$USERNAME
+  arch-chroot /mnt runuser -u $USERNAME -- bash /home/$USERNAME/setup.sh
+else
+  echo "Skipping setup. Remember to execute it later as the newly added $USERNAME user!"
+fi
