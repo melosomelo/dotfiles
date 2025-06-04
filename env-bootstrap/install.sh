@@ -76,12 +76,13 @@ arch-chroot /mnt locale-gen
 arch-chroot /mnt /bin/bash -c 'echo "LANG=en_US.UTF-8" >> /etc/locale.conf'
 echo "✓ Locale set to en_US.UTF-8"
 
-prompt_if_unset HOSTNAME "Specify your hostname: "
-arch-chroot /mnt /bin/bash -c "echo \"$HOSTNAME\" > /etc/hostname"
-echo "✓ Hostname set to $HOSTNAME"
+prompt_if_unset _HOSTNAME "Specify your hostname: "
+arch-chroot /mnt /bin/bash -c "echo \"$_HOSTNAME\" > /etc/hostname"
+echo "✓ Hostname set to $_HOSTNAME"
 
-if [ -z "$PASSWORD" ]; then
+if [ -z "$ROOT_PASSWORD" ]; then
   read -rsp "Enter the root password for the system: " PASSWORD
 fi
-arch-chroot /mnt /bin/bash -c "echo \"$PASSWORD\" | passwd --stdin"
+arch-chroot /mnt /bin/bash -c "echo \"$ROOT_PASSWORD\" | passwd --stdin"
+echo
 echo "✓ Root password set successfully"
