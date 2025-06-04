@@ -77,7 +77,7 @@ virt-install \
   --vcpus 2 \
   --cdrom archlinux.iso \
   --os-variant archlinux \
-  --disk size=2 \
+  --disk size=4 \
   --transient \
   --graphics none \
   --noautoconsole

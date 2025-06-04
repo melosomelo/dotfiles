@@ -19,9 +19,9 @@ for arg in "$@"; do
     echo "1. Disk partitioning"
     echo -e "This script uses the GNU parted tool to partition a \e[1msingle\e[0m disk of your choosing."
     echo "It creates three partitions:"
-    echo "  - One EFI boot partition"
+    echo "  - One FAT32 EFI boot partition, mounted on /mnt/boot"
     echo "  - One swap partition"
-    echo "  - One Ext4 root partition"
+    echo "  - One Ext4 root partition, mounted on /mnt"
     echo
     echo "You can specify the start and end of each partition using the syntax accepted by parted (see its manpage)."
     echo "This setup suits most use cases, but may not be ideal for complex layouts."
@@ -51,7 +51,7 @@ for i in {5..1}; do
 done
 echo
 
-pacman -Sy --noconfirm --quiet gum > /dev/null
+pacman -Sy --noconfirm --quiet gum
 
 if [ "$SKIP_DISK_PARTITIONING" != 1 ]; then
   if [ -z "$TARGET_DISK" ]; then
@@ -66,6 +66,9 @@ if [ "$SKIP_DISK_PARTITIONING" != 1 ]; then
     exit 1
   fi
 
+  # Creating a new partition table in the disk.
+  parted --script "$TARGET_DISK" mklabel gpt
+
   if [ -z "$BOOT_PARTITION_START" ]; then
     BOOT_PARTITION_START=$(gum input \
       --header "Specify the start of the boot partition" \
@@ -74,7 +77,6 @@ if [ "$SKIP_DISK_PARTITIONING" != 1 ]; then
   else
     gum log --level debug "Boot partition start was passed as a variable. Using value '$BOOT_PARTITION_START'"
   fi
-
   if [ -z "$BOOT_PARTITION_END" ]; then
     BOOT_PARTITION_END=$(gum input \
       --header "Specify the end of the boot partition" \
@@ -83,6 +85,12 @@ if [ "$SKIP_DISK_PARTITIONING" != 1 ]; then
   else
     gum log --level debug "Boot partition end was passed as a variable. Using value '$BOOT_PARTITION_END'"
   fi
+  parted --script "$TARGET_DISK" mkpart efiboot fat32 "$ROOT_PARTITION_START" "$ROOT_PARTITION_END" \
+    set 1 boot on \
+    set 1 esp on
+  mkfs.fat -F 32 "$TARGET_DISK"1
+  mount --mkdir "$TARGET_DISK"1 /mnt/boot
+  echo "✓ Boot partition created and mounted successfully"
 
   if [ -z "$SWAP_PARTITION_START" ]; then
     SWAP_PARTITION_START=$(gum input \
@@ -92,7 +100,6 @@ if [ "$SKIP_DISK_PARTITIONING" != 1 ]; then
   else
     gum log --level debug "Swap partition start was passed as a variable. Using value '$SWAP_PARTITION_START'"
   fi
-
   if [ -z "$SWAP_PARTITION_END" ]; then
     SWAP_PARTITION_END=$(gum input \
       --header "Specify the end of the swap partition" \
@@ -101,6 +108,10 @@ if [ "$SKIP_DISK_PARTITIONING" != 1 ]; then
   else
     gum log --level debug "Swap partition end was passed as a variable. Using value '$SWAP_PARTITION_END'"
   fi
+  parted --script "$TARGET_DISK" mkpart swap linux-swap "$SWAP_PARTITION_START" "$SWAP_PARTITION_END"
+  mkswap "$TARGET_DISK"2
+  swapon "$TARGET_DISK"2
+  echo "✓ Swap partition created and enabled successfully"
 
   if [ -z "$ROOT_PARTITION_START" ]; then
     ROOT_PARTITION_START=$(gum input \
@@ -110,7 +121,6 @@ if [ "$SKIP_DISK_PARTITIONING" != 1 ]; then
   else
     gum log --level debug "Root partition start was passed as a variable. Using value '$ROOT_PARTITION_START'"
   fi
-
   if [ -z "$ROOT_PARTITION_END" ]; then
     ROOT_PARTITION_END=$(gum input \
       --header "Specify the end of the root partition" \
@@ -119,12 +129,13 @@ if [ "$SKIP_DISK_PARTITIONING" != 1 ]; then
   else
     gum log --level debug "Root partition end was passed as a variable. Using value '$ROOT_PARTITION_END'"
   fi
-
-  if false
-  then
-    :
-  else
-    gum log --level error "PARTITIONING FAILED. At least one of the partitions was not successfully created."
-    gum log --level error "The disk is most likely at an inconsistent state. You'll have to fix it manually."
-  fi
+  parted --script "$TARGET_DISK" mkpart root ext4 "$ROOT_PARTITION_START" "$ROOT_PARTITION_END"
+  mkfs.ext4 "$TARGET_DISK"3
+  mount "$TARGET_DISK"3 /mnt
+  echo "✓ Root partition created and mounted successfully"
+  echo
+  echo "All partitions created and mounted successfully. Here's the layout of the target disk:"
+  echo
+  parted --script "$TARGET_DISK" print
+  echo
 fi
