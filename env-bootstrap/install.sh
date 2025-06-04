@@ -76,9 +76,9 @@ arch-chroot /mnt locale-gen
 arch-chroot /mnt /bin/bash -c 'echo "LANG=en_US.UTF-8" >> /etc/locale.conf'
 echo "✓ Locale set to en_US.UTF-8"
 
-prompt_if_unset _HOSTNAME "Specify your hostname: "
-arch-chroot /mnt /bin/bash -c "echo \"$_HOSTNAME\" > /etc/hostname"
-echo "✓ Hostname set to $_HOSTNAME"
+prompt_if_unset NEW_HOSTNAME "Specify your hostname: "
+arch-chroot /mnt /bin/bash -c "echo \"$NEW_HOSTNAME\" > /etc/hostname"
+echo "✓ Hostname set to $NEW_HOSTNAME"
 
 if [ -z "$ROOT_PASSWORD" ]; then
   read -rsp "Enter the root password for the system: " ROOT_PASSWORD
@@ -116,7 +116,7 @@ if [ "$RUN_SETUP_SCRIPT" == "Y" ]; then
   curl https://raw.githubusercontent.com/melosomelo/dotfiles/refs/heads/main/env-bootstrap/setup.sh > setup.sh
   chmod +x ./setup.sh
   mv ./setup.sh /mnt/home/$USERNAME
-  arch-chroot /mnt runuser -u "$USERNAME" -- sudo bash /home/"$USERNAME"/setup.sh
+  arch-chroot /mnt bash /home/"$USERNAME"/setup.sh
 else
-  echo "Skipping setup. Remember to execute it later as the newly added $USERNAME user!"
+  echo "Skipping setup. Remember to execute it later as root!"
 fi

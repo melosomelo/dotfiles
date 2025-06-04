@@ -65,7 +65,7 @@ virt-install \
   --vcpus 2 \
   --cdrom archlinux.iso \
   --os-variant archlinux \
-  --disk size=4 \
+  --disk size=20 \
   --transient \
   --boot uefi
   # --console pty,target_type=serial \

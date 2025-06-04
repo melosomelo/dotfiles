@@ -10,18 +10,27 @@ for i in {5..1}; do
 done
 echo
 
-cd
+USERNAME="mateus"
+
+cd /home/$USERNAME
 
 echo "Cloning dotfiles repository"
-git clone https://github.com/melosomelo/dotfiles
+[ -d dotfiles ] || runuser -u $USERNAME -- git clone https://github.com/melosomelo/dotfiles.git
+
+echo "Adding custom pacman configuration file"
+cp  dotfiles/pacman/pacman.conf /etc/pacman.conf
+
+echo "Adding pritunl repositories and keys"
+pacman-key --keyserver hkp://keyserver.ubuntu.com -r 7568D9BB55FF9E5287D586017AE645C0CF8E292A
+pacman-key --lsign-key 7568D9BB55FF9E5287D586017AE645C0CF8E292A
 
 echo "Installing additional official packages"
-pacman -S $(cat dotfiles/packages/official.txt)
+pacman -Sy --noconfirm $(cat dotfiles/packages/official.txt)
 
 echo "Installing yay"
-git clone https://aur.archlinux.org/yay.git
+[-d yay] || runuser -u $USERNAME -- git clone https://aur.archlinux.org/yay.git
 cd yay
-makepkg -si
+runuser -u $USERNAME -- makepkg -si
 cd..
 
 echo "Using yay to install AUR packages"
