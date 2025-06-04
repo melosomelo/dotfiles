@@ -9,3 +9,20 @@ for i in {5..1}; do
   sleep 1
 done
 echo
+
+cd
+
+echo "Cloning dotfiles repository"
+git clone https://github.com/melosomelo/dotfiles
+
+echo "Installing additional official packages"
+pacman -S $(cat dotfiles/packages/official.txt)
+
+echo "Installing yay"
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
+cd..
+
+echo "Using yay to install AUR packages"
+yay -S $(cat dotfiles/packages/aur.txt)

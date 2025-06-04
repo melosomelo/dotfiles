@@ -61,7 +61,7 @@ if [ "$SKIP_DISK_PARTITIONING" != 1 ]; then
   echo
 fi
 
-pacstrap -K /mnt base base-devel linux linux-firmware grub efibootmgr networkmanager
+pacstrap -K /mnt base base-devel linux linux-firmware grub efibootmgr networkmanager neovim sudo git
 echo "✓ Installed base system"
 
 genfstab -U /mnt >> /mnt/etc/fstab
@@ -91,7 +91,7 @@ arch-chroot /mnt grub-install --target=x86_64-efi --efi-directory=/boot --bootlo
 arch-chroot /mnt grub-mkconfig -o /boot/grub/grub.cfg
 echo "✓ Bootloader (GRUB) configured"
 
-arch-chroot /mnt systemctl enable NetworkManager
+arch-chroot /mnt systemctl enable NetworkManager.service
 echo "✓ Required services enabled"
 
 # Values is fixed as of now due to the pacman hook that saves the list of installed packages.
@@ -113,10 +113,10 @@ echo "✓ $USERNAME now has sudo privileges"
 
 read -rp "Installation is complete! Would you like to run the setup script now? (Y/n): " RUN_SETUP_SCRIPT
 if [ "$RUN_SETUP_SCRIPT" == "Y" ]; then
-  https://raw.githubusercontent.com/melosomelo/dotfiles/refs/heads/main/env-bootstrap/setup.sh > setup.sh
+  curl https://raw.githubusercontent.com/melosomelo/dotfiles/refs/heads/main/env-bootstrap/setup.sh > setup.sh
   chmod +x ./setup.sh
   mv ./setup.sh /mnt/home/$USERNAME
-  arch-chroot /mnt runuser -u $USERNAME -- bash /home/$USERNAME/setup.sh
+  arch-chroot /mnt runuser -u "$USERNAME" -- sudo bash /home/"$USERNAME"/setup.sh
 else
   echo "Skipping setup. Remember to execute it later as the newly added $USERNAME user!"
 fi
