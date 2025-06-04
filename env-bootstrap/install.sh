@@ -3,139 +3,85 @@ set -e
 
 echo -e "\033[1mArch Linux installation script\033[0m. Written by \033[1;36mMateus Nascimento\033[0m (\033[4;36m@melosomelo\033[0m)"
 
-# Simple (and a bit crude) check to display help prompt. 
-for arg in "$@"; do
-  case "$arg" in
-    -h|--help)
-    echo
-    echo "This script follows the steps from the Arch Linux installation guide and is meant to be run"
-    echo "only in the Arch Linux installation image. Running it elsewhere may have drastic consequences."
-    echo
-    echo "It is interactive by default, but it can be made headless by passing required values via shell variables:"
-    echo -e "  \033[1;3;36mVARIABLE=1 ./install.sh\033[0m"
-    echo
-    echo "Below are its capabilities and configuration options."
-    echo
-    echo "1. Disk partitioning"
-    echo -e "This script uses the GNU parted tool to partition a \e[1msingle\e[0m disk of your choosing."
-    echo "It creates three partitions:"
-    echo "  - One FAT32 EFI boot partition, mounted on /mnt/boot"
-    echo "  - One swap partition"
-    echo "  - One Ext4 root partition, mounted on /mnt"
-    echo
-    echo "You can specify the start and end of each partition using the syntax accepted by parted (see its manpage)."
-    echo "This setup suits most use cases, but may not be ideal for complex layouts."
-    echo
-    echo "If you'd rather format your disk manually, you can run script with SKIP_DISK_PARTITIONING set to 1."
-    echo
-    echo "Partitioning is configured using these variables:"
-    echo "  - TARGET_DISK"
-    echo "  - BOOT_PARTITION_START"
-    echo "  - BOOT_PARTITION_END"
-    echo "  - SWAP_PARTITION_START"
-    echo "  - SWAP_PARTITION_END"
-    echo "  - ROOT_PARTITION_START"
-    echo "  - ROOT_PARTITION_END"
-    echo
-    echo "Example:"
-    echo "  TARGET_DISK=/dev/sda BOOT_PARTITION_START=0MiB BOOT_PARTITION_END=512MiB ./install.sh"
-    echo
-    echo "Partitioning is an inherently dangerous operation, so always be careful when doing it (especially via automated scripts ;))."
-    exit 0
-  esac
-done
-
 for i in {5..1}; do
   echo -ne "Starting in $i\r"
   sleep 1
 done
 echo
 
-pacman -Sy --noconfirm --quiet gum
+prompt_if_unset() {
+  local var_name="$1"
+  local prompt_text="$2"
+
+  if [ -z "${!var_name}" ]; then
+    read -rp "$prompt_text" "$var_name"
+  fi
+}
+
 
 if [ "$SKIP_DISK_PARTITIONING" != 1 ]; then
-  if [ -z "$TARGET_DISK" ]; then
-    TARGET_DISK=$(gum input \
-      --header "Provide the path for the disk to be partitioned" \
-      --placeholder "Something like /dev/sda")
-  else
-    gum log --level debug "Target disk was passed as a variable. Using value '$TARGET_DISK'."
-  fi
+  prompt_if_unset TARGET_DISK "Provide the path for the disk to be partitioned (e.g., /dev/sda): "
   if [ ! -b "$TARGET_DISK" ]; then
-    gum log --level error "Device $TARGET_DISK does not exist"
+    echo -e "\033[1;31mDevice $TARGET_DISK does not exist\033[0m"
     exit 1
   fi
 
   # Creating a new partition table in the disk.
   parted --script "$TARGET_DISK" mklabel gpt
 
-  if [ -z "$BOOT_PARTITION_START" ]; then
-    BOOT_PARTITION_START=$(gum input \
-      --header "Specify the start of the boot partition" \
-      --placeholder "An offset from the beginning of the disk (e.g. 0%, 1MiB)"
-    )
-  else
-    gum log --level debug "Boot partition start was passed as a variable. Using value '$BOOT_PARTITION_START'"
-  fi
-  if [ -z "$BOOT_PARTITION_END" ]; then
-    BOOT_PARTITION_END=$(gum input \
-      --header "Specify the end of the boot partition" \
-      --placeholder "An offset from the beginning of the disk (e.g. 0%, 1MiB)"
-    )
-  else
-    gum log --level debug "Boot partition end was passed as a variable. Using value '$BOOT_PARTITION_END'"
-  fi
+  # Creating partitions
+  prompt_if_unset BOOT_PARTITION_START "Specify the start of the boot partition (e.g., 0%, 1MiB): "
+  prompt_if_unset BOOT_PARTITION_END "Specify the end of the boot partition (e.g., 0%, 1MiB): "
   parted --script "$TARGET_DISK" mkpart efiboot fat32 "$BOOT_PARTITION_START" "$BOOT_PARTITION_END" \
     set 1 boot on \
     set 1 esp on
-  mkfs.fat -F 32 "$TARGET_DISK"1
-  mount --mkdir "$TARGET_DISK"1 /mnt/boot
-  echo "✓ Boot partition created and mounted successfully"
-
-  if [ -z "$SWAP_PARTITION_START" ]; then
-    SWAP_PARTITION_START=$(gum input \
-      --header "Specify the start of the swap partition" \
-      --placeholder "An offset from the beginning of the disk (e.g. 0%, 1MiB)"
-    )
-  else
-    gum log --level debug "Swap partition start was passed as a variable. Using value '$SWAP_PARTITION_START'"
-  fi
-  if [ -z "$SWAP_PARTITION_END" ]; then
-    SWAP_PARTITION_END=$(gum input \
-      --header "Specify the end of the swap partition" \
-      --placeholder "An offset from the beginning of the disk (e.g. 0%, 1MiB)"
-    )
-  else
-    gum log --level debug "Swap partition end was passed as a variable. Using value '$SWAP_PARTITION_END'"
-  fi
+  prompt_if_unset SWAP_PARTITION_START "Specify the start of the swap partition (e.g., 0%, 1MiB): "
+  prompt_if_unset SWAP_PARTITION_END "Specify the end of the swap partition (e.g., 0%, 1MiB): "
   parted --script "$TARGET_DISK" mkpart swap linux-swap "$SWAP_PARTITION_START" "$SWAP_PARTITION_END"
-  mkswap "$TARGET_DISK"2
-  swapon "$TARGET_DISK"2
-  echo "✓ Swap partition created and enabled successfully"
-
-  if [ -z "$ROOT_PARTITION_START" ]; then
-    ROOT_PARTITION_START=$(gum input \
-      --header "Specify the start of the root partition" \
-      --placeholder "An offset from the beginning of the disk (e.g. 0%, 1MiB)"
-    )
-  else
-    gum log --level debug "Root partition start was passed as a variable. Using value '$ROOT_PARTITION_START'"
-  fi
-  if [ -z "$ROOT_PARTITION_END" ]; then
-    ROOT_PARTITION_END=$(gum input \
-      --header "Specify the end of the root partition" \
-      --placeholder "An offset from the beginning of the disk (e.g. 0%, 1MiB)"
-    )
-  else
-    gum log --level debug "Root partition end was passed as a variable. Using value '$ROOT_PARTITION_END'"
-  fi
+  prompt_if_unset ROOT_PARTITION_START "Specify the start of the root partition (e.g., 0%, 1MiB): "
+  prompt_if_unset ROOT_PARTITION_END "Specify the end of the root partition (e.g., 0%, 1MiB): "
   parted --script "$TARGET_DISK" mkpart root ext4 "$ROOT_PARTITION_START" "$ROOT_PARTITION_END"
+  echo "✓ Partitions created"
+
+  # Formatting partitions
+  mkfs.fat -F 32 "$TARGET_DISK"1
+  mkswap "$TARGET_DISK"2
   mkfs.ext4 "$TARGET_DISK"3
+  echo "✓ Partitions formatted"
+
+  # Mounting file systems
   mount "$TARGET_DISK"3 /mnt
-  echo "✓ Root partition created and mounted successfully"
-  echo
-  echo "All partitions created and mounted successfully. Here's the layout of the target disk:"
+  mount --mkdir "$TARGET_DISK"1 /mnt/boot
+  swapon "$TARGET_DISK"2
+  echo "✓ File systems mounted"
+
+  echo "Final layout of the target disk:"
   echo
   parted --script "$TARGET_DISK" print
   echo
 fi
+
+pacstrap -K /mnt base linux linux-firmware
+echo "✓ Installed base system"
+
+genfstab -U /mnt >> /mnt/etc/fstab
+echo "✓ fstab file created successfully"
+
+arch-chroot /mnt ln -sf /usr/share/zoneinfo/America/Fortaleza /etc/localtime
+arch-chroot /mnt hwclock --systohc
+echo "✓ Time zone set to America/Fortaleza (UTC-3)"
+
+arch-chroot /mnt sed -i '/^#en_US.UTF-8 UTF-8/s/^#//' /etc/locale.gen
+arch-chroot /mnt locale-gen
+arch-chroot /mnt /bin/bash -c 'echo "LANG=en_US.UTF-8" >> /etc/locale.conf'
+echo "✓ Locale set to en_US.UTF-8"
+
+prompt_if_unset HOSTNAME "Specify your hostname: "
+arch-chroot /mnt /bin/bash -c "echo \"$HOSTNAME\" > /etc/hostname"
+echo "✓ Hostname set to $HOSTNAME"
+
+if [ -z "$PASSWORD" ]; then
+  read -rsp "Enter the root password for the system: " PASSWORD
+fi
+arch-chroot /mnt /bin/bash -c "echo \"$PASSWORD\" | passwd --stdin"
+echo "✓ Root password set successfully"
