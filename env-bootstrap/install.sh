@@ -61,7 +61,7 @@ if [ "$SKIP_DISK_PARTITIONING" != 1 ]; then
   echo
 fi
 
-pacstrap -K /mnt base linux linux-firmware
+pacstrap -K /mnt base base-devel linux linux-firmware grub efibootmgr networkmanager
 echo "✓ Installed base system"
 
 genfstab -U /mnt >> /mnt/etc/fstab
@@ -81,8 +81,32 @@ arch-chroot /mnt /bin/bash -c "echo \"$_HOSTNAME\" > /etc/hostname"
 echo "✓ Hostname set to $_HOSTNAME"
 
 if [ -z "$ROOT_PASSWORD" ]; then
-  read -rsp "Enter the root password for the system: " PASSWORD
+  read -rsp "Enter the root password for the system: " ROOT_PASSWORD
 fi
 arch-chroot /mnt /bin/bash -c "echo \"$ROOT_PASSWORD\" | passwd --stdin"
 echo
 echo "✓ Root password set successfully"
+
+arch-chroot /mnt grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
+arch-chroot /mnt grub-mkconfig -o /boot/grub/grub.cfg
+echo "✓ Bootloader (GRUB) configured"
+
+arch-chroot /mnt systemctl enable NetworkManager
+echo "✓ Required services enabled"
+
+# Values is fixed as of now due to the pacman hook that saves the list of installed packages.
+# Will fix this later (maybe).
+USERNAME="mateus"
+arch-chroot /mnt useradd -m "$USERNAME"
+echo "✓ Created user $USERNAME"
+
+if [ -z "$USER_PASSWORD" ]; then
+  read -rsp "Enter the main user's password: " USER_PASSWORD
+fi
+arch-chroot /mnt /bin/bash -c "echo \"$USER_PASSWORD\" | passwd --stdin \"$USERNAME\""
+echo
+echo "✓ Password for $USERNAME set"
+
+arch-chroot /mnt sed -i "s/# %wheel ALL=(ALL:ALL) ALL/%wheel ALL=(ALL:ALL) ALL/" /etc/sudoers && \
+  arch-chroot /mnt usermod -aG wheel "$USERNAME"
+echo "✓ $USERNAME now has sudo privileges"
