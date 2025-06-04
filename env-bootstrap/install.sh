@@ -85,7 +85,7 @@ if [ "$SKIP_DISK_PARTITIONING" != 1 ]; then
   else
     gum log --level debug "Boot partition end was passed as a variable. Using value '$BOOT_PARTITION_END'"
   fi
-  parted --script "$TARGET_DISK" mkpart efiboot fat32 "$ROOT_PARTITION_START" "$ROOT_PARTITION_END" \
+  parted --script "$TARGET_DISK" mkpart efiboot fat32 "$BOOT_PARTITION_START" "$BOOT_PARTITION_END" \
     set 1 boot on \
     set 1 esp on
   mkfs.fat -F 32 "$TARGET_DISK"1
