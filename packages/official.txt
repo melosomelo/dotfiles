@@ -25,7 +25,6 @@ github-cli
 grub
 gum
 ibus
-jre17-openjdk
 less
 libvirt
 linux
