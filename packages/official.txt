@@ -26,7 +26,6 @@ grub
 gum
 ibus
 jre17-openjdk
-kolourpaint
 less
 libvirt
 linux
