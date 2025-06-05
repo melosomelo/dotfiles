@@ -24,6 +24,7 @@ git
 github-cli
 grub
 gum
+i3-wm
 ibus
 less
 libvirt
