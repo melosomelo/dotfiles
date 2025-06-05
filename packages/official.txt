@@ -25,7 +25,6 @@ github-cli
 grub
 gum
 ibus
-iwd
 jre17-openjdk
 kolourpaint
 less
