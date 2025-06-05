@@ -40,7 +40,6 @@ okular
 openssh
 otf-monaspace
 plasma-meta
-postgresql
 pritunl-client-electron
 python-networkx
 python-pip
