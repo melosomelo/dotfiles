@@ -7,9 +7,6 @@ base-devel
 bluez-utils
 cdrtools
 certbot
-composer
-coq
-coqide
 cronie
 dbeaver
 deno
