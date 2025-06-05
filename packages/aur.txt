@@ -10,6 +10,5 @@ spotify
 stremio
 visual-studio-code-bin
 watchman-bin
-whatsdesk-bin
 yay
 yay-bin-debug
