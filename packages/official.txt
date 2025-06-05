@@ -39,7 +39,6 @@ nvm
 okular
 openssh
 otf-monaspace
-php-legacy
 plasma-meta
 postgresql
 pritunl-client-electron
