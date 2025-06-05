@@ -1,9 +1,7 @@
 alacritty
 alsa-utils
 amdvlk
-ansible-core
 aria2
-azure-cli
 base
 base-devel
 bluez-utils
