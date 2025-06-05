@@ -32,15 +32,15 @@ if [ "$SKIP_DISK_PARTITIONING" != 1 ]; then
   # Creating partitions
   prompt_if_unset BOOT_PARTITION_START "Specify the start of the boot partition (e.g., 0%, 1MiB): "
   prompt_if_unset BOOT_PARTITION_END "Specify the end of the boot partition (e.g., 0%, 1MiB): "
-  parted --script "$TARGET_DISK" mkpart efiboot fat32 "$BOOT_PARTITION_START" "$BOOT_PARTITION_END" \
+  parted --script "$TARGET_DISK" mkpart archefiboot fat32 "$BOOT_PARTITION_START" "$BOOT_PARTITION_END" \
     set 1 boot on \
     set 1 esp on
   prompt_if_unset SWAP_PARTITION_START "Specify the start of the swap partition (e.g., 0%, 1MiB): "
   prompt_if_unset SWAP_PARTITION_END "Specify the end of the swap partition (e.g., 0%, 1MiB): "
-  parted --script "$TARGET_DISK" mkpart swap linux-swap "$SWAP_PARTITION_START" "$SWAP_PARTITION_END"
+  parted --script "$TARGET_DISK" mkpart archswap linux-swap "$SWAP_PARTITION_START" "$SWAP_PARTITION_END"
   prompt_if_unset ROOT_PARTITION_START "Specify the start of the root partition (e.g., 0%, 1MiB): "
   prompt_if_unset ROOT_PARTITION_END "Specify the end of the root partition (e.g., 0%, 1MiB): "
-  parted --script "$TARGET_DISK" mkpart root ext4 "$ROOT_PARTITION_START" "$ROOT_PARTITION_END"
+  parted --script "$TARGET_DISK" mkpart archroot ext4 "$ROOT_PARTITION_START" "$ROOT_PARTITION_END"
   echo "✓ Partitions created"
 
   # Formatting partitions
