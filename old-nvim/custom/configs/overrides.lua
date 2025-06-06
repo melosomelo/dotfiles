@@ -24,19 +24,6 @@ M.mason = {
 	},
 }
 
-M.gitsigns = {
-	current_line_blame = true,
-}
-
-M.cmp = {
-	mapping = {
-		["<C-k>"] = cmp.mapping.select_prev_item(),
-		["<C-j>"] = cmp.mapping.select_next_item(),
-		["<C-u>"] = cmp.mapping.scroll_docs(-4),
-		["<C-d>"] = cmp.mapping.scroll_docs(4),
-	},
-}
-
 M.telescope = {
 	defaults = {
 		file_ignore_patterns = {

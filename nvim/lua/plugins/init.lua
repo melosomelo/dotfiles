@@ -3,7 +3,7 @@ return {
 		"stevearc/conform.nvim",
 		event = "BufWritePre",
 		opts = require("configs.conform"),
-	}, -- These are some examples, uncomment them if you want to see them work!
+	},
 	{
 		"neovim/nvim-lspconfig",
 		config = function()
@@ -32,5 +32,17 @@ return {
 			},
 			indent = { enable = true },
 		},
+	},
+	{
+		"lewis6991/gitsigns.nvim",
+		opts = function()
+			return require("configs.gitsigns")
+		end,
+	},
+	{
+		"hrsh7th/nvim-cmp",
+		opts = function()
+			return require("configs.cmp")
+		end,
 	},
 }
