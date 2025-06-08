@@ -37,6 +37,7 @@ networkmanager
 noto-fonts-cjk
 nvidia-dkms
 nvm
+obsidian
 okular
 openssh
 otf-monaspace
