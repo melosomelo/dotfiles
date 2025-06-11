@@ -9,7 +9,14 @@ autocmd("VimEnter", {
 	callback = function()
 		local mason_registry = require("mason-registry")
 
-		local ensure_installed = { "clangd", "lua-language-server", "prettier", "stylua", "typescript-language-server" }
+		local ensure_installed = {
+			"clangd",
+			"lua-language-server",
+			"prettier",
+			"stylua",
+			"typescript-language-server",
+			"astro-language-server",
+		}
 
 		for _, server in ipairs(ensure_installed) do
 			if not mason_registry.is_installed(server) then

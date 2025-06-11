@@ -29,6 +29,7 @@ return {
 				"typescript",
 				"c",
 				"cpp",
+				"astro",
 			},
 			indent = { enable = true },
 		},
