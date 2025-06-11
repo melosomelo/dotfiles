@@ -16,6 +16,7 @@ autocmd("VimEnter", {
 			"stylua",
 			"typescript-language-server",
 			"astro-language-server",
+			"tailwindcss-language-server",
 		}
 
 		for _, server in ipairs(ensure_installed) do
