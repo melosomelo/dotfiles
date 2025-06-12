@@ -9,7 +9,8 @@ local servers = {
 	"ts_ls",
 	"astro-language-server",
 	"tailwindcss-language-server",
+	"vue_ls",
 }
-vim.lsp.enable(servers)
 
 -- read :h vim.lsp.config for changing options of lsp servers
+vim.lsp.enable(servers)

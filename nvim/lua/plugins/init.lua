@@ -30,6 +30,8 @@ return {
 				"c",
 				"cpp",
 				"astro",
+				"html",
+				"css",
 			},
 			indent = { enable = true },
 		},

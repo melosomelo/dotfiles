@@ -17,6 +17,7 @@ autocmd("VimEnter", {
 			"typescript-language-server",
 			"astro-language-server",
 			"tailwindcss-language-server",
+			"vue-language-server",
 		}
 
 		for _, server in ipairs(ensure_installed) do
