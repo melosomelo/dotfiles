@@ -18,6 +18,7 @@ autocmd("VimEnter", {
 			"astro-language-server",
 			"tailwindcss-language-server",
 			"vue-language-server",
+			"json-lsp",
 		}
 
 		for _, server in ipairs(ensure_installed) do
