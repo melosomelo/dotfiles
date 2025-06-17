@@ -35,6 +35,7 @@ return {
 				"markdown",
 				"json",
 				"jsonc",
+				"tsx",
 			},
 			indent = { enable = true },
 		},

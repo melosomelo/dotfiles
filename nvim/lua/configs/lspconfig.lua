@@ -10,6 +10,8 @@ local servers = {
 	"astro-language-server",
 	"tailwindcss-language-server",
 	"vue_ls",
+	"json-lsp",
+	"marksman",
 }
 
 -- read :h vim.lsp.config for changing options of lsp servers
