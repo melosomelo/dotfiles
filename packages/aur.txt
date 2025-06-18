@@ -4,8 +4,7 @@ anki
 google-chrome
 insomnia
 lazydocker
-python-decli
-python-questionary
+python-commitizen
 python2-bin
 slack-desktop
 spotify
