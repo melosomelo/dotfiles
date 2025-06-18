@@ -22,6 +22,8 @@ abbr -a ta tmux a
 
 abbr -a npmc npm run commit
 
+abbr -a czc cz commit
+
 # aliases
 alias v nvim
 
