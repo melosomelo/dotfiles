@@ -43,11 +43,15 @@ openssh
 otf-monaspace
 plasma-meta
 pritunl-client-electron
+python-argcomplete
+python-colorama
+python-importlib-metadata
 python-networkx
 python-pip
-python-poetry-core
-python-prompt_toolkit
+python-pyaml
 python-pymysql
+python-termcolor
+python-tomlkit
 qbittorrent
 qemu-base
 qutebrowser
