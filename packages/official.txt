@@ -45,6 +45,8 @@ plasma-meta
 pritunl-client-electron
 python-networkx
 python-pip
+python-poetry-core
+python-prompt_toolkit
 python-pymysql
 qbittorrent
 qemu-base

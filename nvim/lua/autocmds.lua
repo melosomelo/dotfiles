@@ -19,6 +19,7 @@ autocmd("VimEnter", {
 			"tailwindcss-language-server",
 			"vue-language-server",
 			"json-lsp",
+			"eslint-lsp",
 		}
 
 		for _, server in ipairs(ensure_installed) do

@@ -12,6 +12,7 @@ local servers = {
 	"vue_ls",
 	"json-lsp",
 	"marksman",
+	"eslint-lsp",
 }
 
 -- read :h vim.lsp.config for changing options of lsp servers
