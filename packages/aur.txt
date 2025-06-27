@@ -1,6 +1,7 @@
 1password
 android-studio
 anki
+datagrip
 google-chrome
 insomnia
 lazydocker
