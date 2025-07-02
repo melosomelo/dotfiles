@@ -199,5 +199,6 @@
   "workbench.navigationControl.enabled": false,
   "window.commandCenter": false,
   "window.menuBarVisibility": "compact",
-  "diffEditor.ignoreTrimWhitespace": true
+  "diffEditor.ignoreTrimWhitespace": true,
+  "git.openRepositoryInParentFolders": "never"
 }
