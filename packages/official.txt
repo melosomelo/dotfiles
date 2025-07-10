@@ -29,6 +29,7 @@ ibus
 less
 libvirt
 linux
+linux-firmware
 man-db
 mise
 neovim
