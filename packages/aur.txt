@@ -11,6 +11,7 @@ python2-bin
 slack-desktop
 spotify
 stremio
+ttf-adwaita-mono-nerd
 visual-studio-code-bin
 watchman-bin
 yay
