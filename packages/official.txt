@@ -57,6 +57,7 @@ tmux
 tree
 ttf-cascadia-code
 ttf-fira-code
+ttf-ibmplex-mono-nerd
 ttf-input
 ttf-iosevka-nerd
 ttf-jetbrains-mono-nerd
