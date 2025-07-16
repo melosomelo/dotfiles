@@ -53,6 +53,7 @@ reflector
 sof-firmware
 spectacle
 sudo
+tex-gyre-fonts
 tmux
 tree
 ttf-cascadia-code
