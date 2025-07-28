@@ -42,6 +42,7 @@ okular
 openssh
 otf-monaspace
 plasma-meta
+plasma-x11-session
 pritunl-client-electron
 python-networkx
 python-pip
