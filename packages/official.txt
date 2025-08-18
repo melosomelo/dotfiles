@@ -27,6 +27,7 @@ gum
 i3-wm
 ibus
 less
+libreoffice-still
 libvirt
 linux
 linux-firmware
