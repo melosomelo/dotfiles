@@ -1,6 +1,5 @@
 1password
 beekeeper-studio-bin
-beekeeper-studio-bin-debug
 spotify
 stremio
 swhkd-git
