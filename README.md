@@ -64,7 +64,9 @@ end
 45. `sudo chmod u+s swhkd`
 46. Start swhkd on startup
     [with systemd](https://github.com/waycrate/swhkd/tree/main/contrib/init/systemd)
-47. Reboot
+47. `mkdir ~/.config/mise`
+48. `ln -s ~/dotfiles/mise/config.toml ~/.config/mise/config.toml`
+49. Reboot
 
 ## Wishlist
 
