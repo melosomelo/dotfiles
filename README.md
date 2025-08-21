@@ -66,7 +66,8 @@ end
     [with systemd](https://github.com/waycrate/swhkd/tree/main/contrib/init/systemd)
 47. `mkdir ~/.config/mise`
 48. `ln -s ~/dotfiles/mise/config.toml ~/.config/mise/config.toml`
-49. Reboot
+49. `sudo ln -s ~/dotfiles/kde/kglobalshortcutsrc ~/.config/kglobalshortcutsrc`
+50. Reboot
 
 ## Wishlist
 

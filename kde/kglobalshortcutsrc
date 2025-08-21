@@ -255,3 +255,6 @@ toggle do not disturb=none,,Toggle do not disturb
 
 [services][Alacritty.desktop]
 _launch=Meta+Return
+
+[services][org.kde.spectacle.desktop]
+_launch=Print\tMeta+Shift+S\tMeta+Shift+P
