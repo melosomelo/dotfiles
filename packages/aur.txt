@@ -2,7 +2,6 @@
 spotify
 stremio
 swhkd-git
-swhkd-git-debug
 ttf-adwaita-mono-nerd
 visual-studio-code-bin
 yay
