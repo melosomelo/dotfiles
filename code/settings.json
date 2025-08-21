@@ -200,5 +200,6 @@
   "window.commandCenter": false,
   "window.menuBarVisibility": "compact",
   "diffEditor.ignoreTrimWhitespace": false,
-  "git.openRepositoryInParentFolders": "never"
+  "git.openRepositoryInParentFolders": "never",
+  "workbench.secondarySideBar.defaultVisibility": "hidden"
 }
