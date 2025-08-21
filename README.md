@@ -57,7 +57,7 @@ end
 38. `sudo systemctl start docker.service`
 39. `sudo usermod -aG docker mateus`
 40. `sudo systemctl enable cronie && sudo systemctl start cronie`
-41. `cat ~/dotfiles/cron/base_crontab | crontab -`
+41. `sudo crontab < ~/dotfiles/cron/base_crontab`
 42. `mdkir ~/.config/swhkd`
 43. `sudo ln -s ~/dotfiles/swhkd/swhkdrc ~/.config/swhkd/swhkdrc`
 44. `sudo chown root:root swhkd`
