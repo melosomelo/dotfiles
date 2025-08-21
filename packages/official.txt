@@ -16,7 +16,6 @@ fish
 git
 github-cli
 grub
-html-xml-utils
 lazydocker
 less
 linux
@@ -47,6 +46,5 @@ ttf-input
 ttf-iosevka-nerd
 ttf-jetbrains-mono-nerd
 unzip
-w3m
 zip
 zoxide
