@@ -4,12 +4,13 @@ My personal configuration files and scripts for a Arch Linux + KDE environment.
 
 ## Setup
 
-Steps that need to be taken in order to setup the environment. This is not aimed at being customizable.
-It's just a list for my personal use so that I have something to follow when I need to setup a new environment.
-Will likely turn into a script in the future.
+Steps that need to be taken in order to setup the environment. This is not aimed at being
+customizable. It's just a list for my personal use so that I have something to follow when I need to
+setup a new environment. Will likely turn into a script in the future.
 
 1. Follow the [Arch Linux installation guide](https://wiki.archlinux.org/title/Installation_guide).
-   In the "Install essencial packages" section, make sure to also install `networkmanager`, `neovim`, `sudo` and `git`
+   In the "Install essencial packages" section, make sure to also install `networkmanager`,
+   `neovim`, `sudo` and `git`
 2. Login with root
 3. `systemctl enable NetworkManager.service && systemctl start NetworkManager.service`
 4. Connect to the Internet with `nmtui`
@@ -24,7 +25,7 @@ Will likely turn into a script in the future.
 13. [Install `yay`](https://github.com/Jguer/yay?tab=readme-ov-file#installation)
 14. `yay -S $(cat dotfiles/packages/aur.txt)`
 15. `mkdir -p ~/.config/alacritty`
-16. `ln -s  ~/dotfiles/alacritty/alacritty.toml ~/.config/alacritty/alacritty.toml`
+16. `ln -s ~/dotfiles/alacritty/alacritty.toml ~/.config/alacritty/alacritty.toml`
 17. run `fish` and then `exit`
 18. `rm .config/fish/config.fish`
 19. `rm -rf .config/fish/functions`
@@ -44,8 +45,8 @@ for ext in $(cat dotfiles/code/extensions.txt)
 end
 ```
 
-29. `ln -s  ~/dotfiles/code/settings.json ~/.config/Code/User/settings.json`
-30. `ln -s  ~/dotfiles/code/keybindings.json ~/.config/Code/User/keybindings.json`
+29. `ln -s ~/dotfiles/code/settings.json ~/.config/Code/User/settings.json`
+30. `ln -s ~/dotfiles/code/keybindings.json ~/.config/Code/User/keybindings.json`
 31. `mkdir -p ~/.ssh`
 32. `touch ~/.ssh/config`
 33. Configure `ssh` for GitHub authentication via the `config` file
@@ -57,16 +58,23 @@ end
 39. `sudo usermod -aG docker mateus`
 40. `sudo systemctl enable cronie && sudo systemctl start cronie`
 41. `cat ~/dotfiles/cron/base_crontab | crontab -`
-42. Reboot
+42. `mdkir ~/.config/swhkd`
+43. `sudo ln -s ~/dotfiles/swhkd/swhkdrc ~/.config/swhkd/swhkdrc`
+44. `sudo chown root:root swhkd`
+45. `sudo chmod u+s swhkd`
+46. Start swhkd on startup
+    [with systemd](https://github.com/waycrate/swhkd/tree/main/contrib/init/systemd)
+47. Reboot
 
 ## Wishlist
 
-- [ ] Configure `tmux`
 - [ ] Configure `qutebrowser`
 - [ ] Save web bookmarks independently of web browser
-- [ ] Implement a "work mode". This'd be a mode that can be toggled in order to use more work optimized software.
-      For instance, use i3 + qutebrowser instead of Chrome + Kwin. It'd be cool for times when I want to use my computer more
-      casually or for when other people need to use it for some reason.
+- [ ] Implement a "work mode". This'd be a mode that can be toggled in order to use more work
+      optimized software. For instance, use i3 + qutebrowser instead of Chrome + Kwin. It'd be cool
+      for times when I want to use my computer more casually or for when other people need to use it
+      for some reason.
 - [ ] Add some cool themes with color schemes
 - [ ] Add some cool screenshots to the README (e.g. fastfetch, maybe make it automatic?)
-- [ ] Turn setup section into a script. Would also be cool to have tests for this setup script. Maybe via a CI/CD pipeline?
+- [ ] Turn setup section into a script. Would also be cool to have tests for this setup script.
+      Maybe via a CI/CD pipeline?
