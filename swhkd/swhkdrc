@@ -2,3 +2,5 @@ super + Return
   alacritty
 super + Escape
   sudo pkill -HUP swhkd
+super + P
+  spectacle
