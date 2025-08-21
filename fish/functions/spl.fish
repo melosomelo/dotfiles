@@ -6,5 +6,5 @@ function spl
   pacman -Qqem > packages/aur.txt
   git add .
   git commit -m "[$(date +%Y-%m-%d_%H:%M)] updating packages list"
-  git push origin main
+  git push origin
 end
