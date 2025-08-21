@@ -30,6 +30,7 @@ okular
 openssh
 otf-monaspace
 pipewire-alsa
+pipewire-pulse
 plasma-desktop
 qbittorrent
 reflector
