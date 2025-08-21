@@ -29,6 +29,7 @@ nvidia-open
 okular
 openssh
 otf-monaspace
+pipewire-alsa
 plasma-desktop
 qbittorrent
 reflector
