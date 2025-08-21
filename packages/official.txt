@@ -1,6 +1,8 @@
 alacritty
 base
 base-devel
+bluez
+bluez-utils
 cronie
 deno
 docker
