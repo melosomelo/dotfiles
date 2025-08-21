@@ -1,6 +1,7 @@
 alacritty
 base
 base-devel
+bluedevil
 bluez
 bluez-utils
 cronie
