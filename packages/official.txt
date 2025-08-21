@@ -33,8 +33,6 @@ pipewire-alsa
 plasma-desktop
 qbittorrent
 reflector
-rust
-scdoc
 sddm
 spectacle
 sudo
