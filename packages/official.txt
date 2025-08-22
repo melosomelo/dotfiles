@@ -37,6 +37,7 @@ qbittorrent
 reflector
 sddm
 spectacle
+spotify-launcher
 sudo
 tex-gyre-fonts
 tmux
