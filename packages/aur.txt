@@ -1,5 +1,7 @@
 1password
 beekeeper-studio-bin
+insomnia
+insomnia-debug
 spotify
 stremio
 swhkd-git

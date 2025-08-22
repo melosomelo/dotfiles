@@ -25,9 +25,7 @@ mise
 neovim
 networkmanager
 noto-fonts-cjk
-npm
 nvidia-open
-nvm
 okular
 openssh
 otf-monaspace
@@ -50,6 +48,5 @@ ttf-input
 ttf-iosevka-nerd
 ttf-jetbrains-mono-nerd
 unzip
-yarn
 zip
 zoxide
