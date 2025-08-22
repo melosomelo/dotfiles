@@ -32,6 +32,7 @@ otf-monaspace
 pipewire-alsa
 pipewire-pulse
 plasma-desktop
+plasma-nm
 plasma-pa
 qbittorrent
 reflector
