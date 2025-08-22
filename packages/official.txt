@@ -22,10 +22,8 @@ linux
 linux-firmware
 man-db
 mise
-mold
 neovim
 networkmanager
-ninja
 noto-fonts-cjk
 nvidia-open
 okular
@@ -35,12 +33,8 @@ pipewire-alsa
 pipewire-pulse
 plasma-desktop
 plasma-pa
-python-installer
-python-wheel
 qbittorrent
 reflector
-rsync
-rust
 sddm
 spectacle
 sudo
@@ -54,7 +48,5 @@ ttf-input
 ttf-iosevka-nerd
 ttf-jetbrains-mono-nerd
 unzip
-uv
-yarn
 zip
 zoxide
