@@ -35,6 +35,7 @@ pipewire-pulse
 plasma-desktop
 plasma-nm
 plasma-pa
+python-pip
 qbittorrent
 reflector
 sddm
