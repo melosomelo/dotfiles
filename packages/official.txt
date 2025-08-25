@@ -5,6 +5,7 @@ base-devel
 bluedevil
 bluez
 bluez-utils
+cmake
 cronie
 deno
 docker
