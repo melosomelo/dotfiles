@@ -35,7 +35,6 @@ ms-python.debugpy
 ms-python.python
 ms-python.vscode-pylance
 ms-python.vscode-python-envs
-ms-vscode.cmake-tools
 ms-vscode.cpptools
 pkief.material-icon-theme
 qufiwefefwoyn.kanagawa
