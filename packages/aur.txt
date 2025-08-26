@@ -1,7 +1,6 @@
 1password
 beekeeper-studio-bin
 insomnia
-spotify
 stremio
 swhkd-git
 ttf-adwaita-mono-nerd
