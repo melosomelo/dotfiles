@@ -67,7 +67,9 @@ end
 47. `mkdir ~/.config/mise`
 48. `ln -s ~/dotfiles/mise/config.toml ~/.config/mise/config.toml`
 49. `sudo ln -s ~/dotfiles/kde/kglobalshortcutsrc ~/.config/kglobalshortcutsrc`
-50. Reboot
+50. `mkdir ~/.config/hypr`
+51. `sudo ln -s ~/dotfiles/hypr/hyprland.conf ~/.config/hypr/hyprland.conf`
+52. Reboot
 
 ## Wishlist
 
