@@ -18,6 +18,7 @@ git
 github-cli
 grub
 hyprland
+kwalletmanager
 lazydocker
 less
 linux
