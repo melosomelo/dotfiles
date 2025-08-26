@@ -41,6 +41,7 @@ python-pip
 qbittorrent
 reflector
 sddm
+spectacle
 sudo
 tex-gyre-fonts
 tmux
