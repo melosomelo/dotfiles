@@ -1,4 +1,6 @@
 1password
+anki
+anki-debug
 beekeeper-studio-bin
 insomnia
 spotify
