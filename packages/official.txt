@@ -17,7 +17,6 @@ fish
 git
 github-cli
 grub
-html-xml-utils
 hyprland
 kwalletmanager
 lazydocker
@@ -29,9 +28,7 @@ mise
 neovim
 networkmanager
 noto-fonts-cjk
-npm
 nvidia-open
-nvm
 okular
 openssh
 otf-monaspace
@@ -57,7 +54,5 @@ ttf-iosevka-nerd
 ttf-jetbrains-mono-nerd
 unzip
 vlc
-w3m
-yarn
 zip
 zoxide
