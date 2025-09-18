@@ -4,6 +4,7 @@ amdvlk
 aria2
 base
 base-devel
+blender
 bluez-utils
 cdrtools
 certbot
