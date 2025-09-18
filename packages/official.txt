@@ -26,6 +26,7 @@ grub
 gum
 i3-wm
 ibus
+lazydocker
 less
 libreoffice-still
 libvirt
@@ -69,5 +70,6 @@ virt-install
 virt-viewer
 wayland-protocols
 xmlstarlet
+xorg-xrandr
 zip
 zoxide

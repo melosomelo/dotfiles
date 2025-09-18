@@ -4,7 +4,6 @@ anki
 datagrip
 google-chrome
 insomnia
-lazydocker
 mongodb-tools
 python-commitizen
 python2-bin
