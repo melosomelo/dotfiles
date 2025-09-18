@@ -69,7 +69,6 @@ ttf-iosevka-nerd
 ttf-jetbrains-mono-nerd
 unzip
 virt-install
-virt-viewer
 wayland-protocols
 xmlstarlet
 xorg-xhost
