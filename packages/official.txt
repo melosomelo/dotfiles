@@ -9,6 +9,7 @@ bluez-utils
 cdrtools
 certbot
 cronie
+cuda
 dbeaver
 deno
 dnsmasq
