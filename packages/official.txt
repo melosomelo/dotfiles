@@ -2,11 +2,13 @@ alacritty
 alsa-utils
 base
 base-devel
+blender
 bluedevil
 bluez
 bluez-utils
 cmake
 cronie
+cuda
 deno
 docker
 docker-compose
