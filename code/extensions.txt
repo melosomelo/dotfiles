@@ -19,6 +19,8 @@ editorconfig.editorconfig
 enkia.tokyo-night
 esbenp.prettier-vscode
 gaearon.subliminal
+github.copilot
+github.copilot-chat
 golang.go
 haskell.haskell
 inferrinizzard.prettier-sql-vscode
@@ -47,11 +49,12 @@ tamasfe.even-better-toml
 tomoki1207.pdf
 visualstudioexptteam.intellicode-api-usage-examples
 visualstudioexptteam.vscodeintellicode
+vscjava.migrate-java-to-azure
 vscjava.vscode-gradle
 vscjava.vscode-java-debug
 vscjava.vscode-java-dependency
-vscjava.vscode-java-pack
 vscjava.vscode-java-test
+vscjava.vscode-java-upgrade
 vscjava.vscode-maven
 vscodevim.vim
 vue.volar
