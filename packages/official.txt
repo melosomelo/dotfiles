@@ -71,5 +71,6 @@ wayland-protocols
 xmlstarlet
 xorg-xhost
 xorg-xrandr
+yt-dlp
 zip
 zoxide
