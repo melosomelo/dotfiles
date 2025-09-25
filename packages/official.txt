@@ -37,6 +37,8 @@ mise
 neovim
 networkmanager
 noto-fonts-cjk
+nvidia
+nvidia-settings
 nvm
 obsidian
 okular
