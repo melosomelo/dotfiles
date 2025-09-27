@@ -40,8 +40,6 @@ plasma-desktop
 plasma-nm
 plasma-pa
 python-pip
-python-rich-click
-python-ruff
 qbittorrent
 reflector
 sddm

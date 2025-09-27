@@ -3,6 +3,10 @@ anki
 beekeeper-studio-bin
 insomnia
 lazysql
+python-questionary
+python-shandy-sqlfmt
+python-textual-fastdatatable
+python-textual-textarea
 spotify
 stremio
 swhkd-git
