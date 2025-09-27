@@ -39,7 +39,10 @@ pipewire-pulse
 plasma-desktop
 plasma-nm
 plasma-pa
+python-build
+python-installer
 python-pip
+python-poetry
 qbittorrent
 reflector
 sddm
