@@ -3,6 +3,7 @@ anki
 beekeeper-studio-bin
 insomnia
 lazysql
+python-pandas-stubs
 spotify
 stremio
 swhkd-git
