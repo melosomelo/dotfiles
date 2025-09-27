@@ -2,6 +2,8 @@
 anki
 beekeeper-studio-bin
 insomnia
+lazysql
+lazysql-debug
 spotify
 stremio
 swhkd-git
