@@ -10,7 +10,6 @@ python2-bin
 slack-desktop
 spotify
 stremio
-teams
 ttf-adwaita-mono-nerd
 visual-studio-code-bin
 watchman-bin
