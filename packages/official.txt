@@ -58,6 +58,7 @@ ttf-jetbrains-mono-nerd
 unzip
 vlc
 vlc-plugin-ffmpeg
+vlc-plugin-freetype
 vlc-plugin-srt
 zip
 zoxide
