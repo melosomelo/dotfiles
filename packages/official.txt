@@ -57,5 +57,6 @@ ttf-iosevka-nerd
 ttf-jetbrains-mono-nerd
 unzip
 vlc
+vlc-plugin-ffmpeg
 zip
 zoxide
