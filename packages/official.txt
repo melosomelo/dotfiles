@@ -60,5 +60,6 @@ vlc
 vlc-plugin-ffmpeg
 vlc-plugin-freetype
 vlc-plugin-srt
+yt-dlp
 zip
 zoxide
