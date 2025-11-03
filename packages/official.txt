@@ -6,6 +6,7 @@ blender
 bluedevil
 bluez
 bluez-utils
+calibre
 cmake
 cronie
 cuda
