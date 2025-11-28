@@ -2,6 +2,7 @@
 anki
 beekeeper-studio-bin
 insomnia
+ngrok
 spotify
 stremio
 swhkd-git
