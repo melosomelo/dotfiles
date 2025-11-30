@@ -14,6 +14,11 @@ local options = {
 		timeout_ms = 500,
 		lsp_format = "fallback",
 	},
+	formatters = {
+		prettier = {
+			append_args = { "--single-quote" },
+		},
+	},
 }
 
 return options

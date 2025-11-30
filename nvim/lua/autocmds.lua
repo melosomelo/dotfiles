@@ -3,6 +3,7 @@ require("nvchad.autocmds")
 local autocmd = vim.api.nvim_create_autocmd
 
 local default_group = vim.api.nvim_create_augroup("default_group", { clear = true })
+
 autocmd("VimEnter", {
 	desc = "Ensure certain LSP servers are installed via Mason",
 	group = default_group,
@@ -27,6 +28,17 @@ autocmd("VimEnter", {
 				print("Server " .. server .. " is not installed. Installing it now...")
 				vim.cmd("MasonInstall " .. server)
 			end
+		end
+	end,
+})
+
+autocmd("VimEnter", {
+	desc = "cd into directory passed as argument (if it exists)",
+	group = default_group,
+	callback = function(args)
+		local arg = vim.fn.argv(0)
+		if arg and vim.fn.isdirectory(arg) == 1 then
+			vim.cmd("cd " .. arg)
 		end
 	end,
 })
