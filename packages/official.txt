@@ -35,6 +35,7 @@ noto-fonts-cjk
 nvidia-open
 okular
 openssh
+otf-font-awesome
 otf-monaspace
 pipewire-alsa
 pipewire-pulse
