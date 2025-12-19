@@ -34,7 +34,7 @@ set -g fish_greeting
 set -gx DOTFILES $HOME/dotfiles
 set -gx EDITOR nvim
 set -gx NVM_INITIALIZED false
-set -gx QT_STYLE_OVERRIDE breeze
+# set -gx QT_STYLE_OVERRIDE breeze
 set -gx ANDROID_HOME /home/mateus/Android/Sdk
 
 fish_add_path $ANDROID_HOME/emulator

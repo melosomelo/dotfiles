@@ -4,7 +4,6 @@ beekeeper-studio-bin
 insomnia
 ngrok
 spotify
-stremio
 swhkd-git
 ttf-adwaita-mono-nerd
 visual-studio-code-bin
