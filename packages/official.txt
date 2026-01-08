@@ -17,6 +17,7 @@ dolphin
 efibootmgr
 firefox
 fish
+flatpak
 git
 github-cli
 grub
