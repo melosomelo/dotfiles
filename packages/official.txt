@@ -37,6 +37,7 @@ nvidia-open
 nvtop
 okular
 ollama
+ollama-cuda
 openssh
 os-prober
 otf-font-awesome
