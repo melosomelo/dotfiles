@@ -36,6 +36,7 @@ noto-fonts-cjk
 nvidia-open
 nvtop
 okular
+ollama
 openssh
 os-prober
 otf-font-awesome
