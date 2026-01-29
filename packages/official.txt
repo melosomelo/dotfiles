@@ -34,6 +34,7 @@ neovim
 networkmanager
 noto-fonts-cjk
 nvidia-open
+nvtop
 okular
 openssh
 os-prober
