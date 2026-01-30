@@ -28,7 +28,6 @@ lazydocker
 less
 linux
 linux-firmware
-lmms
 man-db
 mise
 neovim
