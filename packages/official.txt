@@ -49,7 +49,6 @@ plasma-nm
 plasma-pa
 python-pip
 qbittorrent
-reaper
 reflector
 sddm
 spectacle
