@@ -1,5 +1,6 @@
 alacritty
 alsa-utils
+anki
 base
 base-devel
 blender

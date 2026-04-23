@@ -1,5 +1,4 @@
 1password
-anki
 beekeeper-studio-bin
 insomnia
 ngrok
