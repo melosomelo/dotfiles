@@ -2,6 +2,7 @@
 beekeeper-studio-bin
 insomnia
 ngrok
+qt5-webchannel-debug
 spotify
 swhkd-git
 ttf-adwaita-mono-nerd
