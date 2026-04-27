@@ -1,8 +1,9 @@
 1password
 beekeeper-studio-bin
 insomnia
+mongosh-bin
+mongosh-bin-debug
 ngrok
-qt5-webchannel-debug
 spotify
 swhkd-git
 ttf-adwaita-mono-nerd
