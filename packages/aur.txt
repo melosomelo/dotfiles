@@ -2,7 +2,6 @@
 beekeeper-studio-bin
 insomnia
 mongosh-bin
-mongosh-bin-debug
 ngrok
 spotify
 swhkd-git

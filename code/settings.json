@@ -202,4 +202,5 @@
   "diffEditor.ignoreTrimWhitespace": false,
   "git.openRepositoryInParentFolders": "never",
   "workbench.secondarySideBar.defaultVisibility": "hidden",
+  "window.confirmSaveUntitledWorkspace": false,
 }
