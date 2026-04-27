@@ -1,5 +1,6 @@
 1password
 beekeeper-studio-bin
+gcc14-debug
 insomnia
 mongosh-bin
 ngrok
