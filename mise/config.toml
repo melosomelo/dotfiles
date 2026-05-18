@@ -1,4 +1,5 @@
 [tools]
+maven = "latest"
 node = "22"
 
 [settings]

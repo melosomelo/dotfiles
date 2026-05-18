@@ -1,6 +1,6 @@
 1password
 beekeeper-studio-bin
-gcc14-debug
+gitkraken
 insomnia
 mongosh-bin
 ngrok

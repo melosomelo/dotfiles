@@ -203,4 +203,5 @@
   "git.openRepositoryInParentFolders": "never",
   "workbench.secondarySideBar.defaultVisibility": "hidden",
   "window.confirmSaveUntitledWorkspace": false,
+  "chat.viewSessions.orientation": "stacked",
 }
