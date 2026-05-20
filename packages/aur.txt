@@ -5,6 +5,7 @@ gitkraken
 insomnia
 mongosh-bin
 ngrok
+slack-desktop
 spotify
 swhkd-git
 ttf-adwaita-mono-nerd

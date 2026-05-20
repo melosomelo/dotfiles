@@ -26,6 +26,8 @@ abbr -a hr hyprctl
 
 abbr -a czc cz commit
 
+abbr -a cl claude
+
 # aliases
 alias v nvim
 
