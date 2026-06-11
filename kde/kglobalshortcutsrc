@@ -275,3 +275,7 @@ _launch=Meta+Return
 CurrentMonitorScreenShot=
 OpenWithoutScreenshot=
 _launch=Print\tMeta+Shift+S\tMeta+Shift+P
+
+[slack]
+9FDAE9FEC6A68BD3150D2F797512B4CD-Ctrl+Shift+Space=Ctrl+Shift+Space,Ctrl+Shift+Space,Slack shortcut: Ctrl+Shift+Space
+_k_friendly_name=Slack

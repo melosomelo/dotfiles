@@ -8,6 +8,7 @@ abbr -a gpom git push origin main
 abbr -a gpl git pull 
 abbr -a gc git commit
 abbr -a gcm git commit -m \"
+abbr -a gcam git commit -a -m \"
 abbr -a gco git checkout
 abbr -a gl git log
 
