@@ -55,6 +55,10 @@ Each fundamental document has a default filename inside `<REQS_DIR>`. The user m
 | User Classes Catalog | `user-classes.md` | `/discover-user-classes` |
 | Parking Lot | `parking-lot.md` | passive capture (this skill) |
 
+### Documents are optional, but valuable
+
+None of the fundamental documents are required to begin requirements engineering work. However, when a relevant document is missing and the work would benefit from it, let the user know — briefly and without being pushy. For example, if writing a use case without a Vision and Scope document, mention that having one would help ground the actor, preconditions, and business rules. The goal is to inform, not to block progress.
+
 ### Local files as pointers
 
 A fundamental document's local file does not have to contain the document itself. It may instead contain a short description of where to find the real content — for example, a link to a Notion page, a Confluence URL, instructions for querying a database, or any other external source. When reading a fundamental document, always check whether the local file is a pointer rather than content, and follow it accordingly.
