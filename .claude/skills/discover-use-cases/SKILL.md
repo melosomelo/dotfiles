@@ -39,12 +39,12 @@ The catalog is always anchored by a file in the working directory. That file is 
 ### Step 1 — Check for existing context
 Before asking anything, check memory and the working directory for:
 - A Vision and Scope document (provides scope boundaries and known features)
-- A user classes document or section (provides actors — critical for actor-based identification)
+- A user requirements document (`user-reqs.md`) — provides user classes, which are critical actors for actor-based identification
 - An existing use case catalog or catalog descriptor (indicates a session to resume)
 
 Then:
 - **If a catalog already exists:** Offer to resume the previous session. Read the catalog and orient the user on what's already been discovered before proceeding.
-- **If user classes are absent:** Issue a strong warning. Actors are the primary vehicle for use case identification — without them, the actor-based pass will be shallow. The user can still proceed, but this gap will limit the quality of discovery.
+- **If `user-reqs.md` is absent:** Issue a strong warning. Actors are the primary vehicle for use case identification — without user class definitions, the actor-based pass will be shallow. The user can still proceed, but this gap will limit the quality of discovery.
 - **If Vision and Scope is absent:** Note that it's valuable for understanding scope boundaries and in-scope features. Proceed without it if unavailable.
 
 ### Step 2 — Set up the catalog
@@ -118,7 +118,7 @@ A use case doesn't need to meet all criteria for High — one strong criterion i
   - **Step masquerading as a use case** — does this describe one coherent goal, or just one interaction step inside a larger goal?
   - **Use case explosion** — if the list is growing very large, probe whether the level of abstraction is right. You'll typically have many more use cases than features, but something is off if every button on the screen becomes a use case.
   - **Out of scope** — if a candidate use case lies outside the defined session scope or outside the product scope established in the Vision and Scope document, flag it rather than silently including it.
-- **Note actor implications.** If a discovered use case implies an actor that doesn't map to any known user class, flag it. This may warrant running `/user-classes` after the session.
+- **Note actor implications.** If a discovered use case implies an actor that doesn't map to any known user class, flag it. This may warrant running `/discover-user-classes` and updating `user-reqs.md` after the session.
 
 ## Ending the session
 

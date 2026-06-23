@@ -30,10 +30,10 @@ Not every field needs to be completed. The dressing level you determine early in
 ## Starting the session
 
 ### Step 1 — Check for existing context
-Before asking anything, check memory for known file paths to a Vision and Scope document and a user classes document. Also look in the working directory for common filenames (e.g., `vision-and-scope.md`, `user-classes.md`, `srs.md`). Then:
+Before asking anything, check memory for known file paths to a Vision and Scope document and a user requirements document. Also look in `<REQS_DIR>` (default: `.spec/reqs`) for `vision-and-scope.md` and `user-reqs.md`. Then:
 
 - **If found:** Read the relevant documents and extract what's already known about the product, user classes, and in-scope features. Use this as a starting point.
-- **If not found:** Inform the user that a Vision and Scope document and user class definitions are typically valuable context for writing a quality use case — they ground the actor, preconditions, and business rules. Then proceed without them.
+- **If not found:** Inform the user that a Vision and Scope document (`vision-and-scope.md`) and a user requirements document (`user-reqs.md`) are typically valuable context for writing a quality use case — they ground the actor, preconditions, and business rules. Then proceed without them.
 
 ### Step 2 — Ask for any additional context
 Ask whether the user has any other relevant material: existing use case lists, process descriptions, user research, or prior elicitation notes. If they do, read and digest it before proceeding.

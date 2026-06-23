@@ -49,11 +49,11 @@ All requirements artifacts live under a single directory, referred to here as `<
 
 Each fundamental document has a default filename inside `<REQS_DIR>`. The user may override any filename.
 
-| Document | Default filename | Produced by |
+| Document | Default filename | Description |
 |----------|-----------------|-------------|
-| Vision and Scope | `vision-and-scope.md` | `/discover-biz-reqs` |
-| User Classes Catalog | `user-classes.md` | `/discover-user-classes` |
-| Parking Lot | `parking-lot.md` | passive capture (this skill) |
+| Vision and Scope | `vision-and-scope.md` | Business objectives, product vision, scope boundaries, stakeholder profiles, and project priorities |
+| User Requirements | `user-reqs.md` | User classes and their characteristics, use cases, and user stories — everything that describes who uses the system and what they need to accomplish with it |
+| Parking Lot | `parking-lot.md` | Stray requirements captured during conversation, pending triage and routing to the appropriate artifact |
 
 ### Documents are optional, but valuable
 

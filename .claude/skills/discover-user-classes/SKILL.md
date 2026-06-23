@@ -73,10 +73,9 @@ When the user indicates they're done (or you've both run out of new ground to co
 
 1. Present the full consolidated list of user classes with their characteristics.
 2. Highlight any open questions or gaps.
-3. If a Vision and Scope document exists, offer to update section 4.1 (Stakeholder Profiles) with the newly discovered or refined user class information.
-4. Ask how they'd like the output — for example:
-   - Added directly to the existing Vision and Scope document
-   - A standalone local file (ask for path and format: Markdown, plain text, etc.)
+3. Ask how they'd like the output — for example:
+   - Written to `user-reqs.md` in `<REQS_DIR>` (default: `.spec/reqs/user-reqs.md`) — the canonical home for user requirements, including user classes
+   - A standalone local file at a custom path (ask for path and format)
    - A Word document (.docx)
    - A remote document (Notion, Google Docs, etc.)
    - Just a summary in the chat
