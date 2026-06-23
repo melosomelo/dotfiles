@@ -1,6 +1,6 @@
 ---
-name: user-classes
-description: Guides the user through identifying, characterizing, and consolidating user classes for a software product, following Karl Wiegers' requirements engineering framework. Should be run after /biz-reqs. Use when the user wants to define who will use the system, identify stakeholder groups, or classify users by role, behavior, or access level.
+name: discover-user-classes
+description: Guides the user through identifying, characterizing, and consolidating user classes for a software product, following Karl Wiegers' requirements engineering framework. Should be run after /discover-biz-reqs. Use when the user wants to define who will use the system, identify stakeholder groups, or classify users by role, behavior, or access level.
 ---
 
 # User Class Discovery
@@ -29,7 +29,7 @@ Keep in mind that user classes need not be human — other systems or hardware c
 Before asking anything, check memory for a known Vision and Scope document (local file path or remote document URL). Then:
 
 - **If found:** Read or fetch the document and extract whatever is already known about stakeholders and user groups (section 4.1 — Stakeholder Profiles). Use this as a starting point. Open the conversation by reflecting back what's already established and what still needs to be explored.
-- **If not found:** Ask the user whether they have a Vision and Scope document and where it is. If they don't have one at all, gently prompt them to run `/biz-reqs` first, since user classes should be grounded in the product's business objectives and stakeholder context. If they want to proceed anyway, continue without it.
+- **If not found:** Ask the user whether they have a Vision and Scope document and where it is. If they don't have one at all, gently prompt them to run `/discover-biz-reqs` first, since user classes should be grounded in the product's business objectives and stakeholder context. If they want to proceed anyway, continue without it.
 
 ### Step 2 — Check for prior material
 Ask whether the user has any existing material that captures user or stakeholder information — org charts, interview notes, existing user research, personas, or any other documentation. If they do, read and digest it before proceeding.

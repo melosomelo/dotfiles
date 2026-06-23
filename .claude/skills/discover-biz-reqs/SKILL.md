@@ -1,5 +1,5 @@
 ---
-name: biz-reqs
+name: discover-biz-reqs
 description: Guides the user through a discovery conversation to define the contents of a Vision and Scope document, following Karl Wiegers' requirements engineering framework. Use when the user wants to define business requirements, establish product vision and scope, or work through a Vision and Scope document.
 ---
 
