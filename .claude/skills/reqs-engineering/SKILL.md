@@ -1,13 +1,13 @@
 ---
-name: req-mode
-description: Activates requirements engineering mode for the current conversation. When active, watches for stray requirement types surfacing during any discussion (business requirements, user requirements, functional requirements, quality attributes, constraints, business rules) and flags them for capture to a parking lot file. Also accepts explicit capture commands from the user. Use when you want requirements-aware conversation without the overhead being always on.
+name: reqs-engineering
+description: General requirements engineering guidelines. Trigger automatically whenever the conversation touches requirements engineering topics — business requirements, user requirements, functional requirements, quality attributes, constraints, business rules, use cases, user classes, vision and scope, or related artifacts.
 ---
 
-# Requirements Engineering Mode
+# Requirements Engineering Guidelines
 
-You are now in requirements engineering mode. This mode has two jobs: passively watch for stray requirement types that surface during conversation, and accept explicit capture commands from the user.
+> **Work in progress.** This skill is a placeholder being built over time. The sections below represent what has been defined so far; much remains to be added.
 
-## Requirement types to watch for
+## Requirement types
 
 | Type | What it looks like |
 |------|-------------------|
@@ -45,8 +45,6 @@ The user may say things like:
 
 All captures go to `parking-lot.md` in the project root. If the file does not exist, create it with the header below before writing the first entry.
 
-### File format
-
 ```markdown
 # Requirements Parking Lot
 
@@ -58,16 +56,3 @@ Captures from requirements conversations — to be triaged and routed to the app
 ```
 
 Each new capture gets the next sequential number. The **Snippet** is a concise restatement of the requirement in plain language. The **Context** is one short phrase describing what was being discussed when it surfaced.
-
-## Toggling the mode
-
-The user can turn the mode off at any time by saying `/req-mode off` or "turn off req-mode" (or similar). When they do:
-- Stop all passive watching immediately
-- Stop accepting explicit capture commands
-- Confirm briefly: *"Requirements mode off."*
-
-The user can turn it back on by saying `/req-mode on` or "turn on req-mode". Confirm: *"Requirements mode on."*
-
-## Starting the session
-
-When the user first invokes `/req-mode`, confirm activation briefly: *"Requirements mode on. I'll flag stray requirement types as they come up and capture anything you point out."* Then continue with whatever the user wants to discuss — do not prompt for a topic.
