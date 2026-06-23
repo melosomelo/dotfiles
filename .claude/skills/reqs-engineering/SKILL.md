@@ -41,9 +41,27 @@ The user may say things like:
 
 **If a type is given:** Validate it against the taxonomy above. If the type seems wrong, say so and explain why before logging. Example: *"That reads more like a functional requirement than a constraint — a constraint limits the solution space, while this describes a system behavior. Want me to log it as a functional requirement instead?"* If the user insists on their classification, respect it.
 
+## Requirements directory structure
+
+All requirements artifacts live under a single directory, referred to here as `<REQS_DIR>`. The default is `.spec/reqs`. The user may specify a different path at any time — if they do, use that path for the remainder of the session.
+
+### Fundamental documents
+
+Each fundamental document has a default filename inside `<REQS_DIR>`. The user may override any filename.
+
+| Document | Default filename | Produced by |
+|----------|-----------------|-------------|
+| Vision and Scope | `vision-and-scope.md` | `/discover-biz-reqs` |
+| User Classes Catalog | `user-classes.md` | `/discover-user-classes` |
+| Parking Lot | `parking-lot.md` | passive capture (this skill) |
+
+### Local files as pointers
+
+A fundamental document's local file does not have to contain the document itself. It may instead contain a short description of where to find the real content — for example, a link to a Notion page, a Confluence URL, instructions for querying a database, or any other external source. When reading a fundamental document, always check whether the local file is a pointer rather than content, and follow it accordingly.
+
 ## Parking lot file
 
-All captures go to `parking-lot.md` in the project root. If the file does not exist, create it with the header below before writing the first entry.
+All captures go to `<REQS_DIR>/parking-lot.md` (default: `.spec/reqs/parking-lot.md`). If the file does not exist, create it — including any missing parent directories — with the header below before writing the first entry.
 
 ```markdown
 # Requirements Parking Lot
