@@ -1,6 +1,6 @@
 ---
 name: write-use-case
-description: Guides the user through writing a single use case following Karl Wiegers' use case template (Software Requirements, 3rd Edition). Use when the user has a specific use case in mind and wants to document it. Determines dressing level, works through the template conversationally, and produces structured output.
+description: Guides the user through writing a single use case following Karl Wiegers' use case template (Software Requirements, 3rd Edition). Use when the user has a specific use case in mind and wants to document it. Determines dressing level, works through the template conversationally, and produces structured output — either as a written specification, a Mermaid flowchart, or both.
 ---
 
 # Writing a Use Case
@@ -43,7 +43,7 @@ Before touching the template, establish: who is the primary actor for this use c
 
 If you have user class information available, cross-reference the actor against known user classes. Keep in mind that a user class and an actor are not the same thing: a user class is a group of real people; an actor is the role a person plays when executing this particular use case. Multiple user classes may play the same actor role.
 
-If the actor doesn't map cleanly to any existing user class — or implies a new one — flag it explicitly. This may warrant updating the user classes after the session (via `/user-classes`).
+If the actor doesn't map cleanly to any existing user class — or implies a new one — flag it explicitly. This may warrant updating the user classes after the session (via `/discover-user-classes`).
 
 ### Step 4 — Determine the dressing level
 Before exploring the template, ask 2–3 targeted questions to determine whether the use case should be **casual** (brief narrative, just the essentials) or **fully dressed** (complete template with flows, exceptions, and all supporting detail). The most discriminating factors are:
@@ -75,12 +75,53 @@ Make a recommendation based on the answers and confirm with the user before proc
 - **Reflect back periodically.** Summarize the use case as it develops every few exchanges so the user can confirm or correct.
 - **Handle discovered use cases gracefully.** If the discussion reveals that what the user thought was one use case is actually zero or more than one, name it clearly. If new use cases are discovered along the way, note them in a running list. When the scope of the session comes into question, prompt the user: do they want to stay focused on the original, pivot to a newly discovered use case, or wrap up and address the others separately?
 
+## Graphical representation (Mermaid flowchart)
+
+A use case can also be expressed as a Mermaid `flowchart TD`. This is a complement to the written specification, not a replacement — it makes the flow structure immediately visible and is useful for walkthroughs and reviews.
+
+### Mapping rules
+
+| Use case element | Flowchart element |
+|-----------------|-------------------|
+| Trigger | First node (rounded rectangle) |
+| Each normal flow step | Rectangular node, labelled with step number and brief action |
+| Decision point leading to an alternative flow | Diamond node |
+| Alternative flow branch | Nodes on a separate path that eventually rejoins or ends |
+| Exception condition | Diamond node branching to a terminal error node (use a distinct style, e.g., `:::error`) |
+| Successful postcondition | Final node (stadium/rounded rectangle) |
+
+### Style conventions
+
+- Label actor actions with the actor name: `"Actor: does something"`
+- Label system responses with "System:": `"System: does something"`
+- Keep step labels short — one concise phrase per node
+- Use `classDef` to visually distinguish normal flow, alternative flows, and exceptions
+
+### Example skeleton
+
+```mermaid
+flowchart TD
+    T([Trigger]) --> S1["Actor: initiates action"]
+    S1 --> S2["System: responds"]
+    S2 --> D1{Condition?}
+    D1 -- Yes --> A1["Actor: takes alternate path"]
+    A1 --> S3["System: handles alternate path"]
+    D1 -- No --> S3
+    S3 --> E1{Error condition?}
+    E1 -- Yes --> ERR["System: handles error"]:::error
+    E1 -- No --> END([Goal achieved])
+
+    classDef error fill:#f88,stroke:#c00
+```
+
+Only offer or produce a Mermaid diagram if the use case has a meaningful flow (i.e., at least a normal flow with a step or two). A casual use case with no branching may not benefit from it.
+
 ## Ending the conversation
 
 When the user is satisfied with the use case:
 
 1. Present the complete use case in structured form, using the template fields as headings. Mark any fields left incomplete or unresolved (e.g., `[TBD]` or `[Open question: ...]`).
-2. If the actor discussion implied any new or updated user classes, note them explicitly and suggest revisiting `/user-classes`.
+2. If the actor discussion implied any new or updated user classes, note them explicitly and suggest revisiting `/discover-user-classes`.
 3. If any additional use cases were discovered during the session, list them briefly so the user has a record.
 4. Ask how the user would like the output — for example:
    - A standalone local file (ask for path and format: Markdown, plain text, etc.)
@@ -88,8 +129,9 @@ When the user is satisfied with the use case:
    - A Word document (.docx)
    - A remote document (Notion, Google Docs, etc.)
    - Just the result in the chat
+5. Ask whether they also want a Mermaid flowchart — either alongside the written spec or as a standalone output.
 
-Then produce the output in the chosen format.
+Then produce the output in the chosen format(s).
 
 ## Tone
 
