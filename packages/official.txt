@@ -49,6 +49,7 @@ pipewire-pulse
 plasma-desktop
 plasma-nm
 plasma-pa
+plocate
 python-pip
 qbittorrent
 reflector
