@@ -52,6 +52,7 @@ plasma-pa
 plocate
 python-pip
 qbittorrent
+re2c
 reflector
 sddm
 spectacle
