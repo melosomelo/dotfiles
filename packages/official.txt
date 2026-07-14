@@ -52,7 +52,6 @@ plasma-nm
 plasma-pa
 plocate
 postgresql-libs
-python-openai-whisper
 python-pip
 qbittorrent
 re2c
