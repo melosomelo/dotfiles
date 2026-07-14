@@ -74,6 +74,7 @@ vlc-plugin-ffmpeg
 vlc-plugin-freetype
 vlc-plugin-srt
 waybar
+whisper-cpp-rocm
 yt-dlp
 zip
 zoxide
