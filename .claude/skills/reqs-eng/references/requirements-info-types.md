@@ -23,7 +23,7 @@ statements: "The customer shall be able to choose their preferred payment method
 ## Business rules
 
 Include corporate policies, government regulations, industry standards, and ­computational
-algorithms. They are not themselves software requirements because they have an existence outside of
+algorithms. They are NOT themselves software requirements because they have an existence outside of
 any software application, but they often dictate that the system must contain functionality to
 comply with the pertinent rules. Example: "staff can only overwrite ticket validation failure with
 the approval of a manager".
