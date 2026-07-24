@@ -16,6 +16,8 @@ docker
 docker-compose
 docx2txt
 dolphin
+edk2-aarch64
+edk2-ovmf
 efibootmgr
 firefox
 fish
@@ -54,9 +56,12 @@ plocate
 postgresql-libs
 python-pip
 qbittorrent
+qemu-system-aarch64
+qemu-system-x86
 re2c
 reflector
 sddm
+socat
 spectacle
 sudo
 tex-gyre-fonts
@@ -69,6 +74,7 @@ ttf-input
 ttf-iosevka-nerd
 ttf-jetbrains-mono-nerd
 unzip
+virtiofsd
 vlc
 vlc-plugin-ffmpeg
 vlc-plugin-freetype
