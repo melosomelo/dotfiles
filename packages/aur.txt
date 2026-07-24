@@ -1,6 +1,7 @@
 1password
 beekeeper-studio-bin
 claude-code
+claude-desktop
 gitkraken
 insomnia
 mongosh-bin
