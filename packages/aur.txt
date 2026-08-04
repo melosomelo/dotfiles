@@ -1,4 +1,5 @@
 1password
+accounts-qml-module-debug
 beekeeper-studio-bin
 claude-code
 claude-desktop
@@ -6,6 +7,7 @@ gitkraken
 insomnia
 mongosh-bin
 ngrok
+qt5-location-debug
 slack-desktop
 spotify
 swhkd-git
