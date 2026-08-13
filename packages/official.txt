@@ -38,6 +38,7 @@ networkmanager
 noto-fonts-cjk
 nvidia-open
 nvtop
+obsidian
 okular
 ollama
 ollama-cuda
